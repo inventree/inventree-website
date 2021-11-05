@@ -4,11 +4,26 @@
 
 
 @layer components {
+    .primary {
+        @apply bg-purple
+    }
+
     .custom-underline-blue {
         @apply border-b-4 border-blue-400;
     }
 
     .custom-underline-red {
         @apply border-b-4 border-red-400;
+    }
+
+    .footer-link {
+        @apply text-gray-600 hover:text-gray-800
+    }
+
+    .footer-categorie {
+        @apply font-medium text-gray-900 tracking-widest text-sm mb-3
+        /*
+        @apply title-font font-medium text-gray-900 tracking-widest text-sm mb-3
+        */
     }
 }
