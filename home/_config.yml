@@ -1,6 +1,7 @@
 
-title: Your site title
-description: Your site description
+title: InvenTree
+description: Intuitive Inventory Management
+demo-link: http://demo.inventreedb.com/
 
 plugins:
   - jekyll-seo-tag
