@@ -10,6 +10,7 @@ module.exports = {
     purge: [
         '{,!(node_modules|_site)/**/}*.{html,md}',
     ],
+    darkMode: 'media',
     theme: {},
     plugins: [
         require('@tailwindcss/typography'),

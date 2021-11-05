@@ -4,10 +4,6 @@
 
 
 @layer components {
-    .primary {
-        @apply bg-purple
-    }
-
     .custom-underline-blue {
         @apply border-b-4 border-blue-400;
     }
@@ -26,4 +22,12 @@
         @apply title-font font-medium text-gray-900 tracking-widest text-sm mb-3
         */
     }
+}
+
+.bg-primary {
+    background-color: blueviolet;
+}
+
+.bg-primarylg {
+    background-color: lightblue;
 }
