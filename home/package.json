@@ -11,12 +11,12 @@
         "css:rel": "parcel build styles/index.css --no-source-maps"
     },
     "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^3.0.0",
-        "@tailwindcss/typography": "^0.4.0",
-        "autoprefixer": "^9.8.6",
-        "concurrently": "^5.3.0",
-        "parcel-bundler": "^1.12.4",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.4"
+        "@fullhuman/postcss-purgecss": "^4.0.3",
+        "@tailwindcss/typography": "^0.4.1",
+        "autoprefixer": "^10.4.0",
+        "concurrently": "^6.3.0",
+        "parcel": "^2.0.0",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
     },
     "resolutions": {
         "node-forge": "0.10.0"

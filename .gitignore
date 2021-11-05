@@ -1,4 +1,5 @@
 _site/
+.parcel-cache/
 .cache/
 .jekyll-cache/
 dist/
