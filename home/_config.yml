@@ -1,0 +1,16 @@
+google_analytics:
+
+title: Your site title
+description: Your site description
+
+plugins:
+  - jekyll-seo-tag
+
+exclude: [
+  styles/index.css,
+  styles/syntax.css,
+  package.json,
+  package-lock.json,
+  postcss.config.js,
+  readme.md,
+]

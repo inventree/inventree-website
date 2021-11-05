@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="{{ "/dist/index.css" | relative_url }}">
+<link rel="shortcut icon" type="image/png" href={{ "/assets/favicon.ico" | relative_url }}>
+
+<title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+<meta itemprop="description" name="description"
+    content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
+
+{% seo %}

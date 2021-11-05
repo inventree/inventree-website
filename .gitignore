@@ -1,0 +1,5 @@
+_site/
+.cache/
+.jekyll-cache/
+dist/
+node_modules/

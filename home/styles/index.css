@@ -1,0 +1,21 @@
+/* Syntax highlighting
+ * https://jwarby.github.io/jekyll-pygments-themes/languages/java.html */
+@import "./syntax.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Extract Tailwind CSS components here according to the docs.
+ * https://tailwindcss.com/docs/extracting-components/#extracting-css-components-with-apply
+*/
+@layer components {
+    .custom-underline-blue {
+        @apply border-b-4 border-blue-400;
+    }
+
+    .custom-underline-red {
+        @apply border-b-4 border-red-400;
+    }
+}
