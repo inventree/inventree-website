@@ -10,7 +10,12 @@ header:
 features:
   - title: mountain bikes
     subtitle: very intresting
-    description: long text describing this
+    description: |
+      long text describing this
+      - a
+      - b
+      - c
+      more text here
     link: Https://example.com/
 
   - title: mountain bikes1
@@ -22,6 +27,16 @@ features:
     subtitle: very intresting2
     description: long text describing this2
     link: Https://example.com/2
+
+  - title: mountain bikes3
+    subtitle: very intresting3
+    description: long text describing this3
+    link: Https://example.com/3
+
+  - title: mountain bikes3
+    subtitle: very intresting3
+    description: long text describing this3
+    link: Https://example.com/3
 
   - title: mountain bikes3
     subtitle: very intresting3
