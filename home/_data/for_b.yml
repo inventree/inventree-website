@@ -1,0 +1,37 @@
+header:
+  title: For buisness
+  text: |
+    This pipe does something a little different.
+    It preserves the breaks.
+    This is really helpful for code samples,
+    since you can format the code samples with
+       the appropriate
+
+features:
+  - title: mountain bikes
+    subtitle: very intresting
+    description: long text describing this
+    link: Https://example.com/
+
+  - title: mountain bikes1
+    subtitle: very intresting1
+    description: long text describing this1
+    link: Https://example.com/1
+
+  - title: mountain bikes2
+    subtitle: very intresting2
+    description: long text describing this2
+    link: Https://example.com/2
+
+  - title: mountain bikes3
+    subtitle: very intresting3
+    description: long text describing this3
+    link: Https://example.com/3
+
+cta:
+  text: Want to know more? Try out our demo or read more in the enterprise docs!
+  btn:
+    - text: open demo
+      link: https://a.bb/
+    - text: enterprise docs
+      link: https://c.dd/

@@ -1,8 +1,14 @@
-<section class="text-gray-600 body-font">
+<section class="cm-text-body">
+  {% unless include.no_container %}
     <div class="container px-5 py-24 mx-auto">
+  {% endunless %}
       <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-        <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</h1>
-        <button class="flex-shrink-0 text-white bg-primarylg border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg mt-10 sm:mt-0">Button</button>
+        <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">{{ include.cta.text }}</h1>
+        {% for item in include.cta.btn %}
+        <button href="{{ item.link }}" class="flex-shrink-0 text-white bg-primarylg border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg mt-10 sm:mt-0">{{ item.text }}</button>
+        {% endfor %}
       </div>
+  {% unless include.no_container %}
     </div>
+  {% endunless %}
 </section>

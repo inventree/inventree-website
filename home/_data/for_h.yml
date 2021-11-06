@@ -1,0 +1,17 @@
+header:
+  title: For hobbists
+  text: |
+    This pipe does something a little different.
+    It preserves the breaks.
+
+
+features:
+  - title: mountain bikes
+    subtitle: very intresting
+    description: long text describing this
+    link: Https://example.com/
+
+  - title: mountain bikes3
+    subtitle: very intresting3
+    description: long text describing this3
+    link: Https://example.com/3
