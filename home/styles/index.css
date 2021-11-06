@@ -8,10 +8,6 @@
         @apply border-b-4 border-blue-400;
     }
 
-    .custom-underline-red {
-        @apply border-b-4 border-red-400;
-    }
-
     .footer-link {
         @apply text-gray-600 hover:text-gray-800
     }
