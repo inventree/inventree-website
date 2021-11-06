@@ -13,6 +13,7 @@ backLink: false
 {% assign for_h = site.data.for_h %}
 {% include features.html data=for_h %}
 
-{% include cta.html %}
+{% assign end = site.data.end_cta %}
+{% include cta.html cta=end %}
 
 ---
