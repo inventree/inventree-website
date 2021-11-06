@@ -9,77 +9,25 @@
         </a>
         <p class="mt-2 text-sm text-gray-500">{{ site.tagline }}</p>
       </div>
+
       <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+      
+      {% for cat in site.data.footer %}
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="footer-categorie title-font">CATEGORIES</h2>
+          <h2 class="footer-categorie title-font">{{ cat.title }}</h2>
           <nav class="list-none mb-10">
+            {% for item in cat.cats %}
             <li>
-              <a class="footer-link">First Link</a>
+              <a href="{{ item.link }}" class="footer-link">{{ item.name }}</a>
             </li>
-            <li>
-              <a class="footer-link">Second Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Third Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Fourth Link</a>
-            </li>
+            {% endfor %}
           </nav>
         </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="footer-categorie title-font">CATEGORIES</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="footer-link">First Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Second Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Third Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Fourth Link</a>
-            </li>
-          </nav>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="footer-categorie title-font">CATEGORIES</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="footer-link">First Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Second Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Third Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Fourth Link</a>
-            </li>
-          </nav>
-        </div>
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-          <h2 class="footer-categorie title-font">CATEGORIES</h2>
-          <nav class="list-none mb-10">
-            <li>
-              <a class="footer-link">First Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Second Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Third Link</a>
-            </li>
-            <li>
-              <a class="footer-link">Fourth Link</a>
-            </li>
-          </nav>
-        </div>
+      {% endfor %}
+
       </div>
     </div>
+
     <div class="bg-gray-100">
       <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
         <p class="text-gray-500 text-sm text-center sm:text-left">© 2021 {{ site.title }} — made with love by

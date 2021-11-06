@@ -1,0 +1,36 @@
+- title: Websites
+  cats:
+  - name: Documentation
+    link: aa.bb
+  - name: Demo
+    link: aa.cc
+  - name: Plugins
+    link: plugin-repo
+
+- title: Contribute
+  cats:
+  - name: Translate
+    link: crowdin
+  - name: Code
+    link: github
+  - name: Report
+    link: github
+  - name: Document
+    link: inventree-docs
+  - name: Discuss
+    link: invetre/dicuss
+  - name: Fund
+    link: sponsoring
+
+- title: Extend
+  cats:
+  - name: Plugins
+    link: plugin-repo
+  - name: KiCad
+    link: ki-n-tree
+  - name: Fusion360
+    link: F360-Inventree
+  - name: Python
+    link: inventree-python
+  - name: More
+    link: github-tag-inventree
