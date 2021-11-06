@@ -17,7 +17,7 @@
     }
 
     .footer-categorie {
-        @apply font-medium text-gray-900 tracking-widest text-sm mb-3
+        @apply title-font font-medium text-gray-900 tracking-widest text-sm mb-3
         /*
         @apply title-font font-medium text-gray-900 tracking-widest text-sm mb-3
         */
@@ -25,6 +25,10 @@
 
     .cm-text-body {
         @apply text-gray-600 body-font
+    }
+
+    .cm-lgt-txt {
+        @apply text-gray-900
     }
 }
 
