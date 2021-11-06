@@ -28,11 +28,3 @@
         @apply text-gray-900
     }
 }
-
-.bg-primary {
-    background-color: blueviolet;
-}
-
-.bg-primarylg {
-    background-color: lightblue;
-}

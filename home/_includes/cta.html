@@ -5,7 +5,7 @@
       <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
         <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font cm-lgt-txt">{{ include.cta.text }}</h1>
         {% for item in include.cta.btn %}
-        <button href="{{ item.link }}" class="flex-shrink-0 text-white bg-primarylg border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg mt-10 sm:mt-0">{{ item.text }}</button>
+        <button href="{{ item.link }}" class="flex-shrink-0 text-white bg-secondary border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg mt-10 sm:mt-0">{{ item.text }}</button>
         {% endfor %}
       </div>
   {% unless include.no_container %}

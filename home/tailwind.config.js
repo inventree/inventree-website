@@ -11,7 +11,14 @@ module.exports = {
         '{,!(node_modules|_site)/**/}*.{html,md}',
     ],
     darkMode: 'media',
-    theme: {},
+    theme: {
+        extend: {
+            colors: {
+              'primary':'#902eec',
+              'secondary':'#f580f5',
+            }
+        },
+    },
     plugins: [
         require('@tailwindcss/typography'),
     ],
