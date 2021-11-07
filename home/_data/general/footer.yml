@@ -41,8 +41,8 @@
   cats:
   - name: Home
     link: /
-  - name: For Hobby
-    link: /hobby
+  - name: For Maker
+    link: /maker
   - name: For Business
     link: /business
   - name: For Education
