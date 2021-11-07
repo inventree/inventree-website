@@ -1,0 +1,16 @@
+header:
+  ref: edu
+  title: For Education
+  text: |
+    Electronic Labs are creative places. Whether your institution works with K12 or post-grads - organisation and tooling is challenging. Let InvenTree help you calm the storm!
+
+features:
+  - title: Open Source - Open Knowledge
+    subtitle: Stay independed of big vendors
+    description: Free software of big vendors helps the budget. But how about your students?<br>Don’t teach tools – teach process and competence. InvenTree is MIT licensed and free forever.<br>Also, we are open to contribution from all ages!
+    link: Https://example.com/
+
+  - title: mountain bikes3
+    subtitle: very intresting3
+    description: long text describing this3
+    link: Https://example.com/3

@@ -1,5 +1,6 @@
 header:
-  title: For buisness
+  ref: sme
+  title: For Business
   text: |
     This pipe does something a little different.
     It preserves the breaks.
@@ -28,20 +29,6 @@ features:
     description: long text describing this2
     link: Https://example.com/2
 
-  - title: mountain bikes3
-    subtitle: very intresting3
-    description: long text describing this3
-    link: Https://example.com/3
-
-  - title: mountain bikes3
-    subtitle: very intresting3
-    description: long text describing this3
-    link: Https://example.com/3
-
-  - title: mountain bikes3
-    subtitle: very intresting3
-    description: long text describing this3
-    link: Https://example.com/3
 
 cta:
   text: Want to know more? Try out our demo or read more in the enterprise docs!

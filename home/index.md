@@ -6,12 +6,16 @@ backLink: false
 {% include hero.html title=site.tagline title_2='and more' image='https://dummyimage.com/860x600' color='with InvenTree' %}
 
 
-{% assign for_b = site.data.for_b %}
+
+{% assign for_h = site.data.for_hobby %}
+{% include features.html data=for_h %}
+
+{% assign for_b = site.data.for_business %}
 {% include features.html data=for_b %}
 
+{% assign for_e = site.data.for_edu %}
+{% include features.html data=for_e %}
 
-{% assign for_h = site.data.for_h %}
-{% include features.html data=for_h %}
 
 {% assign end = site.data.end_cta %}
 {% include cta.html cta=end %}

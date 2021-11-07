@@ -34,3 +34,14 @@
     link: inventree-python
   - name: More
     link: github-tag-inventree
+
+- title: Subsites
+  cats:
+  - name: Home
+    link: /
+  - name: For Hobby
+    link: /hobby
+  - name: For Business
+    link: /business
+  - name: For Education
+    link: /education

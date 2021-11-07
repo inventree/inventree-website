@@ -1,5 +1,6 @@
 header:
-  title: For hobbists
+  ref: hobby
+  title: For Hobbyist
   text: |
     This pipe does something a little different.
     It preserves the breaks.
