@@ -1,0 +1,9 @@
+stats:
+  - name: Docker pulls
+    number: 500K+
+  - name: GitHub Stars
+    number: 425
+  - name: Contributors
+    number: 29
+  - name: Lines of Code
+    number: 72K+

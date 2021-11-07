@@ -16,6 +16,8 @@ backLink: false
 {% assign for_e = site.data.for_edu %}
 {% include features.html data=for_e %}
 
+{% assign stats = site.data.stats %}
+{% include stats.html data=stats %}
 
 {% assign end = site.data.end_cta %}
 {% include cta.html cta=end %}
