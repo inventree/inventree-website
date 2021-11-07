@@ -10,6 +10,9 @@ backLink: false
 
 {% include cta.html text='read more on the site!' %}
 
+{% assign function = site.data.function %}
+{% include functions.html data=function %}
+
 {% assign end = site.data.end_cta %}
 {% include cta.html cta=end %}
 

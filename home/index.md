@@ -5,6 +5,8 @@ backLink: false
 
 {% include hero.html title=site.tagline title_2='and more' image='https://dummyimage.com/860x600' color='with InvenTree' %}
 
+{% assign function = site.data.function %}
+{% include functions.html data=function %}
 
 
 {% assign for_h = site.data.for_hobby %}
