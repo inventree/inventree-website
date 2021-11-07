@@ -16,18 +16,27 @@
         @apply font-medium text-gray-900 tracking-widest text-sm mb-3
     }
 
-    .cm-text-body {
+    .cm-hvr-btn {
+        @apply text-gray-700 bg-gray-100 hover:bg-gray-200 rounded
+    }
+
+    .cm-gray-1 {
+        @apply text-gray-900
+    }
+
+    .cm-gray-2 {
         @apply text-gray-600
     }
 
-    .cm-lgt-txt {
-        @apply text-gray-900
+    .cm-gray-3 {
+        @apply text-gray-500
     }
-}
 
-a.anchor {
-    display: block;
-    position: relative;
-    top: -72px;
-    visibility: hidden;
+    a.anchor {
+        display: block;
+        position: relative;
+        top: -72px;
+        visibility: hidden;
+    }
+    
 }
