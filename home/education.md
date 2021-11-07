@@ -8,7 +8,7 @@ backLink: false
 {% assign for_e = site.data.for_edu %}
 {% include features.html data=for_e %}
 
-{% include cta.html text='read more on the site!' %}
+{% include cta.html text='InvenTree provides functions for all kinds of users and parts' link = '/' link_text = 'Learn More' %}
 
 {% assign function = site.data.function %}
 {% include functions.html data=function %}
