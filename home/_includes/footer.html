@@ -16,7 +16,7 @@
           <nav class="list-none mb-10">
             {% for item in cat.cats %}
             <li>
-              <a href="{{ item.link }}" class="footer-link">{{ item.name }}</a>
+              <a href="{% if item.site %}{{ site[item.site] }}{% else %}{{ item.link }}{% endif %}" class="footer-link">{{ item.name }}</a>
             </li>
             {% endfor %}
           </nav>

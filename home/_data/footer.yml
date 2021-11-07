@@ -1,41 +1,43 @@
 - title: Websites
   cats:
   - name: Documentation
-    link: aa.bb
+    site: doc-link
   - name: Demo
-    link: aa.cc
+    site: demo-link
   - name: Plugins
-    link: plugin-repo
+    site: plugin-link
 
 - title: Contribute
   cats:
   - name: Translate
-    link: crowdin
+    link: https://crowdin.com/project/inventree
   - name: Code
-    link: github
+    link: https://github.com/inventree/InvenTree/blob/master/CONTRIBUTING.md
   - name: Report
-    link: github
-  - name: Document
-    link: inventree-docs
+    link: https://github.com/inventree/InvenTree/issues/new/choose
   - name: Discuss
-    link: invetre/dicuss
+    link: https://github.com/inventree/InvenTree/issues
+  - name: Document
+    link: https://github.com/inventree/inventree-docs
   - name: Fund
-    link: sponsoring
+    link: https://inventree.readthedocs.io/en/latest/contribute/#donate
 
 - title: Extend
   cats:
+  - name: API
+    link: https://inventree.readthedocs.io/en/latest/extend/python/
   - name: Plugins
-    link: plugin-repo
+    site: plugin-link
   - name: KiCad
-    link: ki-n-tree
+    link: https://github.com/sparkmicro/Ki-nTree/
   - name: Fusion360
-    link: F360-Inventree
+    link: https://github.com/matmair/F360-InvenTree/
   - name: Python
-    link: inventree-python
+    link: https://inventree.readthedocs.io/en/latest/extend/python/
   - name: More
-    link: github-tag-inventree
+    link: https://github.com/topics/inventree
 
-- title: Subsites
+- title: Sitemap
   cats:
   - name: Home
     link: /
@@ -45,3 +47,5 @@
     link: /business
   - name: For Education
     link: /education
+  - name: About
+    link: /about
