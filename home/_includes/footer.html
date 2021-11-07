@@ -10,7 +10,8 @@
 
       <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
       
-      {% for cat in site.data.footer %}
+      {% assign footer  = footer|default: site.data.general.footer %}
+      {% for cat in footer %}
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
           <h2 class="footer-categorie title-font">{{ cat.title }}</h2>
           <nav class="list-none mb-10">

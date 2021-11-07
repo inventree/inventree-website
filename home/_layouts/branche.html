@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% include hero.html title=site.tagline title_2=page.title_2 image='https://dummyimage.com/860x600' color='with InvenTree' %}
+
+{% assign data = site.data[page.data] %}
+{% include features.html data=data %}
+
+{% include cta.html cta=site.data.general.learn_cta %}
+{% include functions.html data=site.data.general.function %}
+{% include cta.html cta=site.data.general.end_cta %}
+
+---
