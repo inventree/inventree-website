@@ -10,11 +10,9 @@
       <div class="xl:w-1/{{ function_len }} lg:w-1/2 md:w-full px-8 py-6">
         <h2 class="text-lg sm:text-xl cm-gray-1 font-medium title-font mb-2">{{ item.title }}</h2>
         <p class="leading-relaxed text-base mb-4">{{ item.text }}</p>
-        <a class="text-secondary inline-flex items-center" href="{{ item.link }}">Learn More
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+        {% if item.link %}
+        <a class="text-secondary inline-flex items-center" href="{{ item.link }}">Learn More {% include learn_more.html %}</a>
+        {% endif %}
       </div>
       {% endfor %}
     </div>
