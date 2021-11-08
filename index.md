@@ -18,4 +18,3 @@ main_page: True
 
 {% include cta.html cta=site.data.general.end_cta %}
 
----
