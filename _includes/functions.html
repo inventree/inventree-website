@@ -17,7 +17,7 @@
           {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
         </p>
         {% if item.link %}
-        <a class="text-secondary inline-flex items-center" href="{{ item.link }}">Learn More {% include learn_more.html %}</a>
+        <a class="text-secondary inline-flex items-center" href="{% include link.html item=item.link %}">Learn More {% include learn_more.html %}</a>
         {% endif %}
       </div>
       {% endfor %}

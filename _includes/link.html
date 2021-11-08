@@ -2,6 +2,8 @@
     {{ site[include.item.site] }}
 {% elsif include.item.internal %}
     {{ include.item.internal | relativurl }}
-{% else %}
+{% elsif include.item.link %}
     {{ include.item.link }}
+{% else %}
+    {{ include.item }}
 {% endif %}
