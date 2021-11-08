@@ -22,4 +22,6 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         target_branch: 'gh-pages'
         jekyll_src: 'home'
-        pre_build_commands: npm install
+        pre_build_commands: |
+          apk add --update npm
+          npm install
