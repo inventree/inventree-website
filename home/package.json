@@ -1,24 +1,11 @@
 {
-    "name": "home.invenhost.com",
-    "version": "0.0.1",
-    "description": "A UI test",
-    "scripts": {
-        "preinstall": "npx npm-force-resolutions",
-        "setup": "gem install bundler && bundle install && npm i",
-        "start": "concurrently --kill-others \"npm run css:dev\" \"bundle exec jekyll serve\"",
-        "build": "npm run css:rel && jekyll build",
-        "css:dev": "parcel watch styles/index.css --no-source-maps",
-        "css:rel": "parcel build styles/index.css --no-source-maps"
-    },
-    "devDependencies": {
-        "@fullhuman/postcss-purgecss": "^4.0.3",
-        "@tailwindcss/typography": "^0.4.1",
-        "autoprefixer": "^10.4.0",
-        "concurrently": "^6.3.0",
-        "parcel": "^2.0.0",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
-    },
-    "resolutions": {
-        "node-forge": "0.10.0"
-    }
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.4.0",
+    "cssnano": "^5.0.10",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
+    "postcss-import": "^14.0.2",
+    "tailwindcss": "^2.2.19"
+  }
 }

@@ -8,11 +8,11 @@ main_page: True
 
 {% include functions.html data=site.data.general.function %}
 
-{% include features.html data=site.data.for_maker %}
+{% include features.html data=site.data.for_maker link='/maker' %}
 
-{% include features.html data=site.data.for_business %}
+{% include features.html data=site.data.for_business link='/business' %}
 
-{% include features.html data=site.data.for_edu %}
+{% include features.html data=site.data.for_edu link='/education' %}
 
 {% include stats.html data=site.data.general.stats %}
 

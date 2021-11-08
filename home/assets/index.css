@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+---
+---
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 
 @layer components {
@@ -30,10 +33,6 @@
 
     .cm-gray-3 {
         @apply text-gray-500
-    }
-
-    .cm-container {
-        @apply container px-5 py-24 mx-auto
     }
 
     a.anchor {

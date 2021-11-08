@@ -1,9 +1,14 @@
 <section class="cm-gray-2 body-font">
-    <div class="cm-container">
+    <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap w-full mb-4">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
           <a class="anchor" id="{{ include.data.header.ref }}"></a>
-          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 cm-gray-1">{{ include.data.header.title }}</h1>
+          <div class="inline-flex items-center">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 cm-gray-1">{{ include.data.header.title }}</h1>
+            {% if include.link %}
+            <a href="{{ include.link }}">{% include learn_more.html %}</a>
+            {% endif %}
+          </div>
           <div class="h-1 w-20 bg-secondary rounded"></div>
         </div>
         <p class="lg:w-1/2 w-full leading-relaxed cm-gray-3">{{ include.data.header.text }}</p>
@@ -15,7 +20,9 @@
           <div class="bg-gray-100 p-6 rounded-lg">
             <h3 class="tracking-widest text-primary text-xs font-medium title-font">{{ item.subtitle }}</h3>
             <h2 class="text-lg cm-gray-1 font-medium title-font mb-4">{{ item.title }}</h2>
-            <p class="leading-relaxed text-base">{{ item.description }}</p>
+            <p class="leading-relaxed text-base">{{ item.description }}
+              {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
+            </p>
             <a class="text-secondary inline-flex items-center" href="{{ item.link }}">Learn More {% include learn_more.html %}</a>
           </div>
         </div>
