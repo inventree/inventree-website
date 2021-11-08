@@ -23,5 +23,6 @@ jobs:
         target_branch: 'gh-pages'
         jekyll_src: 'home'
         pre_build_commands: |
+          cd home
           apk add --update npm
           npm install
