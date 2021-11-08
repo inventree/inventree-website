@@ -20,7 +20,9 @@
           <div class="bg-gray-100 p-6 rounded-lg">
             <h3 class="tracking-widest text-primary text-xs font-medium title-font">{{ item.subtitle }}</h3>
             <h2 class="text-lg cm-gray-1 font-medium title-font mb-4">{{ item.title }}</h2>
-            <p class="leading-relaxed text-base">{{ item.description }}</p>
+            <p class="leading-relaxed text-base">{{ item.description }}
+              {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
+            </p>
             <a class="text-secondary inline-flex items-center" href="{{ item.link }}">Learn More {% include learn_more.html %}</a>
           </div>
         </div>
