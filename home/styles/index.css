@@ -32,10 +32,6 @@
         @apply text-gray-500
     }
 
-    .cm-container {
-        @apply container px-5 py-24 mx-auto
-    }
-
     a.anchor {
         display: block;
         position: relative;
