@@ -40,12 +40,12 @@
 - title: Sitemap
   cats:
   - name: Home
-    link: /
+    internal: ''
   - name: For Maker
-    link: /maker
+    internal: maker
   - name: For Business
-    link: /business
+    internal: business
   - name: For Education
-    link: /education
+    internal: education
   - name: About
-    link: /about
+    internal: about

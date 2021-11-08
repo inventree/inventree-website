@@ -17,7 +17,7 @@
           <nav class="list-none mb-10">
             {% for item in cat.cats %}
             <li>
-              <a href="{% if item.site %}{{ site[item.site] }}{% else %}{{ item.link }}{% endif %}" class="footer-link">{{ item.name }}</a>
+              <a href="{% include link.html item=item%}" class="footer-link">{{ item.name }}</a>
             </li>
             {% endfor %}
           </nav>
