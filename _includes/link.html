@@ -4,6 +4,8 @@
     {{ include.item.internal | relativurl }}
 {% elsif include.item.link %}
     {{ include.item.link }}
+{% elsif include.item.home %}
+    {{ '/' | relative_url }}
 {% else %}
     {{ include.item }}
 {% endif %}

@@ -40,7 +40,7 @@
 - title: Sitemap
   cats:
   - name: Home
-    internal: ''
+    home: true
   - name: For Maker
     internal: maker
   - name: For Business
