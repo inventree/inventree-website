@@ -6,9 +6,8 @@ doc-link: https://inventree.readthedocs.io/en/latest/
 plugin-link: https://repo.invenhost.com/
 
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
+  It is at the center of an ecosystem of addins for EDA and CAD tools, API wrapper, feature-extending plugins and 3rd party tools.
 
 baseurl: "/home.invenhost.com"
 url: ""
