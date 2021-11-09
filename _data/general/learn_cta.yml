@@ -1,4 +1,5 @@
-text: InvenTree provides functions for all kinds of users and parts
+text: InvenTree provides functions for all kinds of users, parts and organisations
 btn:
   - text: Learn More
-    link: /
+    link:
+      home: true
