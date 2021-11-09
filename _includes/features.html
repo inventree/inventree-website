@@ -7,7 +7,7 @@
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 cm-gray-1">{{ include.data.title }}</h1>
             {% if include.link %}
             {% assign link=include.data.link|default:include.link %}
-            <a href="{% include link.html item=link %}">{% include learn_more.html %}</a>
+            <a href="{% include link.html item=link %}" alt="learn more">{% include learn_more.html %}</a>
             {% endif %}
           </div>
           <div class="h-1 w-20 bg-secondary rounded"></div>
@@ -24,7 +24,7 @@
             <p class="leading-relaxed text-base">{{ item.description }}
               {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
             </p>
-            <a class="text-secondary inline-flex items-center" href="{% include link.html item=item.link %}">Learn More {% include learn_more.html %}</a>
+            <a class="text-secondary inline-flex items-center" href="{% include link.html item=item.link %}" alt="learn more">Learn More {% include learn_more.html %}</a>
           </div>
         </div>
       {% endfor %}

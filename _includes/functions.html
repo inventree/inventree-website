@@ -4,7 +4,7 @@
       {% if include.data.title %}<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 cm-gray-1">{{ include.data.title }}</h1>{% endif %}
       {% if include.data.text %}<p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{ include.data.text }}</p>{% endif %}
       {% if include.data.link %}
-      <a class="text-secondary inline-flex items-center justify-center" href="{% include link.html item=include.data.link %}">Learn More {% include learn_more.html %}</a>
+      <a class="text-secondary inline-flex items-center justify-center" href="{% include link.html item=include.data.link %}" alt="learn more">Learn More {% include learn_more.html %}</a>
       {% endif %}
     </div>
     <div class="flex flex-wrap">
@@ -17,7 +17,7 @@
           {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
         </p>
         {% if item.link %}
-        <a class="text-secondary inline-flex items-center" href="{% include link.html item=item.link %}">Learn More {% include learn_more.html %}</a>
+        <a class="text-secondary inline-flex items-center" href="{% include link.html item=item.link %}" alt="learn more">Learn More {% include learn_more.html %}</a>
         {% endif %}
       </div>
       {% endfor %}
