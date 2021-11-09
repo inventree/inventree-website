@@ -26,12 +26,3 @@ features:
     subtitle: very intresting2
     description: long text describing this2
     link: Https://example.com/2
-
-
-cta:
-  text: Want to know more? Try out our demo or read more in the enterprise docs!
-  btn:
-    - text: open demo
-      link: https://a.bb/
-    - text: enterprise docs
-      link: https://c.dd/
