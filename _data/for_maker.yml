@@ -1,9 +1,10 @@
-header:
-  ref: maker
-  title: For Maker
-  text: |
-    This pipe does something a little different.
-    It preserves the breaks.
+ref: maker
+link:
+  internal: maker
+title: For Maker
+text: |
+  This pipe does something a little different.
+  It preserves the breaks.
 
 
 features:

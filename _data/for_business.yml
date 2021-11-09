@@ -1,12 +1,10 @@
-header:
-  ref: business
-  title: For Business
-  text: |
-    This pipe does something a little different.
-    It preserves the breaks.
-    This is really helpful for code samples,
-    since you can format the code samples with
-       the appropriate
+ref: business
+link:
+  internal: business
+title: For Business
+text: |
+  This pipe does something a little different. It preserves the breaks.
+  This is really helpful for code samples, since you can format the code samples with the appropriate
 
 features:
   - title: mountain bikes

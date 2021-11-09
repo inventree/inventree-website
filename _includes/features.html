@@ -2,16 +2,17 @@
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-wrap w-full mb-4">
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
-          <a class="anchor" id="{{ include.data.header.ref }}"></a>
+          <a class="anchor" id="{{ include.data.ref }}"></a>
           <div class="inline-flex items-center">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 cm-gray-1">{{ include.data.header.title }}</h1>
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 cm-gray-1">{{ include.data.title }}</h1>
             {% if include.link %}
-            <a href="{% include link.html item=include.link %}">{% include learn_more.html %}</a>
+            {% assign link=include.data.link|default:include.link %}
+            <a href="{% include link.html item=link %}">{% include learn_more.html %}</a>
             {% endif %}
           </div>
           <div class="h-1 w-20 bg-secondary rounded"></div>
         </div>
-        <p class="lg:w-1/2 w-full leading-relaxed cm-gray-3">{{ include.data.header.text }}</p>
+        <p class="lg:w-1/2 w-full leading-relaxed cm-gray-3">{{ include.data.text }}</p>
       </div>
 
       <div class="flex flex-wrap -m-4">

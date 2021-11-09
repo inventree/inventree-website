@@ -1,8 +1,9 @@
-header:
-  ref: edu
-  title: For Education
-  text: |
-    Electronic Labs are creative places. Whether your institution works with K12 or post-grads - organisation and tooling is challenging. Let InvenTree help you calm the storm!
+ref: edu
+link:
+  internal: edu
+title: For Education
+text: |
+  Electronic Labs are creative places. Whether your institution works with K12 or post-grads - organisation and tooling is challenging. Let InvenTree help you calm the storm!
 
 features:
   - title: Open Source - Open Knowledge
