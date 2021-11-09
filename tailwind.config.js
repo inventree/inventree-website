@@ -7,9 +7,10 @@
 */
 
 module.exports = {
-    purge: [
-        '{,!(node_modules|_site)/**/}*.{html,md}',
-    ],
+    purge: {
+        enabled: true,
+        content: ['./**/*.html'],
+      },
     darkMode: 'media',
     theme: {
         extend: {
