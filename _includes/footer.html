@@ -14,13 +14,13 @@
       {% for cat in footer %}
         <div class="lg:w-1/4 md:w-1/2 w-full px-4">
           <h2 class="footer-categorie title-font">{{ cat.title }}</h2>
-          <nav class="list-none mb-10">
+          <nav class="list-none mb-10"><ul>
             {% for item in cat.cats %}
             <li>
               <a href="{% include link.html item=item%}" class="footer-link">{{ item.name }}</a>
             </li>
             {% endfor %}
-          </nav>
+          </ul></nav>
         </div>
       {% endfor %}
 
