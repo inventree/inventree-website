@@ -24,6 +24,7 @@ jobs:
     - uses: helaili/jekyll-action@2.2.0
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
+        jekyll_src: 'site'
         target_branch: 'gh-pages'
         pre_build_commands: |
           apk add --update npm
