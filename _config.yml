@@ -25,3 +25,4 @@ exclude: [
   postcss.config.js,
   readme.md,
 ]
+source: site
