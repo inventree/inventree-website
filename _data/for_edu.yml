@@ -9,9 +9,9 @@ features:
   - title: Open Source - Open Knowledge
     subtitle: Stay independed of big vendors
     description: Free software of big vendors helps the budget. But how about your students?<br>Don’t teach tools – teach process and competence. InvenTree is MIT licensed and free forever.<br>Also, we are open to contribution from all ages!
-    link: Https://example.com/
+    link: https://example.com/
 
-  - title: mountain bikes3
-    subtitle: very intresting3
-    description: long text describing this3
-    link: Https://example.com/3
+  - title: lorem ipsum title
+    subtitle: lorem ipsum subtitle
+    description: lorem ipsum description
+    link: https://example.com/

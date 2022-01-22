@@ -3,26 +3,22 @@ link:
   internal: business
 title: For Business
 text: |
-  This pipe does something a little different. It preserves the breaks.
-  This is really helpful for code samples, since you can format the code samples with the appropriate
+  lorem ipsum text
 
 features:
-  - title: mountain bikes
-    subtitle: very intresting
+  - title: lorem ipsum title
+    subtitle: lorem ipsum subtitle
     description: |
-      long text describing this
-      - a
-      - b
-      - c
-      more text here
-    link: Https://example.com/
+      lorem ipsum
 
-  - title: mountain bikes1
-    subtitle: very intresting1
-    description: long text describing this1
-    link: Https://example.com/1
+      - lorem ipsum
+      - lorem ipsum
+      - lorem ipsum
 
-  - title: mountain bikes2
-    subtitle: very intresting2
-    description: long text describing this2
-    link: Https://example.com/2
+      lorem ipsum
+    link: https://example.com/
+
+  - title: lorem ipsum title
+    subtitle: lorem ipsum subtitle
+    description: lorem ipsum description
+    link: https://example.com/

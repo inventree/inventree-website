@@ -7,7 +7,7 @@ plugin-link: https://repo.invenhost.com/
 
 description: >-
   InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
-  It is at the center of an ecosystem of addins for EDA and CAD tools, API wrapper, feature-extending plugins and 3rd party tools.
+  It is at the center of an ecosystem of addins for EDA and CAD tools, API wrapper, deeply integrated plugins and 3rd party tools.
 
 baseurl: "/home.invenhost.com"
 url: ""
