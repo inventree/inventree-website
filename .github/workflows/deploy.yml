@@ -31,13 +31,14 @@ jobs:
         with:
           node-version: '14'
       # Install PostCSS plugins (from your package.json)
-      - run: npm install
+      - run: cd site && npm install
       - name: Build site
       # use jekyll-action-ts to build
       # https://github.com/limjh16/jekyll-action-ts
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
+          jekyll_src: 'site'
           # custom_opts: '--verbose --trace'  #'--drafts --future'
           ### If you need to specify any Jekyll build options, enable the above input
           ### Flags accepted can be found here https://jekyllrb.com/docs/configuration/options/#build-command-options
@@ -48,5 +49,4 @@ jobs:
         with:
           # GITHUB_TOKEN secret is set up automatically
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          jekyll_src: 'site'
           target_branch: 'gh-pages'
