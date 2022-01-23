@@ -64,9 +64,9 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  jekyll (~> 4.2)
-  jekyll-postcss-v2 (~> 1.0)
-  jekyll-seo-tag (~> 2.7)
+  jekyll
+  jekyll-postcss-v2
+  jekyll-seo-tag
 
 BUNDLED WITH
    2.3.5
