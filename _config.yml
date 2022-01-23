@@ -15,7 +15,7 @@ url: ""
 
 plugins:
   - jekyll-seo-tag
-  - jekyll-postcss
+  - jekyll-postcss-v2
 
 exclude: [
   styles/index.css,
