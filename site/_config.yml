@@ -23,6 +23,4 @@ exclude: [
   package.json,
   package-lock.json,
   postcss.config.js,
-  readme.md,
 ]
-source: site
