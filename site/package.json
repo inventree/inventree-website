@@ -1,5 +1,5 @@
 {
-  "dependencies": {
+  "devDependencies": {
     "@tailwindcss/typography": "^0.5.0",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.0.15",
