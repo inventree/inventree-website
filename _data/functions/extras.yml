@@ -1,0 +1,10 @@
+functions:
+  - title: Build Parts
+    text: Inventree features a build management system to help you track the progress of your builds. Builds consume stock items to make new parts, you can decide to automatically or manually allocate parts from your current inventory.
+    link: https://inventree.readthedocs.io/en/latest/part/part/
+  - title: Report
+    text: Generate a wide range of reports using custom templates.
+    link: https://inventree.readthedocs.io/en/latest/report/report/
+  - title: Extend and Customize
+    text: InvenTree is designed to be highly extensible. If the core InvenTree functionality does not meet your particular need, InvenTree provides a RESTful API, a native Python library, and a powerful plugin system.
+    link: https://inventree.readthedocs.io/en/latest/extend/api/
