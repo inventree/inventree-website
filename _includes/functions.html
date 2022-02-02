@@ -1,6 +1,11 @@
-{% padding = no_padding|true%}
+{% if include.padding != nil and include.padding != true %}
+  {% assign padding = false %}
+{% else %}
+  {% assign padding = true %}
+{% endif %}
+
 <section class="cm-gray-2 body-font">
-  <div class="container px-5 {% if padding %}py-24{% endif %} mx-auto">
+  <div class="container px-5 {% if padding == true %}py-24{% endif %} mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
       {% if include.data.title %}<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 cm-gray-1">{{ include.data.title }}</h1>{% endif %}
       {% if include.data.text %}<p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{ include.data.text }}</p>{% endif %}
