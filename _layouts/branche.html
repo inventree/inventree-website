@@ -7,6 +7,6 @@ layout: default
 {% assign data = site.data[page.data] %}
 {% include features.html data=data %}
 
-{% include cta.html cta=site.data.general.learn_cta %}
-{% include functions.html data=site.data.general.function extend=true %}
-{% include cta.html cta=site.data.general.end_cta %}
+{% include cta.html cta=site.data.ctas.learn %}
+{% include functions.html data=site.data.functions.general extend=true %}
+{% include cta.html cta=site.data.ctas.end %}
