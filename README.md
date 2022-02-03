@@ -8,7 +8,12 @@ Install packages
 bundle install
 ```
 
-Run debug server
+Build site locally
 ```
 bundle exec jekyll build
+```
+
+Run debug server
+```
+bundle exec jekyll serve --incremental
 ```
