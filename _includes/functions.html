@@ -9,7 +9,7 @@
     <div class="flex flex-col text-center w-full mb-20">
       {% if include.data.title %}<h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 cm-gray-1">{{ include.data.title }}</h1>{% endif %}
       {% if include.data.text %}<p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{ include.data.text }}</p>{% endif %}
-      {% if include.data.link %}
+      {% if include.data.link and include.no_link != true %}
       <a class="text-secondary inline-flex items-center justify-center" href="{% include link.html item=include.data.link %}" alt="learn more">Learn More {% include learn_more.html %}</a>
       {% endif %}
     </div>
