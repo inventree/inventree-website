@@ -1,6 +1,6 @@
 # InvenTree home website
-A small UI test
-
+This project contains the source for the new InvenTree website.
+It is built on Jekyll and GitHub pages for backend / hosting and tailtwindcss for frontend.
 
 ## Develop
 Install packages
