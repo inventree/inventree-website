@@ -22,10 +22,10 @@ plugins:
   - 'jekyll_custom_permalink'
 
 exclude: [
-  styles/index.css,
-  styles/syntax.css,
   package.json,
   package-lock.json,
   postcss.config.js,
-  readme.md,
+  README.md,
+  tailwind.config.js,
+  LICENSE,
 ]
