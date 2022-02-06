@@ -16,6 +16,10 @@ url: ""
 plugins:
   - jekyll-seo-tag
   - jekyll-postcss-v2
+  - 'jekyll-sitemap'
+  - 'jekyll-feed'
+  - 'jekyll-mentions'
+  - 'jekyll_custom_permalink'
 
 exclude: [
   styles/index.css,
