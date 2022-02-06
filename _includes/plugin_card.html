@@ -14,7 +14,7 @@
         {% include publisher_ref.html pub=plugin.publisher %}
       </div>
       <p class="mb-auto">{{ plugin.excerpt | mardownify | remove: '<p>' | remove: '</p>' }}</p>
-      <a href="{{ plugin.url }}" class="stretched-link" aria-label="open plugin details"></a>
+      <a href="{{ plugin.url | relative_url }}" class="stretched-link" aria-label="open plugin details"></a>
     </div>
   </div>
   

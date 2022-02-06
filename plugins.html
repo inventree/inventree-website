@@ -9,7 +9,7 @@ title: Plugins
     <div class="px-0">
       <h1 class="display-4 fst-italic">{{post.title}}</h1>
       <p class="lead my-3">{{post.excerpt}}</p>
-      <p class="lead mb-0"><a href="{{post.url}}" class="text-white fw-bold">Continue reading...</a></p>
+      <p class="lead mb-0"><a href="{{ post.url | relative_url }}" class="text-white fw-bold">Continue reading...</a></p>
     </div>
   </div>
   {% endfor %}

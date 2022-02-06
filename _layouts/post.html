@@ -21,7 +21,7 @@ layout: default
       {{ page.date | date_to_string }}
       {% assign publisher = site.publishers | where: 'short_name', page.publisher | first %}
       {% if publisher %}
-        - <a href="{{ publisher.url }}">{{ publisher.name }}</a>
+        - <a href="{{ publisher.url | relative_url }}">{{ publisher.name }}</a>
       {% endif %}
     </p>
     {{ content }}
