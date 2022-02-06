@@ -1,0 +1,15 @@
+---
+layout: default
+title: Publishers
+---
+<h1>Publishers</h1>
+
+<ul>
+  {% for publisher in site.publishers %}
+    <li>
+      <h2><a href="{{ publisher.url }}">{{ publisher.name }}</a></h2>
+      <h3>{{ publisher.position }}</h3>
+      <p>{{ publisher.content | mardownify }}</p>
+    </li>
+  {% endfor %}
+</ul>

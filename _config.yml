@@ -12,6 +12,35 @@ description: >-
 baseurl: "/home.invenhost.com"
 url: ""
 
+collections:
+  publishers:
+    output: true
+    permalink: "/:title"
+  plugins:
+    output: true
+    custom_permalink_placeholders: ["publisher"]
+    #permalink: "/:publisher/:title"
+
+defaults:
+  - scope:
+      path: ""
+      type: "publishers"
+    values:
+      layout: "publisher"
+  - scope:
+      path: ""
+      type: "plugins"
+    values:
+      layout: "plugin"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
 
 plugins:
   - jekyll-seo-tag

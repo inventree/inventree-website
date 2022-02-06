@@ -16,5 +16,13 @@ layout: default
 </header>
 
 <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto min-h-screen">
+    <h1>{{ page.title }}</h1>
+    <p>
+      {{ page.date | date_to_string }}
+      {% assign publisher = site.publishers | where: 'short_name', page.publisher | first %}
+      {% if publisher %}
+        - <a href="{{ publisher.url }}">{{ publisher.name }}</a>
+      {% endif %}
+    </p>
     {{ content }}
 </article>

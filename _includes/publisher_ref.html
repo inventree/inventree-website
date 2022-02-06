@@ -1,0 +1,4 @@
+{% assign publisher_ref = site.publishers | where: 'short_name', include.pub | first %}
+<a href="{{ publisher_ref.url }}" class="link-secondary">
+    <p class="text-muted">by <img src="https://github.com/{{ include.pub }}.png?size=40" alt="mdo" class="rounded-circle" width="20" height="20"> {{ include.pub }}</p>
+</a>

@@ -1,0 +1,47 @@
+---
+layout: default
+---
+<h1>{{ page.name }}</h1>
+{% include publisher_ref.html pub=page.publisher %}
+
+<div class="row g-5">
+    <div class="col-md-8">
+        {{ content }}
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+
+        <div class="p-4 mb-3 bg-light rounded position-relative">
+          <h4 class="fst-italic">Github</h4>
+          <p class="mb-0">{{ page.github | remove: "https://github.com/" }}</p>
+          <a href="{{ page.github }}" class="stretched-link" aria-label="open github repo"></a>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Categories</h4>
+          <ol class="list-unstyled">
+            {% for categorie in page.categories %}
+            <li><a href="/categories/#{{ categorie | slugify }}"><span class="badge rounded-pill bg-warning">{{ categorie }}</span></a></li>
+            {% endfor %}
+          </ol>
+        </div>
+
+        <div>
+          <h4 class="fst-italic">Tags</h4>
+          <ol class="list-unstyled">
+            {% for tag in page.tags %}
+            <li><a href="/tags/#{{ tag | slugify }}"><span class="badge rounded-pill bg-info">{{ tag }}</span></a></li>
+            {% endfor %}
+          </ol>
+        </div>
+
+        <div class="mb-3 position-relative">
+          <h4 class="fst-italic">Website</h4>
+          <p class="mb-0">{{ page.website }}</p>
+          <a href="{{ page.website }}" class="stretched-link" aria-label="open website"></a>
+        </div>
+
+      </div>
+    </div>
+  </div>

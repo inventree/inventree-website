@@ -49,3 +49,5 @@
     internal: education
   - name: About
     internal: about
+  - name: Blog
+    internal: blog

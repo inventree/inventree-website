@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<h1>
+  <img src="https://github.com/{{ page.github }}.png?size=40" alt="mdo" class="rounded-circle" width="40" height="40">
+  {{ page.name }}
+</h1>
+
+<div>
+{% if page.github %}
+<a href="https://github.com/{{page.github}}"><span class="badge bg-secondary">GitHub</span></a>
+{% endif %}
+
+{% if page.website %}
+<a href="{{page.website}}"><span class="badge bg-secondary">Official Website</span></a>
+{% endif %}
+</div>
+
+<blockquote class="blockquote">
+  <p class="mb-0">{{ content }}</p>
+</blockquote>
+
+{% assign filtered_posts = site.posts | where: 'publisher', page.short_name %}
+{% if filtered_posts and filtered_posts.size != 0 %}
+<h3>Posts</h3>
+<ul class="list-unstyled">
+  {% for post in filtered_posts %}
+    <li>{{ post.date | date_to_string }} <a href="{{ post.url }}" class="lead">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% assign filtered_plugins = site.plugins | where: 'publisher', page.short_name %}
+{% if filtered_plugins and filtered_plugins.size != 0 %}
+<h3>Plugins</h3>
+<ul class="list-unstyled">
+  {% for plugin in filtered_plugins %}
+    <a href="{{ plugin.title }}"></a>
+    <li>{{ plugin.title }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
