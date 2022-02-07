@@ -2,13 +2,20 @@
 layout: default
 title: Blog
 ---
-<h1>Latest Posts</h1>
+  <section class="text-gray-600 body-font overflow-hidden min-h-screen">
+    <div class="container px-5 py-24 mx-auto">
+      <h1 class="header-text title-font mb-4 cm-gray-2">InvenTree Blog</h1>
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
-    </li>
-  {% endfor %}
-</ul>
+      {% for post in site.posts %}
+      <div class="flex flex-wrap -m-12">
+        <div class="p-12 md:w-1/2 flex flex-col items-start">
+          <h2 class="header-text title-font mb-4 cm-gray-1">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <span class="leading-relaxed mb-8">{{ post.excerpt }}</span>
+          {% include publisher_ref.html pub=post.publisher %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
