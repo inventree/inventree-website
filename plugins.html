@@ -2,43 +2,8 @@
 layout: default
 title: Plugins
 ---
-
-
-  {% for post in site.posts limit:1 %}
-  <div class="p-4 mb-4 text-white rounded bg-grad-primary">
-    <div class="px-0">
-      <h1 class="display-4 fst-italic">{{post.title}}</h1>
-      <p class="lead my-3">{{post.excerpt}}</p>
-      <p class="lead mb-0"><a href="{{ post.url | relative_url }}" class="text-white fw-bold">Continue reading...</a></p>
-    </div>
-  </div>
-  {% endfor %}
-
-  <div class="row g-5">
-    <div class="col-md-8">
+  <div>
       {% for plugin in site.plugins %}
         {% include plugin_card.html plugin=plugin %}
       {% endfor %}
-    </div>
-
-    <div class="col-md-4">
-      <div class="position-sticky" style="top: 2rem;">
-
-        <div class="p-4 mb-3 bg-light rounded position-relative">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0">This repo is a sample plugin repo for @InvenTree created by @matmair</p>
-          <a href="/about.html" class="stretched-link" aria-label="read more about this"></a>
-        </div>
-
-        <div class="p-4">
-          <h4 class="fst-italic">More InvenTree</h4>
-          <ol class="list-unstyled">
-            <li><a href="https://github.com/inventree/InvenTree">GitHub</a></li>
-            <li><a href="https://inventree.readthedocs.io/en/latest/">Docs</a></li>
-            <li><a href="https://github.com/inventree/inventree-python">Python interface</a></li>
-            <li><a href="https://main.invenhost.com/">Demo instance</a> feel free to register and play around!</li>
-          </ol>
-        </div>
-      </div>
-    </div>
   </div>
