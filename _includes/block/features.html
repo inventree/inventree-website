@@ -4,7 +4,7 @@
         <div class="lg:w-1/2 w-full mb-6 lg:mb-0">
           <a class="anchor" id="{{ include.data.ref }}"></a>
           <div class="inline-flex items-center">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 cm-gray-1">{{ include.data.title }}</h1>
+            <h1 class="header-text title-font mb-2 cm-gray-1">{{ include.data.title }}</h1>
             {% if include.link %}
             {% assign link=include.data.link|default:include.link %}
             <a href="{% include fnc/link.html item=link %}" alt="learn more">{% include fnc/learn_more.html %}</a>

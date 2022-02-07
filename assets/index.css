@@ -12,6 +12,10 @@ layout: empty
         @apply border-b-4 border-blue-400;
     }
 
+    .header-text{
+        @apply sm:text-3xl text-2xl font-medium
+    }
+
     .footer-link {
         @apply text-gray-600 hover:text-gray-800
     }
