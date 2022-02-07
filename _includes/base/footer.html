@@ -17,7 +17,7 @@
           <nav class="list-none mb-10"><ul>
             {% for item in cat.cats %}
             <li>
-              <a href="{% include link.html item=item%}" class="footer-link">{{ item.name }}</a>
+              <a href="{% include fnc/link.html item=item%}" class="footer-link">{{ item.name }}</a>
             </li>
             {% endfor %}
           </ul></nav>
