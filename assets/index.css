@@ -12,6 +12,10 @@ layout: empty
         @apply border-b-4 border-blue-400;
     }
 
+    .section-container {
+        @apply container px-5 py-24 mx-auto
+    }
+
     .header-text{
         @apply sm:text-3xl text-2xl font-medium
     }
