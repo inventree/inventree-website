@@ -11,7 +11,7 @@
       <h3 class="mb-0">{{ plugin.name }}</h3>
       <div class="mb-1 text-muted">
         {% if plugin.published_on %}{{ plugin.published_on | date_to_string }} - {% endif %}
-        {% include publisher_ref.html pub=plugin.publisher %}
+        {% include partial/publisher_ref.html pub=plugin.publisher %}
       </div>
       <p class="mb-auto">{{ plugin.excerpt | mardownify | remove: '<p>' | remove: '</p>' }}</p>
       <a href="{{ plugin.url | relative_url }}" class="stretched-link" aria-label="open plugin details"></a>

@@ -13,7 +13,7 @@ title: Blog
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h2>
           <span class="leading-relaxed mb-8">{{ post.excerpt }}</span>
-          {% include publisher_ref.html pub=post.publisher %}
+          {% include partial/publisher_ref.html pub=post.publisher %}
         </div>
       </div>
       {% endfor %}
