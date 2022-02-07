@@ -2,8 +2,9 @@
 layout: default
 title: Plugins
 ---
-  <div>
+<div class="section-container">
+  <h1 class="header-text title-font mb-4 cm-gray-1">Plugins Repository</h1>
       {% for plugin in site.plugins %}
         {% include plugin_card.html plugin=plugin %}
       {% endfor %}
-  </div>
+</div>
