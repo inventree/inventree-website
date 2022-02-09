@@ -2,7 +2,7 @@
 This project contains the source for the new InvenTree website.
 It is built on Jekyll and GitHub pages for backend / hosting and tailtwindcss for frontend.
 
-## file structure
+## File structure
 
 State as of f154fc0.
 ``` bash
@@ -56,7 +56,7 @@ State as of f154fc0.
 └── tailwind.config.js
 ```
 
-## common commands
+## Common commands
 Install packages
 ```
 bundle install
