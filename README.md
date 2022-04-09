@@ -12,6 +12,8 @@ State as of ###.
 ## Common commands
 Install packages
 ```
+sudo apt-get install rubygems
+sudo gem install bundler
 bundle install
 ```
 
