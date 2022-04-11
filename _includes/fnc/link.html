@@ -1,11 +1,15 @@
+{% capture link %}
 {% if include.item.site %}
     {{ site[include.item.site] }}
 {% elsif include.item.internal %}
     {{ include.item.internal | relativurl }}
 {% elsif include.item.link %}
-    {{ include.item.link }}
+    {{ include.item.link | include fnc/link.html }}
 {% elsif include.item.home %}
-    {{ '/' | relative_url }}
+    {{  '/' | relative_url }}
 {% else %}
     {{ include.item }}
 {% endif %}
+{% endcapture %}
+
+{{ link | strip }}
