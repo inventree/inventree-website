@@ -1,4 +1,7 @@
 {% capture link %}
+{% if include.internal %}
+    {% link include.internal %}
+{% endif %}
 {% if include.item.site %}
     {{ site[include.item.site] }}
 {% elsif include.item.internal %}
@@ -7,7 +10,7 @@
     {{ include.item.link | include fnc/link.html }}
 {% elsif include.item.home %}
     {{  '/' | relative_url }}
-{% else %}
+{% elsif include.item %}
     {{ include.item }}
 {% endif %}
 {% endcapture %}
