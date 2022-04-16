@@ -1,0 +1,20 @@
+---
+layout: content
+---
+<article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto min-h-screen">
+    {% include partial/alert.html
+        style='info'
+        title='caveat'
+        desc='Please keep in mind that this is the view of one or more devs of InvenTree. So there is an elemenet of bias involved.'
+    %}
+    {{ content }}
+
+    {% if page.oss %}
+    {% include partial/alert.html
+        style='info'
+        title='(F)OSS'
+        desc="This alternative is (F)OSS - let's celebrate this by heading over, giving it a good look and staring the project! Motiviation keeps projects and maintainers healthy."
+    %}
+    {% endif %}
+    View other <a href="{% link alternatives/index.md %}">Alternatives</a>.
+</article>
