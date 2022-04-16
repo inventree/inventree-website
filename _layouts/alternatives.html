@@ -8,6 +8,7 @@ layout: content
         desc='Please keep in mind that this is the view of one or more devs of InvenTree. So there is an elemenet of bias involved.'
     %}
     {{ content }}
+
     {% if page.oss %}
     {% include partial/alert.html
         style='info'
@@ -15,4 +16,5 @@ layout: content
         desc="This alternative is (F)OSS - let's celebrate this by heading over, giving it a good look and staring the project! Motiviation keeps projects and maintainers healthy."
     %}
     {% endif %}
+    View other <a href="{% link alternatives/index.md %}">Alternatives</a>.
 </article>
