@@ -1,0 +1,11 @@
+---
+layout: content
+---
+<article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto min-h-screen">
+    <h2>{{ page.title }}</h2>
+    <p>Please keep in mind that this is the view of one or more devs of InvenTree. So there is an elemenet of bias involved.</p>
+    {{ content }}
+    {% if page.oss %}
+    <p>This alternative is (F)OSS - let's celebrate this by heading over, giving it a good look and staring the project! Motiviation keeps projects and maintainers healthy.</p>
+    {% endif %}
+</article>
