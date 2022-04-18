@@ -3,7 +3,9 @@ layout: default
 ---
 <h1>
   <div class="flex">
+    {% if page.github %}
     <img src="https://github.com/{{ page.github }}.png?size=40" alt="mdo" class="rounded-circle" width="40" height="40" style="margin:0px">
+    {% endif %}
   {{ page.name }}
   </div>
 </h1>
