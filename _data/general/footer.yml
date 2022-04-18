@@ -42,12 +42,12 @@
   - name: Home
     home: true
   - name: For Maker
-    internal: maker
+    internal: use/maker.md
   - name: For Business
-    internal: business
+    internal: use/business.md
   - name: For Education
-    internal: education
+    internal: use/education.md
   - name: About
-    internal: about
+    internal: about/index.md
   - name: Blog
-    internal: blog
+    internal: blog/index.html
