@@ -20,6 +20,8 @@ collections:
     output: true
     custom_permalink_placeholders: ["publisher"]
     #permalink: "/:publisher/:title"
+  posts:
+    permalink: /blog/:year/:month/:day/:title
 
 defaults:
   - scope:
@@ -40,7 +42,7 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "content"
 
 plugins:
   - jekyll-seo-tag
