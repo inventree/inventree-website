@@ -40,8 +40,11 @@ notitle: true
 <h3>Plugins</h3>
 <ul class="list-unstyled">
   {% for plugin in filtered_plugins %}
-    <a href="{{ plugin.title }}"></a>
-    <li>{{ plugin.title }}</li>
+    <li>
+      <a href="{{ plugin.url | relative_url }}">
+      {{ plugin.title }}
+      </a>
+    </li>
   {% endfor %}
 </ul>
 {% endif %}
