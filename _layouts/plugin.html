@@ -1,15 +1,17 @@
 ---
-layout: default
+layout: content
+notitle: true
 ---
-<h1>{{ page.name }}</h1>
+<h2>{{ page.name }}</h2>
 {% include partial/publisher_ref.html pub=page.publisher %}
 
-<div class="row g-5">
-    <div class="col-md-8">
+<div class="flex sm:flex-none flex-row">
+    <div class="w-3/4">
         {{ content }}
     </div>
 
-    <div class="col-md-4">
+    <div class="w-1/4">
+      <h2 class="block sm:hidden">Link section</h2>
       <div class="position-sticky" style="top: 2rem;">
 
         <div class="p-4 mb-3 bg-light rounded position-relative">
@@ -44,4 +46,4 @@ layout: default
 
       </div>
     </div>
-  </div>
+</div>
