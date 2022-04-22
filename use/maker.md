@@ -9,5 +9,6 @@ long_text: |
 buttons:
     - text: lorem ipsum primary
       primary: true
+      link: http://example.com
     - text: lorem ipsum
 ---
