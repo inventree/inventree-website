@@ -22,7 +22,7 @@ notitle: true
 </div>
 
 <blockquote class="blockquote">
-  <p class="mb-0">{{ content }}</p>
+  {{ content }}
 </blockquote>
 
 {% assign filtered_posts = site.posts | where: 'publisher', page.short_name %}
