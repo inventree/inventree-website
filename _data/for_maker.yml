@@ -8,5 +8,5 @@ text: |
 features:
   - title: lorem ipsum title
     subtitle: lorem ipsum subtitle
-    description: lorem ipsum description
+    text: lorem ipsum description
     link: https://example.com/
