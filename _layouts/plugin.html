@@ -5,12 +5,12 @@ notitle: true
 <h2>{{ page.name }}</h2>
 {% include partial/publisher_ref.html pub=page.publisher %}
 
-<div class="flex sm:flex-none flex-row">
-    <div class="w-3/4">
+<div class="md:flex md:flex-row">
+    <div class="w-full md:w-3/4 mr-px">
         {{ content }}
     </div>
 
-    <div class="w-1/4">
+    <div class="w-full md:w-1/4">
       <h2 class="block sm:hidden">Link section</h2>
       <div class="position-sticky" style="top: 2rem;">
 
