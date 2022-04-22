@@ -1,5 +1,6 @@
 ---
 layout: default
+permalink: /functions
 ---
 
 {% include block/hero.html title='A wealth of functions' title_2='is provided' image='https://dummyimage.com/860x600' color='by default with InvenTree' detail='By default InvenTree ships with a lot of functions in the area of part, inventory, supplier, manufacturer, machine and BOM managment.
