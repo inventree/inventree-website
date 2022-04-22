@@ -24,7 +24,9 @@
             <p class="leading-relaxed text-base">{{ item.text }}
               {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
             </p>
+            {% if item.link %}
             <a class="text-secondary inline-flex items-center" href="{% include fnc/link.html item=item.link %}" alt="learn more">Learn More {% include fnc/learn_more.html %}</a>
+            {% endif %}
           </div>
         </div>
       {% endfor %}
