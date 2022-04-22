@@ -16,7 +16,7 @@ notitle: true
 
         <div class="p-4 mb-3 bg-light rounded position-relative">
           <h4 class="fst-italic">Github</h4>
-          <p class="mb-0">{{ page.github | remove: "https://github.com/" }}</p>
+          <p>{{ page.github | remove: "https://github.com/" }}</p>
           <a href="{{ page.github }}" class="stretched-link" aria-label="open github repo"></a>
         </div>
 
@@ -38,9 +38,9 @@ notitle: true
           </ol>
         </div>
 
-        <div class="mb-3 position-relative">
+        <div>
           <h4 class="fst-italic">Website</h4>
-          <p class="mb-0">{{ page.website }}</p>
+          <p>{{ page.website }}</p>
           <a href="{{ page.website }}" class="stretched-link" aria-label="open website"></a>
         </div>
 
