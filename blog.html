@@ -1,18 +1,19 @@
 ---
 layout: default
 title: Blog
+permalink: /blog
 ---
   <section class="cm-gray-2 body-font min-h-screen">
-    <div class="section-container">
+    <div class="pt-3 pb-1 section-container">
       <h1 class="header-text title-font mb-4 cm-gray-2">InvenTree Blog</h1>
-      <div class="flex flex-wrap -m-12">
+      <div class="flex flex-wrap">
 
       {% for post in site.posts %}
-        <div class="p-12 md:w-1/2 flex flex-col items-start">
+        <div class="p-6 md:w-1/2 flex flex-col items-start">
           <h2 class="header-text title-font mb-4 cm-gray-1">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h2>
-          <span class="leading-relaxed mb-8">{{ post.excerpt }}</span>
+          <span class="leading-relaxed mb-4">{{ post.excerpt | strip_html | strip_newlines | truncate: 156  }}</span>
           <span>
             {{ post.date | date_to_string }} | 
           {% include partial/publisher_ref.html pub=post.publisher %}

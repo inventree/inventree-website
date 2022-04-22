@@ -3,7 +3,10 @@ title: InvenTree
 tagline: Intuitive Inventory Management
 demo-link: https://inventree.readthedocs.io/en/latest/demo/
 doc-link: https://inventree.readthedocs.io/en/latest/
-plugin-link: https://repo.invenhost.com/
+blog-link:
+  internal: blog.html
+plugin-link: 
+  internal: plugins.html
 
 description: >-
   InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
@@ -20,6 +23,8 @@ collections:
     output: true
     custom_permalink_placeholders: ["publisher"]
     #permalink: "/:publisher/:title"
+  posts:
+    permalink: /blog/:year/:month/:day/:title
 
 defaults:
   - scope:
@@ -40,7 +45,7 @@ defaults:
   - scope:
       path: ""
     values:
-      layout: "default"
+      layout: "content"
 
 plugins:
   - jekyll-seo-tag

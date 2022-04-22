@@ -50,4 +50,20 @@ layout: empty
         top: -72px;
         visibility: hidden;
     }
+
+    .badge {
+        @apply py-1 px-2.5 rounded-full
+    }
+
+    .list-unstyled {
+        padding-left: 0px;
+        position: initial;
+        @apply list-none
+    }
+
+    .list-unstyled li {
+        padding-left: 0px;
+        position: initial;
+        @apply list-none
+    }
 }

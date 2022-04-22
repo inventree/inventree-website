@@ -1,5 +1,4 @@
 ---
-layout: content
 title: About
 ---
 InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
