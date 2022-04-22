@@ -2,8 +2,9 @@
 layout: content
 notitle: true
 ---
-<h2>{{ page.name }}</h2>
-{% include partial/publisher_ref.html pub=page.publisher %}
+<h2>{{ page.name }}
+<span class="sm:ml-2 text-sm">{% include partial/publisher_ref.html pub=page.publisher %}</span>
+</h2>
 
 <div class="md:flex md:flex-row">
     <div class="w-full md:w-3/4 mr-px">
