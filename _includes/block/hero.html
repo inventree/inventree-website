@@ -16,7 +16,7 @@
         <div class="flex-wrap justify-center">
           {% for item in include.buttons %}
           <button class="{% if  forloop.index != 0 %}ml-4{% endif %} mb-4 {% if item.primary %}cm-hvr-btn-primary{% else%}cm-hvr-btn{% endif %} inline-flex border-0 py-2 px-6 focus:outline-none text-lg">
-            {% if item.link %}<a href="{{item.link}}">{% endif %}{{item.text}}{% if item.link %}</a>{% endif %}
+            {% if item.link %}<a href="{% include fnc/link.html item=item.link %}">{% endif %}{{item.text}}{% if item.link %}</a>{% endif %}
           </button>
           {% endfor %}
         </div>
