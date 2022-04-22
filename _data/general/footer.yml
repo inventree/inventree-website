@@ -5,7 +5,7 @@
   - name: Demo
     site: demo-link
   - name: Plugins
-    site: plugin-link
+    internal: plugins.html
 
 - title: Contribute
   cats:
@@ -27,7 +27,7 @@
   - name: API
     link: https://inventree.readthedocs.io/en/latest/extend/python/
   - name: Plugins
-    site: plugin-link
+    internal: plugins.html
   - name: KiCad
     link: https://github.com/sparkmicro/Ki-nTree/
   - name: Fusion360
