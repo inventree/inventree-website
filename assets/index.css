@@ -50,4 +50,8 @@ layout: empty
         top: -72px;
         visibility: hidden;
     }
+
+    .badge {
+        @apply py-1 px-2.5 rounded-full
+    }
 }
