@@ -50,4 +50,4 @@
   - name: About
     internal: about/index.md
   - name: Blog
-    internal: blog/index.html
+    internal: blog.html

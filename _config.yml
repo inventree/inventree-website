@@ -4,7 +4,7 @@ tagline: Intuitive Inventory Management
 demo-link: https://inventree.readthedocs.io/en/latest/demo/
 doc-link: https://inventree.readthedocs.io/en/latest/
 blog-link:
-  internal: blog/index.html
+  internal: blog.html
 plugin-link: 
   internal: plugins.html
 
