@@ -32,6 +32,10 @@ layout: empty
         @apply text-gray-700 bg-gray-100 hover:bg-gray-200 rounded
     }
 
+    .cm-hvr-btn-primary {
+        @apply text-white bg-secondary hover:bg-primary rounded
+    }
+
     .cm-gray-1 {
         @apply text-gray-900
     }

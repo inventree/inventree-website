@@ -9,11 +9,18 @@
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">{{ include.color }}</span>
           {% endif %}
         </h1>
+        {% if include.detail %}
         <p class="mb-8 leading-relaxed">{{ include.detail }}</p>
-        <div class="flex justify-center">
-          <button class="inline-flex text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded text-lg">Button</button>
-          <button class="ml-4 inline-flex cm-hvr-btn border-0 py-2 px-6 focus:outline-none text-lg">Button</button>
+        {% endif %}
+        {% if include.buttons %}
+        <div class="flex-wrap justify-center">
+          {% for item in include.buttons %}
+          <button class="{% if  forloop.index != 0 %}ml-4{% endif %} mb-4 {% if item.primary %}cm-hvr-btn-primary{% else%}cm-hvr-btn{% endif %} inline-flex border-0 py-2 px-6 focus:outline-none text-lg">
+            {% if item.link %}<a href="{% include fnc/link.html item=item.link %}">{% endif %}{{item.text}}{% if item.link %}</a>{% endif %}
+          </button>
+          {% endfor %}
         </div>
+        {% endif %}
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
         {% if include.image %}
