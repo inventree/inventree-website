@@ -6,4 +6,7 @@ data: for_maker
 long_text: |
     lorem ipsum place for
     multiline inteligent text
+buttons:
+    - text: Button
+    - text: Button1
 ---

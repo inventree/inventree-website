@@ -2,7 +2,14 @@
 layout: default
 ---
 
-{% include block/hero.html title=site.tagline title_2=page.title_2 image='https://dummyimage.com/860x600' color='with InvenTree' detail=page.long_text %}
+{% include block/hero.html
+    title=site.tagline
+    title_2=page.title_2
+    image='https://dummyimage.com/860x600'
+    color='with InvenTree'
+    detail=page.long_text
+    buttons=page.buttons
+%}
 
 {% assign data = site.data[page.data] %}
 {% include block/features.html data=data extend=true %}

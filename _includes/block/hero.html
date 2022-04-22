@@ -12,10 +12,16 @@
         {% if include.detail %}
         <p class="mb-8 leading-relaxed">{{ include.detail }}</p>
         {% endif %}
+        {% if include.buttons %}
         <div class="flex justify-center">
-          <button class="inline-flex text-white bg-secondary border-0 py-2 px-6 focus:outline-none hover:bg-primary rounded text-lg">Button</button>
-          <button class="ml-4 inline-flex cm-hvr-btn border-0 py-2 px-6 focus:outline-none text-lg">Button</button>
+          {% for item in include.buttons %}
+          <button class="
+          {% if  forloop.index != 0 %}ml-4{% endif %}
+          {% if item.primary %}cm-hvr-btn-primary{% else%}cm-hvr-btn{% endif%}
+          inline-flex border-0 py-2 px-6 focus:outline-none text-lg">{{item.text}}</button>
+          {% endfor %}
         </div>
+        {% endif %}
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
         {% if include.image %}
