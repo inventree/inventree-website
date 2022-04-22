@@ -3,4 +3,7 @@ layout: user
 title: For Maker
 title_2: for Maker
 data: for_maker
+long_text: |
+    lorem ipsum place for
+    multiline inteligent text
 ---
