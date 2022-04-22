@@ -11,4 +11,6 @@ buttons:
       primary: true
       link: http://example.com
     - text: lorem ipsum
+      link:
+        internal: plugins.html
 ---
