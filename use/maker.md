@@ -7,6 +7,7 @@ long_text: |
     lorem ipsum place for
     multiline inteligent text
 buttons:
-    - text: Button
-    - text: Button1
+    - text: lorem ipsum primary
+      primary: true
+    - text: lorem ipsum
 ---
