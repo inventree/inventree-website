@@ -5,6 +5,7 @@
 *
 * Run '$ npm run css:dev' to compile changes in this file.
 */
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
     purge: {
@@ -17,6 +18,10 @@ module.exports = {
             colors: {
               'primary':'#90A8D8',
               'secondary':'#DDBC91',
+            },
+            screens: {
+                'xs': '470px',
+                ...defaultTheme.screens
             }
         },
     },
