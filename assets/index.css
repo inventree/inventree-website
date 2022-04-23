@@ -8,6 +8,10 @@ layout: empty
 
 
 @layer components {
+    article {
+        @apply prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto
+    }
+
     .custom-underline-blue {
         @apply border-b-4 border-blue-400;
     }
