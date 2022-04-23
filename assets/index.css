@@ -78,4 +78,9 @@ layout: empty
     .max-w-p90 {
         max-width: 90%
     }
+
+    img + em {
+        display: block;
+        text-align: center;
+    }
 }
