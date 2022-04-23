@@ -12,4 +12,4 @@ There are multiple methods to deploy InvenTree. The most popular (and by the dev
 
 ### Other Options
 
-The core InvenTree server is built using the widely used python-based framework [Django](https://django.org/). Therefore there are  deployment methods for nearly all plattforms and architectures. If you want to read more about InvenTree's structure and a typical installation read the [architecture overview](../contribute/code/architecture).
+The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all plattforms and architectures. If you want to read more about InvenTree's structure and a typical installation read the [architecture overview](../contribute/code/architecture).

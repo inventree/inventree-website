@@ -5,12 +5,16 @@
     {% include base/head.html %}
 </head>
 
-<body class="antialiased cm-gray-1 min-h-screen">
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
     {% include base/header.html %}
-
     {{ content }}
+    </div>
 
+    <div class="flex-grow"></div>
+    <div class="flex-none">
     {% include base/footer.html %}
+    </div>
 </body>
 
 </html>

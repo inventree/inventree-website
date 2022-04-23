@@ -2,11 +2,7 @@
 layout: default
 ---
 
-<article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto min-h-screen"
-{% if layout.fullwith %}
-style="max-width: 90%"
-{% endif %}
->
+<article{% if layout.fullwith %} class="max-w-p90"{% endif %}>
     {% if layout.notitle != true %}
     <h2>{{ page.title }}</h2>
     {% endif %}

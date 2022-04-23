@@ -1,6 +1,6 @@
-- title: Websites
+- title: Quick
   cats:
-  - name: Documentation
+  - name: Docs
     site: doc-link
   - name: Demo
     site: demo-link
@@ -8,46 +8,39 @@
     internal: plugins.html
 
 - title: Contribute
+  link:
+    internal: contribute/index.md
   cats:
   - name: Translate
-    link: https://crowdin.com/project/inventree
+    internal: contribute/translate.md
   - name: Code
-    link: https://github.com/inventree/InvenTree/blob/master/CONTRIBUTING.md
-  - name: Report
+    internal: contribute/code/index.md
+  - name: Community
     link: https://github.com/inventree/InvenTree/issues/new/choose
-  - name: Discuss
-    link: https://github.com/inventree/InvenTree/issues
-  - name: Document
-    link: https://github.com/inventree/inventree-docs
-  - name: Fund
-    link: https://inventree.readthedocs.io/en/latest/contribute/#donate
+    internal: contribute/community.md
+  - name: Sponsor
+    internal: contribute/sponsor.md
 
-- title: Extend
+- title: Ecosystem
+  link:
+    internal: extend/index.md
   cats:
   - name: API
-    link: https://inventree.readthedocs.io/en/latest/extend/python/
+    internal: extend/api.md
   - name: Plugins
-    internal: plugins.html
+    internal: extend/plugin/index.md
   - name: KiCad
-    link: https://github.com/sparkmicro/Ki-nTree/
-  - name: Fusion360
-    link: https://github.com/matmair/F360-InvenTree/
-  - name: Python
-    link: https://inventree.readthedocs.io/en/latest/extend/python/
-  - name: More
-    link: https://github.com/topics/inventree
+    internal: extend/integrate/kntree.md
+  - name: Integrate
+    internal: extend/integrate/index.md
 
 - title: Sitemap
   cats:
-  - name: Home
-    home: true
-  - name: For Maker
-    internal: use/maker.md
-  - name: For Business
-    internal: use/business.md
-  - name: For Education
-    internal: use/education.md
   - name: About
     internal: about/index.md
+  - name: Compare
+    internal: alternatives/index.md
   - name: Blog
     internal: blog.html
+  - name: Deploy
+    internal: deploy/index.md

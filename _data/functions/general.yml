@@ -1,6 +1,6 @@
 title: InvenTree builds it vast functions on top of a few core workflows
 link:
-  internal: functions/index.md
+  internal: functions.md
 text:
 functions:
   - title: Organize Parts
