@@ -55,6 +55,14 @@ defaults:
     values:
       layout: "content"
 
+feed:
+  path: /blog/feed.atom
+  excerpt_only: true
+
+  collections:
+    news:
+      path: "/news/feed.atom"
+
 plugins:
   - jekyll-seo-tag
   - jekyll-postcss-v2
