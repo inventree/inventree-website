@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<header>
+    {% if page.backLink or page.backLink == nil %}
+    <a href="{{ layout.base_link | relative_url }}" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" src="{{ '/assets/back.svg' | relative_url }}" />
+        <span>Back</span>
+    </a>
+    {% endif %}
+</header>
+
+<article>
+    <h1>{{ page.title }}</h1>
+    <p>
+      {{ page.date | date_to_string }}
+      {% assign publisher = site.publishers | where: 'short_name', page.publisher | first %}
+      {% if publisher %}
+        - <a href="{{ publisher.url | relative_url }}">{{ publisher.name }}</a>
+      {% endif %}
+    </p>
+    {{ content }}
+</article>

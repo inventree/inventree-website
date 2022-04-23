@@ -23,6 +23,9 @@ collections:
     output: true
     custom_permalink_placeholders: ["publisher"]
     #permalink: "/:publisher/:title"
+  news:
+    output: true
+    permalink: /news/:year/:month/:day/:title
   posts:
     permalink: /blog/:year/:month/:day/:title
 
@@ -42,6 +45,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "news"
+    values:
+      layout: "news"
   - scope:
       path: ""
     values:

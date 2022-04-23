@@ -6,6 +6,8 @@
     site: demo-link
   - name: Plugins
     internal: plugins.html
+  - name: News
+    internal: news.html
 
 - title: Contribute
   link:
