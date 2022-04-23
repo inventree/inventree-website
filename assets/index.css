@@ -74,4 +74,8 @@ layout: empty
         position: initial;
         @apply list-none
     }
+
+    .max-w-p90 {
+        max-width: 90%
+    }
 }
