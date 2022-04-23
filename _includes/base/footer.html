@@ -1,5 +1,5 @@
 <footer class="cm-gray-2 body-font">
-    <div class="container px-5 py-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
       <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
         <a class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
           <img src="{{ '/assets/logo.png' | relative_url }}" alt="logo" height="32" width="32" class="h-8">
@@ -8,11 +8,11 @@
         <p class="mt-2 text-sm cm-gray-3">{{ site.tagline }}</p>
       </div>
 
-      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+      <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
       
       {% assign footer  = footer|default: site.data.general.footer %}
       {% for cat in footer %}
-        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <div class="md:w-1/4 px-4">
           <h2 class="footer-categorie title-font">{{ cat.title }}</h2>
           <nav class="list-none mb-10"><ul>
             {% for item in cat.cats %}
