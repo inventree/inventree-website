@@ -44,12 +44,12 @@ defaults:
       path: ""
       type: "posts"
     values:
-      layout: "post"
+      layout: "collection/post"
   - scope:
       path: ""
       type: "news"
     values:
-      layout: "news"
+      layout: "collection/news"
   - scope:
       path: ""
     values:

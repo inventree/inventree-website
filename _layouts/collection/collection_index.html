@@ -1,0 +1,22 @@
+---
+layout: default
+---
+  <section class="cm-gray-2 body-font">
+    <div class="pt-3 pb-1 section-container">
+      <h1 class="header-text title-font mb-4 cm-gray-2">{{ page.title_text }}</h1>
+      <div class="flex flex-wrap">
+
+      {% assign cols = site[page.collection] %}
+      {% if page.collection_reverse == true %}{% assign cols = cols | reverse %}{% endif %}
+      {% for item in cols %}
+        <div class="p-6 md:w-1/2 flex flex-col items-start">
+          <h2 class="header-text title-font mb-4 cm-gray-1">
+            <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          </h2>
+          <span class="leading-relaxed mb-4">{{ item.excerpt | strip_html | strip_newlines | truncate: 156  }}</span>
+          <span>{{ item.date | date_to_string }} | </span>
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+  </section>
