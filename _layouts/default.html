@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: " en-US " }}">
 
 <head>
     {% include base/head.html %}
@@ -7,14 +7,15 @@
 
 <body class="flex flex-col antialiased cm-gray-1 min-h-screen">
     <div class="flex-none">
-    {% include base/header.html %}
-    {{ content }}
+        {% include base/header.html %} {{ content }}
     </div>
 
     <div class="flex-grow"></div>
     <div class="flex-none">
-    {% include base/footer.html %}
+        {% include base/footer.html %}
     </div>
 </body>
+
+<script defer data-domain="matmair.github.io" src="https://plausible.io/js/plausible.js"></script>
 
 </html>
