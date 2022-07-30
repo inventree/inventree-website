@@ -14,7 +14,7 @@ layout: default
             <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
           </h2>
           <span class="leading-relaxed mb-4">{{ item.excerpt | strip_html | strip_newlines | truncate: 156  }}</span>
-          <span>{{ item.date | date_to_string }} | </span>
+          <span>{{ item.date | date_to_string }} | {{ item.author }}</span>
         </div>
       {% endfor %}
       </div>
