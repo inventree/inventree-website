@@ -1,5 +1,5 @@
 ---
-publisher: matmair
+author: matmair
 title: We have news now!
 ---
 Hi there,
