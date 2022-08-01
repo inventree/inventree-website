@@ -40,7 +40,7 @@
   cats:
   - name: About
     internal: about/index.md
-  - name: Compare
+  - name: Alternatives
     internal: alternatives/index.md
   - name: Blog
     internal: blog.html
