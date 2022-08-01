@@ -13,4 +13,8 @@ Integrate your Shopping or warehousing solution:
 
 ### Plugin repo
 
-# TODO 
+    {% include partial/alert.html
+        style='info'
+        title='Coming soon'
+        desc="We are working on a full plugin repo - keep up to date on the blog or directly in your InvenTree dashboard with news."
+    %}
