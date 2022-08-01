@@ -4,8 +4,6 @@
     site: doc-link
   - name: Demo
     site: demo-link
-  - name: Plugins
-    internal: plugins.html
   - name: News
     internal: news.html
 
