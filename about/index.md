@@ -24,4 +24,4 @@ We are also actively working on:
 ### But why?
 InvenTree is beeing build and maintained by **users of the systems**. The core-team uses InvenTree in their **companies**, **labs** and organisations to make their life easier.
 This and a general intrest in 'computers' motivates and keeps the project running.  
-There is no inherent monetary intrest but if you would like to [support the org]({% link contribute/sponsor.md %}) - we apprecicate it.
+There is no inherent monetary intrest but if you would like to [support the org]({% link contribute/index.md %}) - we apprecicate it.
