@@ -8,7 +8,7 @@ While there are a few suggestion how you could do your part we are very much ope
 Common ways to help:
 - [Translate](#translate)
 - [Community](#community)
-- [Code](#code)
+- [Code](code)
 - [Sponsor](#sponsor)
 
 ## Translate
@@ -19,9 +19,6 @@ TODO
 
 TODO
 
-## Code
-
-TODO
 
 ## Sponsor
 
