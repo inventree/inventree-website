@@ -12,7 +12,7 @@
     internal: contribute/index.md
   cats:
   - name: Translate
-    internal: contribute/index.hmd#translate
+    internal: contribute/index.md#translate
   - name: Code
     internal: contribute/code/index.md
   - name: Community
