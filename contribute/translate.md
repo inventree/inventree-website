@@ -1,5 +1,0 @@
----
-title: Translations
----
-
-# TODO
