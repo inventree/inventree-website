@@ -18,7 +18,7 @@ The **main goal** is to keep existing instances **stable** and provide a transpa
 
 We are also actively working on:
 - **raising the profile** of InvenTree to get a wider developer base
-- supporting **translation** into every wanted language - [learn more]({% link contribute/translate.md %})
+- supporting **translation** into every wanted language - [learn more]({% link contribute/index.md %})
 - creating [integrations]({% link extend/plugin/index.md %}) into other business and EE-systems via the **plugin system**
 
 ### But why?
