@@ -12,14 +12,14 @@
     internal: contribute/index.md
   cats:
   - name: Translate
-    internal: contribute/translate.md
+    internal: contribute#translate
   - name: Code
     internal: contribute/code/index.md
   - name: Community
     link: https://github.com/inventree/InvenTree/issues/new/choose
-    internal: contribute/community.md
+    internal: contribute#community.md
   - name: Sponsor
-    internal: contribute/sponsor.md
+    internal: contribute#sponsor.md
 
 - title: Ecosystem
   link:
