@@ -4,9 +4,7 @@ backLink: false
 main_page: True
 ---
 
-{% capture image_link %}
-{{ "/assets/front.png" | absolute_url }}
-{% endcapture %}
+{% capture image_link %}{{ "/assets/front.png" | absolute_url }}{% endcapture %}
 {% include block/hero.html
     title=site.tagline
     title_2='and more'
