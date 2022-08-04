@@ -2,28 +2,6 @@ name: Get stats
 
 on:
   workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'
-        required: true
-        default: 'warning' 
-        type: choice
-        options:
-        - info
-        - warning
-        - debug 
-      print_tags:
-        description: 'True to print to STDOUT'
-        required: true 
-        type: boolean 
-      tags:
-        description: 'Test scenario tags'
-        required: true 
-        type: string
-      environment:
-        description: 'Environment to run tests against'
-        type: environment
-        required: true 
 
 jobs:
   build:
@@ -33,9 +11,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set selected color
-        run: echo '::set-output name=SELECTED_COLOR::green'
-        id: random-color-generator
-      - name: Docker stats
-        run: |
-          curl -s https://hub.docker.com/v2/repositories/inventree/inventree/ | jq -r ".pull_count"
-        id: docker-pulls
+        run: python .github/get_stats.py
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "[Bot] Updated the stats"
+          branch: main
