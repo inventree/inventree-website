@@ -10,7 +10,7 @@ main_page: True
     title_2='and more'
     image=image_link
     color='with InvenTree'
-    detail='Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.'
+    detail='InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. A wide range of features makes InvenTree the perfect choice for businesses and hobbyists alike. InvenTree is designed to be extensible, and provides multiple options for integration with external applications or addition of custom plugins.'
 %}
 
 {% include block/functions.html data=site.data.functions.general %}
