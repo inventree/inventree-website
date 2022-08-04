@@ -9,7 +9,7 @@ description: >-
 demo-link: https://inventree.readthedocs.io/en/latest/demo/
 doc-link: https://inventree.readthedocs.io/en/latest/
 deploy-link:
-  internal: deploy/index.md
+  internal: deploy.md
 blog-link:
   internal: blog.html
 plugin-link: 

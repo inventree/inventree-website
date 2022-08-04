@@ -43,4 +43,4 @@
   - name: Blog
     internal: blog.html
   - name: Deploy
-    internal: deploy/index.md
+    internal: deploy.md
