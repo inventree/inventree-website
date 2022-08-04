@@ -1,6 +1,6 @@
 stats:
   - name: Docker pulls
-    number: 500K+
+    number: 1.9M+
   - name: GitHub Stars
     number: 425
   - name: Contributors
