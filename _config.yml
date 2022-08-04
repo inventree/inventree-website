@@ -21,6 +21,9 @@ url: ""
 
 # Analytics
 tracking-domain: matmair.github.io
+# Add names to use more enhanced feature
+# See https://plausible.io/docs/script-extensions
+tracking-add: .outbound-links
 
 # Rendering settings - do not touch
 collections:
