@@ -2,13 +2,12 @@ name: Build pages and publish
 
 on:
   push:
-    branches: [ main ]
+    branches:
+    - main
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
