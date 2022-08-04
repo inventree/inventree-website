@@ -20,10 +20,10 @@ baseurl: "/inventree-website"
 url: ""
 
 # Analytics
-tracking-domain: matmair.github.io
+analytics-domain: matmair.github.io
 # Add names to use more enhanced feature
 # See https://plausible.io/docs/script-extensions
-tracking-add: .outbound-links
+analytics-add: .outbound-links
 
 # Rendering settings - do not touch
 collections:
