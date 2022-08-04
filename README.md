@@ -10,9 +10,10 @@ State as of ###.
 ```
 
 ## Common commands
-Install packages
+Install packages for ruby and nodejs.
 ```
-sudo apt-get install rubygems ruby-dev
+sudo apt-get install rubygems ruby-dev nodejs npm
+npm install
 sudo gem install bundler
 bundle install
 ```
