@@ -19,6 +19,9 @@ plugin-link:
 baseurl: "/inventree-website"
 url: ""
 
+# Analytics
+tracking-domain: matmair.github.io
+
 # Rendering settings - do not touch
 collections:
   publishers:
