@@ -2,7 +2,7 @@ stats:
   - name: Docker pulls
     number: 1.9M+
   - name: GitHub Stars
-    number: 425
+    number: 2000
   - name: Contributors
     number: 29
   - name: Lines of Code
