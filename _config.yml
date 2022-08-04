@@ -1,6 +1,11 @@
-
+# Metadata
 title: InvenTree
 tagline: Intuitive Inventory Management
+description: >-
+  InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
+  It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
+
+# Links
 demo-link: https://inventree.readthedocs.io/en/latest/demo/
 doc-link: https://inventree.readthedocs.io/en/latest/
 deploy-link:
@@ -10,13 +15,11 @@ blog-link:
 plugin-link: 
   internal: plugins.html
 
-description: >-
-  InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
-  It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
-
+# Hosting parameters
 baseurl: "/inventree-website"
 url: ""
 
+# Rendering settings - do not touch
 collections:
   publishers:
     output: true
