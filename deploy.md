@@ -18,7 +18,7 @@ A [bare metal installation guide](https://inventree.readthedocs.io/en/latest/sta
 
 #### Cloud
 
-**TODO**
+# TODO
 
 ### Other Options
 
