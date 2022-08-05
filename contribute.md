@@ -25,7 +25,8 @@ Financial donations directly support the ongoing development of the InvenTree pr
 
 ### Report Bugs
 
-If you find a bug or a feature that does not work correctly, please report it on [GitHub](https://github.com/inventree/inventree/issues). Reporting bugs is critical to improving the software. If you are able and willing, providing a fix for any outstanding issues would be greatly appreciated.
+If you find a bug or a feature that does not work correctly, please report it on [GitHub](https://github.com/inventree/inventree/issues).
+Reporting bugs is critical to improving the software. If you are able and willing, providing a fix for any outstanding issues is greatly appreciated.
 
 ### Code
 
