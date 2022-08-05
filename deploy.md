@@ -2,26 +2,23 @@
 title: Deploying InvenTree
 ---
 
-###  Popular Deployment Methods for InvenTree
+### Deployment Methods for InvenTree
 
-There are multiple methods to deploy InvenTree. The most popular (and by the development team  supported) methods are:
+There are multiple methods to deploy InvenTree. The most popular methods (supported by the development team) are:
 
-- [Bare Metal](#bare-metal)
-- [Docker](#docker)
-- [Cloud](#cloud)
+#### Docker
 
-### Deploying to Bare Metal
+InvenTree supports a simple containerized installation via docker. An official [docker image](https://hub.docker.com/r/inventree/inventree/) is provided with regular updates. 
 
-# TODO
+Refer to the [docker installation guide](https://inventree.readthedocs.io/en/latest/start/docker/) for more information
 
-### Deploying to Docker
+#### Bare Metal
 
-# TODO
+A [bare metal installation guide](https://inventree.readthedocs.io/en/latest/start/intro/) is provided for users who are looking for a low-level or custom installation. 
 
-### Deploying to the Cloud
+#### Cloud
 
-# TODO
-
+**TODO**
 
 ### Other Options
 
