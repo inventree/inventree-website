@@ -3,23 +3,11 @@
   - name: Docs
     site: doc-link
   - name: Demo
-    site: demo-link
+    internal: demo.md
   - name: News
     internal: news.html
-
-- title: Contribute
-  link:
-    internal: contribute/index.md
-  cats:
-  - name: Translate
-    internal: contribute/index.md
-  - name: Code
-    internal: contribute/code/index.md
-  - name: Community
-    link: https://github.com/inventree/InvenTree/issues/new/choose
-    internal: contribute/index.md
-  - name: Sponsor
-    internal: contribute/index.md
+  - name: Contribute
+    internal: contribute.md
 
 - title: Ecosystem
   link:

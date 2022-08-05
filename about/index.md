@@ -18,10 +18,10 @@ The **main goal** is to keep existing instances **stable** and provide a transpa
 
 We are also actively working on:
 - **raising the profile** of InvenTree to get a wider developer base
-- supporting **translation** into every wanted language - [learn more]({% link contribute/index.md %})
+- supporting **translation** into every wanted language - [learn more]({% link contribute.md %})
 - creating [integrations]({% link extend/plugin/index.md %}) into other business and EE-systems via the **plugin system**
 
 ### But why?
 InvenTree is beeing build and maintained by **users of the systems**. The core-team uses InvenTree in their **companies**, **labs** and organisations to make their life easier.
 This and a general intrest in 'computers' motivates and keeps the project running.  
-There is no inherent monetary intrest but if you would like to [support the org]({% link contribute/index.md %}) - we apprecicate it.
+There is no inherent monetary intrest but if you would like to [support the project]({% link contribute.md %}) - we apprecicate it.
