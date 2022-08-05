@@ -1,3 +1,7 @@
+title: InvenTree builds it vast functions on top of a few core workflows
+link:
+  internal: functions.md
+text:
 functions:
   - title: Organize Parts
     text: Parts are the fundamental element of any inventory. InvenTree groups parts into structured categories which allow you to arrange parts to meet your particular needs. 
@@ -13,17 +17,3 @@ functions:
     text: Intelligent <strong>B</strong>ill <strong>o</strong>f <strong>M</strong>aterial management provides a clear understanding of the sub-parts required to make a new part.
     extend: InvenTree allows you to upload simple BOM files in multiple formats, and download a detailed BOM with all the information stored in its database.
     link: https://inventree.readthedocs.io/en/latest/build/bom/
-  - title: Build Parts
-    text: Inventree features a build management system to help you track the progress of your builds.
-    extend: Builds consume stock items to make new parts, you can decide to automatically or manually allocate parts from your current inventory.
-    link: https://inventree.readthedocs.io/en/latest/build/build/
-  - title: Generate Reports
-    text: InvenTree provides a flexible report generation engine for building custom reports
-    extend: A powerful template engine allows users to create custom PDF reports 
-    link: https://inventree.readthedocs.io/en/latest/report/report/
-  - title: Integrate
-    text: A REST API and native Python bindings allow InvenTree to be easily integrated with external services
-    link: https://inventree.readthedocs.io/en/latest/extend/api/
-  - title: Extend and Customize
-    text: InvenTree provides a powerful plugin system and is designed to be extensible out of the box
-    link: https://inventree.readthedocs.io/en/latest/extend/plugins/ 
