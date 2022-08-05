@@ -22,4 +22,4 @@ A [bare metal installation guide](https://inventree.readthedocs.io/en/latest/sta
 
 ### Other Options
 
-The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all plattforms and architectures.
+The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all plattforms and architectures. If you want to read more about InvenTree's structure and a typical installation read the [architecture overview](../contribute/code/architecture).
