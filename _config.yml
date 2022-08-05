@@ -6,7 +6,8 @@ description: >-
   It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
 
 # Links
-demo-link: https://inventree.readthedocs.io/en/latest/demo/
+demo-link:
+  internal: demo.md
 doc-link: https://inventree.readthedocs.io/en/latest/
 deploy-link:
   internal: deploy.md

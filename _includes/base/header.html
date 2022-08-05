@@ -8,6 +8,7 @@
         <div class="flex-grow xs:flex-none"></div>
 
         <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="{% include fnc/link.html item=site.demo-link %}">Demo</a>
             <a class="mr-5 hover:cm-gray-1" href="{% include fnc/link.html item=site.deploy-link %}">Deploy</a>
             <a class="mr-5 hover:cm-gray-1" href="{% include fnc/link.html item=site.doc-link %}">Docs</a>
             <a class="mr-5 hover:cm-gray-1" href="{% include fnc/link.html item=site.blog-link %}">Blog</a>
@@ -19,8 +20,6 @@
             <a class="mr-2 hover:cm-gray-1" href="#business">for <strong>business</strong></a>
             <a class="mr-2 hover:cm-gray-1" href="#edu">for <strong>edu</strong></a>
         </nav>
-        <a href="{{site.demo-link}}" class="inline-flex items-center bg-gray-100 ml-2 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-        Open demo
-      </a> {% endif %}
+        {% endif %}
     </div>
 </header>
