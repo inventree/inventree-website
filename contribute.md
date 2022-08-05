@@ -46,7 +46,7 @@ To contribute to the translation effort, navigate to the [InvenTree crowdin proj
 
 ### Documentation
 
-Documenting a large software project is a challenging and ongoing effort. If you are able to provide assistance in improving this documentation set, please consider doing so! Documentation contributions can be made on [GitHub](https://github.com/inventree/inventree-docs).
+Documenting a large software project is a challenging and ongoing effort. If you are able to provide assistance in improving the documentation set, please consider doing so! Documentation contributions can be made on [GitHub](https://github.com/inventree/inventree-docs).
 
 If you see any sections of the documentation that require work (i.e. denoted with "TODO") - please consider providing assistance in these sections!
 
