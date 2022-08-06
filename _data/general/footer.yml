@@ -1,13 +1,13 @@
 - title: Quick
   cats:
-  - name: Docs
-    site: doc-link
   - name: Demo
     internal: demo.md
+  - name: Deploy
+    internal: deploy.md
+  - name: Docs
+    site: doc-link
   - name: News
     internal: news.html
-  - name: Contribute
-    internal: contribute.md
 
 - title: Ecosystem
   link:
@@ -15,12 +15,12 @@
   cats:
   - name: API
     internal: extend/api.md
+  - name: Integrate
+    internal: extend/integrate/index.md
   - name: Plugins
     internal: extend/plugin/index.md
   - name: KiCad
     internal: extend/integrate/kntree.md
-  - name: Integrate
-    internal: extend/integrate/index.md
 
 - title: Sitemap
   cats:
@@ -30,5 +30,6 @@
     internal: alternatives/index.md
   - name: Blog
     internal: blog.html
-  - name: Deploy
-    internal: deploy.md
+  - name: Contribute
+    internal: contribute.md
+
