@@ -1,25 +1,13 @@
 - title: Quick
   cats:
+  - name: Demo
+    internal: demo.md
+  - name: Deploy
+    internal: deploy.md
   - name: Docs
     site: doc-link
-  - name: Demo
-    site: demo-link
   - name: News
     internal: news.html
-
-- title: Contribute
-  link:
-    internal: contribute/index.md
-  cats:
-  - name: Translate
-    internal: contribute/index.md
-  - name: Code
-    internal: contribute/code/index.md
-  - name: Community
-    link: https://github.com/inventree/InvenTree/issues/new/choose
-    internal: contribute/index.md
-  - name: Sponsor
-    internal: contribute/index.md
 
 - title: Ecosystem
   link:
@@ -27,12 +15,12 @@
   cats:
   - name: API
     internal: extend/api.md
+  - name: Integrate
+    internal: extend/integrate/index.md
   - name: Plugins
     internal: extend/plugin/index.md
   - name: KiCad
     internal: extend/integrate/kntree.md
-  - name: Integrate
-    internal: extend/integrate/index.md
 
 - title: Sitemap
   cats:
@@ -42,5 +30,6 @@
     internal: alternatives/index.md
   - name: Blog
     internal: blog.html
-  - name: Deploy
-    internal: deploy.md
+  - name: Contribute
+    internal: contribute.md
+
