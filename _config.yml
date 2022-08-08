@@ -33,7 +33,7 @@ collections:
   publishers:
     output: true
     permalink: "/:title"
-  plugins:
+  repo:
     output: true
     custom_permalink_placeholders: ["publisher"]
     #permalink: "/:publisher/:title"
@@ -51,7 +51,7 @@ defaults:
       layout: "publisher"
   - scope:
       path: ""
-      type: "plugins"
+      type: "repo"
     values:
       layout: "plugin"
   - scope:
