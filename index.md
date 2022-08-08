@@ -19,9 +19,9 @@ main_page: True
 {% include block/features.html data=site.data.for_business link=true%}
 {% include block/features.html data=site.data.for_edu link=true %}
 
-{% include block/stats.html data=site.data.general.stats %}
-
 {% include block/cta.html cta=site.data.ctas.newsletter %}
+
+{% include block/stats.html data=site.data.general.stats %}
 
 {% include block/cta.html cta=site.data.ctas.end %}
 
