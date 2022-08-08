@@ -3,4 +3,6 @@ layout: default
 backLink: false
 ---
 
-{% include partial/newsletter.html %}
+<div class="justify-center">
+    <div>{% include partial/newsletter.html %}</div>
+</div>
