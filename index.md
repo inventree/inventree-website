@@ -23,5 +23,7 @@ main_page: True
 
 {% include partial/newsletter.html %}
 
+{% include block/cta.html cta=site.data.ctas.newsletter %}
+
 {% include block/cta.html cta=site.data.ctas.end %}
 

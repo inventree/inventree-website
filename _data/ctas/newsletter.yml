@@ -1,0 +1,5 @@
+text: Ready for a glimpse into the future?<br>Together we make InvenTree better, faster and more helpfull each day.
+btn:
+  - text: Sign up
+    link:
+      internal: newsletter.md
