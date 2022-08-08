@@ -1,11 +1,13 @@
-<div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
-    <div class="flex">
-        {% if include.style == 'info' %}
-            <img class="fill-current h-6 w-6 text-teal-500 mr-4" src="{{ '/assets/info.svg' | relative_url }}" />
-        {% endif %}
-        <div>
-            <p class="font-bold">{{ include.title }}</p>
-            <p class="text-sm">{{ include.desc }}</p>
+<div markdown="0">
+    <div class="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+        <div class="flex">
+            {% if include.style == 'info' %}
+                <img class="fill-current h-6 w-6 text-teal-500 mr-4" src="{{ '/assets/info.svg' | relative_url }}" />
+            {% endif %}
+            <div>
+                <p class="font-bold">{{ include.title }}</p>
+                <p class="text-sm">{{ include.desc }}</p>
+            </div>
         </div>
     </div>
 </div>
