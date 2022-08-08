@@ -21,8 +21,6 @@ main_page: True
 
 {% include block/stats.html data=site.data.general.stats %}
 
-{% include partial/newsletter.html %}
-
 {% include block/cta.html cta=site.data.ctas.newsletter %}
 
 {% include block/cta.html cta=site.data.ctas.end %}
