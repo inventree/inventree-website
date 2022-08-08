@@ -3,6 +3,6 @@ layout: default
 backLink: false
 ---
 
-<div class="justify-center">
+<div class="flex justify-around">
     <div>{% include partial/newsletter.html %}</div>
 </div>
