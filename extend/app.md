@@ -21,11 +21,7 @@ Native barcode support provides a multitude of context-sensitive stock control a
 
 The InvenTree app can be downloaded from either the Android or Apple app stores, or accessed via the links below:
 
-#### Android
-
 <span class='fab fa-android'></span> [Android Play Store](https://play.google.com/store/apps/details?id=inventree.inventree_app).
-
-#### iOS
 
 <span class='fab fa-apple'></span> [Apple App Store](https://apps.apple.com/au/app/inventree/id1581731101#?platform=iphone)
 
