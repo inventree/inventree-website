@@ -6,12 +6,12 @@ InvenTree is by far not the only software for managing 'things'<tm>, there are e
 
 PLMs:
 - [Partkeepr](https://partkeepr.org/) - one of the OG OSS inventory solutions
-- [Partsbox](https://partsbox.com/) `/for profit/` nice interface and reasonable priced for SMEs
-- [Bomist](https://bomist.com/) `/for profit/` free version with limited function
+- [Partsbox](https://partsbox.com/) `for profit` nice interface and reasonable priced for SMEs
+- [Bomist](https://bomist.com/) `for profit` free version with limited function
 
 Asset Managemnt:
 - [SnipeIt](https://snipeitapp.com/) - battleproven stable in the PHP scene
 - [Odoo](https://github.com/odoo) - full open source ERP
 
 Other:
-- [Excel](https://de.wikipedia.org/wiki/Microsoft_Excel) `/for profit/` be honest to yourself - could you handle it with a spreadsheet?
+- [Excel](https://de.wikipedia.org/wiki/Microsoft_Excel) `for profit` be honest to yourself - could you handle it with a spreadsheet?
