@@ -50,11 +50,11 @@
   document.addEventListener( 'DOMContentLoaded', function () {
       new Splide('#image-carousel', {
           type: 'loop',
-          perPage: 1,
+          perMove: 1,
+          perPage: {% if include.perPage %}{{ include.perPage }}{% else %}1{% endif %},
           autoPlay: true,
           pagination: false,
       }).mount();
   });
   </script>
-  
 {% endif %}
