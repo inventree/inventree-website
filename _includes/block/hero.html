@@ -26,6 +26,35 @@
         {% if include.image %}
         <img class="object-cover object-center rounded" alt="hero" src="{{ include.image }}">
         {% endif %}
+        {% if include.gallery %}
+        <section id='image-carousel' class='splide'>
+          <div class='splide__track'>
+              <ul class='splide__list' style='list-style-type: none; list-style: none;'>
+              {% for image in site.static_files %}
+                  {% if image.path contains include.gallery %}
+                  <li class='splide__slide'>
+                      <img src="{{ image.path | relative_url }}" alt="" />
+                  </li>
+                  {% endif %}
+              {% endfor %}
+              </ul>
+          </div>
+      </section>
+      {% endif %}
       </div>
     </div>
 </section>
+
+{% if include.gallery %}
+<script>
+  document.addEventListener( 'DOMContentLoaded', function () {
+      new Splide('#image-carousel', {
+          type: 'loop',
+          perMove: 1,
+          perPage: {% if include.perPage %}{{ include.perPage }}{% else %}1{% endif %},
+          autoPlay: true,
+          pagination: false,
+      }).mount();
+  });
+  </script>
+{% endif %}
