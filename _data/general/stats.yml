@@ -1,8 +1,8 @@
 stats:
   - name: Docker pulls
-    number: 1934485
+    number: 1935347
   - name: GitHub Stars
-    number: 2035
+    number: 2036
   - name: Forks
     number: 290
   - name: Contributors
