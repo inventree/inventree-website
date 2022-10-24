@@ -6,6 +6,9 @@ title: Deploying InvenTree
 
 There are multiple methods to deploy InvenTree. The most popular methods (supported by the development team) are:
 
+### Installer
+We provide a [single-line installer](https://inventree.readthedocs.io/en/latest/start/installer/) that enables a quick installation and updates using the packager manager.
+
 #### Docker
 
 InvenTree supports a simple containerized installation via docker. An official [docker image](https://hub.docker.com/r/inventree/inventree/) is provided with regular updates. 
