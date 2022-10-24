@@ -12,8 +12,8 @@ Add *native printing capabilities* for your network connected printers to the we
 
 ### Plugin repo
 
-    {% include partial/alert.html
-        style='info'
-        title='Coming soon'
-        desc="We are working on a full plugin repo - keep up to date on the blog or directly in your InvenTree dashboard with news."
-    %}
+{% include partial/alert.html
+    style='info'
+    title='Coming soon'
+    desc="We are working on a full plugin repo - keep up to date on the blog or directly in your InvenTree dashboard with news."
+%}
