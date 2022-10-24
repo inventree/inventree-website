@@ -2,14 +2,13 @@
 title: Plugins
 ---
 We supply core-dev and community built plugins to get you started with extending InvenTree's functionality. Plugins can hook into many parts of the UI, buisness logic and webserver.
-We expose some internal python APIs to speed up your development and keep the instance running while you discover the possibilities. [Learn more](# TODO plugins)
+We expose some internal python APIs to speed up your development and keep the instance running while you discover the possibilities. [Learn more](https://inventree.readthedocs.io/en/latest/extend/plugins/)
 
 ### Highlights
 
-Add [printing capabilities](printers) for your network connected printers to the webinterface and apps.
-
-Integrate your Shopping or warehousing solution:
-- [Shopify](shopify)
+Add *native printing capabilities* for your network connected printers to the webinterface and apps. There are plugins for:
+- [Brother QL](https://pypi.org/project/inventree-brother-plugin/)
+- [Zebra](https://github.com/SergeoLacruz/inventree-zebra-plugin)
 
 ### Plugin repo
 
