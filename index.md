@@ -15,10 +15,6 @@ main_page: True
 
 {% include block/functions.html data=site.data.functions.general %}
 
-{% include block/features.html data=site.data.for_maker link=true %}
-{% include block/features.html data=site.data.for_business link=true%}
-{% include block/features.html data=site.data.for_edu link=true %}
-
 {% include block/cta.html cta=site.data.ctas.newsletter %}
 
 {% include block/stats.html data=site.data.general.stats %}
