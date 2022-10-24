@@ -22,7 +22,7 @@
   - name: Plugins
     internal: extend/plugin/index.md
   - name: KiCad
-    internal: extend/integrate/kntree.md
+    external: https://github.com/sparkmicro/Ki-nTree
 
 - title: Sitemap
   cats:
