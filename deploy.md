@@ -15,7 +15,7 @@ InvenTree supports a simple containerized installation via docker. An official [
 
 Refer to the [docker installation guide](https://inventree.readthedocs.io/en/latest/start/docker/) for more information
 
-#### Bare Metal
+#### Manual Bare Metal Install
 
 A [bare metal installation guide](https://inventree.readthedocs.io/en/latest/start/intro/) is provided for users who are looking for a low-level or custom installation. 
 
