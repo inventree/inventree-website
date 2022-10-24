@@ -5,7 +5,7 @@ InvenTree is an open-source inventory management system which provides intuitive
 It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
 
 ### Open Source
-We are open source all the way. Webserver, Docs, App and Website are MIT licensed. Please check the [source directory](source) if you want to look at the source code.
+We are open source all the way. Webserver, Docs, App and Website are MIT licensed. Please check the [source directory](https://github.com/inventree/InvenTree/) if you want to look at the source code.
 
 ### Open governance
 The roadmap for InvenTree is created by the [contributors](team). There is no solid roadmap but the team has general areas of intrest and [milestones](https://github.com/inventree/InvenTree/milestones) to provide an outlook to what is to come. As this project is done in spare/free time there is no set release timeline.
