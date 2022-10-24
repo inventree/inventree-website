@@ -21,7 +21,7 @@ A [bare metal installation guide](https://inventree.readthedocs.io/en/latest/sta
 
 #### Cloud
 
-# TODO
+A member of the team provides a [1-click app for InvenTree](https://marketplace.digitalocean.com/apps/inventree?refcode=d6172576d014&action=deploy) on the DigitalOcean marketplace.
 
 ### Other Options
 
