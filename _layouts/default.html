@@ -3,7 +3,7 @@
 
 <head>
     {% include base/head.html %}
-    <script defer data-domain="{{site.analytics-domain}}" src="https://plausible.io/js/script{{site.analytics-add}}.js"></script>
+    <script async src="https://{{site.analytics-domain}}/script.js" data-account-id="{{site.analytics-id}}"></script>
 </head>
 
 <body class="flex flex-col antialiased cm-gray-1 min-h-screen">

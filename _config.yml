@@ -23,10 +23,8 @@ baseurl: "/inventree-website"
 url: ""
 
 # Analytics
-analytics-domain: matmair.github.io
-# Add names to use more enhanced feature
-# See https://plausible.io/docs/script-extensions
-analytics-add: .outbound-links
+analytics-domain: offen.invenhost.com
+analytics-id: 2c8697da-bb92-441b-82ee-ece2622295b2
 
 # Rendering settings - do not touch
 collections:
