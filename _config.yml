@@ -20,7 +20,7 @@ contribute-link:
 
 # Hosting parameters
 baseurl: ""
-url: ""
+url: "https://web1.invenhost.com"
 
 # Analytics
 analytics-domain: offen.web1.invenhost.com
