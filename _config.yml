@@ -23,7 +23,7 @@ baseurl: ""
 url: ""
 
 # Analytics
-analytics-domain: offen.invenhost.com
+analytics-domain: offen.web1.invenhost.com
 analytics-id: 2c8697da-bb92-441b-82ee-ece2622295b2
 
 # Rendering settings - do not touch
