@@ -19,7 +19,7 @@ contribute-link:
   internal: contribute.md
 
 # Hosting parameters
-baseurl: "/inventree-website"
+baseurl: ""
 url: ""
 
 # Analytics
