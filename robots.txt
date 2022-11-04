@@ -1,1 +1,1 @@
-Sitemap: /inventree-website/sitemap.xml
+Sitemap: /sitemap.xml
