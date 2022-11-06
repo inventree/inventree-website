@@ -1,0 +1,20 @@
+text: InvenTree has had 40+ contributors since the project started in March 2017.
+team:
+  - tag: SchrodingersGat
+    name: Oliver
+    text: Oliver is an Australian EE. He started InvenTree in 2017 and is the maintainer.
+    links:
+      - text: GitHub
+        link: https://github.com/SchrodingersGat
+  - tag: eeintech
+    name: Francois
+    text: Francois is an EE. He is part of the core team an maintainer of [Ki-nTree](https://github.com/sparkmicro/Ki-nTree).
+    links:
+      - text: GitHub
+        link: https://github.com/eeintech
+  - tag: matmair
+    name: Matthias
+    text: Matthias is an Austrian developer. He is part of the core team and focuses on `enterprise` enhancments.
+    links:
+      - text: GitHub
+        link: https://github.com/matmair
