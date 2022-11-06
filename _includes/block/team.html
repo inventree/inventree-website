@@ -2,11 +2,11 @@
     <div class="section-container">
         <div class="flex flex-col text-center w-full mb-20">
             <h1 class="text-2xl font-medium title-font mb-4 cm-gray-1 tracking-widest">OUR TEAM</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{ include.text }}</p>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{ include.data.text }}</p>
         </div>
         <div class="flex flex-wrap -m-4">
 
-            {% for item in include.team %}
+            {% for item in include.data.team %}
             <div class="p-4 lg:w-1/2">
                 <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
                     <div class="flex-grow sm:pl-8">
