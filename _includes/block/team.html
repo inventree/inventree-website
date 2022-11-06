@@ -13,9 +13,9 @@
                         <h2 class="title-font font-medium text-lg cm-gray-1">{{ item.tag }}</h2>
                         <h3 class="cm-gray-3 mb-3">{{ item.name }}</h3>
                         <p class="mb-4">{{ item.text }}</p>
-                        <span class="inline-flex">
+                        <span class="inline-flex items-center">
                           {% for link in item.links %}
-                          <a class="cm-gray-3" href="{{ link.link }}" alt="learn more">{{ link.text }} <img class="w-4 h-4 ml-2" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+                          <a class="cm-gray-3" href="{{ link.link }}" alt="learn more">{{ link.text }}</a>
                           {% endfor %}
                         </span>
                     </div>
