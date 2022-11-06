@@ -16,7 +16,7 @@
                         <span class="inline-flex">
                           {% for link in item.links %}
                           <p>{{link.link}}</p>
-                          <a class="cm-gray-3" href="{% include fnc/link.html item=link.link %}" alt="learn more">{{ link.text }} <img class="w-4 h-4 ml-2" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+                          <a class="cm-gray-3" href="{% include fnc/link.html item=link %}" alt="learn more">{{ link.text }} <img class="w-4 h-4 ml-2" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
                           {% endfor %}
                         </span>
                     </div>
