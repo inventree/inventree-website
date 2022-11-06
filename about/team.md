@@ -1,18 +1,16 @@
 ---
-title: The core team
+title: Team
 ---
-
-# Team
 
 InvenTree has had 40+ contributors since the project started in March 2017.
 
-## Maintainer
+### Maintainer
 
 #### SchrodingersGat
 Oliver is an Australian EE. He started InvenTree in 2017 and is the maintainer.
 [GitHub](https://github.com/SchrodingersGat)
 
-## Active Team
+### Active Team
 
 #### eeintech
 Francois is an EE. He is part of the core team an maintainer of [Ki-nTree](https://github.com/sparkmicro/Ki-nTree).
@@ -22,7 +20,7 @@ Francois is an EE. He is part of the core team an maintainer of [Ki-nTree](https
 Matthias is an Austrian developer. He is part of the core team and focuses on `enterprise` enhancments.
 [GitHub](https://github.com/matmair)
 
-## Contributors
+### Contributors
 ToDo / Looking for suggestions.
 
 
