@@ -2,4 +2,11 @@
 title: API
 ---
 
-# TODO
+# InvenTree API
+
+InvenTree ships with an extensive REST API that is used by several native applications:
+- parts of the webinterface
+- InvenTree App (Android/iOS)
+- python module
+
+The API is self-documenting. More information is provided in the [documentation](https://inventree.readthedocs.io/en/latest/api/api/).
