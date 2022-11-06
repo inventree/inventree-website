@@ -18,6 +18,7 @@ main_page: True
 {% include block/cta.html cta=site.data.ctas.newsletter %}
 
 {% include block/stats.html data=site.data.general.stats %}
+{% include block/team.html cta=site.data.team %}
 
 {% include block/cta.html cta=site.data.ctas.end %}
 
