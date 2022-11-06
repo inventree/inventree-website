@@ -17,7 +17,7 @@ Francois is an EE. He is part of the core team and the maintainer of [Ki-nTree](
 [GitHub](https://github.com/eeintech)
 
 #### matmair
-Matthias is an Austrian developer. He is part of the core team and focuses on `enterprise` enhancments.
+Matthias is an Austrian developer. He is part of the core team and focuses on `enterprise` enhancement.
 [GitHub](https://github.com/matmair)
 
 ### Contributors
