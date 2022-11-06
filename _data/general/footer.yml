@@ -34,4 +34,5 @@
     internal: blog.html
   - name: Contribute
     internal: contribute.md
-
+  - name: Support
+    internal: support.md
