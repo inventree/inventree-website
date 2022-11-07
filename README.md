@@ -1,5 +1,5 @@
-# InvenTree home website
-This project contains the source for the new InvenTree website.
+# InvenTree website
+This project contains the source for InvenTree's website.
 It is built on Jekyll and GitHub pages for backend / hosting and tailtwindcss for frontend.
 
 ## Architecture
@@ -8,6 +8,7 @@ The website consists of content, layouts and assets. Jekyll runs and builds out 
 
 Content:
 `_data` contains data that is references on pages  
+`_drafts` contains drafts for blog pages and news items  
 `_news` contains news entries  
 `_posts` contains blog entries  
 `_publishers` contains authors/publishers  
