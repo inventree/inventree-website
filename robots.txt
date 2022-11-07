@@ -1,1 +1,1 @@
-Sitemap: https://web1.invenhost.com/sitemap.xml
+Sitemap: https://inventree.org/sitemap.xml
