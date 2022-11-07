@@ -16,4 +16,4 @@ If you require a custom feature you can either:
 
 ## Paid Customisation / Support
 If you use InvenTree for your business and require a support contract or want to fast track a feature request we have a list of developers and businesses willing to help out.
-Feel free to reach out to `admin <AT> inventree <DOT> ORG` - we will redirect you to a suitable contact.
+Feel free to reach out to `support <AT> inventree <DOT> ORG` - we will redirect you to a suitable contact.
