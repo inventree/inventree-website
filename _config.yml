@@ -20,10 +20,10 @@ contribute-link:
 
 # Hosting parameters
 baseurl: ""
-url: "https://web1.invenhost.com"
+url: "https://inventree.org"
 
 # Analytics
-analytics-domain: offen.web1.invenhost.com
+analytics-domain: offen.inventree.org
 analytics-id: 2c8697da-bb92-441b-82ee-ece2622295b2
 
 # Rendering settings - do not touch
