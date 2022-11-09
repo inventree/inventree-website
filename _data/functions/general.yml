@@ -8,7 +8,7 @@ functions:
     link: https://docs.inventree.org/en/latest/part/part/
   - title: Manage Suppliers
     text: InvenTree allows you to easily create, modify or delete suppliers and supplier items linked to any part in your inventory.
-    link: https://docs.inventree.org/en/latest/companies/supplier/
+    link: https://docs.inventree.org/en/latest/buy/supplier/
   - title: Instant Stock Knowledge
     text: Instantly view current stock for a certain part, in a particular location, or required for an individual build.
     extend: Stock items are organized in cascading locations and sub-locations, allowing flexible inspection of stock under any location. Stock items can be serialized for tracking of individual items, and test results can be stored against a serialized stock item for the purpose of acceptance testing and commissioning.
