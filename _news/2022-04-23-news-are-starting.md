@@ -23,7 +23,7 @@ While the checks use the GitHub APIs, news are gathered from an **RSS-feed** tha
 On your InvenTree instance the **background worker** loads the RSS-feed on a regular basis and creates **entries** for the news items and **notifications** for all applicable users.
 
 ### And my data?
-As listed above we are using GitHub pages for this feature. We are not introducing additional trackers to that so the [general InvenTree privacy statement](https://inventree.readthedocs.io/en/latest/privacy/) applies.  
+As listed above we are using GitHub pages for this feature. We are not introducing additional trackers to that so the [general InvenTree privacy statement](https://docs.inventree.org/en/latest/privacy/) applies.  
 The short version: we **do not sell your data** or share it with third parties. We cannot guarantee what readthedocs and GitHub do with the metrics. We might use them as a metric for the stats section of the site. However, we get very little *actionable* information from that, a screenshot of the total info available is shown below.
 
 ![Sample screenshot of the collected analytics]({{ '/assets/news/2022-04-23-news-are-starting/media1.png' | relative_url }})

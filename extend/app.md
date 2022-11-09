@@ -26,4 +26,4 @@ The InvenTree app can be downloaded from either the Android or Apple app stores,
 
 ### Documentation
 
-Mobile app documentation can be found on the [InvenTree documentation site](https://inventree.readthedocs.io/en/latest/app/app/).
+Mobile app documentation can be found on the [InvenTree documentation site](https://docs.inventree.org/en/latest/app/app/).

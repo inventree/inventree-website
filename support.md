@@ -2,7 +2,7 @@
 title: Get Support
 ---
 
-As an open source project we offer a [public issue tracker](https://github.com/inventree/InvenTree) and [public documentation](https://inventree.readthedocs.io).
+As an open source project we offer a [public issue tracker](https://github.com/inventree/InvenTree) and [public documentation](https://docs.inventree.org).
 
 ## General Questions
 The core team answers questions in the issue tracker of in [discussions](https://github.com/inventree/InvenTree/discussions) when they find time.  
