@@ -2,7 +2,7 @@
 title: Contribute
 ---
 
-InvenTree is an open source project which is supported by a small group of volunteer contributors. Developing and maintaining an open source project is a lot of work, and requires a lot of devloper time, a resouce which is quite scarce.
+InvenTree is an open source project which is supported by a small group of volunteer contributors. Developing and maintaining an open source project is a lot of work, and requires a lot of developer time, a resource which is quite scarce.
 
 We welcome everyone to help with InvenTree however they can!  
 
@@ -15,7 +15,7 @@ We welcome everyone to help with InvenTree however they can!
 
 ### Sponsor
 
-If you or company use InvenTree, please consider sponsoring the project to show your support. Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!
+If you or your company uses InvenTree, please consider sponsoring the project to show your support. Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!
 
 - [Sponsor us on GitHub](https://github.com/sponsors/inventree)
 - [Sponsor us on Patreon](https://www.patreon.com/inventree)
@@ -34,15 +34,17 @@ InvenTree is built using [Python3](https://www.python.org/) and [Django](https:/
 
 Contributions towards the core InvenTree code base are welcomed and encouraged; either extending current functionality, prodiving new features, or addressing outstanding issues.
 
+Check out the [starter issues](https://github.com/inventree/InvenTree/issues?q=is%3Aissue+is%3Aopen+label%3Astarter) if you are looking for a good place to get started.
+
 ### Translate
 
 InvenTree provides a translation layer for both the web interface and mobile app. Native language translation requires effort from translators to provide multi-lingual support. If you wish to translate InvenTree to a new language (or improve an existing translation), such contributions would be greatly appreciated!.
 
-Native language translation of the InvenTree web application is [community contributed via crowdin](https://crowdin.com/project/inventree).
+Native language translations of the InvenTree web application and mobile app are [community contributed via crowdin](https://crowdin.com/project/inventree).
 
 _**Contributions are welcomed and encouraged!**._
 
-To contribute to the translation effort, navigate to the [InvenTree crowdin project](https://crowdin.com/project/inventree), create a free account, and start making translations suggestions for your language of choice!
+To contribute to the translation effort, navigate to the [InvenTree crowdin project](https://crowdin.com/project/inventree), create a free account, and start making translations for your language of choice!
 
 ### Documentation
 
