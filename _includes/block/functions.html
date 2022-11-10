@@ -11,7 +11,7 @@
       {% if include.data.title %}<h1 class="header-text title-font mb-4 cm-gray-1">{{ include.data.title }}</h1>{% endif %}
       {% if include.data.text %}<p class="lg:w-2/3 mx-auto leading-relaxed text-base">{{ include.data.text }}</p>{% endif %}
       {% if include.data.link and include.no_link != true %}
-      <a class="text-secondary inline-flex items-center justify-center" href="{% include fnc/link.html item=include.data.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+      <a class="text-secondary inline-flex items-center justify-center color-link" href="{% include fnc/link.html item=include.data.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
       {% endif %}
     </div>
     {% endif %}
@@ -25,7 +25,7 @@
           {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
         </p>
         {% if item.link %}
-        <a class="text-secondary inline-flex items-center" href="{% include fnc/link.html item=item.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+        <a class="text-secondary inline-flex items-center color-link" href="{% include fnc/link.html item=item.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
         {% endif %}
       </div>
       {% endfor %}
