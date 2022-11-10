@@ -31,4 +31,8 @@ The InvenTree app can be downloaded from either the Android or Apple app stores,
 
 Mobile app documentation can be found on the [InvenTree documentation site](https://docs.inventree.org/en/latest/app/app/).
 
+### Code
+
+The source code for the InvenTree app is available on [GitHub](https://github.com/inventree/inventree-app/) under the MIT license.
+
 </article>
