@@ -2,7 +2,7 @@
 title: Contribute
 ---
 
-InvenTree is an open source project which is supported by a small group of volunteer contributors. Developing and maintaining an open source project is a lot of work, and requires a lot of devloper time, a resouce which is quite scarce.
+InvenTree is an open source project which is supported by a small group of volunteer contributors. Developing and maintaining an open source project is a lot of work, and requires a lot of developer time, a resouce which is quite scarce.
 
 We welcome everyone to help with InvenTree however they can!  
 
