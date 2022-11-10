@@ -5,7 +5,7 @@ title: InvenTree Mobile App
 
 {% include block/hero.html title='Mobile stock control' title_2='in the' color='palm of your hand' gallery='appgallery/' perPage=3 detail='The InvenTree Mobile App brings stock control to your pocket. Integrating seamlessly with the InvenTree API, the app provides immediate access to inventory data wherever you are.' %}
 
-{% include partial/section_start.html %}
+<section class="cm-gray-2 body-font" markdown="1"><div class="section-container">
 
 Native barcode support provides a multitude of context-sensitive stock control actions, allowing streamlined inventory management at your fingertips. The app has been optimized for speed, providing instant access to stock knowledge and handy on-site functionality.
 
@@ -30,4 +30,4 @@ The InvenTree app can be downloaded from either the Android or Apple app stores,
 
 Mobile app documentation can be found on the [InvenTree documentation site](https://docs.inventree.org/en/latest/app/app/).
 
-{% include partial/section_end.html %}
+</div></section>
