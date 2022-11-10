@@ -7,7 +7,8 @@ title: InvenTree Mobile App
 
 <article class="cm-gray-2 body-font section-container" markdown="1">
 
-Native barcode support provides a multitude of context-sensitive stock control actions, allowing streamlined inventory management at your fingertips. The app has been optimized for speed, providing instant access to stock knowledge and handy on-site functionality.
+Native barcode support provides a multitude of context-sensitive stock control actions, allowing streamlined inventory management at your fingertips.  
+The app has been optimized for speed, providing instant access to stock knowledge and handy on-site functionality.
 
 ### Features
 
