@@ -7,7 +7,7 @@
             <h1 class="header-text title-font mb-2 cm-gray-1">{{ include.data.title }}</h1>
             {% if include.link %}
             {% assign link=include.data.link|default:include.link %}
-            <a href="{% include fnc/link.html item=link %}" alt="learn more"><img class="w-4 h-4 ml-2" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+            <a href="{% include fnc/link.html item=link %}" alt="learn more"><img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
             {% endif %}
           </div>
           <div class="h-1 w-20 bg-secondary rounded"></div>
@@ -25,7 +25,7 @@
               {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
             </p>
             {% if item.link %}
-            <a class="text-secondary inline-flex items-center" href="{% include fnc/link.html item=item.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+            <a class="text-secondary inline-flex items-center" href="{% include fnc/link.html item=item.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
             {% endif %}
           </div>
         </div>
