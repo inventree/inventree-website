@@ -59,6 +59,10 @@ layout: empty
         visibility: hidden;
     }
 
+    .color-link {
+        @apply text-secondary
+    }
+
     .badge {
         @apply py-1 px-2.5 rounded-full
     }

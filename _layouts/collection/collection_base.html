@@ -5,7 +5,7 @@ layout: default
 <header>
     {% if page.backLink or page.backLink == nil %}
     <a href="{{ layout.base_link | relative_url }}" class="flex items-center m-5 text-xl hover:underline">
-        <img class="w-6 h-6" src="{{ '/assets/back.svg' | relative_url }}" />
+        <img class="w-6 h-6" alt="go back" src="{{ '/assets/back.svg' | relative_url }}" />
         <span>Back</span>
     </a>
     {% endif %}
