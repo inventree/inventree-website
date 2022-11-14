@@ -1,7 +1,7 @@
 ---
-short_name: schrodingersgat
+short_name: oliver
 name: Oliver
 github: SchrodingersGat
-website: https:\\inventree.readthedocs.com
+website: https://inventree.org
 ---
 Maintainer of InvenTree.
