@@ -2,10 +2,10 @@
 author: matmair
 title: We have news now!
 ---
-Hi there,
-here is something new: News!
 
-These news items will automatically show up for all admins in the **homepage** as the *lowest* category (starting with the next minor release **0.7.0**).
+News!
+
+These news items will automatically show up for all admins in the **homepage** as the *lowest* category (starting with the next minor release **0.9.0**).
 If you do not want to see them there you can **disable** the function in your user-settings. There is also the option to disable news globally in the general server settings.
 
 ### But why?
