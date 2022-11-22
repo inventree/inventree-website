@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set selected color
+      - name: Get Stats
         run: python .github/get_stats.py
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
