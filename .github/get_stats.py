@@ -4,6 +4,7 @@ from pathlib import Path
 from urllib.request import urlopen, Request
 
 file_name = Path('_data/general/stats.yml')
+crowdin_projet_id = 452300
 
 class ReturnMode(Enum):
   data = 0
@@ -36,6 +37,10 @@ forks = gh_data.get('forks_count', 0)
 # See https://stackoverflow.com/a/60458265/17860466 # to enabble anon add `&anon=true`
 link = get_data('https://api.github.com/repos/inventree/inventree/contributors?per_page=1', mode=ReturnMode.header).get('Link')
 contributors = link.split('page=')[-1].split('>')[0]
+# Crowdin
+crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=os.environ.get('CROWDIN_TOKEN'))
+languages = len(crowdin_data.get('targetLanguageIds', []))
+#translators = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}/members', 'data', auth=crowdin_token)
 
 # Write data
 file_name.write_text(
@@ -47,4 +52,9 @@ f"""stats:
   - name: Forks
     number: {forks}
   - name: Contributors
-    number: {contributors}""")
+    number: {contributors}
+  - name: Languages
+    number: {languages}""")
+  #- name: Translators
+  #  number: {translators}
+  #  """)
