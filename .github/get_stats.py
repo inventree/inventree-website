@@ -1,5 +1,6 @@
 from enum import Enum
 import json
+import os
 from pathlib import Path
 from urllib.request import urlopen, Request
 
