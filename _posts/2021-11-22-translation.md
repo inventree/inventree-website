@@ -7,9 +7,9 @@ How we provide translation support for InvenTree in multiple languages
 
 ### Community Contributed Translations
 
-At the time of writing, InvenTree provides language translations for 25 languages (in addition to English), with over 11,000 translated words! This is thanks to the sustained efforts of 130+ InvenTree users.
+At the time of writing, InvenTree provides language translations for 25 languages (in addition to English), with over 11,000 translated words! This is thanks to the sustained efforts of 130+ InvenTree users, who have contributed their time to make our software better for everyone.
 
-Translation progress can be viewed on our [Crowdin project page](https://crowdin.com/project/inventree). Here you can view the progess of the translation efforts:
+Translation progress can be viewed on our [Crowdin project page](https://crowdin.com/project/inventree). Here you can view the current status of the translation efforts:
 
 ![Translations](/assets/blog/2022-11-22-translation.png)
 
