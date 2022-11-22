@@ -9,9 +9,12 @@ class ReturnMode(Enum):
   data = 0
   header = 1
 
-def get_data(url, key=None, default=0, mode: ReturnMode=ReturnMode.data):
+def get_data(url, key=None, default=0, mode: ReturnMode=ReturnMode.data, auth=None):
   """Fetches data from remote endpoint"""
   httprequest = Request(url, headers={"Accept": "application/json"})
+
+  if auth:
+    httprequest.add_header("Authorization", f"Bearer {auth}")
 
   with urlopen(httprequest) as response:
     if mode == ReturnMode.data:
