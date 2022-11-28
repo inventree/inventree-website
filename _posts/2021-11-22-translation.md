@@ -19,7 +19,7 @@ As translations are entirely community contributed, we need a software framework
 
 #### Backend - Django
 
-At its core, InvenTree is built on the [Django](https://www.djangoproject.com/) framework, which provides a [translation framweork](https://docs.djangoproject.com/en/4.1/topics/i18n/translation/) "out of the box". 
+At its core, InvenTree is built on the [Django](https://www.djangoproject.com/) framework, which provides a [translation framework](https://docs.djangoproject.com/en/4.1/topics/i18n/translation/) "out of the box". 
 
 The Django translation framework provides a toolkit for marking certain text strings as "translatable". Translation strings are able to be replaced by a translated string from a language specified by the user - *if a translation for the text is available in that language*.
 
