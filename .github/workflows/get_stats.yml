@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+         token: ${{ secrets.BOT_PAT }}
       - name: Get Stats
         run: python .github/get_stats.py
         env:
