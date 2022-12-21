@@ -12,8 +12,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set selected color
+        with:
+         token: ${{ secrets.BOT_PAT }}
+      - name: Get Stats
         run: python .github/get_stats.py
+        env:
+          CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[Bot] Updated the stats"
