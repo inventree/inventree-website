@@ -40,7 +40,7 @@ forks = gh_data.get('forks_count', 0)
 link = get_data(f'https://api.github.com/repos/{github_project}/contributors?per_page=1', mode=ReturnMode.header).get('Link')
 contributors = link.split('page=')[-1].split('>')[0]
 # Crowdin
-  crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=os.environ.get('CROWDIN_TOKEN'))
+crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=os.environ.get('CROWDIN_TOKEN'))
 languages = len(crowdin_data.get('targetLanguageIds', []))
 #translators = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}/members', 'data', auth=crowdin_token)
 
