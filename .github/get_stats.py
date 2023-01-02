@@ -40,7 +40,7 @@ forks = gh_data.get('forks_count', 0)
 link = get_data(f'https://api.github.com/repos/{github_project}/contributors?per_page=1', mode=ReturnMode.header).get('Link')
 contributors = link.split('page=')[-1].split('>')[0]
 # Crowdin
-crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=os.environ.get('CROWDIN_TOKEN'))
+  crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=os.environ.get('CROWDIN_TOKEN'))
 languages = len(crowdin_data.get('targetLanguageIds', []))
 #translators = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}/members', 'data', auth=crowdin_token)
 
@@ -49,14 +49,19 @@ file_name.write_text(
 f"""stats:
   - name: Docker pulls
     number: {docker}
+    icon: fab fa-docker
   - name: GitHub Stars
     number: {stars}
+    icon: fas fa-stars
   - name: Forks
     number: {forks}
+    icon: fas fa-code-map
   - name: Contributors
     number: {contributors}
+    icon: fas fa-hands-helping
   - name: Languages
-    number: {languages}""")
+    number: {languages}
+    icon: fas fa fa-language
   #- name: Translators
   #  number: {translators}
   #  """)
