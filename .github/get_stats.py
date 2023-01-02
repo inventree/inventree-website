@@ -49,19 +49,17 @@ file_name.write_text(
 f"""stats:
   - name: Docker pulls
     number: {docker}
-    icon: fab fa-docker
+    icon: fa-brands fa-docker
   - name: GitHub Stars
     number: {stars}
-    icon: fas fa-stars
+    icon: fa-solid fa-stars
   - name: Forks
     number: {forks}
-    icon: fas fa-code-map
+    icon: fa-solid fa-code-branch
   - name: Contributors
     number: {contributors}
-    icon: fas fa-hands-helping
+    icon: fa-solids fa-hands-helping
   - name: Languages
     number: {languages}
-    icon: fas fa fa-language
-  #- name: Translators
-  #  number: {translators}
-  #  """)
+    icon: fa-solid fa fa-language
+"""
