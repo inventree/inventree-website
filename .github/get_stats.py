@@ -52,7 +52,7 @@ f"""stats:
     icon: fa-brands fa-docker
   - name: GitHub Stars
     number: {stars}
-    icon: fa-solid fa-stars
+    icon: fa-solid fa-star
   - name: Forks
     number: {forks}
     icon: fa-solid fa-code-branch
