@@ -9,7 +9,7 @@ layout: empty
 
 @layer components {
     article {
-        @apply prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto
+        @apply prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto m-5
     }
 
     .custom-underline-blue {
