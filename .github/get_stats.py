@@ -63,3 +63,4 @@ f"""stats:
     number: {languages}
     icon: fa-solid fa fa-language
 """
+)
