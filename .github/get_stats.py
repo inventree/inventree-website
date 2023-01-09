@@ -58,7 +58,7 @@ f"""stats:
     icon: fa-solid fa-code-branch
   - name: Contributors
     number: {contributors}
-    icon: fa-solids fa-hands-helping
+    icon: fa-solid fa-hands-helping
   - name: Languages
     number: {languages}
     icon: fa-solid fa fa-language
