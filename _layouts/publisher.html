@@ -24,7 +24,7 @@ notitle: true
 
 {% assign filtered_team = site.data.team.team | where: 'tag', page.short_name %}
 {% if filtered_team and filtered_team.size != 0  %}
-<a href="{% link about/team.html %}"><span class="badge bg-lime-600">Core team member</span></a>
+<a href="{% link about/team.html %}"><span class="badge bg-lime-600"><span class="fa-solid fa-shield"></span>Team Member</span></a>
 {% endif %}
 </div>
 
