@@ -1,6 +1,8 @@
 # InvenTree website
 This project contains the source for InvenTree's website.
-It is built on Jekyll and GitHub pages for backend / hosting and tailtwindcss for frontend.
+It is built on Jekyll and GitHub pages for backend / hosting, tailtwindcss for design and Netlify for preview builds.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f84340d0-bc2f-4f7f-ad4c-877c50b33a27/deploy-status)](https://app.netlify.com/sites/inventree-org-preview/deploys)
 
 ## Architecture
 
