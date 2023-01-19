@@ -2,14 +2,16 @@
 layout: content
 notitle: true
 ---
-<h1>
-  <div class="flex">
+<h2>
+  <div class="flex items-end">
     {% if page.github %}
-    <img src="https://github.com/{{ page.github }}.png?size=40" alt="mdo" class="rounded-full" width="40" height="40" style="margin:0px">
+    <div class="mb-1">
+      <img src="https://github.com/{{ page.github }}.png?size=40" alt="mdo" class="rounded-full" width="40" height="40" style="margin:0px">
+    </div>
     {% endif %}
     {{ page.name }}
   </div>
-</h1>
+</h2>
 
 <div>
 {% if page.github %}
@@ -17,7 +19,12 @@ notitle: true
 {% endif %}
 
 {% if page.website %}
-<a href="{{page.website}}"><span class="badge bg-secondary">Official Website</span></a>
+<a href="{{page.website}}"><span class="badge bg-secondary">Website</span></a>
+{% endif %}
+
+{% assign filtered_team = site.data.team.team | where: 'tag', page.short_name %}
+{% if filtered_team and filtered_team.size != 0  %}
+<a href="{% link about/team.html %}"><span class="badge bg-lime-600"><span class="fa-solid fa-shield"></span>Team Member</span></a>
 {% endif %}
 </div>
 
@@ -25,7 +32,7 @@ notitle: true
   {{ content }}
 </blockquote>
 
-{% assign filtered_posts = site.posts | where: 'publisher', page.short_name %}
+{% assign filtered_posts = site.posts | where: 'author', page.short_name %}
 {% if filtered_posts and filtered_posts.size != 0 %}
 <h3>Posts</h3>
 <ul class="list-unstyled">
@@ -35,7 +42,7 @@ notitle: true
 </ul>
 {% endif %}
 
-{% assign filtered_plugins = site.repo | where: 'publisher', page.short_name %}
+{% assign filtered_plugins = site.repo | where: 'author', page.short_name %}
 {% if filtered_plugins and filtered_plugins.size != 0 %}
 <h3>Plugins</h3>
 <ul class="list-unstyled">
