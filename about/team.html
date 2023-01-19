@@ -1,0 +1,33 @@
+---
+title: Team
+---
+
+{{site.data.team.text}}
+<br/>
+
+<h3>Maintainer</h3>
+
+<h4>SchrodingersGat</h4>
+<p>Oliver is an Australian EE. He started InvenTree in 2017 and is the maintainer.
+    <a href="https://github.com/SchrodingersGat" alt="learn more">GitHub</a>
+</p>
+
+<h3>Active Team</h3>
+
+{% for item in site.data.team.team %}
+    <h4>{{ item.tag }}</h4>
+    <p>{{ item.text }}
+        <span class="inline-flex">
+        {% for link in item.links %}
+            <a href="{{ link.link }}" alt="learn more">{{ link.text }}</a>
+        {% endfor %}
+        </span>
+    </p>
+{% endfor %}
+
+<h3>Contributors</h3>
+<p>ToDo / Looking for suggestions.</p>
+
+
+<h3>Disclaimer</h3>
+<p>The list is in no way complete and only contains the most active devs when the website was created. If you feel someone is missing feel free to open an issue in the GitHub repo.</p>
