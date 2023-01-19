@@ -33,11 +33,11 @@ def get_data(url, key=None, default=0, mode: ReturnMode=ReturnMode.data, auth=No
   return data
 
 docker = get_data(f'https://hub.docker.com/v2/repositories/{github_project}', 'pull_count')
-gh_data = get_data(f'https://api.github.com/repos/{github_project}')
+gh_data = get_data(f'https://api.github.com/repos/{github_project}', auth=os.environ.get('GITHUB_TOKEN'))
 stars = gh_data.get('stargazers_count', 0)
 forks = gh_data.get('forks_count', 0)
 # See https://stackoverflow.com/a/60458265/17860466 # to enabble anon add `&anon=true`
-link = get_data(f'https://api.github.com/repos/{github_project}/contributors?per_page=1', mode=ReturnMode.header).get('Link')
+link = get_data(f'https://api.github.com/repos/{github_project}/contributors?per_page=1', mode=ReturnMode.header, auth=os.environ.get('GITHUB_TOKEN')).get('Link')
 contributors = link.split('page=')[-1].split('>')[0]
 # Crowdin
 crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=os.environ.get('CROWDIN_TOKEN'))
