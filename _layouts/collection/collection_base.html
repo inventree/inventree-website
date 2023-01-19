@@ -15,10 +15,7 @@ layout: default
     <h1>{{ page.title }}</h1>
     <p>
       {{ page.date | date_to_string }}
-      {% assign publisher = site.publishers | where: 'short_name', page.author | first %}
-      {% if publisher %}
-        - <a href="{{ publisher.url | relative_url }}">{{ publisher.name }}</a>
-      {% endif %}
+      {% include partial/publisher_link.html pub= page.author %}
     </p>
     {{ content }}
 </article>
