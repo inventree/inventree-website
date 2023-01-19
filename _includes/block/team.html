@@ -10,8 +10,15 @@
             <div class="p-4 lg:w-1/2">
                 <div class="h-full flex sm:flex-row flex-col sm:justify-start justify-center text-center sm:text-left">
                     <div class="flex-grow sm:pl-8">
-                        <h2 class="title-font font-medium text-lg cm-gray-1">{{ item.tag }}</h2>
-                        <h3 class="cm-gray-3 mb-3">{{ item.name }}</h3>
+                        <div class="flex items-end">
+                            <div class="mb-5">
+                                <img src="https://github.com/{{ item.tag }}.png?size=40" alt="mdo" class="rounded-full" width="40" height="40" style="margin:0px">
+                            </div>
+                            <div>
+                                <h2 class="title-font font-medium text-lg cm-gray-1">{{ item.tag }}</h2>
+                                <h3 class="cm-gray-3 mb-3">{{ item.name }}</h3>
+                            </div>
+                        </div>
                         <p class="mb-4">{{ item.text }}</p>
                         <span class="inline-flex">
                           {% for link in item.links %}
