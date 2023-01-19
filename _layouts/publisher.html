@@ -37,7 +37,7 @@ notitle: true
 </ul>
 {% endif %}
 
-{% assign filtered_plugins = site.repo | where: 'publisher', page.short_name %}
+{% assign filtered_plugins = site.repo | where: 'author', page.short_name %}
 {% if filtered_plugins and filtered_plugins.size != 0 %}
 <h3>Plugins</h3>
 <ul class="list-unstyled">
