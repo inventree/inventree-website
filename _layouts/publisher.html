@@ -27,7 +27,7 @@ notitle: true
   {{ content }}
 </blockquote>
 
-{% assign filtered_posts = site.posts | where: 'publisher', page.short_name %}
+{% assign filtered_posts = site.posts | where: 'author', page.short_name %}
 {% if filtered_posts and filtered_posts.size != 0 %}
 <h3>Posts</h3>
 <ul class="list-unstyled">
