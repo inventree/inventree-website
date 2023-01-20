@@ -11,6 +11,7 @@ You can read more about the plugin architecture, including information on develo
 Add *native printing capabilities* for your network connected printers to the webinterface and apps. There are plugins for:
 - [Brother QL](https://pypi.org/project/inventree-brother-plugin/)
 - [Zebra](https://github.com/SergeoLacruz/inventree-zebra-plugin)
+- [Cups](https://github.com/wolflu05/inventree-cups-plugin)
 
 ### Plugin repo
 
