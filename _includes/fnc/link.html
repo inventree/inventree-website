@@ -1,18 +1,18 @@
-{% capture link %}
-{% if include.internal %}
-    {% link include.internal %}
-{% endif %}
-{% if include.item.site %}
+{%- capture link -%}
+{%- if include.internal -%}
+    {%- link include.internal -%}
+{%- endif -%}
+{%- if include.item.site -%}
     {{ site[include.item.site] }}
-{% elsif include.item.internal %}
-    {% link {{ include.item.internal }} %}
-{% elsif include.item.link %}
+{%- elsif include.item.internal -%}
+    {%- link {{ include.item.internal }} -%}
+{%- elsif include.item.link -%}
     {{ include.item.link | include fnc/link.html }}
-{% elsif include.item.home %}
+{%- elsif include.item.home -%}
     {{  '/' | relative_url }}
-{% elsif include.item %}
+{%- elsif include.item -%}
     {{ include.item }}
-{% endif %}
-{% endcapture %}
+{%- endif -%}
+{%- endcapture -%}
 
 {{ link | strip }}

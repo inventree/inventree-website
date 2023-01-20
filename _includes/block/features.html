@@ -5,10 +5,10 @@
           <a class="anchor" id="{{ include.data.ref }}"></a>
           <div class="inline-flex items-center">
             <h1 class="header-text title-font mb-2 cm-gray-1">{{ include.data.title }}</h1>
-            {% if include.link %}
-            {% assign link=include.data.link|default:include.link %}
-            <a href="{% include fnc/link.html item=link %}" alt="learn more" class="color-link"><img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
-            {% endif %}
+            {%- if include.link -%}
+            {%- assign link=include.data.link|default:include.link -%}
+            <a href="{%- include fnc/link.html item=link -%}" alt="learn more" class="color-link"><img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+            {%- endif -%}
           </div>
           <div class="h-1 w-20 bg-secondary rounded"></div>
         </div>
@@ -16,24 +16,24 @@
       </div>
 
       <div class="flex flex-wrap -m-4">
-      {% for item in include.data.features %}
+      {%- for item in include.data.features -%}
         <div class="xl:w-1/4 md:w-1/2 p-4">
           <div class="bg-gray-100 p-6 rounded-lg">
             <h3 class="tracking-widest text-primary text-xs font-medium title-font">{{ item.subtitle }}</h3>
             <h2 class="text-lg cm-gray-1 font-medium title-font mb-4">{{ item.title }}</h2>
             <p class="leading-relaxed text-base">{{ item.text }}
-              {% if include.extend and item.extend %}<br><br>{{ item.extend }}{% endif %}
+              {%- if include.extend and item.extend -%}<br><br>{{ item.extend }}{%- endif -%}
             </p>
-            {% if item.link %}
-            <a class="text-secondary inline-flex items-center" href="{% include fnc/link.html item=item.link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
-            {% endif %}
+            {%- if item.link -%}
+            <a class="text-secondary inline-flex items-center" href="{%- include fnc/link.html item=item.link -%}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+            {%- endif -%}
           </div>
         </div>
-      {% endfor %}
+      {%- endfor -%}
       </div>
 
-      {% if include.data.cta %}
-        {% include cta.html no_container=true cta=include.data.cta %}
-      {% endif %}
+      {%- if include.data.cta -%}
+        {%- include cta.html no_container=true cta=include.data.cta -%}
+      {%- endif -%}
     </div>
   </section>

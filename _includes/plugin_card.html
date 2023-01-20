@@ -1,17 +1,17 @@
 <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
     <div class="col p-4 d-flex flex-column position-static">
       <div class="d-inline-block">
-        {% for cat in plugin.categories %}
+        {%- for cat in plugin.categories -%}
         <span class="badge bg-yellow-500">{{ cat }}</span>
-        {% endfor %}
-        {% for tag in plugin.tags %}
+        {%- endfor -%}
+        {%- for tag in plugin.tags -%}
         <span class="badge bg-blue-400">{{ tag }}</span>
-        {% endfor %}
+        {%- endfor -%}
       </div>
       <h3 class="mb-0">{{ plugin.name }}</h3>
       <div class="mb-1 text-muted">
-        {% if plugin.published_on %}{{ plugin.published_on | date_to_string }} - {% endif %}
-        {% include partial/publisher_ref.html pub=plugin.publisher %}
+        {%- if plugin.published_on -%}{{ plugin.published_on | date_to_string }} - {%- endif -%}
+        {%- include partial/publisher_ref.html pub=plugin.publisher -%}
       </div>
       <p class="mb-auto">{{ plugin.excerpt | mardownify | remove: '<p>' | remove: '</p>' }}</p>
       <a href="{{ plugin.url | relative_url }}" class="stretched-link" aria-label="open plugin details"></a>

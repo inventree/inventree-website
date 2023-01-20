@@ -2,18 +2,18 @@
   <div class="section-container">
     <div class="flex flex-wrap -m-4 text-center">
 
-    {% assign stats = stats|default:site.data.general.stats.stats %}
-    {% for item in stats %}
+    {%- assign stats = stats|default:site.data.general.stats.stats -%}
+    {%- for item in stats -%}
       <div class="p-4 sm:w-1/4 w-1/2">
         <h2 class="title-font font-medium sm:text-4xl text-3xl cm-gray-1">
-          {% if item.icon %}
+          {%- if item.icon -%}
           <span class='{{ item.icon }}'></span>&nbsp;
-          {% endif %}
+          {%- endif -%}
           {{ item.number | intword }}
         </h2>
         <p class="leading-relaxed">{{ item.name }}</p>
       </div>
-    {% endfor %}
+    {%- endfor -%}
     </div>
   </div>
 </section>

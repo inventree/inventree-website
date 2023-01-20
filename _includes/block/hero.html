@@ -2,59 +2,59 @@
     <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
       <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
         <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium cm-gray-1">{{ include.title }}
-          {% if include.title_2 %}
+          {%- if include.title_2 -%}
           <br class="hidden lg:inline-block">{{ include.title_2 }}
-          {% endif %}
-          {% if include.color %}
+          {%- endif -%}
+          {%- if include.color -%}
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">{{ include.color }}</span>
-          {% endif %}
+          {%- endif -%}
         </h1>
-        {% if include.detail %}
+        {%- if include.detail -%}
         <p class="mb-8 leading-relaxed">{{ include.detail }}</p>
-        {% endif %}
-        {% if include.buttons %}
+        {%- endif -%}
+        {%- if include.buttons -%}
         <div class="flex-wrap justify-center">
-          {% for item in include.buttons %}
-          <button class="{% if  forloop.index != 0 %}ml-4{% endif %} mb-4 {% if item.primary %}cm-hvr-btn-primary{% else%}cm-hvr-btn{% endif %} inline-flex border-0 py-2 px-6 focus:outline-none text-lg">
-            {% if item.link %}<a href="{% include fnc/link.html item=item.link %}">{% endif %}{{item.text}}{% if item.link %}</a>{% endif %}
+          {%- for item in include.buttons -%}
+          <button class="{%- if  forloop.index != 0 -%}ml-4{%- endif -%} mb-4 {%- if item.primary -%}cm-hvr-btn-primary{%- else%}cm-hvr-btn{%- endif -%} inline-flex border-0 py-2 px-6 focus:outline-none text-lg">
+            {%- if item.link -%}<a href="{%- include fnc/link.html item=item.link -%}">{%- endif -%}{{item.text}}{%- if item.link -%}</a>{%- endif -%}
           </button>
-          {% endfor %}
+          {%- endfor -%}
         </div>
-        {% endif %}
+        {%- endif -%}
       </div>
       <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
-        {% if include.image %}
+        {%- if include.image -%}
         <img class="object-cover object-center rounded" alt="hero" src="{{ include.image }}">
-        {% endif %}
-        {% if include.gallery %}
+        {%- endif -%}
+        {%- if include.gallery -%}
         <section id='image-carousel' class='splide'>
           <div class='splide__track'>
               <ul class='splide__list' style='list-style-type: none; list-style: none;'>
-              {% for image in site.static_files %}
-                  {% if image.path contains include.gallery %}
+              {%- for image in site.static_files -%}
+                  {%- if image.path contains include.gallery -%}
                   <li class='splide__slide'>
                       <img src="{{ image.path | relative_url }}" alt="" />
                   </li>
-                  {% endif %}
-              {% endfor %}
+                  {%- endif -%}
+              {%- endfor -%}
               </ul>
           </div>
       </section>
-      {% endif %}
+      {%- endif -%}
       </div>
     </div>
 </section>
 
-{% if include.gallery %}
+{%- if include.gallery -%}
 <script>
   document.addEventListener( 'DOMContentLoaded', function () {
       new Splide('#image-carousel', {
           type: 'loop',
           perMove: 1,
-          perPage: {% if include.perPage %}{{ include.perPage }}{% else %}1{% endif %},
+          perPage: {%- if include.perPage -%}{{ include.perPage }}{%- else -%}1{%- endif -%},
           autoPlay: true,
           pagination: false,
       }).mount();
   });
   </script>
-{% endif %}
+{%- endif -%}

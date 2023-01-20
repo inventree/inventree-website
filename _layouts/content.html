@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<article{% if layout.fullwith %} class="max-w-p90"{% endif %}>
-    {% if layout.notitle != true %}
+<article{%- if layout.fullwith -%} class="max-w-p90"{%- endif -%}>
+    {%- if layout.notitle != true -%}
     <h2>{{ page.title }}</h2>
-    {% endif %}
+    {%- endif -%}
     {{ content }}
 </article>

@@ -11,8 +11,8 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>{{ site.title }}{% if page.title %} - {{ page.title }}{% endif %}</title>
+<title>{{ site.title }}{%- if page.title -%} - {{ page.title }}{%- endif -%}</title>
 <meta itemprop="description" name="description"
-    content="{% if page.description %}{{ page.description | truncate: 160 }}{% else %}{{ site.description | truncate: 160  }}{% endif %}" />
+    content="{%- if page.description -%}{{ page.description | truncate: 160 }}{%- else -%}{{ site.description | truncate: 160  }}{%- endif -%}" />
 
-{% seo %}
+{%- seo -%}

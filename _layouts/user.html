@@ -2,7 +2,7 @@
 layout: default
 ---
 
-{% include block/hero.html
+{%- include block/hero.html
     title=site.tagline
     title_2=page.title_2
     image='https://dummyimage.com/860x600'
@@ -11,9 +11,9 @@ layout: default
     buttons=page.buttons
 %}
 
-{% assign data = site.data[page.data] %}
-{% include block/features.html data=data extend=true %}
+{%- assign data = site.data[page.data] -%}
+{%- include block/features.html data=data extend=true -%}
 
-{% include block/cta.html cta=site.data.ctas.learn %}
-{% include block/functions.html data=site.data.functions.general extend=true %}
-{% include block/cta.html cta=site.data.ctas.end %}
+{%- include block/cta.html cta=site.data.ctas.learn -%}
+{%- include block/functions.html data=site.data.functions.general extend=true -%}
+{%- include block/cta.html cta=site.data.ctas.end -%}

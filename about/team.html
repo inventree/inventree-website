@@ -14,16 +14,16 @@ title: Team
 
 <h3>Active Team</h3>
 
-{% for item in site.data.team.team %}
+{%- for item in site.data.team.team -%}
     <h4>{{ item.tag }}</h4>
     <p>{{ item.text }}
         <span class="inline-flex">
-        {% for link in item.links %}
+        {%- for link in item.links -%}
             <a href="{{ link.link }}" alt="learn more">{{ link.text }}</a>
-        {% endfor %}
+        {%- endfor -%}
         </span>
     </p>
-{% endfor %}
+{%- endfor -%}
 
 <h3>Contributors</h3>
 <p>ToDo / Looking for suggestions.</p>

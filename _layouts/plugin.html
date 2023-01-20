@@ -4,7 +4,7 @@ notitle: true
 fullwith: true
 ---
 <h2>{{ page.name }}
-<span class="sm:ml-2 text-sm">{% include partial/publisher_ref.html pub=page.publisher %}</span>
+<span class="sm:ml-2 text-sm">{%- include partial/publisher_ref.html pub=page.publisher -%}</span>
 </h2>
 
 <div class="md:flex md:flex-row flex-wrap">
@@ -25,18 +25,18 @@ fullwith: true
         <div>
           <h4 class="fst-italic">Categories</h4>
           <ol class="list-unstyled">
-            {% for categorie in page.categories %}
+            {%- for categorie in page.categories -%}
             <li><a href="/categories/#{{ categorie | slugify }}"><span class="badge bg-yellow-500">{{ categorie }}</span></a></li>
-            {% endfor %}
+            {%- endfor -%}
           </ol>
         </div>
 
         <div>
           <h4 class="fst-italic">Tags</h4>
           <ol class="list-unstyled">
-            {% for tag in page.tags %}
+            {%- for tag in page.tags -%}
             <li><a href="/tags/#{{ tag | slugify }}"><span class="badge bg-blue-400">{{ tag }}</span></a></li>
-            {% endfor %}
+            {%- endfor -%}
           </ol>
         </div>
 

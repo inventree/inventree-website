@@ -3,7 +3,7 @@ layout: default
 title: InvenTree Mobile App
 ---
 
-{% include block/hero.html title='Mobile stock control' title_2='in the' color='palm of your hand' gallery='appgallery/' perPage=3 detail='The InvenTree Mobile App brings stock control to your pocket. Integrating seamlessly with the InvenTree API, the app provides immediate access to inventory data wherever you are.' %}
+{%- include block/hero.html title='Mobile stock control' title_2='in the' color='palm of your hand' gallery='appgallery/' perPage=3 detail='The InvenTree Mobile App brings stock control to your pocket. Integrating seamlessly with the InvenTree API, the app provides immediate access to inventory data wherever you are.' -%}
 
 <article class="cm-gray-2 body-font section-container" markdown="1">
 

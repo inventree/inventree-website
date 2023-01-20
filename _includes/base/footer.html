@@ -9,19 +9,19 @@
     </div>
 
     <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
-    {% assign footer  = footer|default: site.data.general.footer %}
-    {% for cat in footer %}
+    {%- assign footer  = footer|default: site.data.general.footer -%}
+    {%- for cat in footer -%}
       <div class="md:w-1/4 px-4">
         <h2 class="footer-categorie title-font">
-          {% if cat.link %}<a href="{% include fnc/link.html item=cat.link %}">{% endif %}{{cat.title}}{% if cat.link %}</a>{% endif %}
+          {%- if cat.link -%}<a href="{%- include fnc/link.html item=cat.link -%}">{%- endif -%}{{cat.title}}{%- if cat.link -%}</a>{%- endif -%}
         </h2>
         <nav class="list-none mb-10"><ul>
-          {% for item in cat.cats %}
-          <li><a href="{% include fnc/link.html item=item%}" class="footer-link">{{ item.name }}</a></li>
-          {% endfor %}
+          {%- for item in cat.cats -%}
+          <li><a href="{%- include fnc/link.html item=item%}" class="footer-link">{{ item.name }}</a></li>
+          {%- endfor -%}
         </ul></nav>
       </div>
-    {% endfor %}
+    {%- endfor -%}
     </div>
   </div>
 

@@ -1,17 +1,17 @@
 <section class="cm-gray-2 body-font">
-  {% unless include.no_container %}
+  {%- unless include.no_container -%}
     <div class="section-container">
-  {% endunless %}
+  {%- endunless -%}
       <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
         <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font cm-gray-1">{{ include.cta.text|default:include.text }}</h1>
-        {% for item in include.cta.btn %}
-        <a href="{% include fnc/link.html item=item.link %}" class="text-white bg-secondary focus:outline-none hover:bg-primary text-lg rounded flex-shrink-0 border-0 py-2 px-4 mt-10 sm:mt-0 ml-4">{{ item.text }}</a>
-        {% endfor %}
-        {% if include.link %}
-        <a href="{% include fnc/link.html item=include.link %}" class="flex-shrink-0 text-white bg-secondary border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg mt-10 sm:mt-0">{{ include.link_text }}</a>
-        {% endif %}
+        {%- for item in include.cta.btn -%}
+        <a href="{%- include fnc/link.html item=item.link -%}" class="text-white bg-secondary focus:outline-none hover:bg-primary text-lg rounded flex-shrink-0 border-0 py-2 px-4 mt-10 sm:mt-0 ml-4">{{ item.text }}</a>
+        {%- endfor -%}
+        {%- if include.link -%}
+        <a href="{%- include fnc/link.html item=include.link -%}" class="flex-shrink-0 text-white bg-secondary border-0 py-2 px-8 focus:outline-none hover:bg-primary rounded text-lg mt-10 sm:mt-0">{{ include.link_text }}</a>
+        {%- endif -%}
       </div>
-  {% unless include.no_container %}
+  {%- unless include.no_container -%}
     </div>
-  {% endunless %}
+  {%- endunless -%}
 </section>

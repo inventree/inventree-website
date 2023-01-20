@@ -6,17 +6,17 @@ layout: default
       <h1 class="header-text title-font mb-4 cm-gray-2 flex items-end">{{ page.title_text }}<a href="{{ page.permalink|append:'/feed.atom' }}" alr="Atom feed" class="ml-3 cm-gray-3"><img class="h-5 w-5" src="{{ '/assets/rss.svg' | relative_url }}" /></a></h1>
       <div class="flex flex-wrap">
 
-      {% assign cols = site[page.collection] %}
-      {% if page.collection_reverse == true %}{% assign cols = cols | reverse %}{% endif %}
-      {% for item in cols %}
+      {%- assign cols = site[page.collection] -%}
+      {%- if page.collection_reverse == true -%}{%- assign cols = cols | reverse -%}{%- endif -%}
+      {%- for item in cols -%}
         <div class="p-6 md:w-1/2 flex flex-col items-start">
           <h2 class="header-text title-font mb-4 cm-gray-1">
             <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
           </h2>
           <span class="leading-relaxed mb-4">{{ item.excerpt | strip_html | strip_newlines | truncate: 156  }}</span>
-          <span>{{ item.date | date_to_string }} | {% include partial/publisher_link.html pub=item.author %}</span>
+          <span>{{ item.date | date_to_string }} | {%- include partial/publisher_link.html pub=item.author -%}</span>
         </div>
-      {% endfor %}
+      {%- endfor -%}
       </div>
     </div>
   </section>
