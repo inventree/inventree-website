@@ -25,20 +25,20 @@ fullwith: true
 
         <div>
           <h4 class="fst-italic">Categories</h4>
-          <ol class="list-unstyled">
+          <ul class="list-unstyled">
             {% for categorie in page.categories %}
             <li><a href="/categories/#{{ categorie | slugify }}"><span class="badge bg-yellow-500">{{ categorie }}</span></a></li>
             {% endfor %}
-          </ol>
+          </ul>
         </div>
 
         <div>
           <h4 class="fst-italic">Tags</h4>
-          <ol class="list-unstyled">
+          <ul class="list-unstyled">
             {% for tag in page.tags %}
             <li><a href="/tags/#{{ tag | slugify }}"><span class="badge bg-blue-400">{{ tag }}</span></a></li>
             {% endfor %}
-          </ol>
+          </ul>
         </div>
 
         <a href="{{ page.website }}" class="no-underline" aria-label="open website">
