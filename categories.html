@@ -1,0 +1,42 @@
+---
+title: Plugins by Category
+---
+
+{% assign all_cats = "" | split: "/" %}
+{% for plugin in site.repo %}
+  {% for cat in plugin.categories %}
+    {% assign preprocessed = cat | strip | downcase %}
+    {% unless preprocessed == "" %}
+      {% assign all_cats = all_cats | push: preprocessed %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign all_cats = all_cats | uniq | sort %}
+
+<i class="fa fa-tag"></i>
+{% for cat in all_cats %}
+  {% unless tag == "" %}
+    <a class="label" href="{{ '/categories/' | prepend: site.baseurl }}#{{ cat | slugify }}">
+      <span class="badge rounded-pill bg-warning">{{ cat }}</span>
+    </a>
+  {% endunless %}
+{% endfor %}
+
+{% for cat in all_cats %}
+{% unless cat == "" %}
+<h2 id="{{ cat | slugify }}">{{ cat }}</h2>
+
+<div>
+  {% for plugin in site.repo %}
+    {% assign plugin_cats = "" | split: "/" %}
+    {% for cat in plugin.categories %}
+      {% assign lower_cat = cat | downcase %}
+      {% assign plugin_cats = plugin_cats | push: lower_cat %}
+    {% endfor %}
+    {% if plugin_cats contains cat %}
+      {% include plugin_card.html plugin=plugin %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% endunless %}
+{% endfor %}

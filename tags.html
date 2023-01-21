@@ -1,0 +1,42 @@
+---
+title: Plugins by Tags
+---
+
+{% assign all_tags = "" | split: "/" %}
+{% for plugin in site.repo %}
+  {% for tag in plugin.tags %}
+    {% assign preprocessed = tag | strip | downcase %}
+    {% unless preprocessed == "" %}
+      {% assign all_tags = all_tags | push: preprocessed %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign all_tags = all_tags | uniq | sort %}
+
+<i class="fa fa-tag"></i>
+{% for tag in all_tags %}
+  {% unless tag == "" %}
+  <a class="label" href="{{ '/tags/' | prepend: site.baseurl }}#{{ tag | slugify }}">
+    <span class="badge rounded-pill bg-info">{{ tag }}</span>
+  </a>
+  {% endunless %}
+{% endfor %}
+
+{% for tag in all_tags %}
+{% unless tag == "" %}
+<h2 id="{{ tag | slugify }}">{{ tag }}</h2>
+
+<div>
+  {% for plugin in site.repo %}
+    {% assign plugin_tags = "" | split: "/" %}
+    {% for tag in plugin.tags %}
+      {% assign lower_tag = tag | downcase %}
+      {% assign plugin_tags = plugin_tags | push: lower_tag %}
+    {% endfor %}
+    {% if plugin_tags contains tag %}
+      {% include plugin_card.html plugin=plugin %}
+    {% endif %}
+  {% endfor %}
+</div>
+{% endunless %}
+{% endfor %}
