@@ -10,7 +10,11 @@ permalink: /repo
     InvenTree is a modular application and can be extended with plugins. This list is a collection of plugins that have been developed by the community.
     Beeing on this list does not mean that the plugin is officially supported by the InvenTree core team. We also do not check for security, privacy or performance issues or compatibility with the latest InvenTree version.
   </p>
+  <div class="flex flex-wrap">
       {% for plugin in site.repo %}
+      <div class="space-4 p-2 md:w-1/2">
         {% include plugin_card.html plugin=plugin %}
+      </div>
       {% endfor %}
+  </div>
 </div>
