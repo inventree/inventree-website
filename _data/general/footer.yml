@@ -8,6 +8,8 @@
     site: doc-link
   - name: News
     internal: news.html
+  - name: Plugin Repo
+    internal: repo.html
 
 - title: Ecosystem
   link:
