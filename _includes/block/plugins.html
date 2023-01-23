@@ -1,0 +1,19 @@
+<section class="cm-gray-2 body-font">
+    <div class="section-container">
+        <div class="flex flex-col text-center w-full mb-5">
+            <h1 class="text-2xl font-medium title-font mb-4 cm-gray-1 tracking-widest">Plugin Repository</h1>
+            <p>
+                Explore plugins provided by the community.
+                <a class="text-secondary inline-flex items-center" href="{% link repo.html %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+            </p>
+        </div>
+        <div class="flex flex-wrap -m-4">
+            {% assign filtered_repo = site.repo | sort: 'last-modified-date' | reverse %}
+            {% for plugin in filtered_repo limit:2 %}
+            <div class="space-4 p-2 md:w-1/2">
+                {% include plugin_card.html plugin=plugin %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
