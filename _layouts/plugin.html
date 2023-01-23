@@ -16,12 +16,31 @@ fullwith: true
       <h2 class="block sm:hidden">Link section</h2>
       <div>
 
-        <a href="{{ page.github }}" class="no-underline" aria-label="open github repo">
+        {% if page.github %}
+        <a href="{{ page.github }}" class="no-underline" aria-label="open source on GitHub">
         <div>
-          <h4 class="fst-italic">Github</h4>
+          <h4 class="fst-italic">Sourcecode on GitHub</h4>
           <p>{{ page.github | remove: "https://github.com/" }}</p>
         </div>
         </a>
+        {% endif %}
+        {% if page.gitlab %}
+        <a href="{{ page.gitlab }}" class="no-underline" aria-label="open source on Gitlab">
+        <div>
+          <h4 class="fst-italic">Sourcecode on Gitlab</h4>
+          <p>{{ page.gitlab | remove: "https://gitlab.com/" }}</p>
+        </div>
+        </a>
+        {% endif %}
+
+        {% if page.source %}
+        <a href="{{ page.source }}" class="no-underline" aria-label="open source on SCM">
+        <div>
+          <h4 class="fst-italic">Sourcecode on SCM</h4>
+          <p>{{ page.source }}</p>
+        </div>
+        </a>
+        {% endif %}
 
         <div>
           <h4 class="fst-italic">Categories</h4>
