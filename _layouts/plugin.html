@@ -16,12 +16,14 @@ fullwith: true
     <div class="w-full md:w-1/4">
       <h2 class="block sm:hidden">Detail section</h2>
       <div>
-        <p>License:
+        <p class="mb-0">License:
           {% if page.open_source %}<i class="fa-brands fa-osi"></i>{% else %}<i class="fa-solid fa-lock"></i>{% endif %}
           {{ page.license }}<br>
           Status:
           {% if page.stable %}<i class="fa-regular fa-circle-check"></i> Stable{% else %}<i class="fa-solid fa-triangle-exclamation"></i> Unstable{% endif %}
           {% if page.maintained %}<i class="fa-regular fa-circle-check"></i> Maintained{% else %}<i class="fa-solid fa-circle-exclamation"></i> Unmaintained{% endif %}
+
+          {% if page.pypi and page.package_name %}Package on PyPI:<pre class="my-0">{{ page.package_name }}</pre>{% endif %}
         </p>
 
         {% if page.issue_tracker %}
