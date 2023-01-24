@@ -27,7 +27,7 @@ fullwith: true
         {% if page.issue_tracker %}
         <a href="{{ page.issue_tracker }}" class="no-underline" aria-label="open the issue tracker">
         <div>
-          <h4 class="fst-italic">Issue Tracker</h4>
+          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
         </div>
         </a>
         {% endif %}
@@ -35,31 +35,31 @@ fullwith: true
         {% if page.github %}
         <a href="{{ page.github }}" class="no-underline" aria-label="open source on GitHub">
         <div>
-          <h4 class="fst-italic">Sourcecode on GitHub</h4>
-          <p>{{ page.github | remove: "https://github.com/" }}</p>
+          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.github | remove: "https://github.com/" }}</p>
         </div>
         </a>
         {% endif %}
         {% if page.gitlab %}
         <a href="{{ page.gitlab }}" class="no-underline" aria-label="open source on Gitlab">
         <div>
-          <h4 class="fst-italic">Sourcecode on Gitlab</h4>
-          <p>{{ page.gitlab | remove: "https://gitlab.com/" }}</p>
+          <h4 class="plugin_links">Sourcecode on Gitlab <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.gitlab | remove: "https://gitlab.com/" }}</p>
         </div>
         </a>
         {% endif %}
         {% if page.source %}
         <a href="{{ page.source }}" class="no-underline" aria-label="open source on SCM">
         <div>
-          <h4 class="fst-italic">Sourcecode on SCM</h4>
-          <p>{{ page.source }}</p>
+          <h4 class="plugin_links">Sourcecode on SCM <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.source }}</p>
         </div>
         </a>
         {% endif %}
 
         <div>
-          <h4 class="fst-italic">Categories</h4>
-          <ul class="list-unstyled">
+          <h4 class="plugin_links">Categories</h4>
+          <ul class="list-unstyled font-normal">
             {% for categorie in page.categories %}
             <li><a href="/categories/#{{ categorie | slugify }}"><span class="badge bg-yellow-500">{{ categorie }}</span></a></li>
             {% endfor %}
@@ -67,8 +67,8 @@ fullwith: true
         </div>
 
         <div>
-          <h4 class="fst-italic">Tags</h4>
-          <ul class="list-unstyled">
+          <h4 class="plugin_links">Tags</h4>
+          <ul class="list-unstyled font-normal">
             {% for tag in page.tags %}
             <li><a href="/tags/#{{ tag | slugify }}"><span class="badge bg-blue-400">{{ tag }}</span></a></li>
             {% endfor %}
@@ -77,8 +77,8 @@ fullwith: true
 
         <a href="{{ page.website }}" class="no-underline" aria-label="open website">
         <div>
-          <h4 class="fst-italic">Website</h4>
-          <p>{{ page.website }}</p>
+          <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.website }}</p>
         </div>
         </a>
 

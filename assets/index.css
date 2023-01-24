@@ -87,4 +87,8 @@ layout: empty
         display: block;
         text-align: center;
     }
+
+    .plugin_links {
+        @apply mb-0 italic
+    }
 }
