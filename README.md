@@ -25,11 +25,14 @@ Please note that the plugin repository is moderated as we see fit and we reserve
 As a maintainer of a plugin we count on you to keep the information up to date. If you want to update the information, please create a pull request.
 The plugin repository is just getting started as a static collection, we might enhance the features in the future. If we need more information or make significant changes to the repository, we will ping the maintainers via their GitHub handle - so please keep your main GitHub handle up to date in your publisher file.
 
-## Architecture
+## Architecture and development
 
-The website consists of content, layouts and assets. Jekyll runs and builds out of these files static html files - that are then hosted on GitHub pages. Folders with an underscore prefixed are internal folders for Jekyll, folders without are rendered as subdirectories in the output.
+The website consists of content, layouts and assets. Jekyll runs and builds out of these files static html files - that are then hosted on GitHub pages.
 
-Content:
+### Folders and files
+Folders with an underscore prefixed are internal folders for Jekyll, folders without are rendered as subdirectories in the output.
+
+Structure:
 `_data` contains data that is references on pages  
 `_drafts` contains drafts for blog pages and news items  
 `_news` contains news entries  
@@ -48,9 +51,16 @@ The site configuration is saved in `config.yaml`, required gems in `Gemfile` and
 
 The CSS stylesheet uses tailwindcss and is built with postcss on demand. NodeJs is needed for this. The main css file is located in `assets/index.css`. Rebuilds are handled by the workflows automatically.
 
-## Common commands
+### Preview builds
+
+Once a PR is created, a preview build is created on Netlify. The preview build is available at `https://<pr-number>-inventree-org-preview.netlify.app/`. The preview build is automatically updated when the PR is updated.
+A bot will comment on the PR with the link to the preview build.
+
+
+### Common commands for local development
 Install packages for ruby and nodejs.
-```
+
+```bash
 sudo apt-get install rubygems ruby-dev nodejs npm
 npm install
 sudo gem install bundler
@@ -58,16 +68,13 @@ bundle install
 ```
 
 Build site locally
-```
+
+```bash
 bundle exec jekyll build
 ```
 
-Run debug server
-```
-bundle exec jekyll serve --incremental
-```
+Run debug server that automatically updates. This does not recompile the tailwindcss stylesheet. If you change something in the css file, you neet to build the site fully with the command above.
 
-Regenerate file structure
-```
-tree -I '_site|.git|.jekyll-cache|node_modules' --dirsfirst
+```bash
+bundle exec jekyll serve --incremental
 ```
