@@ -14,8 +14,23 @@ fullwith: true
     </div>
 
     <div class="w-full md:w-1/4">
-      <h2 class="block sm:hidden">Link section</h2>
+      <h2 class="block sm:hidden">Detail section</h2>
       <div>
+        <p>License:
+          {% if page.open_source %}<i class="fa-brands fa-osi"></i>{% else %}<i class="fa-solid fa-lock"></i>{% endif %}
+          {{ page.license }}<br>
+          Status:
+          {% if page.stable %}<i class="fa-regular fa-circle-check"></i> Stable{% else %}<i class="fa-solid fa-triangle-exclamation"></i> Unstable{% endif %}
+          {% if page.maintained %}<i class="fa-regular fa-circle-check"></i> Maintained{% else %}<i class="fa-solid fa-circle-exclamation"></i> Unmaintained{% endif %}
+        </p>
+
+        {% if page.issue_tracker %}
+        <a href="{{ page.issue_tracker }}" class="no-underline" aria-label="open the issue tracker">
+        <div>
+          <h4 class="fst-italic">Issue Tracker</h4>
+        </div>
+        </a>
+        {% endif %}
 
         {% if page.github %}
         <a href="{{ page.github }}" class="no-underline" aria-label="open source on GitHub">
@@ -33,7 +48,6 @@ fullwith: true
         </div>
         </a>
         {% endif %}
-
         {% if page.source %}
         <a href="{{ page.source }}" class="no-underline" aria-label="open source on SCM">
         <div>
