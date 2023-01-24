@@ -23,8 +23,6 @@ tags:
     - Twilio
     - 
 ---
-# inventree-apprise
-
 Send notifications from InvenTree via Apprise
 
 ## Setup
