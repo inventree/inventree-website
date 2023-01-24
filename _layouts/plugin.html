@@ -26,6 +26,13 @@ fullwith: true
           {% if page.pypi and page.package_name %}Package on PyPI:<pre class="my-0">{{ page.package_name }}</pre>{% endif %}
         </p>
 
+        <a href="{{ page.website }}" class="no-underline" aria-label="open website">
+          <div>
+            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+            <p class="font-normal">{{ page.website }}</p>
+          </div>
+        </a>
+
         {% if page.issue_tracker %}
         <a href="{{ page.issue_tracker }}" class="no-underline" aria-label="open the issue tracker">
         <div>
@@ -76,14 +83,6 @@ fullwith: true
             {% endfor %}
           </ul>
         </div>
-
-        <a href="{{ page.website }}" class="no-underline" aria-label="open website">
-        <div>
-          <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
-          <p class="font-normal">{{ page.website }}</p>
-        </div>
-        </a>
-
       </div>
     </div>
 </div>
