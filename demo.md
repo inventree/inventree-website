@@ -2,7 +2,7 @@
 title: InvenTree Demo
 ---
 
-Want to take InvenTree for a spin? A working demo of InvenTree is available online at **[https://demo.inventree.org](https://demo.inventree.org)**
+Want to take InvenTree for a spin? A working demo of InvenTree is available online at <a href="https://demo.inventree.org" class="umami--click--demo">https://demo.inventree.org</a>
 
 ### Login Details
 
@@ -10,10 +10,10 @@ Multiple default accounts are provided, as detailed below. Each account is affor
 
 | Username | Password | Description | Login |
 | --- | --- | --- | --- |
-| allaccess | nolimits | View / create / edit all pages and items | [log in](https://demo.inventree.org/accounts/login/?login=allaccess&password=nolimits) |
-| reader | readonly | Can view all pages but cannot create, edit or delete database records | [log in](https://demo.inventree.org/accounts/login/?login=reader&password=readonly) |
-| engineer | partsonly | Can manage parts, view stock, but no access to purchase orders or sales orders | [log in](https://demo.inventree.org/accounts/login/?login=engineer&password=partsonly) |
-| admin | inventree | Superuser account, access all areas plus administrator actions | [log in](https://demo.inventree.org/accounts/login/?login=admin&password=inventree) |
+| allaccess | nolimits | View / create / edit all pages and items | <a href="https://demo.inventree.org/accounts/login/?login=allaccess&password=nolimits" class="umami--click--demo-allaccess">log in</a> |
+| reader | readonly | Can view all pages but cannot create, edit or delete database records | <a href="https://demo.inventree.org/accounts/login/?login=reader&password=readonly" class="umami--click--demo-reader">log in</a> |
+| engineer | partsonly | Can manage parts, view stock, but no access to purchase orders or sales orders | <a href="https://demo.inventree.org/accounts/login/?login=engineer&password=partsonly" class="umami--click--demo-engineer">log in</a> |
+| admin | inventree | Superuser account, access all areas plus administrator actions | <a href="https://demo.inventree.org/accounts/login/?login=admin&password=inventree" class="umami--click--demo-admin">log in</a> |
 
 ### Data Persistence
 
