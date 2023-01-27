@@ -14,7 +14,7 @@ deploy-link:
 blog-link:
   internal: blog.html
 plugin-link: 
-  internal: repo.html
+  internal: plugins.html
 contribute-link:
   internal: contribute.md
 

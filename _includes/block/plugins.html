@@ -4,7 +4,7 @@
             <h1 class="text-2xl font-medium title-font mb-4 cm-gray-1 tracking-widest">Plugin Repository</h1>
             <p>
                 Explore plugins provided by the community.
-                <a class="text-secondary inline-flex items-center" href="{% link repo.html %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
+                <a class="text-secondary inline-flex items-center" href="{% include fnc/link.html item=site.plugin-link %}" alt="learn more">Learn More <img class="w-4 h-4 ml-2" alt="Arrow pointing right" src="{{ '/assets/learn.svg' | relative_url }}" /></a>
             </p>
         </div>
         <div class="flex flex-wrap -m-4">

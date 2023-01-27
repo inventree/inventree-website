@@ -16,4 +16,4 @@ Add *native printing capabilities* for your network connected printers to the we
 
 You can find all tagged plugins on [PyPi](https://pypi.org/search/?q=inventree-plugin) and [GitHub](https://github.com/topics/inventreeplugins).
 
-We also offer a [plugin repo](../../repo.html) with a community driven list of plugins. We encourage you to add your own plugins.
+We also offer a [plugin repo](../../plugins.html) with a community driven list of plugins. We encourage you to add your own plugins.
