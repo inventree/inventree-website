@@ -33,8 +33,7 @@ collections:
     permalink: "/:title"
   repo:
     output: true
-    custom_permalink_placeholders: ["publisher"]
-    #permalink: "/:publisher/:title"
+    permalink: ":author/:title"
   news:
     output: true
     permalink: /news/:year/:month/:day/:title
