@@ -1,8 +1,8 @@
 module Jekyll
     module Drops
       class UrlDrop < Drop
-        def author
-          @obj.author
+        def doc_author
+          @obj.data['author']
         end
       end
     end

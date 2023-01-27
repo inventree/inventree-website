@@ -33,7 +33,7 @@ collections:
     permalink: "/:title"
   repo:
     output: true
-    permalink: ":author/:title"
+    permalink: ":doc_author/:title"
   news:
     output: true
     permalink: /news/:year/:month/:day/:title
