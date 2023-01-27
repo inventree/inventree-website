@@ -19,10 +19,11 @@ fullwith: true
         <p class="mb-0">License:
           {% if page.open_source %}<i class="fa-brands fa-osi"></i>{% else %}<i class="fa-solid fa-lock"></i>{% endif %}
           {{ page.license }}<br>
-          Status:
-          {% if page.stable %}<i class="fa-regular fa-circle-check"></i> Stable{% else %}<i class="fa-solid fa-triangle-exclamation"></i> Unstable{% endif %}
-          {% if page.maintained %}<i class="fa-regular fa-circle-check"></i> Maintained{% else %}<i class="fa-solid fa-circle-exclamation"></i> Unmaintained{% endif %}
-
+          <div class="flex flex-wrap">
+            Status:
+            <div>{% if page.stable %}<i class="fa-regular fa-circle-check"></i>Stable{% else %}<i class="fa-solid fa-triangle-exclamation"></i> Unstable{% endif %}</div>
+            <div>{% if page.maintained %}<i class="fa-regular fa-circle-check"></i>Maintained{% else %}<i class="fa-solid fa-circle-exclamation"></i> Unmaintained{% endif %}</div>
+          </div>
           {% if page.pypi and page.package_name %}Package on PyPI:<pre class="my-0">{{ page.package_name }}</pre>{% endif %}
         </p>
 
