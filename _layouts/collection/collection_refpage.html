@@ -24,7 +24,8 @@ layout: content
 
 {% for item in all_items %}
     {% unless item == "" %}
-    <h2 id="{{ item | slugify }}">{{ item }}</h2>
+    <div id="{{ item | slugify }}" class="anchor"></div>
+    <h2>{{ item }}</h2>
 
     <div>
       {% for plugin in site[page.collection] %}

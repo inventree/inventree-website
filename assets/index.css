@@ -99,4 +99,11 @@ layout: empty
     .plugin_links {
         @apply mb-0 italic
     }
+
+    .anchor {
+        display: block;
+        position: relative;
+        top: -4.5rem;
+        visibility: hidden;
+    }
 }
