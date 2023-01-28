@@ -13,6 +13,8 @@ layout: content
 {% endfor %}
 {% assign all_items = all_items | uniq | sort %}
 
+<p>The full list of plugins is available on the main <a href="{% link plugins.html %}">plugin list</a> page.</p>
+<p class="mb-0 italic">Click on a name to jump to the plugins that are marked with it.</p>
 <i class="fa fa-tag"></i>
 {% for item in all_items %}
   {% unless tag == "" %}
