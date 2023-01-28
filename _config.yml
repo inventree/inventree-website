@@ -13,10 +13,6 @@ deploy-link:
   internal: deploy.md
 blog-link:
   internal: blog.html
-plugin-link: 
-  internal: plugins.html
-contribute-link:
-  internal: contribute.md
 
 # Hosting parameters
 baseurl: ""
