@@ -14,7 +14,7 @@
         {% if plugin.published_on %}{{ plugin.published_on | date_to_string }} - {% endif %}
         {% include partial/publisher_ref.html pub=plugin.author %}
       </div>
-      <p class="mb-auto">{{ plugin.excerpt | mardownify | remove: '<p>' | remove: '</p>' }}</p>
+      <p class="my-0">{{ plugin.excerpt | mardownify | remove: '<p>' | remove: '</p>' }}</p>
     </div>
   </div>
 </a>
