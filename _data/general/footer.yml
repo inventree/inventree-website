@@ -9,7 +9,7 @@
   - name: News
     internal: news.html
   - name: Plugin Repo
-    site: plugin-link
+    internal: plugins.html
 
 - title: Ecosystem
   link:
