@@ -8,7 +8,7 @@
     site: doc-link
   - name: News
     internal: news.html
-  - name: Plugin Repo
+  - name: Plugin List
     internal: plugins.html
 
 - title: Ecosystem
