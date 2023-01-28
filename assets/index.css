@@ -59,6 +59,12 @@ layout: empty
         visibility: hidden;
     }
 
+    .content a {
+        color:#111827;
+        font-weight:500;
+        text-decoration:underline;
+    }
+
     .color-link {
         @apply text-secondary
     }
