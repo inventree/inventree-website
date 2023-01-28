@@ -17,7 +17,7 @@ layout: default
 {% endfor %}
 {% assign all_items = all_items | uniq | sort %}
 
-<p>The full list of plugins is available on the main <a href="{% link plugins.html %}">plugin list</a> page.</p>
+<p>The full list of plugins is available on the main <a href="{% link plugins.html %}">plugin list</a> page.</p><br>
 <p class="mb-0 italic">Click on a name to jump to the plugins that are marked with it.</p>
 <i class="fa fa-tag"></i>
 {% for item in all_items %}
@@ -28,11 +28,12 @@ layout: default
   {% endunless %}
 {% endfor %}
   </span>
+  <br><br>
 
 {% for item in all_items %}
     {% unless item == "" %}
     <div id="{{ item | slugify }}" class="anchor"></div>
-    <h2>{{ item }}</h2>
+    <h2 class="text-lg sm:text-xl cm-gray-1 font-medium title-font mb-2">{{ item }}</h2>
 
     <div>
       {% for plugin in site[page.collection] %}
