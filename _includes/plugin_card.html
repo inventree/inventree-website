@@ -3,10 +3,10 @@
     <div class="col p-4 d-flex flex-column position-static">
       <div class="d-inline-block">
         {% for cat in plugin.categories %}
-        <span class="badge bg-yellow-500">{{ cat }}</span>
+        <span class="badge bg-yellow-500 whitespace-nowrap">{{ cat }}</span>
         {% endfor %}
         {% for tag in plugin.tags %}
-        <span class="badge bg-blue-400">{{ tag }}</span>
+        <span class="badge bg-blue-400 whitespace-nowrap">{{ tag }}</span>
         {% endfor %}
       </div>
       <h3 class="my-0">{{ plugin.name }}</h3>
