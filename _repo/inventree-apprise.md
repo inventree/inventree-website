@@ -1,5 +1,5 @@
 ---
-name: inventree-apprise
+name: InvenTree Apprise
 author: matmair
 license: MIT
 open_source: true
