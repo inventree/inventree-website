@@ -71,7 +71,7 @@ fullwith: true
           <h4 class="plugin_links">Categories</h4>
           <div>
             {% for categorie in page.categories %}
-            <a href="/categories/#{{ categorie | slugify }}"><span class="badge bg-yellow-500 whitespace-nowrap">{{ categorie }}</span></a>
+            <a href="/categories/#{{ categorie | slugify }}"><span class="plugin_cat">{{ categorie }}</span></a>
             {% endfor %}
           </div>
         </div>
@@ -80,7 +80,7 @@ fullwith: true
           <h4 class="plugin_links">Tags</h4>
           <div>
             {% for tag in page.tags %}
-            <a href="/tags/#{{ tag | slugify }}"><span class="badge bg-blue-400 whitespace-nowrap">{{ tag }}</span></a>
+            <a href="/tags/#{{ tag | slugify }}"><span class="plugin_tag">{{ tag }}</span></a>
             {% endfor %}
           </div>
         </div>

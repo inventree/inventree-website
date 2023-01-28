@@ -79,6 +79,14 @@ layout: empty
         @apply list-none
     }
 
+    .plugin_cat {
+        @apply badge bg-yellow-500 whitespace-nowrap
+    }
+
+    .plugin_tag {
+        @apply badge bg-blue-400 whitespace-nowrap
+    }
+
     .max-w-p90 {
         max-width: 90%
     }
