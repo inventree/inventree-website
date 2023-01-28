@@ -35,7 +35,7 @@ layout: default
     <div id="{{ item | slugify }}" class="anchor"></div>
     <h2 class="text-lg sm:text-xl cm-gray-1 font-medium title-font mb-2">{{ item }}</h2>
 
-    <div>
+    <div class="flex flex-wrap">
       {% for plugin in site[page.collection] %}
         {% assign col_items = "" | split: "/" %}
         {% for item in plugin[page.reference] %}
@@ -43,7 +43,7 @@ layout: default
           {% assign col_items = col_items | push: lower_item %}
         {% endfor %}
         {% if col_items contains item %}
-          {% include plugin_card.html plugin=plugin %}
+          <div class="space-4 p-2 md:w-1/2">{% include plugin_card.html plugin=plugin %}</div>
         {% endif %}
       {% endfor %}
     </div>
