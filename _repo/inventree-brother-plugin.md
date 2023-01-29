@@ -1,6 +1,6 @@
 ---
-name: Brother label printer plugin for InvenTree
-author: oliver.henry.walters@gmail.com
+name: inventree-brother-plugin
+author: schrodingersgat
 license: MIT
 open_source: true
 stable: False
@@ -15,6 +15,8 @@ website:
 categories:
 tags: inventree label printer printing inventory
 ---
+Brother label printer plugin for InvenTree
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![PEP](https://github.com/inventree/inventree-python/actions/workflows/pep.yaml/badge.svg)
 
