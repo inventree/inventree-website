@@ -8,6 +8,7 @@ inp_author = os.environ.get('AUTHOR')
 file_name = Path(f'_repo/{inp_project}.md')
 crowdin_projet_id = 452300
 
+print(f'Collecting {inp_project} with {inp_author}...')
 
 def get_data(url, key=None, default=0, auth=None):
   """Fetches data from remote endpoint"""
