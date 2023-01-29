@@ -9,15 +9,13 @@ on:
       author:
         description: Enter the name of the author if you know it
 
-permissions:
-  contents: write
-  pull-requests: write
-
 jobs:
   build:
 
     runs-on: ubuntu-latest
-    permissions: {}
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v2
       - name: Get Plugin file
