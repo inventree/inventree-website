@@ -4,48 +4,86 @@ notitle: true
 fullwith: true
 ---
 <h2>{{ page.name }}
-<span class="sm:ml-2 text-sm">{% include partial/publisher_ref.html pub=page.publisher %}</span>
+<span class="sm:ml-2 text-sm">{% include partial/publisher_ref.html pub=page.author %}</span>
+<span class="sm:ml-2 text-sm">last modified: {{ page.last-modified-date | date_to_string }}</span>
 </h2>
 
-<div class="md:flex md:flex-row flex-wrap">
-    <div class="w-full md:w-3/4">
+<div class="flex-wrap md:flex md:flex-nowrap">
+    <div class="w-full md:w-auto md:mr-4">
         {{ content }}
     </div>
 
     <div class="w-full md:w-1/4">
-      <h2 class="block sm:hidden">Link section</h2>
+      <h2 class="block sm:hidden">Detail section</h2>
       <div>
+        <p class="mb-0">License:
+          {% if page.open_source %}<i class="fa-brands fa-osi"></i>{% else %}<i class="fa-solid fa-lock"></i>{% endif %}
+          {{ page.license }}<br>
+          <div class="flex flex-wrap">
+            Status:
+            <div>{% if page.stable %}<i class="fa-regular fa-circle-check"></i>Stable{% else %}<i class="fa-solid fa-triangle-exclamation"></i> Unstable{% endif %}</div>
+            <div>{% if page.maintained %}<i class="fa-regular fa-circle-check"></i>Maintained{% else %}<i class="fa-solid fa-circle-exclamation"></i> Unmaintained{% endif %}</div>
+          </div>
+          {% if page.pypi and page.package_name %}Package on PyPI:<pre class="my-0">{{ page.package_name }}</pre>{% endif %}
+        </p>
 
+        <a href="{{ page.website }}" class="no-underline" aria-label="open website">
+          <div>
+            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+            <p class="font-normal">{{ page.website }}</p>
+          </div>
+        </a>
+
+        {% if page.issue_tracker %}
+        <a href="{{ page.issue_tracker }}" class="no-underline" aria-label="open the issue tracker">
         <div>
-          <h4 class="fst-italic">Github</h4>
-          <p>{{ page.github | remove: "https://github.com/" }}</p>
-          <a href="{{ page.github }}" class="stretched-link" aria-label="open github repo"></a>
+          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
         </div>
+        </a>
+        {% endif %}
+
+        {% if page.github %}
+        <a href="{{ page.github }}" class="no-underline" aria-label="open source on GitHub">
+        <div>
+          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.github | remove: "https://github.com/" }}</p>
+        </div>
+        </a>
+        {% endif %}
+        {% if page.gitlab %}
+        <a href="{{ page.gitlab }}" class="no-underline" aria-label="open source on Gitlab">
+        <div>
+          <h4 class="plugin_links">Sourcecode on Gitlab <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.gitlab | remove: "https://gitlab.com/" }}</p>
+        </div>
+        </a>
+        {% endif %}
+        {% if page.source %}
+        <a href="{{ page.source }}" class="no-underline" aria-label="open source on SCM">
+        <div>
+          <h4 class="plugin_links">Sourcecode on SCM <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i></h4>
+          <p class="font-normal">{{ page.source }}</p>
+        </div>
+        </a>
+        {% endif %}
 
         <div>
-          <h4 class="fst-italic">Categories</h4>
-          <ol class="list-unstyled">
+          <h4 class="plugin_links">Categories</h4>
+          <div>
             {% for categorie in page.categories %}
-            <li><a href="/categories/#{{ categorie | slugify }}"><span class="badge bg-yellow-500">{{ categorie }}</span></a></li>
+            <a href="{% link categories.html %}#{{ categorie | slugify }}"><span class="plugin_cat">{{ categorie }}</span></a>
             {% endfor %}
-          </ol>
+          </div>
         </div>
 
         <div>
-          <h4 class="fst-italic">Tags</h4>
-          <ol class="list-unstyled">
+          <h4 class="plugin_links">Tags</h4>
+          <div>
             {% for tag in page.tags %}
-            <li><a href="/tags/#{{ tag | slugify }}"><span class="badge bg-blue-400">{{ tag }}</span></a></li>
+            <a href="{% link tags.html %}#{{ tag | slugify }}"><span class="plugin_tag">{{ tag }}</span></a>
             {% endfor %}
-          </ol>
+          </div>
         </div>
-
-        <div>
-          <h4 class="fst-italic">Website</h4>
-          <p>{{ page.website }}</p>
-          <a href="{{ page.website }}" class="stretched-link" aria-label="open website"></a>
-        </div>
-
       </div>
     </div>
 </div>
