@@ -20,8 +20,6 @@ jobs:
     permissions: {}
     steps:
       - uses: actions/checkout@v2
-        with:
-         token: ${{ secrets.BOT_PAT }}
       - name: Get Plugin file
         run: python .github/collect_plugin.py
         env:
