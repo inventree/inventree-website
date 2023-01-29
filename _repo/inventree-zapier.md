@@ -10,19 +10,11 @@ package_name: inventree-zapier
 github: https://github.com/matmair/inventree-zapier
 gitlab:
 source:
-issue_tracker:
-website:
-categories:
-tags: inventree inventree-plugin zapier inventory
+issue_tracker: https://github.com/matmair/inventree-zapier/issues
+website: https://mjmair.com
+categories: Event
+tags: Zapier
 ---
-Zapier plugin for InvenTree
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![PEP](https://github.com/matmair/inventree-zapier/actions/workflows/pep.yaml/badge.svg)
-
-
-# inventree-zapier
-
 Integrate Zapier into InvenTree
 
 ## Setup
