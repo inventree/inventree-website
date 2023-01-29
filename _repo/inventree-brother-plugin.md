@@ -1,4 +1,3 @@
-
 ---
 name: Brother label printer plugin for InvenTree
 author: oliver.henry.walters@gmail.com
