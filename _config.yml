@@ -13,10 +13,6 @@ deploy-link:
   internal: deploy.md
 blog-link:
   internal: blog.html
-plugin-link: 
-  internal: plugins.html
-contribute-link:
-  internal: contribute.md
 
 # Hosting parameters
 baseurl: ""
@@ -33,8 +29,7 @@ collections:
     permalink: "/:title"
   repo:
     output: true
-    custom_permalink_placeholders: ["publisher"]
-    #permalink: "/:publisher/:title"
+    permalink: ":doc_author/:title"
   news:
     output: true
     permalink: /news/:year/:month/:day/:title

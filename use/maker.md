@@ -12,5 +12,5 @@ buttons:
       link: http://example.com
     - text: lorem ipsum
       link:
-        internal: plugins.html
+        site: plugn-link
 ---

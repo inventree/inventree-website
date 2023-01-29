@@ -59,6 +59,12 @@ layout: empty
         visibility: hidden;
     }
 
+    .content a {
+        color:#111827;
+        font-weight:500;
+        text-decoration:underline;
+    }
+
     .color-link {
         @apply text-secondary
     }
@@ -79,6 +85,14 @@ layout: empty
         @apply list-none
     }
 
+    .plugin_cat {
+        @apply badge bg-yellow-500 whitespace-nowrap
+    }
+
+    .plugin_tag {
+        @apply badge bg-blue-400 whitespace-nowrap
+    }
+
     .max-w-p90 {
         max-width: 90%
     }
@@ -86,5 +100,16 @@ layout: empty
     img + em {
         display: block;
         text-align: center;
+    }
+
+    .plugin_links {
+        @apply mb-0 italic
+    }
+
+    .anchor {
+        display: block;
+        position: relative;
+        top: -4.5rem;
+        visibility: hidden;
     }
 }
