@@ -10,8 +10,8 @@ package_name: inventree-brother-plugin
 github: https://github.com/inventree/inventree-brother-plugin
 gitlab:
 source:
-issue_tracker: None
-website: 
+issue_tracker:
+website:
 categories:
 tags: inventree label printer printing inventory
 ---
