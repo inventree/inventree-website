@@ -10,8 +10,8 @@ package_name: inventree-brother-plugin
 github: https://github.com/inventree/inventree-brother-plugin
 gitlab:
 source:
-issue_tracker:
-website:
+issue_tracker: https://github.com/inventree/inventree-brother-plugin/issues
+website: https://inventree.org
 categories: Printer
 tags: Label Printer Brother
 ---
