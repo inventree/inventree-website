@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - Inventree Zebra Plugin</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Inventree Zebra Plugin | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Inventree Zebra Plugin" />
+<meta name="author" content="SergeoLacruz" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Zebra Label Printer Plugin for Inventree" />
+<meta property="og:description" content="Zebra Label Printer Plugin for Inventree" />
+<link rel="canonical" href="/SergeoLacruz/inventree-zebra-plugin" />
+<meta property="og:url" content="/SergeoLacruz/inventree-zebra-plugin" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-29T21:04:57+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Inventree Zebra Plugin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2023-01-29T21:04:57+00:00","datePublished":"2023-01-29T21:04:57+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <article class="max-w-p90">
+    
+    <h2>inventree-zebra-plugin
+<span class="sm:ml-2 text-sm">
+<a href="/SergeoLacruz">
+<span class="inline-flex">by <img src="https://github.com/SergeoLacruz.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px"> SergeoLacruz</span>
+</a></span>
+<span class="sm:ml-2 text-sm">last modified: 29 Jan 2023</span>
+</h2>
+
+<div class="flex-wrap md:flex md:flex-nowrap">
+    <div class="w-full md:w-auto md:mr-4">
+        <p>Zebra Label Printer Plugin for Inventree</p>
+
+<p>This is a label printing plugin for <a href="https://inventree.org">InvenTree</a>, which provides support for Zebra Label printers .
+It supports printing to just GK420T with one label size (50x30) so far. So it is very simple. It uses the zpl library to
+convert the png data provided by InvenTree to Zebras bitmap format.</p>
+
+<p>It can output the print data either to a local printer connected to the computer via USB or to a network printer
+with an IP address. The output can be configured in the InvenTree plugin user interface. So the source code is 
+a good example for this.</p>
+
+<p>Error handling is very basic.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Install this plugin using pip with the following command::</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install git+https://github.com/SergeoLacruz/inventree-zebra-plugin
+</code></pre></div></div>
+
+<h2 id="configuration-options">Configuration Options</h2>
+<h3 id="printer-interface">Printer Interface</h3>
+<p>Here you can chose between Local printer or network printer. Default value is a local printer.</p>
+
+<h3 id="ip-address">IP address</h3>
+<p>In case you use an IP printer set the IPv4 address here.</p>
+
+<h3 id="port">Port</h3>
+<p>In case you use an IP printer set the port number here. The default port number is 9100.</p>
+
+<h3 id="local-device">Local Device</h3>
+<p>In case of a local printer set the device here. The plugin actually puts the data directly to the
+device libe /dev/usb/lp0. No printer spooler is involved so far.</p>
+
+<h2 id="how-it-works">How it works</h2>
+<p>First import all the stuff you need. Here we use the translation mechanism from django for multi language support.
+The import the InvenTree libs and everything you need for plugin. Here we have zpl for the Zebra bitmaps and socket
+for the IP connection to the printer.</p>
+
+<p>The next part is this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ZebraLabelPlugin</span><span class="p">(</span><span class="n">LabelPrintingMixin</span><span class="p">,</span> <span class="n">SettingsMixin</span><span class="p">,</span> <span class="n">IntegrationPluginBase</span><span class="p">):</span>
+
+    <span class="n">AUTHOR</span> <span class="o">=</span> <span class="s">"Michael Buchmann"</span>
+    <span class="n">DESCRIPTION</span> <span class="o">=</span> <span class="s">"Label printing plugin for Zebra printers"</span>
+    <span class="n">VERSION</span> <span class="o">=</span> <span class="n">ZEBRA_PLUGIN_VERSION</span>
+    <span class="n">NAME</span> <span class="o">=</span> <span class="s">"Zebra"</span>
+    <span class="n">SLUG</span> <span class="o">=</span> <span class="s">"zebra"</span>
+    <span class="n">TITLE</span> <span class="o">=</span> <span class="s">"Zebra Label Printer"</span>
+</code></pre></div></div>
+
+<p>The name of the class can be freely chosen. You reference to it in the entry_points section of the setup.py file.
+The parameters need to be like in the example. Then there is the description block. The keywords are fixed and 
+need to be like that. The values are found in the UI as shown in the pictures below.</p>
+
+<p><img src="https://github.com/SergeoLacruz/inventree-zebra-plugin/blob/master/pictures/plugin_admin.png" alt="Admin">
+<img src="https://github.com/SergeoLacruz/inventree-zebra-plugin/blob/master/pictures/plugin.png" alt="Config"></p>
+
+<p>Then we add the configuration parameters.</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">'CONNECTION'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'name'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Printer Interface'</span><span class="p">),</span>
+            <span class="s">'description'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Select local or network printer'</span><span class="p">),</span>
+            <span class="s">'choices'</span><span class="p">:</span> <span class="p">[(</span><span class="s">'local'</span><span class="p">,</span><span class="s">'Local printer e.g. USB'</span><span class="p">),(</span><span class="s">'network'</span><span class="p">,</span><span class="s">'Network printer with IP address'</span><span class="p">)],</span>
+            <span class="s">'default'</span><span class="p">:</span> <span class="s">'local'</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s">'PORT'</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">'name'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Port'</span><span class="p">),</span>
+            <span class="s">'description'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Network port in case of network printer'</span><span class="p">),</span>
+            <span class="s">'default'</span><span class="p">:</span> <span class="s">'9100'</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">}</span>
+
+</code></pre></div></div>
+
+<p>We need to define a dict with the name SETTINGS. Please be aware the keys need to be in all CAPITAL letters like CONNECTION.
+Simple parameters are just text strings like the port. We can set a default. The name and description shows up in the UI. 
+Instead of ta simple test we can also use choices. The first string like “local” it the key you use in the code. The second
+one is the description in the UI. 
+After that we need to define a function:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">){</span>
+</code></pre></div></div>
+
+<p>The kwargs is a dict with the following keys:</p>
+
+<ul>
+  <li>pdf_data</li>
+  <li>user</li>
+  <li>filename</li>
+  <li>label_instance</li>
+  <li>width</li>
+  <li>height</li>
+  <li>png_file</li>
+</ul>
+
+<p>For the Zebra printer we use the png_file. This is a PIL (python Pillow) object with the graphic of the label in PNG format. 
+The PIL object is a greyscale image. Because the printer can just print pure BW we convert this to a BW picture.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">255</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">Threshold</span> <span class="k">else</span> <span class="mi">0</span>
+<span class="n">label_image</span> <span class="o">=</span> <span class="n">label_image</span><span class="p">.</span><span class="n">convert</span><span class="p">(</span><span class="s">'L'</span><span class="p">).</span><span class="n">point</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'1'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The threshold can by modified by a plugin parameter. 200 is a good starting value.  This trick gives much better prints. 
+We can put the result this directly into the zpl library.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="n">zpl</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="n">origin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="n">write_graphic</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="n">endorigin</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p>50,30 is the size of the label in millimeters. The third parameter is the resolution of the printer in
+dots per mm. As the Zebra printer has 200dpi we put an eight here. write_graphic converts the pillow data
+to zpl. 50 is the with of the image in mm.</p>
+
+<p>The plugin was tested with a label of 50x30 mm defined using css and html in InvenTree as shown below. The DPI scaling
+can be chosen in the InvenTree settings. 400 is a good value because it is just double of the printers
+resolution. If you save the pillow data to a png file you get a size of 788x473 which fits well to that data.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style&gt;
+    @page {
+        width: 50mm;
+        height: 30mm;
+        padding: 0mm;
+        margin: 0px 0px 0px 0px;
+        background-color: white;
+    }
+</code></pre></div></div>
+
+<p>The rest of the code is just output to the printer on different interfaces.</p>
+
+    </div>
+
+    <div class="w-full md:w-1/4">
+      <h2 class="block sm:hidden">Detail section</h2>
+      <div>
+        <p class="mb-0">License:
+          <i class="fa-brands fa-osi"></i>
+          MIT<br>
+          </p>
+<div class="flex flex-wrap">
+            Status:
+            <div>
+<i class="fa-regular fa-circle-check"></i>Stable</div>
+            <div>
+<i class="fa-regular fa-circle-check"></i>Maintained</div>
+          </div>
+          
+        
+
+        
+
+        
+        <a href="https://github.com/SergeoLacruz/inventree-zebra-plugin/issues" class="no-underline" aria-label="open the issue tracker">
+        <div>
+          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+        </div>
+        </a>
+        
+
+        
+        <a href="https://github.com/SergeoLacruz/inventree-zebra-plugin" class="no-underline" aria-label="open source on GitHub">
+        <div>
+          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+          <p class="font-normal">SergeoLacruz/inventree-zebra-plugin</p>
+        </div>
+        </a>
+        
+        
+        
+
+        <div>
+          <h4 class="plugin_links">Categories</h4>
+          <div>
+            
+            <a href="/plugins/categories/#printer"><span class="plugin_cat">Printer</span></a>
+            
+          </div>
+        </div>
+
+        <div>
+          <h4 class="plugin_links">Tags</h4>
+          <div>
+            
+            <a href="/plugins/tags/#label"><span class="plugin_tag">Label</span></a>
+            
+            <a href="/plugins/tags/#printer"><span class="plugin_tag">Printer</span></a>
+            
+            <a href="/plugins/tags/#zebra"><span class="plugin_tag">Zebra</span></a>
+            
+            <a href="/plugins/tags/#zpl"><span class="plugin_tag">ZPL</span></a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+</article>
+
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </a>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrate</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="https://github.com/sparkmicro/Ki-nTree" class="footer-link">KiCad</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>
