@@ -1,5 +1,5 @@
 ---
-author: oliver
+author: schrodingersgat
 title: Translating InvenTree
 ---
 
