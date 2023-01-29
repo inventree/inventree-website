@@ -15,27 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - Shopify</title>
+<title>InvenTree - Inventree Apprise</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Shopify | InvenTree</title>
+<title>Inventree Apprise | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.1" />
-<meta property="og:title" content="Shopify" />
+<meta property="og:title" content="Inventree Apprise" />
 <meta name="author" content="matmair" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A simple Integration into Shopify." />
-<meta property="og:description" content="A simple Integration into Shopify." />
-<link rel="canonical" href="/repo/shopify.html" />
-<meta property="og:url" content="/repo/shopify.html" />
+<meta name="description" content="Send notifications from InvenTree via Apprise" />
+<meta property="og:description" content="Send notifications from InvenTree via Apprise" />
+<link rel="canonical" href="/matmair/inventree-apprise" />
+<meta property="og:url" content="/matmair/inventree-apprise" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-29T01:08:08+00:00" />
+<meta property="article:published_time" content="2023-01-29T02:01:26+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Shopify" />
+<meta property="twitter:title" content="Inventree Apprise" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2023-01-29T01:08:08+00:00","datePublished":"2023-01-29T01:08:08+00:00","description":"A simple Integration into Shopify.","headline":"Shopify","mainEntityOfPage":{"@type":"WebPage","@id":"/repo/shopify.html"},"url":"/repo/shopify.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2023-01-29T02:01:26+00:00","datePublished":"2023-01-29T02:01:26+00:00","description":"Send notifications from InvenTree via Apprise","headline":"Inventree Apprise","mainEntityOfPage":{"@type":"WebPage","@id":"/matmair/inventree-apprise"},"url":"/matmair/inventree-apprise"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -62,86 +62,115 @@
     </div>
 </header> <article class="max-w-p90">
     
-    <h2>ShopifyIntegrationPlugin org
+    <h2>InvenTree Apprise
 <span class="sm:ml-2 text-sm">
-<a href="">
-<span class="inline-flex">by <img src="https://github.com/.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px"> </span>
+<a href="/matmair">
+<span class="inline-flex">by <img src="https://github.com/matmair.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px"> matmair</span>
 </a></span>
+<span class="sm:ml-2 text-sm">last modified: 29 Jan 2023</span>
 </h2>
 
-<div class="md:flex md:flex-row flex-wrap">
-    <div class="w-full md:w-3/4">
-        <p>A simple Integration into Shopify.</p>
+<div class="flex-wrap md:flex md:flex-nowrap">
+    <div class="w-full md:w-auto md:mr-4">
+        <p>Send notifications from InvenTree via Apprise</p>
 
-<p>Let your orders from Shopify be created in autopilot, update your Inventory-Levels from InvenTree and vice-versa.</p>
-
-<h2 id="installation">Installation</h2>
+<h2 id="setup">Setup</h2>
 
 <ol>
-  <li>Navigate to your InvenTree directory and cd into <code class="language-plaintext highlighter-rouge">src/InvenTree/plugins</code> and execute <code class="language-plaintext highlighter-rouge">git submodule add https://github.com/matmair/ShopifyIntegrationPlugin</code> there. Enable plugins in the general plugin settings and reload InvenTree.</li>
-  <li>Add a private app to your Shopify store (please register as a dev and use a development store. This is a PoC)</li>
-  <li>Go to the InvenTree settings and fill in the settings for the ShopifyIntegrationPlugin from your new private app.</li>
-  <li>Check out the new navigation tab.</li>
+  <li>
+    <p>Install this plugin in the webinterface with the packagename <code class="language-plaintext highlighter-rouge">inventree-apprise</code></p>
+  </li>
+  <li>
+    <p>Enable the plugin in the plugin settings. You need to be signed in as a superuser for this.
+<strong>The server will restart if you enable the plugin</strong></p>
+  </li>
+  <li>
+    <p>Add all endpoints you want to use in the plugin settings. You can use the <a href="https://github.com/caronc/apprise#supported-notifications">Apprise URL Syntax</a>.</p>
+  </li>
 </ol>
 
-<h2 id="caveat">Caveat</h2>
-
-<p>Your instance must be reachable for webhooks from Shopify so use ngrok or something like that to expose your instance with HTTPS.</p>
-
-<h2 id="state-of-the-code">State of the code</h2>
-
-<p>This code is bad. It is neither optimized nor is it CI/Cd ready or covered in any way.
-I use this Plugin as a PoC to show what will be possible with the new system.</p>
-
-<h2 id="contribute">Contribute</h2>
-
-<p>The whole plugin system is currently not even in the dev branch.
-Feel free to submit issues or just send me a mail to dev AT mjmair.com</p>
-
-<h2 id="no-open-source">No open source?</h2>
-
-<p>Currently I have defined no license so forking is a bad idea copyright-wise. This code should not be used as basis for anything - I will define a license once the plugin system gets released.</p>
+<h2 id="license">License</h2>
+<p>This project is licensed as MIT. Copy and do what you want - maybe tag your new plugin so others can find it. The more the merrier.</p>
 
     </div>
 
     <div class="w-full md:w-1/4">
-      <h2 class="block sm:hidden">Link section</h2>
+      <h2 class="block sm:hidden">Detail section</h2>
       <div>
+        <p class="mb-0">License:
+          <i class="fa-brands fa-osi"></i>
+          MIT<br>
+          </p>
+<div class="flex flex-wrap">
+            Status:
+            <div>
+<i class="fa-regular fa-circle-check"></i>Stable</div>
+            <div>
+<i class="fa-regular fa-circle-check"></i>Maintained</div>
+          </div>
+          Package on PyPI:<pre class="my-0">inventree-apprise</pre>
+        
+
+        <a href="https://mjmair.com" class="no-underline" aria-label="open website">
+          <div>
+            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+            <p class="font-normal">https://mjmair.com</p>
+          </div>
+        </a>
+
+        
+        <a href="https://github.com/matmair/inventree-apprise/issues" class="no-underline" aria-label="open the issue tracker">
+        <div>
+          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+        </div>
+        </a>
+        
+
+        
+        <a href="https://github.com/matmair/inventree-apprise" class="no-underline" aria-label="open source on GitHub">
+        <div>
+          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+          <p class="font-normal">matmair/inventree-apprise</p>
+        </div>
+        </a>
+        
+        
+        
 
         <div>
-          <h4 class="fst-italic">Github</h4>
-          <p>matmair/ShopifyIntegrationPlugin</p>
-          <a href="https://github.com/matmair/ShopifyIntegrationPlugin" class="stretched-link" aria-label="open github repo"></a>
+          <h4 class="plugin_links">Categories</h4>
+          <div>
+            
+            <a href="/plugins/categories/#notifications"><span class="plugin_cat">Notifications</span></a>
+            
+          </div>
         </div>
 
         <div>
-          <h4 class="fst-italic">Categories</h4>
-          <ol class="list-unstyled">
+          <h4 class="plugin_links">Tags</h4>
+          <div>
             
-            <li><a href="/categories/#integration"><span class="badge bg-yellow-500">Integration</span></a></li>
+            <a href="/plugins/tags/#apprise"><span class="plugin_tag">Apprise</span></a>
             
-            <li><a href="/categories/#webhook"><span class="badge bg-yellow-500">Webhook</span></a></li>
+            <a href="/plugins/tags/#3rd-party-integration"><span class="plugin_tag">3rd party integration</span></a>
             
-          </ol>
+            <a href="/plugins/tags/#discord"><span class="plugin_tag">Discord</span></a>
+            
+            <a href="/plugins/tags/#ifttt"><span class="plugin_tag">IFTTT</span></a>
+            
+            <a href="/plugins/tags/#matrix"><span class="plugin_tag">Matrix</span></a>
+            
+            <a href="/plugins/tags/#microsoft-teams"><span class="plugin_tag">Microsoft Teams</span></a>
+            
+            <a href="/plugins/tags/#slack"><span class="plugin_tag">Slack</span></a>
+            
+            <a href="/plugins/tags/#twilio"><span class="plugin_tag">Twilio</span></a>
+            
+          </div>
         </div>
-
-        <div>
-          <h4 class="fst-italic">Tags</h4>
-          <ol class="list-unstyled">
-            
-            <li><a href="/tags/#shopify"><span class="badge bg-blue-400">Shopify</span></a></li>
-            
-            <li><a href="/tags/#orders"><span class="badge bg-blue-400">Orders</span></a></li>
-            
-          </ol>
-        </div>
-
-        <div>
-          <h4 class="fst-italic">Website</h4>
-          <p>https://mjmair.com</p>
-          <a href="https://mjmair.com" class="stretched-link" aria-label="open website"></a>
-        </div>
-
       </div>
     </div>
 </div>
@@ -178,6 +207,8 @@ Feel free to submit issues or just send me a mail to dev AT mjmair.com</p>
           <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
           
           <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
           
         </ul></nav>
       </div>
