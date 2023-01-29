@@ -1,0 +1,53 @@
+---
+layout: default
+---
+
+<div class="pt-3 pb-1 section-container">
+  <h1 class="header-text title-font mb-4 cm-gray-1">{{page.title}}</h1>
+  <span class="content">
+
+{% assign all_items = "" | split: "/" %}
+{% for col_item in site[page.collection] %}
+  {% for item in col_item[page.reference] %}
+    {% assign preprocessed = item | strip %}
+    {% unless preprocessed == "" %}
+      {% assign all_items = all_items | push: preprocessed %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+{% assign all_items = all_items | uniq | sort %}
+
+<p>The full list of plugins is available on the main <a href="{% link plugins.html %}">plugin list</a> page.</p><br>
+<p class="mb-0 italic">Click on a name to jump to the plugins that are marked with it.</p>
+<i class="fa fa-tag"></i>
+{% for item in all_items %}
+  {% unless tag == "" %}
+    <a class="label" href="{{ page.permalink | prepend: site.baseurl }}#{{ item | slugify }}">
+      <span class="badge">{{ item }}</span>
+    </a>
+  {% endunless %}
+{% endfor %}
+  </span>
+  <br><br>
+
+{% for item in all_items %}
+    {% unless item == "" %}
+    <div id="{{ item | slugify }}" class="anchor"></div>
+    <h2 class="text-lg sm:text-xl cm-gray-1 font-medium title-font mb-2">{{ item }}</h2>
+
+    <div class="flex flex-wrap">
+      {% for plugin in site[page.collection] %}
+        {% assign col_items = "" | split: "/" %}
+        {% for item in plugin[page.reference] %}
+          {% assign lower_item = item %}
+          {% assign col_items = col_items | push: lower_item %}
+        {% endfor %}
+        {% if col_items contains item %}
+          <div class="space-4 p-2 md:w-1/2">{% include plugin_card.html plugin=plugin %}</div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% endunless %}
+{% endfor %}
+
+</div></div>
