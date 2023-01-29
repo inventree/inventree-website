@@ -3,8 +3,8 @@ import os
 from pathlib import Path
 from urllib.request import urlopen, Request
 
-inp_project = os.environ.get('PROJECT')
-inp_author = os.environ.get('AUTHOR')
+inp_project = os.environ.get('PROJECT').strip()
+inp_author = os.environ.get('AUTHOR').strip()
 file_name = Path(f'_repo/{inp_project}.md')
 crowdin_projet_id = 452300
 
