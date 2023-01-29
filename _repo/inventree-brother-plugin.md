@@ -1,6 +1,6 @@
 ---
 name: inventree-brother-plugin
-author: schrodingersgat
+author: SchrodingersGat
 license: MIT
 open_source: true
 stable: False

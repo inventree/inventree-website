@@ -1,6 +1,6 @@
 ---
 name: inventree-brother-plugin                                                    # Name of the plugin (should be either NAME, TITLE or SLUG)
-author: schrodingersgat                                                           # Maintainer must be the same as the publisher reference
+author: SchrodingersGat                                                           # Maintainer must be the same as the publisher reference
 license: MIT                                                                      # License, we prefer open source
 open_source: true                                                                 # Is this project licensed with an OSI-approved license - aka 'open source'
 stable: true                                                                      # Is this project stable? Should users deploy this in their instace?
