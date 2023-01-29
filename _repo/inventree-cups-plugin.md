@@ -7,10 +7,10 @@ stable: true
 maintained: true
 pypi: false
 package_name:
-github: https://github.com/inventree/inventree-cups-plugin
+github: https://github.com/wolflu05/inventree-cups-plugin
 gitlab:
 source:
-issue_tracker: https://github.com/inventree/inventree-cups-plugin/issues
+issue_tracker: https://github.com/wolflu05/inventree-cups-plugin/issues
 website:
 categories: Printer
 tags: Label Printer CUPS DYMO
