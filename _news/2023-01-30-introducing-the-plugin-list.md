@@ -24,4 +24,4 @@ The website got some UI fixes for mobile users and gained more icons. We also ad
 
 ### Plugin List
 
-A new feature landed: the [plugin list](https://inventree.org/plugins). Check out the blog post for more details.
+A new feature landed: the [plugin list](https://inventree.org/plugins). Check out the [blog post](/blog/2023/01/30/plugin-list) for more details.
