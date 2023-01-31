@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - Starting the Plugin List</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Starting the Plugin List | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.1" />
+<meta property="og:title" content="Starting the Plugin List" />
+<meta name="author" content="matmair" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Recently a new feature was launched: A central plugin list." />
+<meta property="og:description" content="Recently a new feature was launched: A central plugin list." />
+<link rel="canonical" href="/blog/2023/01/30/plugin-list" />
+<meta property="og:url" content="/blog/2023/01/30/plugin-list" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-01-30T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Starting the Plugin List" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2023-01-30T00:00:00+00:00","datePublished":"2023-01-30T00:00:00+00:00","description":"Recently a new feature was launched: A central plugin list.","headline":"Starting the Plugin List","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/01/30/plugin-list"},"url":"/blog/2023/01/30/plugin-list"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>Starting the Plugin List</h1>
+    <p>
+      30 Jan 2023
+      
+
+<a href="/matmair">Matthias Mair</a>
+    </p>
+    <p>Recently a new feature was launched: A central plugin list.</p>
+
+<h2 id="tldr">TLDR</h2>
+
+<p>The Plugin List is managed by the <a href="https://github.com/inventree">InvenTree org</a> and is <a href="https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list">open for submissions</a>. It is a simple list <a href="/plugins">on the website</a> for a start. Being on the list is not an endorsement or guarantee of service by the core team.</p>
+
+<h2 id="why-plugins-and-a-plugin-list">Why plugins and a plugin list?</h2>
+
+<p>InvenTree is a powerful tool but the use cases very widely. Many things can be done with it, but too many special features also create confusion for the average hobbyist user. 
+That is why we created the plugin system. It allows users to extend InvenTree with custom functionality without having to modify or ding into core code. It is a great way to add features that are not needed by everyone but are still useful for a subset of users. It can also be used to customize InvenTree to fit existing patterns (eg. part numbering scheme or order references).</p>
+
+<p>One of my main goals was to enable complex changes without the need of forking the code. This way users can still benefit from upstream changes and bugfixes without having to merge them manually. As a positive side effect, it should also reduce requests for fixes of very old versions and enable users to always use the latest version of InvenTree as we try to keep the plugin (python) APIs stable.</p>
+
+<p>The plugin system has been in core for a while now and from my own usage, conversations with users and requests on GitHub I know that small plugin collections have started to form.<br>
+I think most plugins are very tailored to the businesses/users that deploy them. I have seen some for shipping, integrating ERP systems, connecting machines or generating files for orders. Therefore, they are not fit for public consumption.<br>
+There are, however, a number of public repos on GitHub and GitLab with integrations for printers, adding functionality that we are not willing/able to add to core or do other cool things.</p>
+
+<p>The plugin list is a way to share the cool, public plugins you made with the community. I also hope that it enables new users to onboard faster.</p>
+
+<h2 id="how-it-works">How it works</h2>
+
+<p>As mentioned <a href="/news/2022/04/23/news-are-starting">before</a>, we use Jekyll for this website. This means that the list consists of static pages that are generated from YAML/Markdown files. The output is hosted by GitHub pages (for free ;-)) and can be previewed on PRs thanks to the Netlify app integration.</p>
+
+<p>A file contains a number of standardised fields in the header and markup text for the plugin page that uses Markdown (just like GitHub README pages). That information is used to generate:</p>
+<ul>
+  <li>the individual plugin pages (eg. <a href="/SchrodingersGat/inventree-brother-plugin">this one</a>)</li>
+  <li>plugin cards on the main page (showing the newest entries)</li>
+  <li>a list of <a href="/plugins">all plugins</a>
+</li>
+  <li>overview pages for <a href="/plugins/tags/">tags</a> and <a href="/plugins/categories/">categories</a>
+</li>
+</ul>
+
+<p>Adding a new entry is as simple as forking, creating a new file in the plugins folder and opening a PR. More on that is below.</p>
+
+<p>There are also entries and pages for authors/publishers. Currently, we only support one author per plugin, but that might change in the future. The author entry is used to generate a page for the author (eg. <a href="/schrodingersgat">this one</a>). That page also contains all blog posts written by the author and a few links.</p>
+
+<h3 id="disclaimer">Disclaimer</h3>
+
+<p>While the list is moderated, the core team does not endorse or guarantee any service for the plugins listed. If you have any questions, please contact the plugin author directly.</p>
+
+<h3 id="submitting-a-plugin">Submitting a plugin</h3>
+
+<p>If you want to add your plugin to the list, please follow the <a href="https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list">instructions in the README</a> of the repo for the website. The list is managed by members of the <a href="https://github.com/inventree">InvenTree org</a>, so it might take a few days to process your request. If you are submitting a plugin for the first time, there is a good chance you do not have a publisher/author entry either - please add that as well. The steps are listed in the README.</p>
+
+<p>Please make sure to update your listing if your plugin is no longer maintained or if anything important changes. For now, there is no automated process to update listings from their repos.</p>
+
+<h2 id="future-ideas">Future ideas</h2>
+
+<p>Several ideas have been brought forward regarding possible improvements to the plugin list since I started public work on it (the original idea is from Feb/Mar 2022, like the rest of the website). If you have any ideas, please let us know in the discussions on GitHub or in an issue. And if you want to help, please feel free to open a PR for anything listed below.</p>
+
+<p>Inclusion in InvenTree: Users of InvenTree should be able to browse and install plugins directly from within the web app. This would require a way to install plugins and probably a way to update them too. A good example would be Octoprint’s plugin manager. The main work would be to create a nice interface, the API endpoints (for installing and activating/deactivation) are already there.</p>
+
+<p>Regarding browsing the list on the site:</p>
+<ul>
+  <li>A more detailed list with screenshots, short descriptions and standardised sections in the page itself</li>
+  <li>A way to rate plugins</li>
+  <li>A way to show how often a plugin is used/downloaded (would probably need <a href="https://github.com/inventree/InvenTree/issues/4150">4150</a>)</li>
+  <li>A better way to search for plugins (by name, description, author, tags, etc.) - we deploy statically so that might be tricky</li>
+  <li>A way to filter plugins by InvenTree version</li>
+  <li>A way to filter plugins by language (if they are translated)</li>
+  <li>A way to filter plugins by license (there are so many licenses that I did not include it in the first version)
+Quality of life:</li>
+  <li>A more automated process to update the list from the plugin repos</li>
+  <li>Improve the PyPI scraper to also work with GitHub and GitLab repos</li>
+  <li>A way to automatically test plugins for compatibility with InvenTree and show that on the listing</li>
+  <li>RSS feed for new plugins</li>
+</ul>
+
+<p>Moon-shot idea: A privacy-friendly way to register your instance once and then have a button on the website that directly installs the plugin. That would also enable some cool other stuff with browser integrations, fast pairing for the app (very much requested by uni labs) and more.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </a>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrate</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="https://github.com/sparkmicro/Ki-nTree" class="footer-link">KiCad</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>

@@ -15,27 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - Inventree Brother Plugin</title>
+<title>InvenTree - Introducing the Plugin List</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Inventree Brother Plugin | InvenTree</title>
+<title>Introducing the Plugin List | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.1" />
-<meta property="og:title" content="Inventree Brother Plugin" />
-<meta name="author" content="SchrodingersGat" />
+<meta property="og:title" content="Introducing the Plugin List" />
+<meta name="author" content="matmair" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Brother label printer plugin for InvenTree" />
-<meta property="og:description" content="Brother label printer plugin for InvenTree" />
-<link rel="canonical" href="/SchrodingersGat/inventree-brother-plugin" />
-<meta property="og:url" content="/SchrodingersGat/inventree-brother-plugin" />
+<meta name="description" content="Getting ready for 0.10.0, Website Updates and the Plugin List." />
+<meta property="og:description" content="Getting ready for 0.10.0, Website Updates and the Plugin List." />
+<link rel="canonical" href="/news/2023/01/30/introducing-the-plugin-list" />
+<meta property="og:url" content="/news/2023/01/30/introducing-the-plugin-list" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-01-31T08:22:02+00:00" />
+<meta property="article:published_time" content="2023-01-30T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Inventree Brother Plugin" />
+<meta property="twitter:title" content="Introducing the Plugin List" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-01-31T08:22:02+00:00","datePublished":"2023-01-31T08:22:02+00:00","description":"Brother label printer plugin for InvenTree","headline":"Inventree Brother Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SchrodingersGat/inventree-brother-plugin"},"url":"/SchrodingersGat/inventree-brother-plugin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2023-01-30T00:00:00+00:00","datePublished":"2023-01-30T00:00:00+00:00","description":"Getting ready for 0.10.0, Website Updates and the Plugin List.","headline":"Introducing the Plugin List","mainEntityOfPage":{"@type":"WebPage","@id":"/news/2023/01/30/introducing-the-plugin-list"},"url":"/news/2023/01/30/introducing-the-plugin-list"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -60,113 +60,50 @@
 
         
     </div>
-</header> <article class="max-w-p90">
+</header> <header>
     
-    <h2>inventree-brother-plugin
-<span class="sm:ml-2 text-sm">
-<a href="/schrodingersgat">
-<span class="inline-flex">by <img src="https://github.com/SchrodingersGat.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px"> SchrodingersGat</span>
-</a></span>
-<span class="sm:ml-2 text-sm">last modified: 31 Jan 2023</span>
-</h2>
+    <a href="/news" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
 
-<div class="flex-wrap md:flex md:flex-nowrap">
-    <div class="w-full md:w-auto md:mr-4">
-        <p>Brother label printer plugin for InvenTree</p>
+<article>
+    <h1>Introducing the Plugin List</h1>
+    <p>
+      30 Jan 2023
+      
 
-<p>A label printing plugin for <a href="https://inventree.org">InvenTree</a>, which provides support for the <a href="https://www.brother.com.au/en/products/all-labellers/labellers">Brother label printers</a>.</p>
+<a href="/matmair">Matthias Mair</a>
+    </p>
+    <p>Getting ready for 0.10.0, Website Updates and the Plugin List.</p>
 
-<p>This plugin supports printing to <em>some</em> Brother label printers with network (wired or WiFi) support. Refer to the <a href="https://github.com/pklaus/brother_ql/blob/master/brother_ql/models.py">brother_ql docs</a> for a list of label printers which are directly supported.</p>
+<h3 id="preparations-for-0100">Preparations for 0.10.0</h3>
 
-<h2 id="installation">Installation</h2>
+<p>Since the last release, we’ve been working on the next version of InvenTree, which will be 0.10.0. There are already 85 PRs merged into the <code class="language-plaintext highlighter-rouge">master</code> branch, and we’re expecting to release 0.10.0 in the next few weeks.</p>
 
-<p>Install this plugin manually as follows:</p>
+<p>There will be a full blog post once we release but here are a few perks to look for:</p>
+<ul>
+  <li>The option to use <a href="https://github.com/inventree/InvenTree/pull/4072">Slovenian</a>. Around 7% are already translated - we need your help to get that number up. Head over to the <a href="https://crowdin.com/project/inventree">translation project</a> if you want to help with any language.</li>
+  <li>Attach the current order schedule to your calendar (<a href="https://github.com/inventree/InvenTree/pull/3858">3858</a>)</li>
+  <li>Improvements for report rendering (<a href="https://github.com/inventree/InvenTree/pull/4081">4081</a>) and a lot of improvements to the docs</li>
+  <li>Get orders by their reference via the API (<a href="https://github.com/inventree/InvenTree/pull/4083">4083</a>)</li>
+  <li>Improvements for SSO - including the UI (<a href="https://github.com/inventree/InvenTree/pull/4169">4169</a>, <a href="https://github.com/inventree/InvenTree/pull/4263">4263</a>), better separation between local and SSO user management (<a href="https://github.com/inventree/InvenTree/pull/4171">4171</a>) and restricting signups to specific domains (<a href="https://github.com/inventree/InvenTree/pull/4172">4172</a>)</li>
+  <li>Include alternative parts in your BOM exports (<a href="https://github.com/inventree/InvenTree/pull/4203">4203</a>)</li>
+  <li>A simple priority field for order (<a href="https://github.com/inventree/InvenTree/pull/4225">4225</a>)</li>
+</ul>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install inventree-brother-plugin
-</code></pre></div></div>
+<h3 id="website-updates">Website Updates</h3>
 
-<p>Or, add to your <code class="language-plaintext highlighter-rouge">plugins.txt</code> file to install automatically using the <code class="language-plaintext highlighter-rouge">invoke install</code> command:</p>
+<p>The website got some UI fixes for mobile users and gained more icons. We also added a <a href="https://inventree.org/about/team">team section</a> and moved away from cookie-based analytics.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inventree-brother-plugin
-</code></pre></div></div>
+<h3 id="plugin-list">Plugin List</h3>
 
-    </div>
+<p>A new feature landed: the <a href="https://inventree.org/plugins">plugin list</a>. Check out the <a href="/blog/2023/01/30/plugin-list">blog post</a> for more details.</p>
 
-    <div class="w-full md:w-1/4">
-      <h2 class="block sm:hidden">Detail section</h2>
-      <div>
-        <p class="mb-0">License:
-          <i class="fa-brands fa-osi"></i>
-          MIT<br>
-          </p>
-<div class="flex flex-wrap">
-            Status:
-            <div>
-<i class="fa-solid fa-triangle-exclamation"></i> Unstable</div>
-            <div>
-<i class="fa-regular fa-circle-check"></i>Maintained</div>
-          </div>
-          Package on PyPI:<pre class="my-0">inventree-brother-plugin</pre>
-        
-
-        
-        <a href="https://inventree.org" class="no-underline" aria-label="open website">
-          <div>
-            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-            <p class="font-normal">https://inventree.org</p>
-          </div>
-        </a>
-        
-
-        
-        <a href="https://github.com/inventree/inventree-brother-plugin/issues" class="no-underline" aria-label="open the issue tracker">
-        <div>
-          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-        </div>
-        </a>
-        
-
-        
-        <a href="https://github.com/inventree/inventree-brother-plugin" class="no-underline" aria-label="open source on GitHub">
-        <div>
-          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-          <p class="font-normal">inventree/inventree-brother-plugin</p>
-        </div>
-        </a>
-        
-        
-        
-
-        <div>
-          <h4 class="plugin_links">Categories</h4>
-          <div>
-            
-            <a href="/plugins/categories/#printer"><span class="plugin_cat">Printer</span></a>
-            
-          </div>
-        </div>
-
-        <div>
-          <h4 class="plugin_links">Tags</h4>
-          <div>
-            
-            <a href="/plugins/tags/#label"><span class="plugin_tag">Label</span></a>
-            
-            <a href="/plugins/tags/#printer"><span class="plugin_tag">Printer</span></a>
-            
-            <a href="/plugins/tags/#brother"><span class="plugin_tag">Brother</span></a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
 
 </article>
-
     </div>
 
     <div class="flex-grow"></div>
