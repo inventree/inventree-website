@@ -1,9 +1,7 @@
 name: Build pages and publish
 
 on:
-  push:
-    branches:
-    - main
+  push
 
 jobs:
   build:
@@ -23,7 +21,10 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
+      - run: bundle exec htmlproofer ./_site --enforce-https=false
+        name: Check links
       - name: Deploy
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

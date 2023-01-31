@@ -8,4 +8,4 @@ InvenTree is designeds to be part of a larger system of tools to support both ho
 - [API](api)
 - [Integrate](integrate) into other tools
 - PK2InvenTree for [migrating from PartKeepr to InvenTreen](https://github.com/rgilham/PK2InvenTree)
-- Python [package](https://docs.inventree.org/en/latest/extend/python/) 
+- Python [package](https://docs.inventree.org/en/latest/api/python/python/) 
