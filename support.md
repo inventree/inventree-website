@@ -12,7 +12,7 @@ Private questions (via DM, email, etc.) are generally not answered, use the publ
 If you require a custom feature you can either:
 - Suggest the feature on the issue tracker as a [Feature Request](https://github.com/inventree/InvenTree/issues/new?template=feature_request.yaml)
 - Implement the feature yourself, and contribute back to the project. InvenTree developers will happily help you work through any issues.
-- Create a [plugin](/extend/plugin/index.md)
+- Create a [plugin]({% link extend/plugin/index.md %})
 - Request a paid customisation
 
 ## Paid Customisation / Support
