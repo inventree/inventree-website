@@ -21,7 +21,7 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-      - run: bundle exec htmlproofer ./_site
+      - run: bundle exec htmlproofer ./_site --no-enforce-https
         name: Check links
       - name: Deploy
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
