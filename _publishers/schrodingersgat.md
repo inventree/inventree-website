@@ -1,5 +1,5 @@
 ---
-short_name: oliver
+short_name: SchrodingersGat
 name: Oliver
 github: SchrodingersGat
 website: https://inventree.org
