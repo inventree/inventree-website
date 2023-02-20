@@ -18,3 +18,9 @@ team:
     links:
       - text: GitHub
         link: https://github.com/matmair
+  - tag: wolflu05
+    name: Lukas
+    text: Lukas is a German student who likes developing, and building electronics. He focuses on plugin development.
+    links:
+      - text: GitHub
+        link: https://github.com/wolflu05
