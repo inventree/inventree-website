@@ -21,7 +21,7 @@
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>Inventree Zebra Plugin | InvenTree</title>
-<meta name="generator" content="Jekyll v4.3.1" />
+<meta name="generator" content="Jekyll v4.3.2" />
 <meta property="og:title" content="Inventree Zebra Plugin" />
 <meta name="author" content="SergeoLacruz" />
 <meta property="og:locale" content="en_US" />
@@ -31,11 +31,11 @@
 <meta property="og:url" content="/SergeoLacruz/inventree-zebra-plugin" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-04-18T16:17:33+00:00" />
+<meta property="article:published_time" content="2023-04-18T17:44:56+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Inventree Zebra Plugin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2023-04-18T16:17:33+00:00","datePublished":"2023-04-18T16:17:33+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2023-04-18T17:44:56+00:00","datePublished":"2023-04-18T17:44:56+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -132,14 +132,14 @@ need to be like that. The values are found in the UI as shown in the pictures be
 <p>Then we add the configuration parameters.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s">'CONNECTION'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s">'name'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Printer Interface'</span><span class="p">),</span>
-            <span class="s">'description'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Select local or network printer'</span><span class="p">),</span>
+            <span class="s">'name'</span><span class="p">:</span> <span class="nf">_</span><span class="p">(</span><span class="s">'Printer Interface'</span><span class="p">),</span>
+            <span class="s">'description'</span><span class="p">:</span> <span class="nf">_</span><span class="p">(</span><span class="s">'Select local or network printer'</span><span class="p">),</span>
             <span class="s">'choices'</span><span class="p">:</span> <span class="p">[(</span><span class="s">'local'</span><span class="p">,</span><span class="s">'Local printer e.g. USB'</span><span class="p">),(</span><span class="s">'network'</span><span class="p">,</span><span class="s">'Network printer with IP address'</span><span class="p">)],</span>
             <span class="s">'default'</span><span class="p">:</span> <span class="s">'local'</span><span class="p">,</span>
         <span class="p">},</span>
         <span class="s">'PORT'</span><span class="p">:</span> <span class="p">{</span>
-            <span class="s">'name'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Port'</span><span class="p">),</span>
-            <span class="s">'description'</span><span class="p">:</span> <span class="n">_</span><span class="p">(</span><span class="s">'Network port in case of network printer'</span><span class="p">),</span>
+            <span class="s">'name'</span><span class="p">:</span> <span class="nf">_</span><span class="p">(</span><span class="s">'Port'</span><span class="p">),</span>
+            <span class="s">'description'</span><span class="p">:</span> <span class="nf">_</span><span class="p">(</span><span class="s">'Network port in case of network printer'</span><span class="p">),</span>
             <span class="s">'default'</span><span class="p">:</span> <span class="s">'9100'</span><span class="p">,</span>
         <span class="p">},</span>
     <span class="p">}</span>
@@ -152,7 +152,7 @@ Instead of ta simple test we can also use choices. The first string like “loca
 one is the description in the UI. 
 After that we need to define a function:</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">){</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_label</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">){</span>
 </code></pre></div></div>
 
 <p>The kwargs is a dict with the following keys:</p>
@@ -171,16 +171,16 @@ After that we need to define a function:</p>
 The PIL object is a greyscale image. Because the printer can just print pure BW we convert this to a BW picture.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">255</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">Threshold</span> <span class="k">else</span> <span class="mi">0</span>
-<span class="n">label_image</span> <span class="o">=</span> <span class="n">label_image</span><span class="p">.</span><span class="n">convert</span><span class="p">(</span><span class="s">'L'</span><span class="p">).</span><span class="n">point</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'1'</span><span class="p">)</span>
+<span class="n">label_image</span> <span class="o">=</span> <span class="n">label_image</span><span class="p">.</span><span class="nf">convert</span><span class="p">(</span><span class="s">'L'</span><span class="p">).</span><span class="nf">point</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s">'1'</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The threshold can by modified by a plugin parameter. 200 is a good starting value.  This trick gives much better prints. 
 We can put the result this directly into the zpl library.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="n">zpl</span><span class="p">.</span><span class="n">Label</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
-<span class="n">l</span><span class="p">.</span><span class="n">origin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">l</span><span class="p">.</span><span class="n">write_graphic</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">l</span><span class="p">.</span><span class="n">endorigin</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="n">zpl</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">origin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">write_graphic</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">endorigin</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>50,30 is the size of the label in millimeters. The third parameter is the resolution of the printer in
