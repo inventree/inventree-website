@@ -78,3 +78,12 @@ Run debug server that automatically updates. This does not recompile the tailwin
 ```bash
 bundle exec jekyll serve --incremental
 ```
+
+### Update dependencies
+
+Update ruby gems and node packages.
+
+```bash
+bundle update
+ncu -u
+```
