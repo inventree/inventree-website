@@ -13,7 +13,7 @@ source:
 issue_tracker: https://github.com/matmair/inventree-rapidoc/issues
 website: https://mjmair.com/
 categories: API
-tags: inventree-rapidoc, rapidoc
+tags: RapiDoc
 ---
 Use RapiDoc for Inventree API docs
 
