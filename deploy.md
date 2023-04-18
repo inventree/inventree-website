@@ -19,8 +19,8 @@ A [bare metal installation guide](https://docs.inventree.org/en/latest/start/int
 
 ### Cloud
 
-A member of the team provides a [1-click app for InvenTree](https://marketplace.digitalocean.com/apps/inventree?refcode=d6172576d014&action=deploy) on the DigitalOcean marketplace.
+A member of the team provides a [1-click app for InvenTree](https://marketplace.digitalocean.com/apps/inventree?refcode=d6172576d014) on the DigitalOcean marketplace.
 
 ### Other Options
 
-The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all plattforms and architectures. If you want to read more about InvenTree's structure and a typical installation read the [architecture overview](../contribute/code/architecture).
+The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all plattforms and architectures. 

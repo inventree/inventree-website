@@ -7,4 +7,4 @@ functions:
     link: https://docs.inventree.org/en/latest/report/report/
   - title: Extend and Customize
     text: InvenTree is designed to be highly extensible. If the core InvenTree functionality does not meet your particular need, InvenTree provides a RESTful API, a native Python library, and a powerful plugin system.
-    link: https://docs.inventree.org/en/latest/extend/api/
+    link: https://docs.inventree.org/en/latest/api/api/
