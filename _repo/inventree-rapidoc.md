@@ -1,5 +1,5 @@
 ---
-name: inventree-rapidoc
+name: Inventree RapiDoc
 author: matmair
 license: MIT license
 open_source: true
@@ -15,9 +15,6 @@ website: https://mjmair.com/
 categories: API
 tags: RapiDoc
 ---
-Use RapiDoc for Inventree API docs
-
-# inventree-rapidoc
 
 Use RapiDoc for Inventree API docs.
 
