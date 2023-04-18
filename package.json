@@ -1,11 +1,11 @@
 {
-  "devDependencies": {
-    "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.4.0",
-    "cssnano": "^5.0.10",
-    "postcss": "^8.3.11",
-    "postcss-cli": "^9.0.2",
-    "postcss-import": "^14.0.2",
-    "tailwindcss": "^2.2.19"
-  }
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.4.1",
+        "autoprefixer": "^10.4.14",
+        "cssnano": "^5.1.15",
+        "postcss": "^8.4.22",
+        "postcss-cli": "^9.1.0",
+        "postcss-import": "^14.1.0",
+        "tailwindcss": "^2.2.19"
+    }
 }
