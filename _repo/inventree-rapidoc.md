@@ -3,17 +3,17 @@ name: inventree-rapidoc
 author: matmair
 license: MIT license
 open_source: true
-stable: False
+stable: true
 maintained: true
 pypi: true
 package_name: inventree-rapidoc
-github: None
+github: https://github.com/matmair/inventree-rapidoc
 gitlab:
 source:
-issue_tracker:https://github.com/matmair/inventree-rapidoc/issues
-website:
-categories:
-tags: inventree,inventree-plugin,inventree-rapidoc
+issue_tracker: https://github.com/matmair/inventree-rapidoc/issues
+website: https://mjmair.com/
+categories: API
+tags: inventree-rapidoc, rapidoc
 ---
 Use RapiDoc for Inventree API docs
 
