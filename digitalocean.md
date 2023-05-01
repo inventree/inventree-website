@@ -12,7 +12,7 @@ title: InvenTree x DigitalOcean
 
 <a href="https://marketplace.digitalocean.com/apps/inventree?refcode=d6172576d014"><img src="https://www.deploytodo.com/do-btn-blue-ghost.svg" alt="Deploy to DO" width="auto" height="40" /></a>
 
-InvenTree is available as a one-click install on the DigitalOcean marketplace. The image makes use of the installer and is maintained by team member [matmair](/_publishers/matmair.md). The source is available [here](https://github.com/invenhost/inventree_droplet).
+InvenTree is available as a one-click install on the DigitalOcean marketplace. The image makes use of the installer and is maintained by team member [matmair]({% link _publishers/matmair.md %}). The source is available [here](https://github.com/invenhost/inventree_droplet).
 
 ## DigitalOcean Open Source Credits
 
