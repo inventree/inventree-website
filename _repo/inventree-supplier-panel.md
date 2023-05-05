@@ -1,6 +1,6 @@
 ---
 name: inventree-supplier-panel                                                    # Name of the plugin (should be either NAME, TITLE or S
-author: SergelLacruz                                                              # Maintainer must be the same as the publisher reference
+author: SergolLacruz                                                              # Maintainer must be the same as the publisher reference
 license: MIT                                                                      # License, we prefer open source
 open_source: true                                                                 # Is this project licensed with an OSI-approved license - aka 'open source'
 stable: true                                                                      # Is this project stable? Should users deploy this in their instace?
@@ -83,7 +83,7 @@ the actual stock at mouser and an OK bubble when the stock is large enough for y
 You also find the actual price as well as the total amount of your order. 
 
 All items that have been in the cart before get deleted. The cart always contains only the parts
-in your PO. 
+in your PO. SergelLacruz
 
 The plugin also transfers your IPNs (internal part numbers). Mouser reserves a field 
 for such numbers. They show up in your shopping cart as well as on the invoice and even
