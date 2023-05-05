@@ -15,10 +15,7 @@ tags:                                                                           
     - supplier
     - mouser
 ---
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-# The InvenTree-supplier-panel
+Create Mouser shopping cart from purchase order
 
 This is a plugin for [InvenTree](https://inventree.org), which translates a purchase order
 into a Mouser shopping cart. After using this plugin you can directly order the shopping
