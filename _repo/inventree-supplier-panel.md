@@ -33,7 +33,7 @@ You can get this on the Mouser WEB page. Do not mess up with the Mouser search A
 key. This is different. If the key is properly set up you can find it on the Mouser 
 WEB page here:
 
-{% capture image_link %}{{ "/assets/plugins/mouser_api.png" | absolute_url }}{% endcapture %}
+![Mouser WEB](/assets/plugins/mouser_api.png)
 
 ## Installation
 
