@@ -15,27 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - Inventree Apprise</title>
+<title>InvenTree - Inventree Supplier Panel</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Inventree Apprise | InvenTree</title>
+<title>Inventree Supplier Panel | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="Inventree Apprise" />
-<meta name="author" content="matmair" />
+<meta property="og:title" content="Inventree Supplier Panel" />
+<meta name="author" content="SergeoLacruz" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Send notifications from InvenTree via Apprise" />
-<meta property="og:description" content="Send notifications from InvenTree via Apprise" />
-<link rel="canonical" href="/matmair/inventree-apprise" />
-<meta property="og:url" content="/matmair/inventree-apprise" />
+<meta name="description" content="Create Mouser shopping cart from purchase order" />
+<meta property="og:description" content="Create Mouser shopping cart from purchase order" />
+<link rel="canonical" href="/SergeoLacruz/inventree-supplier-panel" />
+<meta property="og:url" content="/SergeoLacruz/inventree-supplier-panel" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-05-06T15:57:15+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Inventree Apprise" />
+<meta property="twitter:title" content="Inventree Supplier Panel" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2023-05-06T15:57:15+00:00","datePublished":"2023-05-06T15:57:15+00:00","description":"Send notifications from InvenTree via Apprise","headline":"Inventree Apprise","mainEntityOfPage":{"@type":"WebPage","@id":"/matmair/inventree-apprise"},"url":"/matmair/inventree-apprise"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2023-05-06T15:57:15+00:00","datePublished":"2023-05-06T15:57:15+00:00","description":"Create Mouser shopping cart from purchase order","headline":"Inventree Supplier Panel","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-supplier-panel"},"url":"/SergeoLacruz/inventree-supplier-panel"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -62,35 +62,115 @@
     </div>
 </header> <article class="max-w-p90">
     
-    <h2>InvenTree Apprise
+    <h2>inventree-supplier-panel
 <span class="sm:ml-2 text-sm">
-<a href="/matmair">
-<span class="inline-flex">by <img src="https://github.com/matmair.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px"> matmair</span>
+<a href="/SergeoLacruz">
+<span class="inline-flex">by <img src="https://github.com/SergeoLacruz.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px"> SergeoLacruz</span>
 </a></span>
 <span class="sm:ml-2 text-sm">last modified: 06 May 2023</span>
 </h2>
 
 <div class="flex-wrap md:flex md:flex-nowrap">
     <div class="w-full md:w-auto md:mr-4">
-        <p>Send notifications from InvenTree via Apprise</p>
+        <p>Create Mouser shopping cart from purchase order</p>
 
-<h2 id="setup">Setup</h2>
+<p>This is a plugin for <a href="https://inventree.org">InvenTree</a>, which translates a purchase order
+into a Mouser shopping cart. After using this plugin you can directly order the shopping
+cart on the Mouser WEB page. You need to have a Mouser account and a Mouser API key. 
+The shopping cart will be created in your Mouser account.</p>
 
-<ol>
-  <li>
-    <p>Install this plugin in the webinterface with the packagename <code class="language-plaintext highlighter-rouge">inventree-apprise</code></p>
-  </li>
-  <li>
-    <p>Enable the plugin in the plugin settings. You need to be signed in as a superuser for this.
-<strong>The server will restart if you enable the plugin</strong></p>
-  </li>
-  <li>
-    <p>Add all endpoints you want to use in the plugin settings. You can use the <a href="https://github.com/caronc/apprise#supported-notifications">Apprise URL Syntax</a>.</p>
-  </li>
-</ol>
+<h2 id="prerequisites">Prerequisites</h2>
 
-<h2 id="license">License</h2>
-<p>This project is licensed as MIT. Copy and do what you want - maybe tag your new plugin so others can find it. The more the merrier.</p>
+<p>For this plugin to work you need to have Mouser as as supplier in your InvenTree data.
+Suppliers parts must be added to all the parts that you like to buy at Mouser. All Mouser supplier
+parts need to have the proper SKU. It needs to match the Mouser part number exactly.</p>
+
+<p>For access to the Mouser API you need a Mouser account and a shopping cart API key. 
+You can get this on the Mouser WEB page. Do not mess up with the Mouser search API
+key. This is different. If the key is properly set up you can find it on the Mouser 
+WEB page here:</p>
+
+<p><img src="/assets/plugins/mouser_api.png" alt="Mouser WEB"></p>
+
+<h2 id="installation">Installation</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install git+https://github.com/SergeoLacruz/inventree-supplier-panel
+</code></pre></div></div>
+
+<h2 id="configuration">Configuration</h2>
+<h3 id="mouser-supplier-id">Mouser Supplier ID</h3>
+<p>Place here the primary key of the supplier Mouser in your system. You can select from a list of
+your suppliers.</p>
+
+<h3 id="supplier-api-key">Supplier API key</h3>
+<p>Place here you Mouser key for manipulating shopping carts.</p>
+
+<h3 id="supplier-shopping-cart-key">Supplier shopping cart key</h3>
+<p>Each shopping cart on the Mouser page has a designated key. You can have several shopping carts 
+in our account. Each cart has a separate key. The plugin puts your PO into the cart with this key.
+If you do not have a shopping cart key, leave the field empty. The plugin will create a cart
+and save the key in the field.</p>
+
+<h3 id="proxies">Proxies</h3>
+<p>In case you need to authorise a proxy server between your InvenTree server and the internet
+put the required setting here. The argument for the request is {‘Proxy CON’ : ‘Proxy URL’} for
+example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ 'https' : 'https://user:password@ipaddress:port' }
+</code></pre></div></div>
+
+<p>If you do not need this just leave Proxy CON empty.</p>
+
+<h2 id="what-it-does">What it does</h2>
+
+<p>The plugin creates a new panel which is visible on the purchase order details view. 
+This is called Mouser actions. On the panel there are three things:</p>
+
+<ul>
+  <li>a button that starts the transfer of your PO to Mouser</li>
+  <li>a status bar that shows error messages</li>
+  <li>a table that contains the created Mouser shopping cart.</li>
+</ul>
+
+<p><img src="/assets/plugins/mouser_panel.png" alt="Mouser Panel"></p>
+
+<p>The button initiates the transfer. It takes each element of your PO, takes the SKU of
+the Mouser supplier part and adds it into your shopping cart. When finished it downloads
+the shopping cart from the Mouser WEB page and puts the data into the table. Here you see
+the actual stock at mouser and an OK bubble when the stock is large enough for you order. 
+You also find the actual price as well as the total amount of your order.</p>
+
+<p>All items that have been in the cart before get deleted. The cart always contains only the parts
+in your PO. SergelLacruz</p>
+
+<p>The plugin also transfers your IPNs (internal part numbers). Mouser reserves a field 
+for such numbers. They show up in your shopping cart as well as on the invoice and even
+on the labels that they put onto the bags and reels.</p>
+
+<p>Finally the prices that come with the Mouser shopping cart will be copied back into your
+InvenTree purchase order line items. So you can always see what you payed for the part when
+you ordered it. This does not modify the price breaks of the supplier part. These are stored
+with the supplier part. Here we just modify the purchase order.</p>
+
+<p>The panel is only displayed when the supplier of the current purchase order is Mouser.
+In addition the current user must have change, add or delete access to purchase orders.</p>
+
+<h2 id="issues">Issues</h2>
+<h3 id="mouser-messed-up">Mouser messed up</h3>
+<p>It can happen that the Mouser shopping cart API gets messed up and no item are added into
+your cart. Just delete the cart in that case and delete the key in the plugin setting.
+A new key will be created and usually works.</p>
+
+<h3 id="api-keys-are-global">API keys are global</h3>
+<p>The API keys and especially the proxy password are user specific and shall not be given to 
+others. Up to now there are no user specific settings in InvenTree. So these keys are global
+and visible to, at least every admin. All users who use the plugin will have the same
+keys. We use a team key to solve this.</p>
+
+<h3 id="other-suppliers">Other suppliers</h3>
+<p>Actually this works only for Mouser. Other suppliers like Digikey, Farnell or Buerklin
+might follow.</p>
+
 
     </div>
 
@@ -108,21 +188,13 @@
             <div>
 <i class="fa-regular fa-circle-check"></i>Maintained</div>
           </div>
-          Package on PyPI:<pre class="my-0">inventree-apprise</pre>
+          
         
 
         
-        <a href="https://mjmair.com" class="no-underline" aria-label="open website">
-          <div>
-            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-            <p class="font-normal">https://mjmair.com</p>
-          </div>
-        </a>
-        
 
         
-        <a href="https://github.com/matmair/inventree-apprise/issues" class="no-underline" aria-label="open the issue tracker">
+        <a href="https://github.com/SergeoLacruz/inventree-supplier-panel/issues" class="no-underline" aria-label="open the issue tracker">
         <div>
           <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
 </h4>
@@ -131,11 +203,11 @@
         
 
         
-        <a href="https://github.com/matmair/inventree-apprise" class="no-underline" aria-label="open source on GitHub">
+        <a href="https://github.com/sergeolacruz/inventree-supplier-panel" class="no-underline" aria-label="open source on GitHub">
         <div>
           <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
 </h4>
-          <p class="font-normal">matmair/inventree-apprise</p>
+          <p class="font-normal">sergeolacruz/inventree-supplier-panel</p>
         </div>
         </a>
         
@@ -146,7 +218,7 @@
           <h4 class="plugin_links">Categories</h4>
           <div>
             
-            <a href="/plugins/categories/#notifications"><span class="plugin_cat">Notifications</span></a>
+            <a href="/plugins/categories/#supplier"><span class="plugin_cat">Supplier</span></a>
             
           </div>
         </div>
@@ -155,21 +227,9 @@
           <h4 class="plugin_links">Tags</h4>
           <div>
             
-            <a href="/plugins/tags/#apprise"><span class="plugin_tag">Apprise</span></a>
+            <a href="/plugins/tags/#supplier"><span class="plugin_tag">supplier</span></a>
             
-            <a href="/plugins/tags/#3rd-party-integration"><span class="plugin_tag">3rd party integration</span></a>
-            
-            <a href="/plugins/tags/#discord"><span class="plugin_tag">Discord</span></a>
-            
-            <a href="/plugins/tags/#ifttt"><span class="plugin_tag">IFTTT</span></a>
-            
-            <a href="/plugins/tags/#matrix"><span class="plugin_tag">Matrix</span></a>
-            
-            <a href="/plugins/tags/#microsoft-teams"><span class="plugin_tag">Microsoft Teams</span></a>
-            
-            <a href="/plugins/tags/#slack"><span class="plugin_tag">Slack</span></a>
-            
-            <a href="/plugins/tags/#twilio"><span class="plugin_tag">Twilio</span></a>
+            <a href="/plugins/tags/#mouser"><span class="plugin_tag">mouser</span></a>
             
           </div>
         </div>
