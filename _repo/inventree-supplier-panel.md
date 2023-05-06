@@ -75,7 +75,7 @@ This is called Mouser actions. On the panel there are three things:
 - a status bar that shows error messages
 - a table that contains the created Mouser shopping cart. 
 
-![Mouser Panel](https://github.com/SergeoLacruz/inventree-supplier-panel/blob/master/pictures/mouser_panel.png)
+![Mouser Panel](/assets/plugins/mouser_panel.png)
 
 The button initiates the transfer. It takes each element of your PO, takes the SKU of
 the Mouser supplier part and adds it into your shopping cart. When finished it downloads
