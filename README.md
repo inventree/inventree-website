@@ -81,7 +81,7 @@ bundle exec jekyll serve --incremental
 
 ### Update dependencies
 
-Update ruby gems and node packages.
+If the above commands fail, you may have outdated ruby gems, or node packages. Update with the following commands:
 
 ```bash
 bundle update
