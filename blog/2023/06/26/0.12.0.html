@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - 0.12.0 Stable Release</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>0.12.0 Stable Release | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="0.12.0 Stable Release" />
+<meta name="author" content="SchrodingersGat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Once again, it’s time to announce a new stable release! The InvenTree development team, aided by a number of new contributors, are pleased to announce a new stable release version - 0.12.0." />
+<meta property="og:description" content="Once again, it’s time to announce a new stable release! The InvenTree development team, aided by a number of new contributors, are pleased to announce a new stable release version - 0.12.0." />
+<link rel="canonical" href="/blog/2023/06/26/0.12.0" />
+<meta property="og:url" content="/blog/2023/06/26/0.12.0" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-06-26T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="0.12.0 Stable Release" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-06-26T00:00:00+00:00","datePublished":"2023-06-26T00:00:00+00:00","description":"Once again, it’s time to announce a new stable release! The InvenTree development team, aided by a number of new contributors, are pleased to announce a new stable release version - 0.12.0.","headline":"0.12.0 Stable Release","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/06/26/0.12.0"},"url":"/blog/2023/06/26/0.12.0"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script async defer src="https://umami.invenhost.com/umami.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>0.12.0 Stable Release</h1>
+    <p>
+      26 Jun 2023
+      
+
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>Once again, it’s time to announce a new stable release! The InvenTree development team, aided by a number of new contributors, are pleased to announce a new stable release version - 0.12.0.</p>
+
+<h2 id="deploying-inventree">Deploying InvenTree</h2>
+
+<p>InvenTree deployment is supported with multiple approaches. Refer to our <a href="/deploy.html">deployment guide</a> for more information!</p>
+
+<h2 id="new-features">New Features</h2>
+
+<p>In today’s fast-paced business environment, effective inventory management plays a vital role in the success of any organization. Keeping track of stock, orders, and projects is essential for efficient operations and customer satisfaction. To address the evolving needs of businesses, we are excited to announce the release of InvenTree, our advanced inventory management software. This latest version of InvenTree introduces several key features and enhancements, focusing on improving business functionality and reliability. Let’s explore the major highlights of this release:</p>
+
+<h3 id="units-of-measurement">Units of Measurement</h3>
+
+<p>InvenTree now supports physical units for parts, allowing you to define and track different units of measurement for your inventory items. With seamless conversion between compatible types, you can manage your stock in a way that aligns with your specific requirements and industry standards.</p>
+
+<p>Physical unit management is provided via the <a href="https://pint.readthedocs.io/en/stable/">pint</a> library. Units of measure can be defined for internal parts, and for parts supplied by external companies. In the case of supplier parts, different units of measure can be specified, and converted to internal units on point of purchase.</p>
+
+<p>Additionally, part parameters can now also specify real world units!</p>
+
+<p>For more information on this new feature, refer to the documentation:</p>
+
+<ul>
+  <li><a href="https://docs.inventree.org/en/latest/part/part/#units-of-measure">Part units</a></li>
+  <li><a href="https://docs.inventree.org/en/latest/part/parameter/#parameter-units">Part parameter units</a></li>
+</ul>
+
+<h3 id="project-codes">Project Codes</h3>
+
+<p>To streamline project management and order tracking, InvenTree now offers configurable project codes. These codes can be created and assigned to orders, providing a convenient way to organize and categorize your inventory based on specific projects. This enhancement enhances overall visibility and enables efficient project-based inventory management.</p>
+
+<p>Read more about project code support <a href="https://docs.inventree.org/en/latest/order/project_codes/">in the documentation</a></p>
+
+<h3 id="parameter-types">Parameter Types</h3>
+
+<p>Part parameters in InvenTree now support dynamic typing, empowering you to define and validate various parameter types. With this flexibility, you can customize and validate part parameters to suit your specific needs. Furthermore, the addition of plugin support ensures seamless integration of third-party validation mechanisms, enhancing the reliability of your inventory data.</p>
+
+<p>More information about part parameters is available <a href="https://docs.inventree.org/en/latest/part/parameter/">in the documentation</a>.</p>
+
+<h3 id="parameter-sorting">Parameter Sorting</h3>
+
+<p>To enhance the usability and efficiency of InvenTree’s part parameters, the latest release introduces the ability to sort parameters by value. This functionality enables you to quickly identify and analyze specific parameter values across your inventory. Moreover, the conversion between real unit values of compatible types allows for seamless comparison and analysis. By easily sorting parts based on parameter values, you gain deeper insights into your inventory, facilitating better decision-making and process optimization.</p>
+
+<h3 id="report-plugins">Report Plugins</h3>
+
+<p>InvenTree introduces a new <a href="https://docs.inventree.org/en/latest/extend/plugins/report/">plugin mixin class</a> that allows for custom context variables to be injected into reports. This enhancement provides extensive customization options when generating reports, enabling you to include additional information relevant to your business processes. With improved report functionality, you can present inventory data in a more comprehensive and meaningful way.</p>
+
+<h3 id="build-orders-consume-stock">Build Orders Consume Stock</h3>
+
+<p>The build order interface in InvenTree has received a major overhaul, resulting in a significantly improved API interface. This update simplifies the process of managing build orders and ensures a smoother workflow. Additionally, build orders now track stock consumption, allowing for lifecycle tracking of consumed stock. This feature enables better monitoring of stock usage and enhances traceability.</p>
+
+<h3 id="scrap-build-order-outputs">Scrap Build Order Outputs</h3>
+
+<p>InvenTree’s latest release introduces a valuable feature that allows users to <a href="https://docs.inventree.org/en/latest/build/output/#scrap-build-output">scrap partially completed or failed build outputs</a> while retaining traceability. In real-world manufacturing scenarios, it is common for builds to encounter challenges or errors, resulting in the need to discard certain outputs. With the new scrap build outputs functionality, you can easily identify and remove faulty or incomplete build outputs from your inventory. This feature ensures accurate stock tracking and maintains a clear audit trail, improving reliability and efficiency in your manufacturing processes.</p>
+
+<h3 id="image-uploads">Image Uploads</h3>
+
+<p>To enrich documentation and enhance visual representation, InvenTree now supports image uploads. Images can be uploaded and seamlessly integrated into markdown notes fields, providing a more comprehensive overview of inventory items. With the ability to include images, you can easily document and visualize important aspects of your inventory, increasing reliability and improving communication.</p>
+
+<h3 id="address-management">Address Management</h3>
+
+<p>InvenTree now offers <a href="https://docs.inventree.org/en/latest/order/company/#addresses">increased support for address management</a> with a more complex address database model. This enhancement enables businesses to manage addresses more effectively, accommodating various scenarios such as multiple shipping locations, customer addresses, and supplier information. With improved address management, you can maintain accurate records and ensure smooth logistics operations.</p>
+
+<h3 id="svg-support">SVG Support</h3>
+
+<p>With the growing importance of visual data representation, InvenTree now supports the embedding of SVG images into generated reports. By incorporating SVG images into your reports, you can create visually appealing and informative documentation, making it easier for stakeholders to understand and engage with your inventory data.</p>
+
+<p>Read more about <a href="https://docs.inventree.org/en/latest/report/helpers/#svg-images">SVG support in generated reports</a> in the documentation.</p>
+
+<h3 id="update-to-openapi">Update to OpenAPI</h3>
+
+<p>InvenTree’s API documentation has been updated to utilize OpenAPI, resulting in improved readability and enhanced functionality. The transition to OpenAPI brings a standardized and user-friendly interface for developers, enabling easier integration with other systems and applications. This update enhances the reliability and compatibility of InvenTree within your existing software ecosystem.</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>As always, we have worked hard to address any identified bugs or inconsistencies in system performance. These bug fixes and usability improvements represent our commitment to delivering a robust, reliable, and user-friendly inventory management solution. We value user feedback and continuously strive to enhance the software based on user needs and industry best practices. With each iteration, InvenTree becomes more refined, reliable, and user-centric, empowering businesses to efficiently manage their inventory and drive success.</p>
+
+<h2 id="and-more">And More!</h2>
+
+<p>With over 175 merged requests, this new stable release represents a major step forward in the InvenTree project. Please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.0">release notes</a> for a full listing of new features, bug fixes, and other updates.</p>
+
+<h2 id="support-for-inventree">Support for InvenTree</h2>
+
+<p>We believe in the power of open-source software and its ability to drive innovation and empower businesses worldwide. InvenTree has always been developed with a community-driven approach, with contributors and users collaborating to make it a robust and reliable inventory management solution. To continue providing high-quality software and ensure its long-term sustainability, we rely on the support of the community.</p>
+
+<p>Maintaining and continuously improving a software project requires time, effort, and resources. We are committed to dedicating our expertise and energy to enhancing InvenTree, but we also need your support to sustain its development at the highest standards. By contributing financially to the project, you can play a crucial role in ensuring that InvenTree remains a cutting-edge, reliable, and feature-rich inventory management solution.</p>
+
+<p>Your financial support will help us in several ways:</p>
+
+<p><strong>Continued Development</strong></p>
+
+<p>Funds raised through your contributions will enable us to allocate more resources to the ongoing development of InvenTree. This means that we can invest in additional development hours, hire talented developers, and accelerate the implementation of new features, bug fixes, and usability improvements.</p>
+
+<p><strong>Bug Fixing and Quality Assurance</strong></p>
+
+<p>With your financial support, we can dedicate more attention to addressing reported bugs promptly. By investing in rigorous quality assurance processes, we can ensure that InvenTree operates smoothly, minimizing disruptions and maximizing reliability for users like you.</p>
+
+<p><strong>Documentation and User Support</strong></p>
+
+<p>High-quality documentation and responsive user support are vital components of a successful software project. Your contributions will enable us to allocate resources to improving documentation, creating helpful tutorials, and providing timely assistance to users, enhancing their experience and understanding of InvenTree.</p>
+
+<p><strong>Infrastructure and Hosting Costs</strong></p>
+
+<p>Maintaining reliable infrastructure and hosting services is essential for ensuring the ongoing development and maintenance of the InvenTree project. Your support will help us cover the various ongoing costs associated with hosting.</p>
+
+<p>To support InvenTree financially, please view the <a href="/contribute.html#sponsor">contribution page</a> or contact our team for more information on how you can contribute. We extend our heartfelt gratitude to the entire InvenTree community for your ongoing support, contributions, and belief in the power of open-source software. Your involvement is invaluable, and we look forward to building a brighter future for InvenTree together.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrate</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="https://github.com/sparkmicro/Ki-nTree" class="footer-link">KiCad</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>
