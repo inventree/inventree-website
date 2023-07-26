@@ -21,7 +21,7 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-      - run: bundle exec htmlproofer ./_site --no-enforce-https --ignore-urls "/marketplace.digitalocean.com/" --ignore-urls "https://twitter.com/inventreedb"
+      - run: bundle exec htmlproofer ./_site --no-enforce-https --ignore-urls "/marketplace.digitalocean.com/" --ignore-urls "https://twitter.com/inventreedb"  --ignore-urls "https://reddit.com/r/inventree"
         name: Check links
       - name: Deploy
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
