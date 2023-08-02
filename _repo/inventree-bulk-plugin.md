@@ -3,17 +3,17 @@ name: inventree-bulk-plugin
 author: wolflu05
 license: MIT
 open_source: true
-stable: False
+stable: true
 maintained: true
 pypi: true
 package_name: inventree-bulk-plugin
 github: https://github.com/wolflu05/inventree-bulk-plugin
 gitlab:
 source:
-issue_tracker:
+issue_tracker: https://github.com/wolflu05/inventree-bulk-plugin/issues
 website:
-categories:
-tags: inventree bulk
+categories: AppMixin
+tags: Bulk Stock Part Locations
 ---
 Bulk creation plugin for InvenTree
 
