@@ -24,7 +24,6 @@ Bulk creation plugin for InvenTree
 
 This plugin helps you bulk create storage locations and part categories in [InvenTree](https://inventree.org/) by using customized naming strategies. That means you not only have the option to generate multidimensional* names for stock locations or part categories, but also have the option to save the templates for later usage if your storage room uses e.g. drawer towers, saved templates help to ensure naming consistency for all later added towers.
 
-> [!NOTE]
 > multidimensional means that you are not limited to namings like `D1`,`D2`, .. but also something like `D1.A`, `D1.B`, `D2.A`, `D2.B`, ...
 
 ## 🌟Screenshots
@@ -110,14 +109,12 @@ You can save bulk creation templates to ensure consistency along your storage tr
 4. Create you template by using "Create"
 5. Goto the specific sub-location where you want to apply that template, load it and Bulk generate your locations to your needs.
 
-> [!NOTE]
 > You can use [inputs](#input) to make your bulk creation schema dynamic in amount of drawers or their names.
 
 ### Bulk creation editor
 
 The bulk creation editor helps you to define the generation schema. 
 
-> [!NOTE]
 > You can use [Jinja2 templating](https://jinja.palletsprojects.com/en/3.1.x/templates/) in every field (except in the `input` section). You can also use filters to manipulate the dimension output.
 > **Global context:**
 > - `inp.<key>` - Access [input variables](#input), e.g. (`{{inp.drawer_count|int / 2}}`)
@@ -158,14 +155,12 @@ Alpha generator: `*ALPHA(casing=upper|lower,start=A,end=F,step=2,count=3)` or `a
 
 Example: `1-3,hello,*NUMERIC(start=1,step=2,end=10),*ALPHA(casing=upper,end=B),A-D(step=2)`, this will generate the following dimension: `12,3,hello,1,3,5,7,9,A,B,A,C`.
 
-> [!IMPORTANT]
 > Infinity generators need a `count` argument or a global count limitation, otherwise generation will fail.
 
 ##### Generate
 
 These fields my differ between stock location and part category. They correspond to the generated items property. For example "Name" will be the name of the created location/category. Fields like "Structural" must evaluate to something that ca be casted to a boolean (e.g. `true` or `false`).
 
-> [!NOTE]
 > **Extended Jinja2 context**:
 > - `len` - count of elements this child will generate
 > - `dim.<x>` - x-th dimension, one-based (e.g. `{{dim.1}}` to access the first dimension)
