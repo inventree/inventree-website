@@ -73,7 +73,7 @@ Build site locally
 bundle exec jekyll build
 ```
 
-Run debug server that automatically updates. This does not recompile the tailwindcss stylesheet. If you change something in the css file, you neet to build the site fully with the command above.
+Run debug server that automatically updates. This does not recompile the tailwindcss stylesheet. If you change something in the css file, you need to build the site fully with the command above.
 
 ```bash
 bundle exec jekyll serve --incremental
