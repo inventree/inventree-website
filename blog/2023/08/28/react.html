@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - User Interface Refactor</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>User Interface Refactor | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="User Interface Refactor" />
+<meta name="author" content="SchrodingersGat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The InvenTree development team is thrilled to share some exciting news about the ongoing efforts to significantly overhaul our user interface. To provide a major facelift to InvenTree, we are migrating our entire user interface to the React framework." />
+<meta property="og:description" content="The InvenTree development team is thrilled to share some exciting news about the ongoing efforts to significantly overhaul our user interface. To provide a major facelift to InvenTree, we are migrating our entire user interface to the React framework." />
+<link rel="canonical" href="/blog/2023/08/28/react" />
+<meta property="og:url" content="/blog/2023/08/28/react" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-08-28T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="User Interface Refactor" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-08-28T00:00:00+00:00","datePublished":"2023-08-28T00:00:00+00:00","description":"The InvenTree development team is thrilled to share some exciting news about the ongoing efforts to significantly overhaul our user interface. To provide a major facelift to InvenTree, we are migrating our entire user interface to the React framework.","headline":"User Interface Refactor","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/08/28/react"},"url":"/blog/2023/08/28/react"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <script async defer src="https://umami.invenhost.com/script.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>User Interface Refactor</h1>
+    <p>
+      28 Aug 2023
+      
+
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>The InvenTree development team is thrilled to share some exciting news about the ongoing efforts to significantly overhaul our user interface. To provide a major facelift to InvenTree, we are migrating our entire user interface to the <a href="https://react.dev/">React</a> framework.</p>
+
+<h3 id="a-brief-history">A Brief History</h3>
+
+<p>The InvenTree software project started as a pure server-side app, with the pages rendered on the server using html template files, via the <a href="https://www.djangoproject.com/">Django</a> template engine. As the amount of data handled by InvenTree increased, this approach very quickly became untenable, with page loading times slowing noticeably.</p>
+
+<p>A significant milestone came with the introduction of the REST API (we use the <a href="https://www.django-rest-framework.org/">Django Rest Framework</a>). Now, the user interface could be separated from the data, which allowed some great improvements to the user experience. Now, content could be loaded dynamically via the API, and rendered on the client side using javascript.</p>
+
+<p>While various improvements have been made, and new features implemented, this has been how the InvenTree user interface has functioned for a number of years. Functionality (and code) has grown somewhat organically, and without much in the way of an overarching design strategy.</p>
+
+<p>A lot of the user interface is still dynamically rendered on the server, with the “gaps” filled in by the client (via API calls). This approach has some drawbacks:</p>
+
+<ul>
+  <li>
+<strong>Inconsistent:</strong> There is no real guiding strategy as to which parts are rendered by the server or the client</li>
+  <li>
+<strong>Inefficient:</strong> Rendering UI elements on the server via templates is very slow, and we cannot make use of modern design patterns</li>
+  <li>
+<strong>Inscrutable:</strong> With a mix of server-side html and client-side javascript, it is very difficult to work out how a certain function works, and how to implement changes.</li>
+</ul>
+
+<p>So, it’s time for a clean break! Moving to a modern UI framework is a daunting task, but with some very clear benefits and provides a path into the future.</p>
+
+<h3 id="design-goals">Design Goals</h3>
+
+<p>The primary design goal for our refactor is to render the entire user interface dynamically, using React. To achieve this, we have to implement the following:</p>
+
+<ul>
+  <li>Update the API</li>
+  <li>Reimplement the UI</li>
+  <li>Test everything</li>
+</ul>
+
+<h4 id="update-api">Update API</h4>
+
+<p>As it stands, the API currently provides the majority of required data to various interfaces, including the web interface, mobile app, and any third party integrations. However there are some data which are not currently accessible via the API, and rendered on-demand by the server. So, we need to ensure that all displayed data are available via API endpoints.</p>
+
+<h4 id="reimplement-ui">Reimplement UI</h4>
+
+<p>Every single page / view needs to be rewritten in React. While this is a lot of work, it will be significantly less work than it took to originally write it all in javascript. We can leverage the reusable components and design patterns provided by React to significantly reduce code duplication. Additionally, there are already a lot of “common” interface patterns (such as data tabulation) used in InvenTree which should cut down the required work.</p>
+
+<h3 id="test-everything">Test Everything</h3>
+
+<p>A big advantage of moving to a modern UI framework is the ability to enhance our unit testing. Currently, while the server code has good code coverage, the front-end code has very little. Our move to React will include a focus on test driven development, to ensure that our front-end is as bug free as is reasonably possible.</p>
+
+<h3 id="advantages">Advantages</h3>
+
+<p>There are a number of significant advantages that this refactor will afford:</p>
+
+<ul>
+  <li>
+<strong>User Experience:</strong> A major driver here is a better user experience. The interface will be more “user friendly”, pages will load more smoothly, and the interface flow (should) feel more intuitive</li>
+  <li>
+<strong>Efficiency Gains:</strong> As the django server no longer has to render front-end code, it should me much more responsive for API requests</li>
+  <li>
+<strong>Improved API:</strong> As a necessary requirement, our API will be enhanced. Data availability and response times will be improved.</li>
+  <li>
+<strong>Reduce Served Load:</strong> By only loading data when necessary, we will drastically reduce the load on the server</li>
+  <li>
+<strong>Code Separation:</strong> Good separation of code between the server (API) and front-end (UI) will result in cleaner code</li>
+  <li>
+<strong>Better for Developers:</strong> By moving to a well-known modern framework, we will make it much easier for other developers to contribute to our codebase.</li>
+  <li>
+<strong>Future Development:</strong> We will have a clear path forward for development of modern, responsive interface features which are not possible with our current toolchain.</li>
+  <li>
+<strong>Easier Integrations:</strong> Developers can implement responsive integrations with external services or plugins</li>
+</ul>
+
+<h3 id="release-timeline">Release Timeline</h3>
+
+<p>Currently, the “master” branch of InvenTree ships with the “legacy” interface, and the new interface (which we have codenamed “platform”). We will be shipping both interfaces side-by-side while we work on the development.</p>
+
+<p>When the new interface is ready to be released, we will have a clean break, with the old interface removed entirely.</p>
+
+<p>Our aim is to have the entire user interface rewritten by the end of the year. Ideally, with developer assistance we could have it done sooner!</p>
+
+<p>You can track the progress of these tasks here - <a href="https://github.com/inventree/InvenTree/issues/5212">https://github.com/inventree/InvenTree/issues/5212</a></p>
+
+<h4 id="distributing-the-interface">Distributing the Interface</h4>
+
+<p>The intent for distributing the UI is to bundle a set of <em>compiled</em> javascript files with the installer. This means that the install / upgrade process is seamless for users:</p>
+
+<ul>
+  <li>End users will not need to install node / npm / yarn / etc on their system</li>
+  <li>UI files are compiled and minified, to reduce download size</li>
+</ul>
+
+<p>Developers will need to install the required development packages to build the user interface on their machine. This is managed by our requirements files.</p>
+
+<h4 id="interface-preview">Interface Preview</h4>
+
+<p>The new interface is currently shipping in the “master” branch of InvenTree, and can be accessed at the <code class="language-plaintext highlighter-rouge">/platform/</code> URL. This is very much a work in progress, but is useful for users or developers who wish to see the progress of the overhaul, or (even better) help us develop it.</p>
+
+<p>You can see the latest version on the demo site, at <a href="https://demo.inventree.org/platform/">https://demo.inventree.org/platform/</a></p>
+
+<h4 id="development-assistance">Development Assistance</h4>
+
+<p>One major goal of the refactor is to attract more developers by using a well-established modern framework. If you would like to contribute to the new interface, please raise a PR over on our <a href="https://github.com/inventree/inventree">GitHub page</a>.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrate</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="https://github.com/sparkmicro/Ki-nTree" class="footer-link">KiCad</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>
