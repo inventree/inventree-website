@@ -19,7 +19,7 @@ baseurl: ""
 url: ""
 
 # Analytics
-analytics-domain: umami.invenhost.com/umami.js
+analytics-domain: umami.invenhost.com/script.js
 analytics-id: c713a5e9-25cf-4bb6-9e84-ceb041a53986
 
 # Rendering settings - do not touch
