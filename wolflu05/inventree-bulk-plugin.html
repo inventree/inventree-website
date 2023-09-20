@@ -31,11 +31,11 @@
 <meta property="og:url" content="/wolflu05/inventree-bulk-plugin" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-09-20T00:51:00+00:00" />
+<meta property="article:published_time" content="2023-09-20T23:38:15+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Inventree Bulk Plugin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wolflu05"},"dateModified":"2023-09-20T00:51:00+00:00","datePublished":"2023-09-20T00:51:00+00:00","description":"Bulk creation plugin for InvenTree","headline":"Inventree Bulk Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/wolflu05/inventree-bulk-plugin"},"url":"/wolflu05/inventree-bulk-plugin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wolflu05"},"dateModified":"2023-09-20T23:38:15+00:00","datePublished":"2023-09-20T23:38:15+00:00","description":"Bulk creation plugin for InvenTree","headline":"Inventree Bulk Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/wolflu05/inventree-bulk-plugin"},"url":"/wolflu05/inventree-bulk-plugin"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/script.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -82,203 +82,36 @@
 <p>This plugin helps you bulk create storage locations and part categories in <a href="https://inventree.org/">InvenTree</a> by using customized naming strategies. That means you not only have the option to generate multidimensional* names for stock locations or part categories, but also have the option to save the templates for later usage if your storage room uses e.g. drawer towers, saved templates help to ensure naming consistency for all later added towers.</p>
 
 <blockquote>
-  <p>multidimensional means that you are not limited to namings like <code class="language-plaintext highlighter-rouge">D1</code>,<code class="language-plaintext highlighter-rouge">D2</code>, .. but also something like <code class="language-plaintext highlighter-rouge">D1.A</code>, <code class="language-plaintext highlighter-rouge">D1.B</code>, <code class="language-plaintext highlighter-rouge">D2.A</code>, <code class="language-plaintext highlighter-rouge">D2.B</code>, …</p>
+  <p>ℹ️ * multidimensional means that you are not limited to namings like <code class="language-plaintext highlighter-rouge">D1</code>,<code class="language-plaintext highlighter-rouge">D2</code>, .. but also something like <code class="language-plaintext highlighter-rouge">D1.A</code>, <code class="language-plaintext highlighter-rouge">D1.B</code>, <code class="language-plaintext highlighter-rouge">D2.A</code>, <code class="language-plaintext highlighter-rouge">D2.B</code>, …</p>
 </blockquote>
 
-<h2 id="screenshots">🌟Screenshots</h2>
+<p>This will generate the previous mentioned example:</p>
 
-<details open="">
-<summary>This will generate the previous mentioned example:</summary>
+<p><img src="https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/c1ad6ccd-bc27-445b-a3fc-ae5ce74390b5" alt="image"></p>
 
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/f0cd29fc-50c0-4880-afa2-f3bd1c2cdaf7)
+<p>If you want to try out the templates on you’re own, you can just copy the below json to your clipboard and use the “New untitled schema from clipboard” button to import them (see <a href="https://github.com/wolflu05/inventree-bulk-plugin#import-export">import/export</a>). For more examples refer to the <a href="https://github.com/wolflu05/inventree-bulk-plugin">plugin documentation</a>.</p>
 
-</details>
-
-<h3 id="-some-more-examples">📄 Some more examples</h3>
-
-<details>
-<summary>But even nested generations don't stop you.</summary>
-
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/cd560237-94cb-485b-a1cc-cf9e7ab70335)
-
-</details>
-
-<details>
-<summary>And with parent name match, you can even generate different sub-locations depending of the name of the parent.</summary>
-
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/ebe53203-1682-4aea-be39-6e79e2d542f2)
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/61ef2fa4-d765-4043-89e3-99840181768e)
-
-</details>
-
-<details>
-<summary>Pad your numeric dimensions with zeros.</summary>
-
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/d90b42e5-eca8-433c-962f-05fbedc48f03)
-
-</details>
-
-<details>
-<summary>Extend from a template.</summary>
-
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/b9622a93-b6b3-4dc7-91f8-d8c145fbdd3a)
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/7a7fbc78-e9e9-471a-8427-8b4b15389a57)
-
-</details>
-
-<details>
-<summary>Use more generate keys.</summary>
-
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/81b4617a-24ef-49c3-8b5a-b4ef9bb3ebac)
-
-</details>
-
-<details>
-<summary>Using input to reuse a saved template.</summary>
-
-![image](https://github.com/wolflu05/inventree-bulk-plugin/assets/76838159/8c56498b-c4a9-4a93-9a68-2ef87defe8da)
-
-</details>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Example"</span><span class="p">,</span><span class="nl">"template_type"</span><span class="p">:</span><span class="s2">"STOCK_LOCATION"</span><span class="p">,</span><span class="nl">"template"</span><span class="p">:{</span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="nl">"input"</span><span class="p">:{},</span><span class="nl">"templates"</span><span class="p">:[],</span><span class="nl">"output"</span><span class="p">:{</span><span class="nl">"parent_name_match"</span><span class="p">:</span><span class="s2">"true"</span><span class="p">,</span><span class="nl">"dimensions"</span><span class="p">:[</span><span class="s2">"*NUMERIC"</span><span class="p">,</span><span class="s2">"*ALPHA"</span><span class="p">],</span><span class="nl">"count"</span><span class="p">:[</span><span class="s2">"3"</span><span class="p">,</span><span class="s2">"2"</span><span class="p">],</span><span class="nl">"generate"</span><span class="p">:{</span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"D."</span><span class="p">},</span><span class="nl">"childs"</span><span class="p">:[]}}}</span><span class="w">
+</span></code></pre></div></div>
 
 <h2 id="️-installation">⚙️ Installation</h2>
 
 <p>Install this plugin as follows:</p>
 
 <ol>
-  <li>
-    <p>Make sure you allow the use of the url integration and app integration (see <a href="#why-does-this-plugin-needs-the-app-mixin">Why does this plugin needs the app mixin?</a>)</p>
-  </li>
-  <li>
-    <p>Goto Settings &gt; Plugins &gt; Install Plugin, enter <code class="language-plaintext highlighter-rouge">inventree-bulk-plugin</code> as package name. Enable the confirm switch and click submit.</p>
-  </li>
-  <li>
-    <p>Restart your server and activate the plugin.</p>
-  </li>
-  <li>
-    <p>Stop your server and run <code class="language-plaintext highlighter-rouge">invoke update</code> (for docker installs it is <code class="language-plaintext highlighter-rouge">docker-compose inventree-server invoke update</code>). This ensures that all migrations run and the static files get collected. You can now start your server again and start using the plugin.</p>
-  </li>
-</ol>
-
-<h2 id="-usage">🏃 Usage</h2>
-
-<h3 id="bulk-create">Bulk create</h3>
-
-<p>You can bulk create sub-stocklocations and sub-partcategories. Goto one and use the panel “Bulk-creation”. Either load a <a href="#saved-templates">saved template</a> or set up the output quickly. Use “Preview” to see how the bulk creation will look like and create to bulk create the locations/categories. To see how this editor works see <a href="#bulk-creation-editor">bulk creation editor</a>.</p>
-
-<h3 id="saved-templates">Saved templates</h3>
-
-<p>You can save bulk creation templates to ensure consistency along your storage trees. Let’s say you have a bunch of drawer towers. With saved templates you can now easily store your templates to re-use it when you want to add a new tower to the system.</p>
-
-<ol>
-  <li>Goto the stock index and select the “Manage bulk creation” panel.</li>
-  <li>Click on “New Template”.</li>
-  <li>Adjust the schema to your needs and use “Preview” to see how the creation will look like</li>
-  <li>Create you template by using “Create”</li>
-  <li>Goto the specific sub-location where you want to apply that template, load it and Bulk generate your locations to your needs.</li>
+  <li>Make sure you allow the use of the url integration and app integration (see <a href="https://github.com/wolflu05/inventree-bulk-plugin#why-does-this-plugin-needs-the-app-mixin">Why does this plugin needs the app mixin?</a>)</li>
+  <li>Goto Settings &gt; Plugins &gt; Install Plugin, enter <code class="language-plaintext highlighter-rouge">inventree-bulk-plugin</code> as package name. Enable the confirm switch and click submit.</li>
+  <li>Restart your server and activate the plugin.</li>
+  <li>Stop your server and run <code class="language-plaintext highlighter-rouge">invoke update</code> (for docker installs it is <code class="language-plaintext highlighter-rouge">docker-compose inventree-server invoke update</code>). This ensures that all migrations run and the static files get collected. You can now start your server again and start using the plugin.</li>
 </ol>
 
 <blockquote>
-  <p>You can use <a href="#input">inputs</a> to make your bulk creation schema dynamic in amount of drawers or their names.</p>
+  <p>❗At least InvenTree v0.12.7 is required to use this plugin.</p>
 </blockquote>
 
-<h3 id="bulk-creation-editor">Bulk creation editor</h3>
+<h2 id="-documentation">📖 Documentation</h2>
 
-<p>The bulk creation editor helps you to define the generation schema.</p>
-
-<blockquote>
-  <p>You can use <a href="https://jinja.palletsprojects.com/en/3.1.x/templates/">Jinja2 templating</a> in every field (except in the <code class="language-plaintext highlighter-rouge">input</code> section). You can also use filters to manipulate the dimension output.
-<strong>Global context:</strong></p>
-  <ul>
-    <li>
-<code class="language-plaintext highlighter-rouge">inp.&lt;key&gt;</code> - Access <a href="#input">input variables</a>, e.g. (``)</li>
-  </ul>
-</blockquote>
-
-<h4 id="input">Input</h4>
-
-<p>You can define key/value pairs of inputs which you can later reference in your schema via ``. This is useful for <a href="#saved-templates">saved templates</a> to dynamically generate the amount of locations as you want, but still keep the structure.</p>
-
-<h4 id="templates">Templates</h4>
-
-<p>You can define templates from which you can later extend in your output. Template values can also be overwritten.</p>
-
-<ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">Template name</code> - Template name, is later used to select for extending</li>
-</ul>
-
-<p>For the rest of the fields see <a href="#output">output</a>.</p>
-
-<h4 id="output">Output</h4>
-
-<h5 id="parent-name-match">Parent name match</h5>
-<p>First child that matches the parent name matcher will be chosen for generating the child’s for a specific parent. This must evaluate to something that can be casted to a boolean. You can use Jinja2 for dynamically decide based on the parent. E.g. ``. The global jinja2 and <code class="language-plaintext highlighter-rouge">par</code> context is available here.</p>
-
-<h5 id="extends">Extends</h5>
-<p>Select a template to extend from</p>
-
-<h5 id="dimensionscount">Dimensions/Count</h5>
-<p>Dimensions are a way to add various counting strategies to your naming. You can add a dimension by clicking on “Add dimension” and remove it via the red “X” on the right of the dimension field.</p>
-
-<p>A <code class="language-plaintext highlighter-rouge">dimension</code> can contain comma separated generators which generate the values for you. There are three types of generators. You can use the <code class="language-plaintext highlighter-rouge">count</code> field to limit a dimension to a specific amount of generating items. These generators can have arguments parsed via the following syntax: <code class="language-plaintext highlighter-rouge">GENERATOR(key1=value,key2=value)</code>, where <code class="language-plaintext highlighter-rouge">GENERATOR</code> is the name/range. <br></p>
-
-<p><strong>Generator types:</strong><br>
-Word: <em>any arbitrary word, not starting with <code class="language-plaintext highlighter-rouge">*</code></em>. E.g. <code class="language-plaintext highlighter-rouge">hello world</code><br>
-Ranges: <em>ranges are defined with a - in the middle</em> E.g. <code class="language-plaintext highlighter-rouge">a-bx</code><br>
-Infinity: <em>infinity generators start with a *</em> E.g. <code class="language-plaintext highlighter-rouge">*NUMERIC</code><br></p>
-
-<p><strong>Available Generators:</strong><br>
-Numeric generator: <code class="language-plaintext highlighter-rouge">*NUMERIC(start=0,end=10,step=2,count=5)</code> or <code class="language-plaintext highlighter-rouge">0-10(step=2}</code><br>
-Alpha generator: <code class="language-plaintext highlighter-rouge">*ALPHA(casing=upper|lower,start=A,end=F,step=2,count=3)</code> or <code class="language-plaintext highlighter-rouge">a-z(step=2)</code><br><br></p>
-
-<p>Example: <code class="language-plaintext highlighter-rouge">1-3,hello,*NUMERIC(start=1,step=2,end=10),*ALPHA(casing=upper,end=B),A-D(step=2)</code>, this will generate the following dimension: <code class="language-plaintext highlighter-rouge">12,3,hello,1,3,5,7,9,A,B,A,C</code>.</p>
-
-<blockquote>
-  <p>Infinity generators need a <code class="language-plaintext highlighter-rouge">count</code> argument or a global count limitation, otherwise generation will fail.</p>
-</blockquote>
-
-<h5 id="generate">Generate</h5>
-
-<p>These fields my differ between stock location and part category. They correspond to the generated items property. For example “Name” will be the name of the created location/category. Fields like “Structural” must evaluate to something that ca be casted to a boolean (e.g. <code class="language-plaintext highlighter-rouge">true</code> or <code class="language-plaintext highlighter-rouge">false</code>).</p>
-
-<blockquote>
-  <p><strong>Extended Jinja2 context</strong>:</p>
-  <ul>
-    <li>
-<code class="language-plaintext highlighter-rouge">len</code> - count of elements this child will generate</li>
-    <li>
-<code class="language-plaintext highlighter-rouge">dim.&lt;x&gt;</code> - x-th dimension, one-based (e.g. `` to access the first dimension)</li>
-    <li>
-<code class="language-plaintext highlighter-rouge">dim.&lt;x&gt;.len</code> - count of items the x-th dimension has</li>
-    <li>
-<code class="language-plaintext highlighter-rouge">par.&lt;...&gt;</code> - parent’s context</li>
-    <li>
-<code class="language-plaintext highlighter-rouge">par.dim.&lt;x&gt;</code> - parents’s dimensions</li>
-    <li>
-<code class="language-plaintext highlighter-rouge">par.gen.&lt;name&gt;</code> - parent’s generated fields (e.g. to reuse the parents name ``)</li>
-    <li>
-<code class="language-plaintext highlighter-rouge">par.par.&lt;...&gt;</code> - parent’s parent context, can be nested deeply</li>
-  </ul>
-</blockquote>
-
-<h5 id="childs">Child’s</h5>
-
-<p>Child’s are a way to add some nesting to your bulk creation tree. You can use them for e.g. generating sections in every of your drawer. You can use the <a href="#parent-name-match">Parent name match</a> option to add for your drawers named from <code class="language-plaintext highlighter-rouge">Drawer 1</code> - <code class="language-plaintext highlighter-rouge">Drawer 10</code> two sections while your other drawers have different sections.</p>
-
-<h2 id="-faq">❓ FAQ</h2>
-
-<h4 id="why-does-this-plugin-needs-the-app-mixin">Why does this plugin needs the App Mixin?</h4>
-
-<blockquote>
-  <p>This plugin uses the App Mixin to add a custom model to the database to manage stored templates which ensure consistency along your creation of storage trees. (See <a href="#saved-templates">Saved templates</a>). Additionally the App Mixin is used to provide the static files that are required for the reactive interface powered by preact.</p>
-</blockquote>
-
-<h4 id="why-does-this-plugin-needs-the-url-mixin">Why does this plugin needs the Url Mixin?</h4>
-
-<blockquote>
-  <p>This plugin uses the Url Mixin to expose custom API endpoints for previewing and bulk create locations.</p>
-</blockquote>
-
+<p>Refer to the <a href="https://github.com/wolflu05/inventree-bulk-plugin">plugin documentation</a> for further examples, instructions and information.</p>
 
     </div>
 
