@@ -17,12 +17,30 @@ fullwith: true
       <h2 class="block sm:hidden">Detail section</h2>
       <div>
         <p class="mb-0">License:
+          <small>
           {% if page.open_source %}<i class="fa-brands fa-osi"></i>{% else %}<i class="fa-solid fa-lock"></i>{% endif %}
           {{ page.license }}<br>
-          <div class="flex flex-wrap">
-            Status:
-            <div>{% if page.stable %}<i class="fa-regular fa-circle-check"></i>Stable{% else %}<i class="fa-solid fa-triangle-exclamation"></i> Unstable{% endif %}</div>
-            <div>{% if page.maintained %}<i class="fa-regular fa-circle-check"></i>Maintained{% else %}<i class="fa-solid fa-circle-exclamation"></i> Unmaintained{% endif %}</div>
+          </small>
+          <div class="">
+            Status:<br>
+            <div>
+              <small>
+                {% if page.stable %}
+                <i class="fa-regular fa-circle-check success"></i>Stable
+                {% else %}
+                <i class="fa-solid fa-triangle-exclamation"></i> Unstable
+                {% endif %}
+              </small>
+            </div>
+            <div>
+              <small>
+                {% if page.maintained %}
+                <i class="fa-regular fa-circle-check success"></i>Maintained
+                {% else %}
+                <i class="fa-solid fa-circle-exclamation"></i> Unmaintained
+                {% endif %}
+              </small>
+            </div>
           </div>
           {% if page.pypi and page.package_name %}Package on PyPI:<pre class="my-0">{{ page.package_name }}</pre>{% endif %}
         </p>

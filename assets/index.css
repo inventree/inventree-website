@@ -106,6 +106,10 @@ layout: empty
         @apply mb-0 italic
     }
 
+    .success {
+        color: #155724;
+    }
+
     .anchor {
         display: block;
         position: relative;

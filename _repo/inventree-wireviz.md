@@ -3,7 +3,7 @@ name: inventree-wireviz-plugin
 author: SchrodingersGat
 license: MIT
 open_source: true
-stable: false
+stable: true
 maintained: true
 pypi: true
 package_name: inventree-wireviz-plugin
