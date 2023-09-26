@@ -9,7 +9,6 @@ pypi: true
 package_name: inventree-kicad-plugin
 github: https://github.com/afkiwers/inventree_kicad
 issue_tracked: https://github.com/afkiwers/inventree_kicad/issues
-website: https://github.com/afkiwers/inventree_kicad
 categories: Integration
 tags: schematic bom kicad
 ---
