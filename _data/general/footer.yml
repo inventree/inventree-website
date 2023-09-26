@@ -19,12 +19,10 @@
     internal: extend/api.md
   - name: App
     internal: extend/app.md
-  - name: Integrate
-    internal: extend/integrate/index.md
   - name: Plugins
     internal: extend/plugin/index.md
-  - name: KiCad
-    link: https://github.com/sparkmicro/Ki-nTree
+  - name: Integrations
+    internal: extend/integrate/index.md
 
 - title: Sitemap
   cats:
