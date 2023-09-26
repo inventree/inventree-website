@@ -15,25 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - InvenTree Demo</title>
+<title>InvenTree - KiCad Integration</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>InvenTree Demo | InvenTree</title>
+<title>KiCad Integration | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="InvenTree Demo" />
+<meta property="og:title" content="KiCad Integration" />
+<meta name="author" content="SchrodingersGat" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools." />
-<meta property="og:description" content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools." />
-<link rel="canonical" href="/demo.html" />
-<meta property="og:url" content="/demo.html" />
+<meta name="description" content="In the world of electronics design and PCB (Printed Circuit Board) development, KiCad has been a go-to tool for engineers and hobbyists alike. KiCad is a very popular and capable tool, and has continually evolved to meet the changing needs of its users." />
+<meta property="og:description" content="In the world of electronics design and PCB (Printed Circuit Board) development, KiCad has been a go-to tool for engineers and hobbyists alike. KiCad is a very popular and capable tool, and has continually evolved to meet the changing needs of its users." />
+<link rel="canonical" href="/blog/2023/09/26/kicad" />
+<meta property="og:url" content="/blog/2023/09/26/kicad" />
 <meta property="og:site_name" content="InvenTree" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-09-26T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="InvenTree Demo" />
+<meta property="twitter:title" content="KiCad Integration" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.","headline":"InvenTree Demo","url":"/demo.html"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-09-26T00:00:00+00:00","datePublished":"2023-09-26T00:00:00+00:00","description":"In the world of electronics design and PCB (Printed Circuit Board) development, KiCad has been a go-to tool for engineers and hobbyists alike. KiCad is a very popular and capable tool, and has continually evolved to meet the changing needs of its users.","headline":"KiCad Integration","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/09/26/kicad"},"url":"/blog/2023/09/26/kicad"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/script.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -58,69 +60,80 @@
 
         
     </div>
-</header> <article>
+</header> <header>
     
-    <h2>InvenTree Demo</h2>
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
     
-    <p>Want to take InvenTree for a spin? A working demo of InvenTree is available online at <a href="https://demo.inventree.org" data-umami-event="demo">https://demo.inventree.org</a></p>
+</header>
 
-<h3 id="login-details">Login Details</h3>
+<article>
+    <h1>KiCad Integration</h1>
+    <p>
+      26 Sep 2023
+      
 
-<p>Multiple default accounts are provided, as detailed below. Each account is afforded a different set of permissions, so users can see the InvenTree roles/permission system in action</p>
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>In the world of electronics design and PCB (Printed Circuit Board) development, KiCad has been a go-to tool for engineers and hobbyists alike. KiCad is a very popular and capable tool, and has continually evolved to meet the changing needs of its users.</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Password</th>
-      <th>Description</th>
-      <th>Login</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>allaccess</td>
-      <td>nolimits</td>
-      <td>View / create / edit all pages and items</td>
-      <td><a href="https://demo.inventree.org/accounts/login/?login=allaccess&amp;password=nolimits" data-umami-event="demo-allaccess">log in</a></td>
-    </tr>
-    <tr>
-      <td>reader</td>
-      <td>readonly</td>
-      <td>Can view all pages but cannot create, edit or delete database records</td>
-      <td><a href="https://demo.inventree.org/accounts/login/?login=reader&amp;password=readonly" data-umami-event="demo-reader">log in</a></td>
-    </tr>
-    <tr>
-      <td>engineer</td>
-      <td>partsonly</td>
-      <td>Can manage parts, view stock, but no access to purchase orders or sales orders</td>
-      <td><a href="https://demo.inventree.org/accounts/login/?login=engineer&amp;password=partsonly" data-umami-event="demo-engineer">log in</a></td>
-    </tr>
-    <tr>
-      <td>admin</td>
-      <td>inventree</td>
-      <td>Superuser account, access all areas plus administrator actions</td>
-      <td><a href="https://demo.inventree.org/accounts/login/?login=admin&amp;password=inventree" data-umami-event="demo-admin">log in</a></td>
-    </tr>
-  </tbody>
-</table>
+<p>Ever since InvenTree was first <a href="https://forum.kicad.info/t/inventory-management-open-source/"><em>shamlessly cross-promoted</em></a> on the KiCad forums, I have been searching for a clean way to connect KiCad and InvenTree together. This has been a <a href="https://github.com/inventree/InvenTree/discussions/4133">popular topic of discussion</a> with other InvenTree users too!</p>
 
-<h3 id="data-persistence">Data Persistence</h3>
+<p>InvenTree contains all of my part definition data and inventory management information, such as part parameters, supplier data, etc. If only there was a simply way to get all of that information directly out of InvenTree and into KiCad.</p>
 
-<p>The InvenTree demo database resets to a known state once per day.</p>
+<p>Well now, with great excitement, there is! InvenTree data can now be used as a first-class <em>symbol library</em> - with full support of all of InvenTree’s internal data!</p>
 
-<ul>
-  <li>Database records are reset to the latest state of the <a href="https://github.com/inventree/demo-dataset">demo dataset</a>
-</li>
-  <li>InvenTree software is kept up to date with the latest <code class="language-plaintext highlighter-rouge">inventree:master</code> available via docker</li>
-</ul>
+<h3 id="http-library-support">HTTP Library Support</h3>
 
-<div class="alert alert-info" role="alert">
-During the update period, the demo server may be inaccessible for a few minutes.
-</div>
+<p>In September 2023, <a href="https://gitlab.com/kicad/code/kicad/-/merge_requests/1679">HTTP Libary Support</a> was added to the KiCad application.</p>
+
+<p>This feature allows KiCad library data to be retrieved from an external API endpoint, rather than a library file on the local filesystem. This is a groundbreaking change which allows us to leverage InvenTree’s existing capabilities to provide a fully-featured integration between the two software packages.</p>
+
+<h3 id="inventree-plugin">InvenTree Plugin</h3>
+
+<p>The same author who implemented the HTTP library support in KiCad has also released a <a href="https://github.com/afkiwers/inventree_kicad">plugin for InvenTree</a> which provides an API wrapper for the InvenTree database that conforms to the KiCad HTTP library standard.</p>
+
+<p>What does this mean? Simply put, it means that you can now use your InvenTree database as a native KiCad library, and pull your InvenTree data directly in to your KiCad schematic.</p>
+
+<h3 id="configuration-file">Configuration File</h3>
+
+<p>Once the plugin is installed, a simple configuration file on the local computer is all that is required to connect to the InvenTree database. All that is required is the URL to the remote server (with the correct plugin extension) and an API token for authentication:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "meta": {
+        "version": 1.0
+    },
+    "name": "InvenTree",
+    "description": "InvenTree Library",
+    "source": {
+        "type": "REST_API",
+        "api_version": "v1",
+        "root_url": "http://my.inventree.server/plugin/kicad-library-plugin",
+        "token": "usertokendatastring"
+    }
+}
+</code></pre></div></div>
+
+<h3 id="categories-as-libraries">Categories as Libraries</h3>
+
+<p>InvenTree <em>categories</em> can be used as separate <em>libraries</em> in the KiCad application. The InvenTree plugin allows the user to select which part categories are exposed to KiCad.</p>
+
+<h3 id="parameters-as-fields">Parameters as Fields</h3>
+
+<p>Part <em>parameters</em> are exposed to the KiCad symbol as <em>fields</em>. This means that any extra part information (stored as part parameters in InvenTree) is available to the KiCad symbols.</p>
+
+<h4 id="default-values">Default Values</h4>
+
+<p>Where certain KiCad values are not defined for a particular part, each <em>library category</em> can optionally specify attributes such as <em>Default Symbol</em> or <em>Default Footprint</em>. This allows a category to be defined where all parts may share a common symbol and/or footprint within KiCad.</p>
+
+<h3 id="further-reading">Further Reading</h3>
+
+<p>Check out the <a href="https://github.com/afkiwers/inventree_kicad">inventree-kicad-plugin</a> page on GitHub for further details, including installation instructions!</p>
+
 
 </article>
-
     </div>
 
     <div class="flex-grow"></div>
