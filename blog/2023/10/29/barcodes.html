@@ -15,27 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - 0.12.8 Bugfix Release</title>
+<title>InvenTree - New Barcode Features</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>0.12.8 Bugfix Release | InvenTree</title>
+<title>New Barcode Features | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.2" />
-<meta property="og:title" content="0.12.8 Bugfix Release" />
+<meta property="og:title" content="New Barcode Features" />
 <meta name="author" content="SchrodingersGat" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The InvenTree development team is proud to announce the release of version 0.12.8, which provides fixes for a number of bugs reported by our community of users." />
-<meta property="og:description" content="The InvenTree development team is proud to announce the release of version 0.12.8, which provides fixes for a number of bugs reported by our community of users." />
-<link rel="canonical" href="/blog/2023/10/03/0.12.8" />
-<meta property="og:url" content="/blog/2023/10/03/0.12.8" />
+<meta name="description" content="Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features." />
+<meta property="og:description" content="Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features." />
+<link rel="canonical" href="/blog/2023/10/29/barcodes" />
+<meta property="og:url" content="/blog/2023/10/29/barcodes" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-10-03T00:00:00+00:00" />
+<meta property="article:published_time" content="2023-10-29T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="0.12.8 Bugfix Release" />
+<meta property="twitter:title" content="New Barcode Features" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-10-03T00:00:00+00:00","datePublished":"2023-10-03T00:00:00+00:00","description":"The InvenTree development team is proud to announce the release of version 0.12.8, which provides fixes for a number of bugs reported by our community of users.","headline":"0.12.8 Bugfix Release","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/10/03/0.12.8"},"url":"/blog/2023/10/03/0.12.8"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-10-29T00:00:00+00:00","datePublished":"2023-10-29T00:00:00+00:00","description":"Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.","headline":"New Barcode Features","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/10/29/barcodes"},"url":"/blog/2023/10/29/barcodes"}</script>
 <!-- End Jekyll SEO tag -->
 
     <script async defer src="https://umami.invenhost.com/script.js" data-website-id="c713a5e9-25cf-4bb6-9e84-ceb041a53986" data-do-not-track="true"></script>
@@ -70,40 +70,82 @@
 </header>
 
 <article>
-    <h1>0.12.8 Bugfix Release</h1>
+    <h1>New Barcode Features</h1>
     <p>
-      03 Oct 2023
+      29 Oct 2023
       
 
 <a href="/schrodingersgat">Oliver</a>
     </p>
-    <p>The InvenTree development team is proud to announce the release of <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.8">version 0.12.8</a>, which provides fixes for a number of bugs reported by our community of users.</p>
+    <p>Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.</p>
 
-<h2 id="currency-exchange">Currency Exchange</h2>
+<h3 id="barcode-workflows">Barcode Workflows</h3>
 
-<p>One key issue addressed in this release is a fix for fetching exchange rate information from the internet.</p>
+<p>To date, InvenTree has provided relatively simple “workflows” for barcode scanning. Scanning a barcode returns information about the database item associated with that barcode - such as a stock item, supplier part, purchase order, etc. This already allows users to perform many stock operations using barcode scanning - and is integrated into the native mobile app.</p>
 
-<p>To date, InvenTree has made use of the <a href="https://exchangerate.host/">exchangerate.host</a> service for updating currency exchange rate data. This has (until now) been provided as a free service which did not require authentication.</p>
+<p>Recent updates (such as <a href="https://github.com/inventree/InvenTree/pull/5509">this pull request</a>) have started to introduce more complex barcode workflows, which will allow for context sensitive barcode actions.</p>
 
-<p>However recent changes to the exchangerate backend have broken our exchange rate implementation, and required an immediate fix.</p>
+<h3 id="ecia-barcodes-for-purchase-orders">ECIA Barcodes for Purchase Orders</h3>
 
-<h3 id="frankfurterapp">frankfurter.app</h3>
+<p>Many electronics manufacturers provide data-rich barcodes on items received against incoming purchase orders. The <em>Electronics Component Industry Association</em> (ECIA) has developed a <a href="https://ecia.identificationlabs.com">2D barcode standard</a> which is now implemented by a number of major electronics suppliers.</p>
 
-<p>For now, the quick approach to get everyone up and running again is to migrate to using the <a href="https://www.frankfurter.app/">frankfurter.app</a> API. This provides a near-identical API, without needing an API key or paid subscription.</p>
+<p>Purchase orders line items received from these suppliers are often provided with comprehensive barcodes, such as the example below, from Digikey:</p>
 
-<h3 id="future-improvements">Future Improvements</h3>
+<p><img src="/assets/blog/digikey-barcode.png" alt="Digikey Barcode"></p>
 
-<p>Future work on supporting exchange rates will involve supporting different backend APIs, including the ability for users to provide their own API keys. We will also implement the ability for custom plugins to provide exchange rate data - allowing users to define their own exchange rate interface if required.</p>
+<p>This 2D barcode contains the following data fields (and other information):</p>
 
-<h2 id="other-improvements">Other Improvements</h2>
+<ul>
+  <li>Purchase order reference</li>
+  <li>Manufacturer part number (MPN)</li>
+  <li>Digikey part number</li>
+  <li>Item quantity</li>
+</ul>
 
-<p>For a full description of other issues addressed in this release, refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.8">release notes</a></p>
+<p>These data are sufficient to receive stock items into the InvenTree database with a simple barcode scan. By matching against an open purchase order, and finding the right line item, the item can be marked as <em>received</em> without any manual data entry on the part of the user. A data-driven automated barcode workflow can also reduce data entry errors.</p>
 
-<h2 id="sponsor-the-project">Sponsor the Project</h2>
+<p>To capitalize on this available data, InvenTree now supports scan-in of items received against purchase orders, from suppliers who support ECIA barcodes. A new barcode scan API endpoint is provided which handles all of the back-end operations.</p>
 
-<p>Maintaining and continuously improving a software project requires time, effort, and resources. We are committed to patching critical bugs in a timely manner, to ensure that everyone who is using InvenTree has the best possible experience with our software.</p>
+<p>Currently, the following suppliers are supported:</p>
 
-<p>If you would like to financially support the project, please refer to the <a href="/contribute.html#sponsor">contribution guide</a>.</p>
+<ul>
+  <li>Digikey</li>
+  <li>Mouser</li>
+  <li>LCSC</li>
+  <li>TME</li>
+</ul>
+
+<p>This functionality will be available in the upcoming <code class="language-plaintext highlighter-rouge">0.13.0</code> stable release.</p>
+
+<h4 id="app-integration">App Integration</h4>
+
+<p>The new purchase order barcode functionality is supported by the <a href="/extend/app.html">InvenTree mobile app</a>:</p>
+
+<p><img src="/assets/blog/barcode_po_actions.png" alt="App barcode support"></p>
+
+<h4 id="web-integration">Web Integration</h4>
+
+<p>We are working on integration into the web interface as part of our <a href="https://github.com/inventree/InvenTree/issues/5212">move to react</a></p>
+
+<h4 id="further-workflows">Further Workflows</h4>
+
+<p>Other advanced barcode workflows are also planned for future development, particularly around build orders and sales orders.</p>
+
+<p>Note that barcodes functionality can also be extended by plugins as required, for custom integrations or features.</p>
+
+<h3 id="app-barcode-scanner-support">App Barcode Scanner Support</h3>
+
+<p>To further improve barcode support, the mobile app has been updated to work with external barcode scanners (in addition to providing barcode scanning using the internal camera). The new scanner support provides <a href="https://github.com/inventree/inventree-app/pull/437">keyboard wedge scanning</a>, which means that it can interface with any barcode scanners which act as virtual keyboards.</p>
+
+<p>In addition to working with external bluetooth scanners, this means that the app is now supported on barcode scanners which natively run android:</p>
+
+<p><img src="/assets/blog/barcode_scanner.jpeg" alt="Barcode scanner"></p>
+
+<p>Any scanner which supports <em>wedge</em> or <em>keyboard</em> mode should now be able to integrate seamlessly with the InvenTree app.</p>
+
+<h3 id="acknowledgements">Acknowledgements</h3>
+
+<p>We would particularly like to acknowledge the superb contributions of <a href="https://github.com/30350n">Bobbe</a> who was instrumental in developing these new barcode features and mobile app integration. The InvenTree community continues to help us develop the software into a more functional and feature-packed product!</p>
 
 
 </article>
