@@ -47,9 +47,23 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    'plugin-image-zoom',
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    imageZoom: {
+      // CSS selector to apply the plugin to, defaults to '.markdown img'
+      selector: '.markdown img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        margin: 24,
+        background: '#777',
+      },
+    },
     navbar: {
       title: 'InvenTree',
       logo: {
