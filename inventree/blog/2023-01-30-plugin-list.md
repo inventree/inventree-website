@@ -1,5 +1,5 @@
 ---
-author: matmair
+authors: matmair
 title: Starting the Plugin List
 ---
 
@@ -7,7 +7,7 @@ Recently a new feature was launched: A central plugin list.
 
 ## TLDR
 
-The Plugin List is managed by the [InvenTree org](https://github.com/inventree) and is [open for submissions](https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list). It is a simple list [on the website]({% link plugins.html %}) for a start. Being on the list is not an endorsement or guarantee of service by the core team.
+The Plugin List is managed by the [InvenTree org](https://github.com/inventree) and is [open for submissions](https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list). It is a simple list [on the website](/plugins) for a start. Being on the list is not an endorsement or guarantee of service by the core team.
 
 ## Why plugins and a plugin list?
 
@@ -24,17 +24,17 @@ The plugin list is a way to share the cool, public plugins you made with the com
 
 ## How it works
 
-As mentioned [before]({% link  _news/2022-04-23-news-are-starting.md %}), we use Jekyll for this website. This means that the list consists of static pages that are generated from YAML/Markdown files. The output is hosted by GitHub pages (for free ;-)) and can be previewed on PRs thanks to the Netlify app integration.
+As mentioned before, we use Jekyll for this website. This means that the list consists of static pages that are generated from YAML/Markdown files. The output is hosted by GitHub pages (for free ;-)) and can be previewed on PRs thanks to the Netlify app integration.
 
-A file contains a number of standardised fields in the header and markup text for the plugin page that uses Markdown (just like GitHub README pages). That information is used to generate:
-- the individual plugin pages (eg. [this one]({% link _repo/inventree-brother-plugin.md %}))
+A file contains a number of standardized fields in the header and markup text for the plugin page that uses Markdown (just like GitHub README pages). That information is used to generate:
+- the individual plugin pages
 - plugin cards on the main page (showing the newest entries)
-- a list of [all plugins]({% link plugins.html %})
-- overview pages for [tags]({% link tags.html %}) and [categories]({% link categories.html %})
+- a list of all available plugins
+- overview pages for *tags* and *categories*
 
 Adding a new entry is as simple as forking, creating a new file in the plugins folder and opening a PR. More on that is below.
 
-There are also entries and pages for authors/publishers. Currently, we only support one author per plugin, but that might change in the future. The author entry is used to generate a page for the author (eg. [this one]({% link _publishers/schrodingersgat.md %})). That page also contains all blog posts written by the author and a few links.
+There are also entries and pages for authors/publishers. Currently, we only support one author per plugin, but that might change in the future. The author entry is used to generate a page for the author. That page also contains all blog posts written by the author and a few links.
 
 ### Disclaimer
 
