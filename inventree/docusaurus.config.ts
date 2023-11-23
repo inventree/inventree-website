@@ -117,6 +117,10 @@ const config: Config = {
             {
               label: 'Support',
               to: '/support'
+            },
+            {
+              label: 'Sponsors',
+              to: '/sponsors'
             }
           ],
         },
