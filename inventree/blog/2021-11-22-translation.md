@@ -1,5 +1,5 @@
 ---
-author: oliver
+authors: oliver
 title: Translating InvenTree
 ---
 
