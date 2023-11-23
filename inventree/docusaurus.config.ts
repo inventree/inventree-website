@@ -57,10 +57,9 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          to: '/deploy',
+          label: 'Deploy',
           position: 'left',
-          label: 'Tutorial',
         },
         {
           href: 'https://docs.inventree.org/',
