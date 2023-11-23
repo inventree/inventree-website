@@ -1,17 +1,22 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
+oliver:
+  name: Oliver Walters
+  title: InvenTree Maintainer
+  url: https://github.com/SchrodingersGat
 
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
+matmair:
+  name: Matthias Mair
+  title: InvenTree Developer
+  url: https://github.com/matmair
+  image_url: https://avatars.githubusercontent.com/u/66015116?v=4
 
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+lukas:
+  name: Lukas
+  title: InvenTree Developer
+  url: https://github.com/wolflu05
+  image_url: https://avatars.githubusercontent.com/u/76838159?v=4
+
+eeintech:
+  name: Francois
+  title: InvenTree Developer
+  url: https://github.com/eeintech
+  image_url: https://avatars.githubusercontent.com/u/4020546?v=4
