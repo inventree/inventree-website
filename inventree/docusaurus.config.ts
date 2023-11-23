@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'InvenTree',
-  tagline: 'Inventory management, simplified',
+  tagline: 'Intuitive Inventory Management',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -67,23 +67,66 @@ const config: Config = {
           position: 'left',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/demo', label: 'Demo', position: 'right'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'InvenTree',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Documentation',
+              href: 'https://docs.inventree.org/',
             },
+            {
+              label: 'Source Code',
+              href: 'https://github.com/inventree/inventree',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+          ],
+        },
+        {
+          title: 'Ecosystem',
+          items: [
+            {
+              label: 'Plugins',
+              to: '/plugins',
+            },
+            {
+              label: 'API',
+              to: '/api',
+            },
+            {
+              label: 'Mobile App',
+              to: '/app',
+            }
+          ]
+        },
+        {
+          title: 'About',
+          items: [
+            {
+              label: 'Contribute',
+              to: '/contribute',
+            },
+            {
+              label: 'Support',
+              to: '/support'
+            }
           ],
         },
         {
           title: 'Community',
           items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/inventree/inventree/discussions',
+            },
             {
               label: 'Reddit',
               href: 'https://www.reddit.com/r/InvenTree/',
@@ -91,19 +134,6 @@ const config: Config = {
             {
               label: 'Twitter',
               href: 'https://twitter.com/inventreedb',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/inventree/inventree',
             },
           ],
         },
