@@ -23,7 +23,7 @@ InvenTree can be installed on FreeBSD using AppJail. An [AppJail Makejail](https
 
 ### Cloud Install
 
-A member of the team provides a [1-click app for InvenTree](digitalocean) on the DigitalOcean marketplace.
+A member of the team provides a [1-click app for InvenTree](https://marketplace.digitalocean.com/apps/inventree) on the DigitalOcean marketplace.
 
 ### Bare Metal Install
 
