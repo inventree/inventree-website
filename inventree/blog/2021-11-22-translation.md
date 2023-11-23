@@ -1,5 +1,5 @@
 ---
-author: SchrodingersGat
+author: oliver
 title: Translating InvenTree
 ---
 
@@ -11,7 +11,7 @@ At the time of writing, InvenTree provides language translations for 25 language
 
 Translation progress can be viewed on our [Crowdin project page](https://crowdin.com/project/inventree). Here you can view the current status of the translation efforts:
 
-![Translations](/assets/blog/2022-11-22-translation.png)
+![Translation](/img/blog/2022-11-22-translation.png)
 
 ### Translation Pipeline
 
@@ -29,7 +29,7 @@ There are many files within the InvenTree project which can provide these transl
 - Javascript source files
 - HTML template files
 
-Additionally, translation support is provided for the [InvenTree Mobile App]({% link extend/app.md %})!
+Additionally, translation support is provided for the InvenTree mobile app.
 
 #### Exporting Translations - GitHub
 
@@ -51,7 +51,7 @@ Updated translated strings are periodically merged back into the main code branc
 
 The translation framework is provided by the InvenTree team to make our software more useful and appealing to a greater number of people. The entire translation effort is driven by the InvenTree community. Any contributions, no matter how large or small, are greatly encouraged!
 
-If you would like to see improved translations in a particular language, read the [contribution guide]({% link contribute.md %}#translate)! The InvenTree project benefits greatly from your efforts, and you get a great piece of open source software in your native language.
+If you would like to see improved translations in a particular language, read the [contribution guide](/contribute)! The InvenTree project benefits greatly from your efforts, and you get a great piece of open source software in your native language.
 
 #### Adding New Languages
 
