@@ -1,14 +1,20 @@
-# Website
+# InvenTree website
+This project contains the source for InvenTree's website. It is built using [Docusaurus 2](https://docusaurus.io/), a static website generator.
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f84340d0-bc2f-4f7f-ad4c-877c50b33a27/deploy-status)](https://app.netlify.com/sites/inventree-org-preview/deploys)
 
-### Installation
+
+## Installation
+
+To install the required components on your local machine, run the following command:
 
 ```
 $ yarn
 ```
 
 ### Local Development
+
+To launch a local development server, run:
 
 ```
 $ yarn start
@@ -24,18 +30,6 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
-### Deployment
+## Plugins
 
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+**TODO**
