@@ -3,6 +3,7 @@
 
 # Production
 /build
+/_site
 
 # Generated files
 .docusaurus

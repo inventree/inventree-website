@@ -2,13 +2,14 @@ import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+
 const config: Config = {
   title: 'InvenTree',
   tagline: 'Intuitive Inventory Management',
   favicon: 'img/favicon.ico',
   
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://inventree.org'!,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -38,17 +39,35 @@ const config: Config = {
         },
         blog: {
           showReadingTime: true,
+          blogSidebarCount: 10,
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: [
+            './src/css/custom.css',
+          ]
+
         },
       } satisfies Preset.Options,
     ],
   ],
 
+  plugins: [
+    'plugin-image-zoom',
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+    imageZoom: {
+      // CSS selector to apply the plugin to, defaults to '.markdown img'
+      selector: '.markdown img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        margin: 24,
+        background: '#777',
+      },
+    },
     navbar: {
       title: 'InvenTree',
       logo: {
@@ -150,17 +169,6 @@ const config: Config = {
     },
   } satisfies Preset.ThemeConfig,
 
-  plugins: [
-    [
-      '@docusaurus/plugin-sitemap',
-      {
-        changefreq: 'weekly',
-        priority: 0.5,
-        ignorePatterns: ['/tags/**'],
-        filename: 'sitemap.xml',
-      },
-    ],
-  ]
 };
 
 export default config;
