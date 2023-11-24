@@ -8,6 +8,9 @@ import styles from '@site/src/pages/index.module.css';
 import { InvenTreeStats } from './stats';
 
 
+const humanNumber = require("human-number");
+
+
 /*
  * Function to render a single "stats" item with:
  * - An icon
@@ -21,7 +24,7 @@ function ProjectStatsItem({icon, value, label}) {
         <div className="text--center">
           <h3>
             <FontAwesomeIcon icon={icon} size='xl' />
-            {value}
+            {humanNumber(value, n => Number.parseFloat(n).toFixed(1) * 1)}
           </h3>
           <p>{label}</p>
         </div>
