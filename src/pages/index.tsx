@@ -4,7 +4,11 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDocker } from '@fortawesome/free-brands-svg-icons';
+import { faCodeFork, faLanguage, faStar, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 import { InvenTreeStats } from '@site/src/components/HomepageFeatures/stats';
 import styles from './index.module.css';
@@ -56,11 +60,11 @@ function ProjectStats() {
           InvenTree is an open source project built by a community of developers.
         </p>
         <div className="row">
-          <ProjectStatsItem icon={['fab', 'docker']} value={InvenTreeStats.docker_pulls} label="Docker Pulls" />
-          <ProjectStatsItem icon={['fas', 'users']} value={InvenTreeStats.github_contributors} label="Contributors" />
-          <ProjectStatsItem icon={['fas', 'fa-code-fork']} value={InvenTreeStats.github_forks} label="GitHub Forks" />
-          <ProjectStatsItem icon={['fas', 'fa-star']} value={InvenTreeStats.github_stars} label="GitHub Stars" />
-          <ProjectStatsItem icon={['fas', 'language']} value={InvenTreeStats.crowdin_languages} label="Supported Languages" />
+          <ProjectStatsItem icon={faDocker} value={InvenTreeStats.docker_pulls} label="Docker Pulls" />
+          <ProjectStatsItem icon={faUsers} value={InvenTreeStats.github_contributors} label="Contributors" />
+          <ProjectStatsItem icon={faCodeFork} value={InvenTreeStats.github_forks} label="GitHub Forks" />
+          <ProjectStatsItem icon={faStar} value={InvenTreeStats.github_stars} label="GitHub Stars" />
+          <ProjectStatsItem icon={faLanguage} value={InvenTreeStats.crowdin_languages} label="Supported Languages" />
         </div>
       </div>
     </section>
