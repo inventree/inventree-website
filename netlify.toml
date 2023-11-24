@@ -1,3 +1,3 @@
 [build]
-command="yarn build"
+command="python .github/get_stats.py && yarn build"
 publish = "build"
