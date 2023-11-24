@@ -19,13 +19,15 @@ export default function ImageGallery({
     options?: any;
 }) {
 
+    const perPage = Math.min(images.length, 3);
+
     return (
         <Splide
             aria-label={title ?? "Image Gallery"}
             options={{
                 type: 'loop',
                 perMove: 1,
-                perPage: 3,
+                perPage: perPage,
                 pagination: false,
                 autoplay: true,
                 gap: '20px',
