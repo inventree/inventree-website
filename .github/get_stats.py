@@ -11,7 +11,7 @@ from urllib.request import urlopen, Request
 # External data
 docker_project = 'inventree/inventree'
 github_project = "InvenTree/InvenTree"
-crowdin_projet_id = 452300
+crowdin_project_id = 452300
 
 
 class ReturnMode(Enum):
@@ -81,7 +81,7 @@ def get_crowdin_data(token: [str, None]) -> dict:
     print("No Crowdin token provided, skipping Crowdin stats")
     return {}
 
-  crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_projet_id}?limit=1000', 'data', auth=token)
+  crowdin_data = get_data(f'https://api.crowdin.com/api/v2/projects/{crowdin_project_id}?limit=1000', 'data', auth=token)
   crowdin_data['languages'] = len(crowdin_data.get('targetLanguageIds', []))
 
   return crowdin_data
