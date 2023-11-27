@@ -1,1 +1,89 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-11-27T22:16:53+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.12.1 Release</title><link href="/news/2023/07/13/0.12.1" rel="alternate" type="text/html" title="0.12.1 Release" /><published>2023-07-13T00:00:00+00:00</published><updated>2023-07-13T00:00:00+00:00</updated><id>/news/2023/07/13/0.12.1</id><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.12.1 Release]]></summary></entry><entry><title type="html">0.12.0 Release</title><link href="/news/2023/06/26/0.12.0" rel="alternate" type="text/html" title="0.12.0 Release" /><published>2023-06-26T00:00:00+00:00</published><updated>2023-06-26T00:00:00+00:00</updated><id>/news/2023/06/26/0.12.0</id><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.12.0 Release]]></summary></entry><entry><title type="html">Introducing the Plugin List</title><link href="/news/2023/01/30/introducing-the-plugin-list" rel="alternate" type="text/html" title="Introducing the Plugin List" /><published>2023-01-30T00:00:00+00:00</published><updated>2023-01-30T00:00:00+00:00</updated><id>/news/2023/01/30/introducing-the-plugin-list</id><author><name>matmair</name></author><summary type="html"><![CDATA[Getting ready for 0.10.0, Website Updates and the Plugin List.]]></summary></entry><entry><title type="html">0.9.0 Release</title><link href="/news/2022/12/12/0.9.0" rel="alternate" type="text/html" title="0.9.0 Release" /><published>2022-12-12T00:00:00+00:00</published><updated>2022-12-12T00:00:00+00:00</updated><id>/news/2022/12/12/0.9.0</id><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[InvenTree 0.9.0 stable release now available!]]></summary></entry><entry><title type="html">New Website</title><link href="/news/2022/11/14/website" rel="alternate" type="text/html" title="New Website" /><published>2022-11-14T00:00:00+00:00</published><updated>2022-11-14T00:00:00+00:00</updated><id>/news/2022/11/14/website</id><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Introducing the new InvenTree website!]]></summary></entry><entry><title type="html">We have news now!</title><link href="/news/2022/04/23/news-are-starting" rel="alternate" type="text/html" title="We have news now!" /><published>2022-04-23T00:00:00+00:00</published><updated>2022-04-23T00:00:00+00:00</updated><id>/news/2022/04/23/news-are-starting</id><author><name>matmair</name></author><summary type="html"><![CDATA[News!]]></summary></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-11-27T22:56:59+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.12.1 Release</title><link href="/news/2023/07/13/0.12.1" rel="alternate" type="text/html" title="0.12.1 Release" /><published>2023-07-13T00:00:00+00:00</published><updated>2023-07-13T00:00:00+00:00</updated><id>/news/2023/07/13/0.12.1</id><content type="html" xml:base="/news/2023/07/13/0.12.1"><![CDATA[<h3 id="0121-release">0.12.1 Release</h3>
+
+<p>The 0.12.1 bugfix release is now available</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.12.1 Release]]></summary></entry><entry><title type="html">0.12.0 Release</title><link href="/news/2023/06/26/0.12.0" rel="alternate" type="text/html" title="0.12.0 Release" /><published>2023-06-26T00:00:00+00:00</published><updated>2023-06-26T00:00:00+00:00</updated><id>/news/2023/06/26/0.12.0</id><content type="html" xml:base="/news/2023/06/26/0.12.0"><![CDATA[<h3 id="0120-release">0.12.0 Release</h3>
+
+<p>We are pleased to announce the 0.12.0 stable release, which represents a major upgrade to the InvenTree software! Read more about it in our <a href="/blog/2023/06/26/0.12.0">blog post</a></p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.12.0 Release]]></summary></entry><entry><title type="html">Introducing the Plugin List</title><link href="/news/2023/01/30/introducing-the-plugin-list" rel="alternate" type="text/html" title="Introducing the Plugin List" /><published>2023-01-30T00:00:00+00:00</published><updated>2023-01-30T00:00:00+00:00</updated><id>/news/2023/01/30/introducing-the-plugin-list</id><content type="html" xml:base="/news/2023/01/30/introducing-the-plugin-list"><![CDATA[<p>Getting ready for 0.10.0, Website Updates and the Plugin List.</p>
+
+<h3 id="preparations-for-0100">Preparations for 0.10.0</h3>
+
+<p>Since the last release, we’ve been working on the next version of InvenTree, which will be 0.10.0. There are already 85 PRs merged into the <code class="language-plaintext highlighter-rouge">master</code> branch, and we’re expecting to release 0.10.0 in the next few weeks.</p>
+
+<p>There will be a full blog post once we release but here are a few perks to look for:</p>
+<ul>
+  <li>The option to use <a href="https://github.com/inventree/InvenTree/pull/4072">Slovenian</a>. Around 7% are already translated - we need your help to get that number up. Head over to the <a href="https://crowdin.com/project/inventree">translation project</a> if you want to help with any language.</li>
+  <li>Attach the current order schedule to your calendar (<a href="https://github.com/inventree/InvenTree/pull/3858">3858</a>)</li>
+  <li>Improvements for report rendering (<a href="https://github.com/inventree/InvenTree/pull/4081">4081</a>) and a lot of improvements to the docs</li>
+  <li>Get orders by their reference via the API (<a href="https://github.com/inventree/InvenTree/pull/4083">4083</a>)</li>
+  <li>Improvements for SSO - including the UI (<a href="https://github.com/inventree/InvenTree/pull/4169">4169</a>, <a href="https://github.com/inventree/InvenTree/pull/4263">4263</a>), better separation between local and SSO user management (<a href="https://github.com/inventree/InvenTree/pull/4171">4171</a>) and restricting signups to specific domains (<a href="https://github.com/inventree/InvenTree/pull/4172">4172</a>)</li>
+  <li>Include alternative parts in your BOM exports (<a href="https://github.com/inventree/InvenTree/pull/4203">4203</a>)</li>
+  <li>A simple priority field for order (<a href="https://github.com/inventree/InvenTree/pull/4225">4225</a>)</li>
+</ul>
+
+<h3 id="website-updates">Website Updates</h3>
+
+<p>The website got some UI fixes for mobile users and gained more icons. We also added a <a href="https://inventree.org/about/team">team section</a> and moved away from cookie-based analytics.</p>
+
+<h3 id="plugin-list">Plugin List</h3>
+
+<p>A new feature landed: the <a href="https://inventree.org/plugins">plugin list</a>. Check out the <a href="/blog/2023/01/30/plugin-list">blog post</a> for more details.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[Getting ready for 0.10.0, Website Updates and the Plugin List.]]></summary></entry><entry><title type="html">0.9.0 Release</title><link href="/news/2022/12/12/0.9.0" rel="alternate" type="text/html" title="0.9.0 Release" /><published>2022-12-12T00:00:00+00:00</published><updated>2022-12-12T00:00:00+00:00</updated><id>/news/2022/12/12/0.9.0</id><content type="html" xml:base="/news/2022/12/12/0.9.0"><![CDATA[<p>InvenTree 0.9.0 stable release now available!</p>
+
+<h3 id="090-inventree-release">0.9.0 InvenTree Release</h3>
+
+<p>The InvenTree team is proud to announce the 0.9.0 stable release.</p>
+
+<ul>
+  <li><a href="/blog/2022/12/12/0.9.0">Read the blog</a></li>
+  <li><a href="https://github.com/inventree/InvenTree/releases/tag/0.9.0">View the release notes</a></li>
+</ul>
+
+<h3 id="python-library">Python Library</h3>
+
+<p>A new version of the <a href="https://github.com/inventree/inventree-python/">python library</a> has been released, and is now <a href="https://pypi.org/project/inventree/">available via PyPi</a></p>
+
+<h3 id="mobile-app">Mobile App</h3>
+
+<p>We’ve also released an updated version of the <a href="https://docs.inventree.org/en/latest/app/app/">mobile app</a> - available for Android and iOS devices.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[InvenTree 0.9.0 stable release now available!]]></summary></entry><entry><title type="html">New Website</title><link href="/news/2022/11/14/website" rel="alternate" type="text/html" title="New Website" /><published>2022-11-14T00:00:00+00:00</published><updated>2022-11-14T00:00:00+00:00</updated><id>/news/2022/11/14/website</id><content type="html" xml:base="/news/2022/11/14/website"><![CDATA[<p>Introducing the new InvenTree website!</p>
+
+<p>InvenTree now has a new website (the one you’re looking at right now), which is intended to act as a landing page for anyone wanting to learn more about InvenTree. This new website will provide general information about what InvenTree <em>is</em> and how it can be used.</p>
+
+<p>We will share periodic updates on new features, which provides greater visibility into what the latest-and-greatest versions of InvenTree have to offer.</p>
+
+<p>Additionally as the InvenTree community grows, we’ll share information on new plugins, or feature “show and tell” sections in our blog to show how InvenTree is being used around the world!</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>inventree.org will no longer host the InvenTree software documentation. Documentation has been moved to <a href="https://docs.inventree.org">docs.inventree.org</a></p>
+
+<h3 id="demo-server">Demo Server</h3>
+
+<p>The <a href="/demo.html">demo server</a> remains available at <a href="https://demo.inventree.org">demo.inventree.org</a></p>
+
+<h3 id="credits">Credits</h3>
+
+<p>Thanks to <a href="https://github.com/matmair">@matmair</a> for bringing the new website into existence</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Introducing the new InvenTree website!]]></summary></entry><entry><title type="html">We have news now!</title><link href="/news/2022/04/23/news-are-starting" rel="alternate" type="text/html" title="We have news now!" /><published>2022-04-23T00:00:00+00:00</published><updated>2022-04-23T00:00:00+00:00</updated><id>/news/2022/04/23/news-are-starting</id><content type="html" xml:base="/news/2022/04/23/news-are-starting"><![CDATA[<p>News!</p>
+
+<p>These news items will automatically show up for all admins in the <strong>homepage</strong> as the <em>lowest</em> category (starting with the next minor release <strong>0.9.0</strong>).
+If you do not want to see them there you can <strong>disable</strong> the function in your user-settings. There is also the option to disable news globally in the general server settings.</p>
+
+<h3 id="but-why">But why?</h3>
+<p>The good news first: We will <strong>not</strong> spam you with this function daily.<br />
+It is more of a tool to <em>communicate</em> with the <em>power users</em> and <em>admins</em>. There is wide array of reasons for the dev-team to want to communicate with you.<br />
+For example when we</p>
+<ul>
+  <li>are looking for inputs on new big, roadmap worthy FRs</li>
+  <li>want to show you a cool show-and-tell as an inspiration</li>
+  <li>have security advisories (please also follow releases - we always try to push new releases as fast as possible)</li>
+  <li>are planning to depreciate a function and want to gauge if there are still users</li>
+</ul>
+
+<h3 id="how-does-it-work">How does it work?</h3>
+<p>Like the update-checks we are using the infrastructure GitHub provides.<br />
+While the checks use the GitHub APIs, news are gathered from an <strong>RSS-feed</strong> that is served via <strong>GitHub Pages</strong>. The Jekyll-based website generates through a <strong>GitHub Action</strong> and then passes the <strong>static output</strong> to Pages, where it gets hosted for free (thank you GitHub) and delivered through CDNs worldwide.
+On your InvenTree instance the <strong>background worker</strong> loads the RSS-feed on a regular basis and creates <strong>entries</strong> for the news items and <strong>notifications</strong> for all applicable users.</p>
+
+<h3 id="and-my-data">And my data?</h3>
+<p>As listed above we are using GitHub pages for this feature. We are not introducing additional trackers to that so the <a href="https://docs.inventree.org/en/latest/privacy/">general InvenTree privacy statement</a> applies.<br />
+The short version: we <strong>do not sell your data</strong> or share it with third parties. We cannot guarantee what readthedocs and GitHub do with the metrics. We might use them as a metric for the stats section of the site. However, we get very little <em>actionable</em> information from that, a screenshot of the total info available is shown below.</p>
+
+<p><img src="/assets/news/2022-04-23-news-are-starting/media1.png" alt="Sample screenshot of the collected analytics" />
+<em>Sample screenshot of the collected analytics</em></p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[News!]]></summary></entry></feed>
