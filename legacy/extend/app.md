@@ -14,7 +14,7 @@ The app has been optimized for speed, providing instant access to stock knowledg
 
 Core app features include:
 
-- View and edit part and stock information with a blazingly fast interface
+- View and edit part and stock information in a blazing fast interface
 - Perform stock control actions on the go
 - Barcode integrations simplify stock operations
 - Receive purchase orders and check in stock items
