@@ -2,22 +2,22 @@ oliver:
   name: Oliver Walters
   title: InvenTree Maintainer
   url: https://github.com/SchrodingersGat
-  image_url: https://avatars.githubusercontent.com/u/10080325?v=4
+  image_url: https://github.com/SchrodingersGat.png
 
 matmair:
   name: Matthias Mair
   title: InvenTree Developer
   url: https://github.com/matmair
-  image_url: https://avatars.githubusercontent.com/u/66015116?v=4
+  image_url: https://github.com/matmair.png
 
 lukas:
   name: Lukas
   title: InvenTree Developer
   url: https://github.com/wolflu05
-  image_url: https://avatars.githubusercontent.com/u/76838159?v=4
-
+  image_url: https://github.com/wolflu05.png
+  
 eeintech:
   name: Francois
   title: InvenTree Developer
   url: https://github.com/eeintech
-  image_url: https://avatars.githubusercontent.com/u/4020546?v=4
+  image_url: https://github.com/eeintech.png
