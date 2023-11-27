@@ -57,6 +57,6 @@ If you see any sections of the documentation that require work (i.e. denoted wit
 
 New users tend to ask questions in the [issues](https://github.com/inventree/InvenTree/issues) or [discussions](https://github.com/inventree/InvenTree/discussions). Be there, answer questions or [show off](https://github.com/inventree/InvenTree/discussions/categories/show-and-tell) your projects. Together we learn new things and get inspired for our usage.
 
-Our offical channels are:
+Our official channels are:
 - Twitter [@inventreedb](https://twitter.com/inventreedb)
 - Reddit [r/InvenTree](https://www.reddit.com/r/InvenTree/)
