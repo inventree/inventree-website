@@ -22,4 +22,5 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[Bot] Updated the stats"
+          commit_author: Bot <actions@github.com>
           branch: main
