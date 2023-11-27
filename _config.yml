@@ -64,7 +64,6 @@ defaults:
 
 feed:
   path: /blog/feed.atom
-  excerpt_only: true
 
   collections:
     news:
