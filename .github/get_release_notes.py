@@ -53,8 +53,32 @@ def generate_release_page(release_data, overwrite=False) -> bool:
         f.write(f"date: {published}\n")
         f.write("---\n\n")
 
+        f.write("import Admonition from '@theme/Admonition';\n\n")
+
         f.write(f"## InvenTree Release {name}\n\n")
         f.write(f"**Release Date:** {published}\n\n")
+
+        if patch == 0 and minor == 0:
+            admonition = f"""
+            <Admonition type='warning' title='Major Release'>
+            This is a major project release, and may contain breaking changes. Review the release notes carefully before upgrading.
+            </Admonition>
+            """
+        elif patch == 0:
+            admonition = f"""
+            <Admonition type='info' title='Minor Release'>
+            This is a minor project release, which may contain some changes to existing features. Review the release notes carefully before upgrading.
+            </Admonition>
+            """
+        else:
+            admonition = f"""
+            <Admonition type='info' title='Bugfix'>
+            This is a bugfix release, which contains only minor changes and bugfixes.
+            </Admonition>
+            """
+        
+        f.write(textwrap.dedent(admonition)[1:])
+
         f.write(f"{body}\n")
 
     print(f"Generated release file: {output_filename}")
@@ -132,6 +156,10 @@ def generate_index_page(releases: dict):
 
     The head of the *stable* code branch represents the most recent stable tagged release of InvenTree.
 
+    <Admonition type='info' title='Stable Code'>
+        The latest stable code can be found on [GitHub stable branch](https://github.com/inventree/inventree/tree/stable).
+    </Admonition>
+
     <Admonition type='tip' title='Stable Docker'>
         To pull down the latest *stable* release of InvenTree in docker, use `inventree/inventree:stable`
     </Admonition>
@@ -139,6 +167,10 @@ def generate_index_page(releases: dict):
     ### Development Branch
 
     The head of the *master* code branch represents the "latest and greatest" working codebase. All features and bug fixes are merged into the master branch, in addition to relevant stable release branches.
+
+    <Admonition type='info' title='Development Code'>
+    The latest development code can be found on [GitHub master branch](https://github.com/inventree/inventree/tree/master).
+    </Admonition>
 
     <Admonition type='tip' title='Development Docker'>
     To pull down the latest *development* version of InvenTree in docker, use `inventree/inventree:latest`
