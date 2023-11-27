@@ -5,7 +5,8 @@ import { faCodeFork, faLanguage, faStar, faUsers } from '@fortawesome/free-solid
 
 import Heading from '@theme/Heading';
 import styles from '@site/src/pages/index.module.css';
-import { InvenTreeStats } from './stats';
+
+import InvenTreeStats from '@site/src/data/stats.json';
 
 
 const humanNumber = require("human-number");
