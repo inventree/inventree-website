@@ -35,4 +35,4 @@ The bare metal installation is recommended only for advanced users, if any of th
 
 ### Other Options
 
-The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all plattforms and architectures. 
+The core InvenTree server is built using the widely used python-based framework [Django](https://www.djangoproject.com/). Therefore there are  deployment methods for nearly all platforms and architectures. 
