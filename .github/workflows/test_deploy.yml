@@ -22,3 +22,7 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Test build website
         run: yarn build
+      - name: Test external links
+        run: |
+          npm install -g link-checker
+          link-checker build
