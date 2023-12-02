@@ -3,6 +3,10 @@ authors: oliver
 title: New Barcode Features
 ---
 
+import Thumbnail from '@site/src/components/Thumbnail';
+
+## Barcode Integration
+
 Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.
 
 ### Barcode Workflows
@@ -17,7 +21,7 @@ Many electronics manufacturers provide data-rich barcodes on items received agai
 
 Purchase orders line items received from these suppliers are often provided with comprehensive barcodes, such as the example below, from Digikey:
 
-![Digikey Barcode](/img/blog/digikey-barcode.png)
+<Thumbnail src="/img/blog/digikey-barcode.png" title="Digikey barcode" />
 
 This 2D barcode contains the following data fields (and other information):
 
@@ -43,7 +47,7 @@ This functionality will be available in the upcoming `0.13.0` stable release.
 
 The new purchase order barcode functionality is supported by the [InvenTree mobile app](/app):
 
-![App barcode support](/img/blog/barcode_po_actions.png)
+<Thumbnail src="/img/blog/barcode_po_actions.png" title="App barcode support" />
 
 #### Web Integration
 
@@ -61,7 +65,7 @@ To further improve barcode support, the mobile app has been updated to work with
 
 In addition to working with external bluetooth scanners, this means that the app is now supported on barcode scanners which natively run android:
 
-![Barcode scanner](/img/blog/barcode_scanner.jpeg)
+<Thumbnail src="/img/blog/barcode_scanner.jpeg" title="Barcode scanner" />
 
 Any scanner which supports *wedge* or *keyboard* mode should now be able to integrate seamlessly with the InvenTree app.
 
