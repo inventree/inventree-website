@@ -69,4 +69,4 @@ Labels are printed in a regular grid on the resulting sheet. Note that the first
 
 ### Available Soon
 
-The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available not in the master code branch!
+The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available now in the master code branch!
