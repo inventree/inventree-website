@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - Label Printing Updates</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Label Printing Updates | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Label Printing Updates" />
+<meta name="author" content="SchrodingersGat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible." />
+<meta property="og:description" content="Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible." />
+<link rel="canonical" href="/blog/2023/12/06/label-printing" />
+<meta property="og:url" content="/blog/2023/12/06/label-printing" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-06T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Label Printing Updates" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-12-06T00:00:00+00:00","datePublished":"2023-12-06T00:00:00+00:00","description":"Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.","headline":"Label Printing Updates","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/12/06/label-printing"},"url":"/blog/2023/12/06/label-printing"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>Label Printing Updates</h1>
+    <p>
+      06 Dec 2023
+      
+
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.</p>
+
+<h3 id="label-printing-plugins">Label Printing Plugins</h3>
+
+<p>Previously, we had separate concepts for “native label printing” and “printing via plugins”, with different software pipelines for each. This meant that:</p>
+
+<ul>
+  <li>We had a lot of duplicated or inefficient code</li>
+  <li>External printing plugins did not have the same available features</li>
+</ul>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/5251">#5251</a> we refactored the label printing codebase entirely, and now all label printing is handled via plugins. A builtin plugin is provided which simply renders a single label as a <code class="language-plaintext highlighter-rouge">.pdf</code> file (maintaining previous behavior).</p>
+
+<p>The refactor also provided a number of significant improvements and new functionality:</p>
+
+<h4 id="background-printing">Background Printing</h4>
+
+<p>Printing plugins can run in the <em>foreground</em> - and return a <code class="language-plaintext highlighter-rouge">.pdf</code> object - or in the <em>background</em>. Background printing plugins return a response immediately (to prevent blocking of the web application) and the printing is offloaded to the background worker process. This allows flexibility to (for example) communicate with an external physical printing device.</p>
+
+<h4 id="multiple-labels">Multiple Labels</h4>
+
+<p>Before this refactor, plugins received each label individually, with a single “print job” being sent to the printing plugin for each selected label. This was inefficient, and also meant that the printing plugin did not have the flexibility to handle simultaneous printing of multiple labels.</p>
+
+<p>Now, printing plugins have access to the <code class="language-plaintext highlighter-rouge">print_labels</code> method, which receives <em>all</em> labels to be printed. If desired, multiple labels could be printed together onto a single paper sheet (<em>an example of this is below</em>).</p>
+
+<p>The default implementation of <code class="language-plaintext highlighter-rouge">print_labels</code> simply calls the existing <code class="language-plaintext highlighter-rouge">print_label</code> method in sequence for each separate label - maintaining backwards compatibility for existing plugins.</p>
+
+<h3 id="printing-options">Printing Options</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/5786">PR #5786</a> we introduced the concept of “printing options”. Each printing plugin can provide a set of printing options which are presented to the user before initiating label printing. This allows for greater flexibility for label printing plugins.</p>
+
+<p>For example, these run-time options could be used to:</p>
+
+<ul>
+  <li>Select paper size</li>
+  <li>Switch between multiple connected printers</li>
+  <li>Specify the number of copies of each label to print</li>
+  <li>etc</li>
+</ul>
+
+<h3 id="label-sheets">Label Sheets</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/5883">PR #5883</a>, a builtin plugin was developed to print multiple labels to a single “sheet”. This could be used to print a set of labels onto a specialized label sheet with peelable labels, or just a sheet of paper where the individual labels can be cut from the sheet.</p>
+
+<p>This plugin also provides an example of how the <a href="#printing-options">printing options</a> can be used to customize printing behavior at runtime.</p>
+
+<h4 id="example">Example</h4>
+
+<p>The images below demonstrate how the new label sheet plugin works.</p>
+
+<p><strong>Select Items to Print</strong></p>
+
+<p>Select a number of individual stock items, for which labels will be printed:</p>
+
+<p><img src="/assets/blog/select-labels.png" alt="Select Items"></p>
+
+<p><strong>Label Printing Dialog</strong></p>
+
+<p>Select the <em>InvenTree Sheet Label Printer</em> plugin:</p>
+
+<p><img src="/assets/blog/printer-dialog.png" alt="Select printer"></p>
+
+<p><strong>Print Labels</strong></p>
+
+<p>Labels are printed in a regular grid on the resulting sheet. Note that the first three cells have been skipped, as per the selected option in the printing dialog:</p>
+
+<p><img src="/assets/blog/print-labels.png" alt="Print labels"></p>
+
+<h3 id="available-soon">Available Soon</h3>
+
+<p>The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available now in the master code branch!</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrations</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>

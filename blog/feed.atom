@@ -1,4 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-12-06T00:55:18+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">New Barcode Features</title><link href="/blog/2023/10/29/barcodes" rel="alternate" type="text/html" title="New Barcode Features" /><published>2023-10-29T00:00:00+00:00</published><updated>2023-10-29T00:00:00+00:00</updated><id>/blog/2023/10/29/barcodes</id><content type="html" xml:base="/blog/2023/10/29/barcodes"><![CDATA[<p>Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-12-06T12:18:57+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Label Printing Updates</title><link href="/blog/2023/12/06/label-printing" rel="alternate" type="text/html" title="Label Printing Updates" /><published>2023-12-06T00:00:00+00:00</published><updated>2023-12-06T00:00:00+00:00</updated><id>/blog/2023/12/06/label-printing</id><content type="html" xml:base="/blog/2023/12/06/label-printing"><![CDATA[<p>Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.</p>
+
+<h3 id="label-printing-plugins">Label Printing Plugins</h3>
+
+<p>Previously, we had separate concepts for “native label printing” and “printing via plugins”, with different software pipelines for each. This meant that:</p>
+
+<ul>
+  <li>We had a lot of duplicated or inefficient code</li>
+  <li>External printing plugins did not have the same available features</li>
+</ul>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/5251">#5251</a> we refactored the label printing codebase entirely, and now all label printing is handled via plugins. A builtin plugin is provided which simply renders a single label as a <code class="language-plaintext highlighter-rouge">.pdf</code> file (maintaining previous behavior).</p>
+
+<p>The refactor also provided a number of significant improvements and new functionality:</p>
+
+<h4 id="background-printing">Background Printing</h4>
+
+<p>Printing plugins can run in the <em>foreground</em> - and return a <code class="language-plaintext highlighter-rouge">.pdf</code> object - or in the <em>background</em>. Background printing plugins return a response immediately (to prevent blocking of the web application) and the printing is offloaded to the background worker process. This allows flexibility to (for example) communicate with an external physical printing device.</p>
+
+<h4 id="multiple-labels">Multiple Labels</h4>
+
+<p>Before this refactor, plugins received each label individually, with a single “print job” being sent to the printing plugin for each selected label. This was inefficient, and also meant that the printing plugin did not have the flexibility to handle simultaneous printing of multiple labels.</p>
+
+<p>Now, printing plugins have access to the <code class="language-plaintext highlighter-rouge">print_labels</code> method, which receives <em>all</em> labels to be printed. If desired, multiple labels could be printed together onto a single paper sheet (<em>an example of this is below</em>).</p>
+
+<p>The default implementation of <code class="language-plaintext highlighter-rouge">print_labels</code> simply calls the existing <code class="language-plaintext highlighter-rouge">print_label</code> method in sequence for each separate label - maintaining backwards compatibility for existing plugins.</p>
+
+<h3 id="printing-options">Printing Options</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/5786">PR #5786</a> we introduced the concept of “printing options”. Each printing plugin can provide a set of printing options which are presented to the user before initiating label printing. This allows for greater flexibility for label printing plugins.</p>
+
+<p>For example, these run-time options could be used to:</p>
+
+<ul>
+  <li>Select paper size</li>
+  <li>Switch between multiple connected printers</li>
+  <li>Specify the number of copies of each label to print</li>
+  <li>etc</li>
+</ul>
+
+<h3 id="label-sheets">Label Sheets</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/5883">PR #5883</a>, a builtin plugin was developed to print multiple labels to a single “sheet”. This could be used to print a set of labels onto a specialized label sheet with peelable labels, or just a sheet of paper where the individual labels can be cut from the sheet.</p>
+
+<p>This plugin also provides an example of how the <a href="#printing-options">printing options</a> can be used to customize printing behavior at runtime.</p>
+
+<h4 id="example">Example</h4>
+
+<p>The images below demonstrate how the new label sheet plugin works.</p>
+
+<p><strong>Select Items to Print</strong></p>
+
+<p>Select a number of individual stock items, for which labels will be printed:</p>
+
+<p><img src="/assets/blog/select-labels.png" alt="Select Items" /></p>
+
+<p><strong>Label Printing Dialog</strong></p>
+
+<p>Select the <em>InvenTree Sheet Label Printer</em> plugin:</p>
+
+<p><img src="/assets/blog/printer-dialog.png" alt="Select printer" /></p>
+
+<p><strong>Print Labels</strong></p>
+
+<p>Labels are printed in a regular grid on the resulting sheet. Note that the first three cells have been skipped, as per the selected option in the printing dialog:</p>
+
+<p><img src="/assets/blog/print-labels.png" alt="Print labels" /></p>
+
+<h3 id="available-soon">Available Soon</h3>
+
+<p>The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available now in the master code branch!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.]]></summary></entry><entry><title type="html">New Barcode Features</title><link href="/blog/2023/10/29/barcodes" rel="alternate" type="text/html" title="New Barcode Features" /><published>2023-10-29T00:00:00+00:00</published><updated>2023-10-29T00:00:00+00:00</updated><id>/blog/2023/10/29/barcodes</id><content type="html" xml:base="/blog/2023/10/29/barcodes"><![CDATA[<p>Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.</p>
 
 <h3 id="barcode-workflows">Barcode Workflows</h3>
 
@@ -489,94 +559,4 @@ Quality of life:</li>
   <li>RSS feed for new plugins</li>
 </ul>
 
-<p>Moon-shot idea: A privacy-friendly way to register your instance once and then have a button on the website that directly installs the plugin. That would also enable some cool other stuff with browser integrations, fast pairing for the app (very much requested by uni labs) and more.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[Recently a new feature was launched: A central plugin list.]]></summary></entry><entry><title type="html">2022 in Review</title><link href="/blog/2023/01/02/upcoming" rel="alternate" type="text/html" title="2022 in Review" /><published>2023-01-02T00:00:00+00:00</published><updated>2023-01-02T00:00:00+00:00</updated><id>/blog/2023/01/02/upcoming</id><content type="html" xml:base="/blog/2023/01/02/upcoming"><![CDATA[<p>2022 was a huge year for the InvenTree project.</p>
-
-<h3 id="release-milestones">Release Milestones</h3>
-
-<p>This was a very active year for the project, especially in terms of core software development. A huge array of new features have been implemented, and significant performance improvements have been made across the board.</p>
-
-<p>We extend our sincere thanks to the many contributors who have helped make this a reality!</p>
-
-<h4 id="060">0.6.0</h4>
-
-<p>At the start of the year, we released <a href="https://github.com/inventree/InvenTree/releases/tag/0.6.0">version 0.6.0</a> of InvenTree. This release provided a slew of significant new features</p>
-
-<h4 id="070">0.7.0</h4>
-
-<p>In May, <a href="https://github.com/inventree/InvenTree/releases/tag/0.7.0">version 0.7.0</a> was released, bringing major improvements to the plugin system, among other new features and fixes.</p>
-
-<h4 id="080">0.8.0</h4>
-
-<p>In August the InvenTree team released <a href="https://github.com/inventree/InvenTree/releases/tag/0.8.0">version 0.8.0</a>.</p>
-
-<h4 id="090">0.9.0</h4>
-
-<p>In December, we released <a href="https://github.com/inventree/InvenTree/releases/tag/0.9.0">0.9.0</a> with 248 merged pull requests from multiple contributors. This release represented a huge number of new features and improvements!</p>
-
-<h3 id="new-website">New Website</h3>
-
-<p>Our new website (inventree.org) is now up and running! Thanks to @matmair in particular for bringing this to life.</p>
-
-<h3 id="translations">Translations</h3>
-
-<p><a href="/contribute.html#translate">Translations</a> for the InevnTree project continue to grow, thanks to our vibrant community of users. Thanks to the <a href="https://crowdin.com">crowdin project</a> which makes this possible.</p>
-
-<h3 id="users">Users</h3>
-
-<p>And finally, thanks to our users! In 2022 we went from 500 stars on GitHub, to over 2,000! While not necessarily the most accurate metric for tracking how many people are actually <em>using</em> InvenTree, this is very exciting for us.</p>
-
-<p>The GitHub stargazers data gives us a picture of where InvenTree is being used - we’ve gone global!</p>
-
-<p><img src="/assets/blog/world-map.png" alt="Star Map" /></p>
-
-<p><em>Location data were obtained from GitHub stars metadata - InvenTree software does not track user location!</em></p>
-
-<h3 id="upcoming-in-2023">Upcoming in 2023</h3>
-
-<p>What are we working on in 2023?</p>
-
-<p>There is a <em>lot</em> on the horizon - and with <a href="https://github.com/inventree/InvenTree/issues">over 120 outstanding issues</a> we need to be selective in what we tackle first.</p>
-
-<h4 id="ui-refactor">UI Refactor</h4>
-
-<p>One of the larger projects is a complete front-end overhaul - <a href="https://github.com/inventree/InvenTree/issues/3901">issue 3901</a>. We are migrating away from the current clutter of templated HTML and JS files, which are pre-rendered by the server, and moving to an API-oriented React UI.</p>
-
-<p>This change will have some immediate major benefits:</p>
-
-<ul>
-  <li>Improved page load speed and general usability</li>
-  <li>Significant reduction in duplicated code</li>
-  <li>Data are loaded on demand via the API</li>
-  <li>Ability to change front-end elements without touching back-end code</li>
-  <li>Unit testing for front-end code</li>
-</ul>
-
-<p>This will be a pretty significant undertaking, some of the old front-end code has been with us right from the beginning of the project! Please be patient.</p>
-
-<p>Over the coming months we will be shipping the React front-end in parallel with the existing UI code, to allow side-by-side testing while we squash bugs.</p>
-
-<h4 id="data-import-overhaul">Data Import Overhaul</h4>
-
-<p>The current workflows for importing data into an InvenTree database are pretty messy. There are three separate methods of ingesting bulk records, none of which we are really happy with.</p>
-
-<p>A complete overhaul of the data import framework is necessary. We will be developing a stack which allows generic, robust, repeatable data importing for various tables.</p>
-
-<p>You can <a href="https://github.com/inventree/InvenTree/issues/3101">follow the progress here</a>.</p>
-
-<h4 id="plugins">Plugins</h4>
-
-<p>The InvenTree plugin infrastructure is now very mature, with many custom plugins developed for (and by) our users.</p>
-
-<h4 id="documentation">Documentation</h4>
-
-<p>As always, the documentation lags the product. While we do try to keep our documentation as fresh as possible, we are always on the lookout for users who can contribute to the project by helping us with documentation!</p>
-
-<p>Check out the <a href="https://github.com/inventree/inventree-docs">documentation project</a> if you are able to contribute.</p>
-
-<h3 id="sponsorship">Sponsorship</h3>
-
-<p>The InvenTree project has grown substantially over the last year. While we now have an active user community, we still only have a very small core development team, trying to keep on top of all the great ideas you have.</p>
-
-<p>If you have found InvenTree to be a useful piece of software, especially if you are using it for your business, please consider <a href="https://github.com/sponsors/inventree/">sponsoring the project</a>. Sponsorship allows the devs to provide more of their (quite precious) time to the project, which benefits everyone.</p>
-
-<p>You can provide a one-off or monthly sponsorship, or sponsor a specific feature or plugin!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[2022 was a huge year for the InvenTree project.]]></summary></entry></feed>
+<p>Moon-shot idea: A privacy-friendly way to register your instance once and then have a button on the website that directly installs the plugin. That would also enable some cool other stuff with browser integrations, fast pairing for the app (very much requested by uni labs) and more.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[Recently a new feature was launched: A central plugin list.]]></summary></entry></feed>
