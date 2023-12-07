@@ -24,6 +24,7 @@
     "@mdx-js/react": "^3.0.0",
     "@splidejs/react-splide": "^0.7.12",
     "clsx": "^1.2.1",
+    "docusaurus-plugin-image-zoom": "^1.0.1",
     "human-number": "^2.0.4",
     "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
     "prism-react-renderer": "^2.1.0",
