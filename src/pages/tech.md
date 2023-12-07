@@ -10,7 +10,7 @@ InvenTree supports multiple database backends:
 
 - [PostgreSQL](https://www.postgresql.org)
 - [MySQL](https://www.mysql.com)
-- [SQLite](https://www.sqlite.org)
+- [SQLite](https://www.sqlite.org/index.html)
 
 ### Web Server
 
