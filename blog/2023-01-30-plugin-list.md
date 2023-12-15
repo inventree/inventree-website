@@ -53,7 +53,7 @@ Several ideas have been brought forward regarding possible improvements to the p
 Inclusion in InvenTree: Users of InvenTree should be able to browse and install plugins directly from within the web app. This would require a way to install plugins and probably a way to update them too. A good example would be Octoprint's plugin manager. The main work would be to create a nice interface, the API endpoints (for installing and activating/deactivation) are already there.
 
 Regarding browsing the list on the site:
-* A more detailed list with screenshots, short descriptions and standardised sections in the page itself
+* A more detailed list with screenshots, short descriptions and standardized sections in the page itself
 * A way to rate plugins
 * A way to show how often a plugin is used/downloaded (would probably need [4150](https://github.com/inventree/InvenTree/issues/4150))
 * A better way to search for plugins (by name, description, author, tags, etc.) - we deploy statically so that might be tricky
