@@ -86,7 +86,7 @@
 
 <h3 id="installer">Installer</h3>
 
-<p>We now have a packaged command-line installer for simplified setup (on supported platforms), using the <a href="https://packager.io/">packager.io</a> service. The installer is targetted for users who are installing InvenTree on a bare metal system (separate installers are available for container environments).</p>
+<p>We now have a packaged command-line installer for simplified setup (on supported platforms), using the <a href="https://packager.io/">packager.io</a> service. The installer is targeted for users who are installing InvenTree on a bare metal system (separate installers are available for container environments).</p>
 
 <p>You can find more information about the installer at <a href="https://docs.inventree.org/en/latest/start/installer/">docs.inventree.org</a>.</p>
 
@@ -96,7 +96,7 @@
 
 <h3 id="pricing-overhaul">Pricing Overhaul</h3>
 
-<p>This release provides a major overhaul for how pricing data is managed. The new pricing system calculates various pricing information (such as BOM cost or purchase price range) and caches this data in the database. This means that the efficiency of accessing pricing data in real time is greatly improved. For complex bills of material, viewing pricing data was (before this update) extremely prohibitive, due to the recursive calculations which were being performed “on the fly”. The new achitecture makes use of the background worker to recalculate pricing information whenever the underlying data changes, ensuring that “up to date” pricing is readily available.</p>
+<p>This release provides a major overhaul for how pricing data is managed. The new pricing system calculates various pricing information (such as BOM cost or purchase price range) and caches this data in the database. This means that the efficiency of accessing pricing data in real time is greatly improved. For complex bills of material, viewing pricing data was (before this update) extremely prohibitive, due to the recursive calculations which were being performed “on the fly”. The new architecture makes use of the background worker to recalculate pricing information whenever the underlying data changes, ensuring that “up to date” pricing is readily available.</p>
 
 <p><img src="/assets/blog/bom-pricing.png" alt="BOM Pricing"></p>
 

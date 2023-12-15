@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - 0.13.0 Stable Release</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>0.13.0 Stable Release | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="0.13.0 Stable Release" />
+<meta name="author" content="SchrodingersGat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the 0.12.0 stable release." />
+<meta property="og:description" content="The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the 0.12.0 stable release." />
+<link rel="canonical" href="/blog/2023/12/15/0.13.0" />
+<meta property="og:url" content="/blog/2023/12/15/0.13.0" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-12-15T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="0.13.0 Stable Release" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-12-15T00:00:00+00:00","datePublished":"2023-12-15T00:00:00+00:00","description":"The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the 0.12.0 stable release.","headline":"0.13.0 Stable Release","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2023/12/15/0.13.0"},"url":"/blog/2023/12/15/0.13.0"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>0.13.0 Stable Release</h1>
+    <p>
+      15 Dec 2023
+      
+
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the <a href="/blog/2023/06/26/0.12.0">0.12.0 stable release</a>.</p>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<p>This release has been enhanced by the contributions of many developers, and we would like to thank everyone who has contributed to the project!</p>
+
+<p>We have 18 developers who have made their first contribution to the project in this release! Thanks goes to:</p>
+
+<ul>
+  <li><a href="https://github.com/markxoe">markzoe</a></li>
+  <li><a href="https://github.com/xunleii">xunleii</a></li>
+  <li><a href="https://github.com/RitchieP">RitchieP</a></li>
+  <li><a href="https://github.com/spike77453">spike77453</a></li>
+  <li><a href="https://github.com/xeno27">xeno27</a></li>
+  <li><a href="https://github.com/sebastienAPP">sebastienAPP</a></li>
+  <li><a href="https://github.com/ssterling">ssterling</a></li>
+  <li><a href="https://github.com/hvraven">hraven</a></li>
+  <li><a href="https://github.com/Petrox">Pterox</a></li>
+  <li><a href="https://github.com/saharshtapi">saharshtapi</a></li>
+  <li><a href="https://github.com/30350n">30350n</a></li>
+  <li><a href="https://github.com/Adoliin">Adoliin</a></li>
+  <li><a href="https://github.com/lippoliv">lippoliv</a></li>
+  <li><a href="https://github.com/1337joe">1337joe</a></li>
+  <li><a href="https://github.com/Limb">Limb</a></li>
+  <li><a href="https://github.com/CodingPupper3033">CodingPupper3033</a></li>
+  <li><a href="https://github.com/mechanarchy">mechanarchy</a></li>
+  <li><a href="https://github.com/afkiwers">afkiwers</a></li>
+</ul>
+
+<h2 id="new-languages">New Languages</h2>
+
+<p>InvenTree is used by people all over the world, and we would love to see more translations of the project! If you would like to help translate InvenTree into your language, please <a href="https://inventree.org/contribute.html#translate">read our translation guide</a>. We currently support over 30 languages, but there are many more that we would like to support!</p>
+
+<p>In this release, we have added support for 4 new languages:</p>
+
+<ul>
+  <li>Bulgarian</li>
+  <li>Hindi</li>
+  <li>Serbian</li>
+  <li>Traditional Chinese</li>
+</ul>
+
+<p>Additionally, we have had a huge surge in community contributions for translations! There are now multiple languages with almost 100% translation coverage. Thanks to everyone who has contributed to the translation effort!</p>
+
+<h2 id="new-features">New Features</h2>
+
+<p>This release includes a number of major new features. Some of the highlights include:</p>
+
+<h3 id="plugin-improvements">Plugin Improvements</h3>
+
+<p>Multiple improvements have been made to the InvenTree plugin system:</p>
+
+<h4 id="auto-reload">Auto Reload</h4>
+
+<p>The plugin registry is now automatically reloaded when a new plugin is installed or updated. This means that new plugins can be installed without restarting the server. Additionally, the new reloading system ensures that the background worker thread is always running the same plugin version as the web server.</p>
+
+<h4 id="auto-migration">Auto Migration</h4>
+
+<p>Adds the ability to automatically run database migrations when a new plugin is installed. This allows plugins to add new database models, and automatically migrate the database when the plugin is installed.</p>
+
+<h4 id="improved-installation">Improved Installation</h4>
+
+<p>The plugin installation process has been improved, with handling for a number of edge cases.</p>
+
+<h4 id="exchange-rate-plugin">Exchange Rate Plugin</h4>
+
+<p>Exchange rate support has now been exposed to the plugin interface. This allows plugins to provide exchange rate data to the InvenTree system. The default exchange rate backend can now be overridden by a custom plugin if required.</p>
+
+<h3 id="label-printing">Label Printing</h3>
+
+<p>The label printing system has been improved, allowing for greater flexibility in label design. The label printing system now supports:</p>
+
+<h4 id="multi-label-printing">Multi Label Printing</h4>
+
+<p>The label printing system now allows for multiple labels to printed at once onto a single page. <a href="https://github.com/inventree/InvenTree/pull/5883">PR #5833</a> adds a builtin label printing plugin for printing an array of labels to PDF.</p>
+
+<h4 id="printing-options">Printing Options</h4>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/5837">PR #5873</a> adds the ability to specify printing options at “print time”, with the options set based on the selected plugin. Extending the label printing API with dynamic options allows printing plugins to be more flexible.</p>
+
+<h3 id="barcode-scanning">Barcode Scanning</h3>
+
+<p>Barcode scanning support received some significant improvements in this release:</p>
+
+<h4 id="vendor-barcode-scanning">Vendor Barcode Scanning</h4>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/5509">PR #5509</a> presents major new functionality for barcode scanning. InvenTree now supports a number of vendor barcodes. Incoming goods can be scanned directly into stock, and received against a purchase order. Read <a href="/blog/2023/10/29/barcodes">our blog post</a> for a more detailed overview of the new barcode scanning features.</p>
+
+<h4 id="allocate-items-to-sales-order">Allocate Items to Sales Order</h4>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/6072">PR #6072</a> we added the ability to allocate stock items to a sales order via barcode scanning. This allows for a more streamlined workflow when picking stock items for a sales order.</p>
+
+<h3 id="token-authentication">Token Authentication</h3>
+
+<p>We have improved support for token based authentication. Each user can now have multiple authentication tokens, which can be used to authenticate with the InvenTree API. This allows for more fine-grained control over API access. Tokens can be revoked at any time, and have an expiry date.</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>As well as new features, this release includes a number of bug fixes and improvements. We would like to thank everyone who has contributed to the project, and helped to identify and fix bugs! A key part of keeping InvenTree stable is the help of our users, who report bugs and help us to fix them. Please refer to GitHub for a <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+milestone%3A0.13.0+label%3Abug+">complete list of bugs we have squashed</a></p>
+
+<h2 id="user-interface-refactor">User Interface Refactor</h2>
+
+<p>We have continued to work towards the goal of <a href="/blog/2023/08/28/react">refactoring the user interface</a>. The new frontend is progressing well, and we hope to have it fully available for the next release. The new frontend is written in React, and will provide a more modern user interface for InvenTree.</p>
+
+<p>There are still a number of features which are not yet available in the new frontend, and we are working hard to ensure that the new frontend is feature complete before we release it. Please consider contributing to the frontend development effort if you would like to help out!</p>
+
+<h2 id="support-for-inventree">Support for InvenTree</h2>
+
+<p>InvenTree is an open-source project, and we welcome contributions of all kinds! If you would like to support the project, please consider:</p>
+
+<h3 id="sponsor">Sponsor</h3>
+
+<p>You can provide support to InvenTree by <a href="https://inventree.org/contribute.html#sponsor">sponsoring the project</a>. If you use InvenTree in your business, please consider sponsoring the project to help us continue development.</p>
+
+<h3 id="code">Code</h3>
+
+<p>Please consider contributing to the project by <a href="https://inventree.org/contribute.html#code">submitting a pull request</a>. The InvenTree project has been receiving a lot of attention from users, and we would love to see more developers contributing to the project! There are a <a href="https://github.com/inventree/InvenTree/issues">large number of open issues</a> - if you would like to help out, please get in touch!</p>
+
+<h2 id="release-notes">Release Notes</h2>
+
+<p>For a full list of changes, please see the <a href="https://github.com/inventree/InvenTree/releases/tag/0.13.0">release notes on GitHub</a></p>
+
+<h3 id="release-cycle">Release Cycle</h3>
+
+<p>Moving forward, we will be releasing stable versions on a quicker release cycle. We hope to release a new stable version every 3 months, to keep up with the rapid development of the project. This will allow us to get new features into the hands of our users more quickly, and will also allow us to release bug fixes more quickly. Thanks to the efforts of our contributors, we have been able to significantly increase the pace of development, and we hope to continue this trend!</p>
+
+<h2 id="deploying-inventree">Deploying InvenTree</h2>
+
+<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrations</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>
