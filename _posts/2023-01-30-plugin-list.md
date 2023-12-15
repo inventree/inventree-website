@@ -26,7 +26,7 @@ The plugin list is a way to share the cool, public plugins you made with the com
 
 As mentioned [before]({% link  _news/2022-04-23-news-are-starting.md %}), we use Jekyll for this website. This means that the list consists of static pages that are generated from YAML/Markdown files. The output is hosted by GitHub pages (for free ;-)) and can be previewed on PRs thanks to the Netlify app integration.
 
-A file contains a number of standardised fields in the header and markup text for the plugin page that uses Markdown (just like GitHub README pages). That information is used to generate:
+A file contains a number of standardized fields in the header and markup text for the plugin page that uses Markdown (just like GitHub README pages). That information is used to generate:
 - the individual plugin pages (eg. [this one]({% link _repo/inventree-brother-plugin.md %}))
 - plugin cards on the main page (showing the newest entries)
 - a list of [all plugins]({% link plugins.html %})
@@ -53,7 +53,7 @@ Several ideas have been brought forward regarding possible improvements to the p
 Inclusion in InvenTree: Users of InvenTree should be able to browse and install plugins directly from within the web app. This would require a way to install plugins and probably a way to update them too. A good example would be Octoprint's plugin manager. The main work would be to create a nice interface, the API endpoints (for installing and activating/deactivation) are already there.
 
 Regarding browsing the list on the site:
-* A more detailed list with screenshots, short descriptions and standardised sections in the page itself
+* A more detailed list with screenshots, short descriptions and standardized sections in the page itself
 * A way to rate plugins
 * A way to show how often a plugin is used/downloaded (would probably need [4150](https://github.com/inventree/InvenTree/issues/4150))
 * A better way to search for plugins (by name, description, author, tags, etc.) - we deploy statically so that might be tricky
