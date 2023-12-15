@@ -59,4 +59,4 @@ New users tend to ask questions in the [issues](https://github.com/inventree/Inv
 
 Our official channels are:
 - Twitter [@inventreedb](https://twitter.com/inventreedb)
-- Reddit [r/InvenTree](https://www.reddit.com/r/InvenTree/)
+- Reddit [r/InvenTree](https://www.reddit.com/r/inventree/)
