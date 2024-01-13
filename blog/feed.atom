@@ -1,4 +1,90 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2023-12-24T00:57:21+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.13.0 Stable Release</title><link href="/blog/2023/12/15/0.13.0" rel="alternate" type="text/html" title="0.13.0 Stable Release" /><published>2023-12-15T00:00:00+00:00</published><updated>2023-12-15T00:00:00+00:00</updated><id>/blog/2023/12/15/0.13.0</id><content type="html" xml:base="/blog/2023/12/15/0.13.0"><![CDATA[<p>The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the <a href="/blog/2023/06/26/0.12.0">0.12.0 stable release</a>.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-01-13T13:18:37+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">2023 in Review</title><link href="/blog/2024/01/13/upcoming" rel="alternate" type="text/html" title="2023 in Review" /><published>2024-01-13T00:00:00+00:00</published><updated>2024-01-13T00:00:00+00:00</updated><id>/blog/2024/01/13/upcoming</id><content type="html" xml:base="/blog/2024/01/13/upcoming"><![CDATA[<h2 id="2023-in-review">2023 in Review</h2>
+
+<p>Once again, the InvenTree development team has had a very busy year! In 2023, we have released 3 major stable versions of the InvenTree software, with a significant number of new features and improvements. It is also worth noting that we have had a huge number of new contributors to the project, and we would like to thank everyone who has helped make this possible!</p>
+
+<h3 id="release-milestones">Release Milestones</h3>
+
+<p>This was a very active year for the project, especially in terms of core software development. A huge array of new features have been implemented, and significant performance improvements have been made across the board.</p>
+
+<h4 id="0100">0.10.0</h4>
+
+<p>In February, we released <a href="https://github.com/inventree/InvenTree/releases/tag/0.10.0">version 0.10.0</a>, with over 100 commits from 6 contributors (including 3 new contributors).</p>
+
+<h4 id="0110">0.11.0</h4>
+
+<p>In April, we released <a href="https://github.com/inventree/InvenTree/releases/tag/0.11.0">version 0.11.0</a>. Again, this release included contributions from 3 new developers, which was very exciting! With 142 commits to the project, this was again a significant release milestone.</p>
+
+<h4 id="0120">0.12.0</h4>
+
+<p>In June, we released <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.0">version 0.12.0</a>. Once again, this release included contributions from 3 new developers, and included a huge number of new features and improvements. The 0.12.0 release included 237 commits from 14 contributors, making it the most significant release of InvenTree to date!</p>
+
+<h3 id="developers">Developers</h3>
+
+<p>We now have over 75 developers who have contributed to the project, with many new developers making their first contribution in 2023. We would like to thank everyone who has contributed to the project, and we hope to see many more developers getting involved in the future!</p>
+
+<h3 id="translation-effort">Translation Effort</h3>
+
+<p>The <a href="https://crowdin.com/project/inventree">language translation effort</a> continues to build momentum, with over 30 languages now supported by the project. There are also over 300 contributors to the translation effort, which is incredible! It is very exciting to see InvenTree being used by people all over the world, and working to translate it into their native language.</p>
+
+<p>Thanks to the <a href="https://crowdin.com">crowdin project</a> which makes this possible!</p>
+
+<h3 id="digital-ocean-sponsorship">Digital Ocean Sponsorship</h3>
+
+<p>In 2023 we were honoured to receive a sponsorship from <a href="https://www.digitalocean.com/">Digital Ocean</a>. This sponsorship funds hosting for the InvenTree demo server instance, and we are very grateful for their support! If you are looking for a cloud hosting provider, consider using Digital Ocean.</p>
+
+<h3 id="kicad-integration">KiCad Integration</h3>
+
+<p>In September 2023, we were happy to announce that InvenTree can now be used as a <a href="/blog/2023/09/26/kicad.html">KiCad symbol library</a>, using a custom plugin developed by one of our users. This is a huge step forward for the project, and allows InvenTree to be used as a first-class symbol library for KiCad.</p>
+
+<h3 id="chaos-computer-club-talk">Chaos Computer Club Talk</h3>
+
+<p>In December, Matthias, one of our lead developers, presented a lightning talk on InvenTree at the <a href="https://events.ccc.de/congress/2023/infos/index.html">Chaos Communication Congress</a>, which received a lot of positive feedback. It was a great opportunity to showcase the project to a wider audience, and we hope to see more people getting involved in the project as a result.</p>
+
+<p>You can view the talk online <a href="https://media.ccc.de/v/37c3-lightningtalks-58014-inventree-oss-inventory-and-plm">here</a>.</p>
+
+<h2 id="upcoming-in-2024">Upcoming in 2024</h2>
+
+<p>It is hard to believe that we are already in 2024! We have a lot of exciting plans for the project this year, and we are looking forward to seeing what the year brings.</p>
+
+<h3 id="outstanding-issues">Outstanding Issues</h3>
+
+<p>At the time of writing this blog, there are over <a href="https://github.com/inventree/InvenTree/issues">180 outstanding issues</a> in the project. This is largely due to an influx of new users, who have been reporting bugs and requesting new features. We are working hard to address these issues, and we hope to see the number of outstanding issues decrease over the coming months.</p>
+
+<p>Attracting new developer talent to the project is a key goal for 2024, and we hope to see many new developers getting involved in the project. If you use InvenTree and would like to help out, please read our contribution guide and get in touch!</p>
+
+<h3 id="issue-funding">Issue Funding</h3>
+
+<p>In an effort to focus developer attention, and also potentially attract new developers to the project, we will be experimenting with a new funding model for the project. This would allow users to fund the development of specific issues, and would allow us to focus our efforts on the most important issues.</p>
+
+<p>Moving forward, we will be tagging specific issues with a <em>funding</em> label, which will indicate that the issue is available for funding. If you would like to see a specific issue addressed, please consider funding it!</p>
+
+<p>Funds allocated to a specific issue will be shared between the developers who work on the issue, as well as the maintainers of the InvenTree project.</p>
+
+<p>We are making use of the <a href="https://polar.sh">polar.sh</a> platform to manage the funding process. Please note that we are not affiliated with polar.sh, we are simply using it as a tool to manage the funding process.</p>
+
+<p>We will <em>not</em> be asking for funding for every issue, and we will continue to work on issues which are not funded!</p>
+
+<h3 id="user-interface-refactor">User Interface Refactor</h3>
+
+<p>We are continuing to work towards the goal of <a href="/blog/2023/08/28/react">refactoring the user interface</a>. This is a major project and will take some time to complete.</p>
+
+<p>While the new frontend is progressing well, we would love to see more developers getting involved in the project. In particular, we are looking for support from front-end developers who have experience with React. If you would like to help out, please get in touch!</p>
+
+<h3 id="plugin-system">Plugin System</h3>
+
+<p>The plugin system has been a major focus of development in 2023, and we hope to see this continue in 2024. We are working towards a more flexible plugin system, which will allow for more complex plugins to be developed.</p>
+
+<p>As more users (both individuals and businesses) start to use InvenTree, we have seen a significant increase in demand for custom plugins. In particular, we have received a lot of interest in plugins providing integration with other business / enterprise software systems. To allow this, the plugin system does need further development, and we hope to see this happen in 2024.</p>
+
+<h3 id="documentation">Documentation</h3>
+
+<p>The InvenTree development team is very small, and we are always looking for help with documentation. If you are able to contribute to the project by helping us with documentation, please reach out to us. Writing good quality documentation is a real skill, and just as crucial to a software project as the code itself. If you have any experience or interest in technical writing, please consider helping us out!</p>
+
+<h2 id="sponsor-the-project">Sponsor the Project</h2>
+
+<p>There are now many businesses (small and large) using InvenTree to support their operations. If you are using InvenTree in your business, please consider <a href="https://github.com/sponsors/inventree/">sponsoring the project</a>. The InvenTree project is maintained by developers in their “spare” time, and financial sponsorship allows us to dedicate more time to the project.</p>
+
+<p>You can provide a one-off or monthly sponsorship, or sponsor a specific feature or plugin!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[2023 in Review]]></summary></entry><entry><title type="html">0.13.0 Stable Release</title><link href="/blog/2023/12/15/0.13.0" rel="alternate" type="text/html" title="0.13.0 Stable Release" /><published>2023-12-15T00:00:00+00:00</published><updated>2023-12-15T00:00:00+00:00</updated><id>/blog/2023/12/15/0.13.0</id><content type="html" xml:base="/blog/2023/12/15/0.13.0"><![CDATA[<p>The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the <a href="/blog/2023/06/26/0.12.0">0.12.0 stable release</a>.</p>
 
 <h2 id="new-contributors">New Contributors</h2>
 
@@ -580,44 +666,4 @@
 
 <p>The InvenTree development team is committed to providing users with the best possible open source inventory management software. However, we rely on the support of our community to continue developing new features and improving our platform. If you find InvenTree valuable and want to support our ongoing development efforts, please consider making a financial contribution to help us continue developing the InvenTree software.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is proud to announce the 0.11.0 stable release!]]></summary></entry><entry><title type="html">0.10.1 Bugfix Release</title><link href="/blog/2023/02/25/0.10.1" rel="alternate" type="text/html" title="0.10.1 Bugfix Release" /><published>2023-02-25T00:00:00+00:00</published><updated>2023-02-25T00:00:00+00:00</updated><id>/blog/2023/02/25/0.10.1</id><content type="html" xml:base="/blog/2023/02/25/0.10.1"><![CDATA[<p>The InvenTree development team is pleased to announce the 0.10.1 bugfix release.</p>
 
-<p>This release fixes a small number of critical bugs, backported from the master branch. The complete release notes can be <a href="https://github.com/inventree/InvenTree/releases/tag/0.10.1">found on Github</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is pleased to announce the 0.10.1 bugfix release.]]></summary></entry><entry><title type="html">0.10.0 Stable Release</title><link href="/blog/2023/02/06/0.10.0" rel="alternate" type="text/html" title="0.10.0 Stable Release" /><published>2023-02-06T00:00:00+00:00</published><updated>2023-02-06T00:00:00+00:00</updated><id>/blog/2023/02/06/0.10.0</id><content type="html" xml:base="/blog/2023/02/06/0.10.0"><![CDATA[<p>The InvenTree development team is proud to announce the 0.10.0 stable release!</p>
-
-<h2 id="new-features">New Features</h2>
-
-<p>As always, thanks to the efforts of our development team and larger community, this release is packed full of new features! Some of these new features are highlighted below - refer to the <a href="#release-notes">release notes</a> for more information!</p>
-
-<h3 id="sso-improvements">SSO Improvements</h3>
-
-<p>A lot of work has gone into improving <a href="https://docs.inventree.org/en/latest/settings/SSO/">Single Sign On (SSO)</a> integration. We have made some changes to make the SSO process smoother, and improved the user experience. Additionally (and importantly) the documentation has been significantly improved!</p>
-
-<h3 id="currency-conversion">Currency Conversion</h3>
-
-<p>In a major improvement for currency support, conversion between different currencies is now performed “client side”. This means that data tables which contain money values with different currencies can now be added together - and in a computationally efficient manner. Currency exchange rate data is now made available via <a href="https://docs.inventree.org/en/latest/api/api/">the API</a> - paving the way for future feature development in this area.</p>
-
-<h3 id="pricing-features">Pricing Features</h3>
-
-<p>A number of smaller improvements have been made to the pricing architecture.</p>
-
-<h3 id="build-order-priority">Build Order Priority</h3>
-
-<p>Build orders can now be arranged by <em>priority</em> - a simple numerical value which allows certain build orders to be marked as more “important” than others.</p>
-
-<h2 id="translation">Translation</h2>
-
-<p>As always, thanks must be given to our <a href="https://crowdin.com/project/inventree">translation team</a> who help provide InvenTree in multiple languages. This release cycle, we have added support for Slovenian (although this does need some attention, at only 6% translated). Translation is an ongoing process, and requires the support of the InvenTree community!</p>
-
-<h2 id="bug-fixes">Bug Fixes</h2>
-
-<p>In addition to the new features listed above, this release also provides fixes for a number of outstanding bugs. Many of these have been reported by our users - thanks for your feedback and help to make InvenTree better for everyone!</p>
-
-<h2 id="release-notes">Release Notes</h2>
-
-<p>As always, the full set of release notes and changelogs is <a href="https://github.com/inventree/InvenTree/releases/tag/0.10.0">available on our GitHub Page</a>.</p>
-
-<h2 id="mobile-app">Mobile App</h2>
-
-<p>Corresponding with the main software release, the mobile app has <a href="https://github.com/inventree/inventree-app/releases/tag/0.10.0">a new release also</a>.</p>
-
-<h2 id="python-bindings">Python Bindings</h2>
-
-<p>The InvenTree python bindings have also been updated - check out <a href="https://github.com/inventree/inventree-python/releases/tag/0.10.0">the release notes</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is proud to announce the 0.10.0 stable release!]]></summary></entry></feed>
+<p>This release fixes a small number of critical bugs, backported from the master branch. The complete release notes can be <a href="https://github.com/inventree/InvenTree/releases/tag/0.10.1">found on Github</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is pleased to announce the 0.10.1 bugfix release.]]></summary></entry></feed>
