@@ -1,8 +1,7 @@
-# InvenTree website
-This project contains the source for InvenTree's website. It is built using [Docusaurus 2](https://docusaurus.io/), a static website generator.
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f84340d0-bc2f-4f7f-ad4c-877c50b33a27/deploy-status)](https://app.netlify.com/sites/inventree-org-preview/deploys)
 
+# InvenTree website
+This project contains the source for InvenTree's website. It is built using [Docusaurus 2](https://docusaurus.io/), a static website generator.
 
 ## Installation
 
