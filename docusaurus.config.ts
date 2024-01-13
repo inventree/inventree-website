@@ -34,11 +34,12 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          path: 'docs',
-          routeBasePath: 'docs',
-          sidebarPath: './sidebarsDocs.ts',
-        },
+        docs: false,
+        // docs: {
+        //   path: 'docs',
+        //   routeBasePath: 'docs',
+        //   sidebarPath: './sidebarsDocs.ts',
+        // },
         blog: {
           showReadingTime: true,
           blogSidebarCount: 10,
@@ -55,15 +56,15 @@ const config: Config = {
 
   plugins: [
     'plugin-image-zoom',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'app',
-        path: 'app',
-        routeBasePath: 'app',
-        sidebarPath: './sidebarApp.ts',
-      }
-    ]
+    // [
+    //   '@docusaurus/plugin-content-docs',
+    //   {
+    //     id: 'app',
+    //     path: 'app',
+    //     routeBasePath: 'app',
+    //     sidebarPath: './sidebarApp.ts',
+    //   }
+    // ]
   ],
 
   themeConfig: {
@@ -96,7 +97,7 @@ const config: Config = {
           label: 'Docs',
           position: 'left',
         },
-        {to: '/app', label: 'App', position: 'left'},
+        // {to: '/app', label: 'App', position: 'left'},
         {to: '/blog', label: 'Blog', position: 'left'},
         {to: '/demo', label: 'Demo', position: 'right'},
       ],
