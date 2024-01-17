@@ -5,3 +5,5 @@ _site/
 dist/
 node_modules/
 .jekyll-metadata
+.docusaurus/
+yarn-error.log
