@@ -15,27 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - Inventree Zapier</title>
+<title>InvenTree - 0.13.0 Release</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Inventree Zapier | InvenTree</title>
+<title>0.13.0 Release | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Inventree Zapier" />
-<meta name="author" content="matmair" />
+<meta property="og:title" content="0.13.0 Release" />
+<meta name="author" content="SchrodingersGat" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Integrate Zapier into InvenTree" />
-<meta property="og:description" content="Integrate Zapier into InvenTree" />
-<link rel="canonical" href="/matmair/inventree-zapier" />
-<meta property="og:url" content="/matmair/inventree-zapier" />
+<meta name="description" content="0.13.0 Release" />
+<meta property="og:description" content="0.13.0 Release" />
+<link rel="canonical" href="/news/2023/12/15/0.13.0" />
+<meta property="og:url" content="/news/2023/12/15/0.13.0" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-01-17T10:30:59+00:00" />
+<meta property="article:published_time" content="2023-12-15T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Inventree Zapier" />
+<meta property="twitter:title" content="0.13.0 Release" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2024-01-17T10:30:59+00:00","datePublished":"2024-01-17T10:30:59+00:00","description":"Integrate Zapier into InvenTree","headline":"Inventree Zapier","mainEntityOfPage":{"@type":"WebPage","@id":"/matmair/inventree-zapier"},"url":"/matmair/inventree-zapier"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2023-12-15T00:00:00+00:00","datePublished":"2023-12-15T00:00:00+00:00","description":"0.13.0 Release","headline":"0.13.0 Release","mainEntityOfPage":{"@type":"WebPage","@id":"/news/2023/12/15/0.13.0"},"url":"/news/2023/12/15/0.13.0"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -59,150 +59,36 @@
 
         
     </div>
-</header> <article class="max-w-p90">
+</header> <header>
     
-    <h2>inventree-zapier
-<span class="sm:ml-2 text-sm">
-<a href="/matmair">
-<span class="inline-flex">
-    <img src="https://github.com/matmair.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px">
-    <p> matmair</p>
-</span>
-</a></span>
-<span class="sm:ml-2 text-sm">last modified: 17 Jan 2024</span>
-</h2>
+    <a href="/news" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
 
-<div class="flex-wrap md:flex md:flex-nowrap">
-    <div class="w-full md:w-auto md:mr-4">
-        <p>Integrate Zapier into InvenTree</p>
+<article>
+    <h1>0.13.0 Release</h1>
+    <p>
+      15 Dec 2023
+      
 
-<h2 id="setup">Setup</h2>
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <h3 id="0130-release">0.13.0 Release</h3>
 
-<ol>
-  <li>Install
-Install this plugin as follows <strong>in the enviroment of your InvenTree instance</strong>:</li>
-</ol>
+<p>We are pleased to announce the 0.13.0 stable release, which represents a major upgrade to the InvenTree software!</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>inventree-zapier
-</code></pre></div></div>
+<ul>
+  <li>Read more about it in our <a href="/blog/2023/12/15/0.13.0">blog post</a>
+</li>
+  <li>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.13.0">release notes</a>
+</li>
+</ul>
 
-<p>Or, add to your <code class="language-plaintext highlighter-rouge">plugins.txt</code> file:</p>
-
-<pre><code class="language-txt">inventree-zapier
-</code></pre>
-
-<ol>
-  <li>
-    <p>Enable
-Enable the plugin in the plugin settings. You need to be signed in as a superuser for this.
-<strong>The server will erstart if you enable the plugin</strong></p>
-  </li>
-  <li>
-    <p>Migrate
-Access your instances python enviroment and run</p>
-  </li>
-</ol>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inv migrate
-</code></pre></div></div>
-
-<ol>
-  <li>Configure
-Create an API-token in the admin interface and add set up the zapier integration in Zapier.com itself.</li>
-</ol>
-
-<h2 id="license">License</h2>
-<p>This project is licensed as MIT. Copy and do what you want - maybe tag your new plugin so others can find it. The more the merrier.</p>
-
-<h2 id="state-of-the-code">State of the Code</h2>
-<p>This is currently a PoC / ‘beta’ - at least till the Zapier App is published. Please feel free to file FRs, issues or just ideas.</p>
-
-
-    </div>
-
-    <div class="w-full md:w-1/4">
-      <h2 class="block sm:hidden">Detail section</h2>
-      <div>
-        <p class="mb-0">License:
-          <small>
-          <i class="fa-brands fa-osi"></i>
-          MIT<br>
-          </small>
-          </p>
-<div class="">
-            Status:<br>
-            <div>
-              <small>
-                
-                <i class="fa-solid fa-triangle-exclamation"></i> Unstable
-                
-              </small>
-            </div>
-            <div>
-              <small>
-                
-                <i class="fa-regular fa-circle-check success"></i>Maintained
-                
-              </small>
-            </div>
-          </div>
-          Package on PyPI:<pre class="my-0">inventree-zapier</pre>
-        
-
-        
-        <a href="https://mjmair.com" class="no-underline" aria-label="open website">
-          <div>
-            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-            <p class="font-normal">https://mjmair.com</p>
-          </div>
-        </a>
-        
-
-        
-        <a href="https://github.com/matmair/inventree-zapier/issues" class="no-underline" aria-label="open the issue tracker">
-        <div>
-          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-        </div>
-        </a>
-        
-
-        
-        <a href="https://github.com/matmair/inventree-zapier" class="no-underline" aria-label="open source on GitHub">
-        <div>
-          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
-</h4>
-          <p class="font-normal">matmair/inventree-zapier</p>
-        </div>
-        </a>
-        
-        
-        
-
-        <div>
-          <h4 class="plugin_links">Categories</h4>
-          <div>
-            
-            <a href="/plugins/categories/#event"><span class="plugin_cat">Event</span></a>
-            
-          </div>
-        </div>
-
-        <div>
-          <h4 class="plugin_links">Tags</h4>
-          <div>
-            
-            <a href="/plugins/tags/#zapier"><span class="plugin_tag">Zapier</span></a>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
 
 </article>
-
     </div>
 
     <div class="flex-grow"></div>

@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-01-17T00:55:47+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.12.1 Release</title><link href="/news/2023/07/13/0.12.1" rel="alternate" type="text/html" title="0.12.1 Release" /><published>2023-07-13T00:00:00+00:00</published><updated>2023-07-13T00:00:00+00:00</updated><id>/news/2023/07/13/0.12.1</id><content type="html" xml:base="/news/2023/07/13/0.12.1"><![CDATA[<h3 id="0121-release">0.12.1 Release</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-01-17T10:30:59+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.13.2 Release</title><link href="/news/2024/01/17/0.13.2" rel="alternate" type="text/html" title="0.13.2 Release" /><published>2024-01-17T00:00:00+00:00</published><updated>2024-01-17T00:00:00+00:00</updated><id>/news/2024/01/17/0.13.2</id><content type="html" xml:base="/news/2024/01/17/0.13.2"><![CDATA[<h3 id="0132-release">0.13.2 Release</h3>
+
+<p>We are pleased to announce the 0.13.2 bug fix release, which represents a number of small bug fixes and stability improvements to the software</p>
+
+<ul>
+  <li>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.13.2">release notes</a></li>
+</ul>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.13.2 Release]]></summary></entry><entry><title type="html">0.13.1 Release</title><link href="/news/2024/01/13/0.13.1" rel="alternate" type="text/html" title="0.13.1 Release" /><published>2024-01-13T00:00:00+00:00</published><updated>2024-01-13T00:00:00+00:00</updated><id>/news/2024/01/13/0.13.1</id><content type="html" xml:base="/news/2024/01/13/0.13.1"><![CDATA[<h3 id="0131-release">0.13.1 Release</h3>
+
+<p>We are pleased to announce the 0.13.1 bug fix release, which represents a number of small bug fixes and stability improvements to the software</p>
+
+<ul>
+  <li>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.13.1">release notes</a></li>
+</ul>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.13.1 Release]]></summary></entry><entry><title type="html">0.13.0 Release</title><link href="/news/2023/12/15/0.13.0" rel="alternate" type="text/html" title="0.13.0 Release" /><published>2023-12-15T00:00:00+00:00</published><updated>2023-12-15T00:00:00+00:00</updated><id>/news/2023/12/15/0.13.0</id><content type="html" xml:base="/news/2023/12/15/0.13.0"><![CDATA[<h3 id="0130-release">0.13.0 Release</h3>
+
+<p>We are pleased to announce the 0.13.0 stable release, which represents a major upgrade to the InvenTree software!</p>
+
+<ul>
+  <li>Read more about it in our <a href="/blog/2023/12/15/0.13.0">blog post</a></li>
+  <li>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.13.0">release notes</a></li>
+</ul>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.13.0 Release]]></summary></entry><entry><title type="html">0.12.1 Release</title><link href="/news/2023/07/13/0.12.1" rel="alternate" type="text/html" title="0.12.1 Release" /><published>2023-07-13T00:00:00+00:00</published><updated>2023-07-13T00:00:00+00:00</updated><id>/news/2023/07/13/0.12.1</id><content type="html" xml:base="/news/2023/07/13/0.12.1"><![CDATA[<h3 id="0121-release">0.12.1 Release</h3>
 
 <p>The 0.12.1 bugfix release is now available</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.12.1 Release]]></summary></entry><entry><title type="html">0.12.0 Release</title><link href="/news/2023/06/26/0.12.0" rel="alternate" type="text/html" title="0.12.0 Release" /><published>2023-06-26T00:00:00+00:00</published><updated>2023-06-26T00:00:00+00:00</updated><id>/news/2023/06/26/0.12.0</id><content type="html" xml:base="/news/2023/06/26/0.12.0"><![CDATA[<h3 id="0120-release">0.12.0 Release</h3>
 
