@@ -19,8 +19,8 @@ const config: Config = {
   organizationName: 'InvenTree', // Usually your GitHub org/user name.
   projectName: 'inventree-website', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  onBrokenLinks: 'ignore',
+  onBrokenMarkdownLinks: 'ignore',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -43,6 +43,20 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           blogSidebarCount: 10,
+          feedOptions: {
+            type: 'atom',
+            limit: 20,
+            createFeedItems: async (
+              params
+            ) => {
+              let posts = params.blogPosts.filter((item, index) => item?.metadata?.frontMatter?.feed ?? true);
+              
+              return params.defaultCreateFeedItems({
+                ...params,
+                blogPosts: posts,
+              });
+            }
+          }
         },
         theme: {
           customCss: [
