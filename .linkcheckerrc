@@ -1,0 +1,11 @@
+{
+    "external-only": true,
+    "http-status-ignore": [
+        302
+    ],
+    "url-ignore": [
+        "https://github.com/inventree/InvenTree/pull/",
+        "https://github.com/inventree/InvenTree/compare/",
+        "https://twitter.com/"
+    ]
+}

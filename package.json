@@ -1,11 +1,57 @@
 {
-    "devDependencies": {
-        "@tailwindcss/typography": "^0.5.9",
-        "autoprefixer": "^10.4.14",
-        "cssnano": "^6.0.1",
-        "postcss": "^8.4.31",
-        "postcss-cli": "^10.1.0",
-        "postcss-import": "^15.1.0",
-        "tailwindcss": "^3.3.3"
-    }
+  "name": "inventree",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "typecheck": "tsc"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.0.1",
+    "@docusaurus/preset-classic": "^3.0.1",
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-brands-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mdx-js/react": "^3.0.0",
+    "@splidejs/react-splide": "^0.7.12",
+    "clsx": "^1.2.1",
+    "docusaurus-plugin-image-zoom": "^1.0.1",
+    "human-number": "^2.0.4",
+    "plugin-image-zoom": "flexanalytics/plugin-image-zoom",
+    "prism-react-renderer": "^2.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-medium-image-zoom": "^5.1.8",
+    "yarn": "^1.22.21"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.0.1",
+    "@docusaurus/tsconfig": "^3.0.1",
+    "@docusaurus/types": "^3.0.1",
+    "typescript": "~5.2.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0"
+  }
 }
