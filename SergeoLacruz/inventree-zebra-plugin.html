@@ -31,11 +31,11 @@
 <meta property="og:url" content="/SergeoLacruz/inventree-zebra-plugin" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2024-02-19T20:47:40+00:00" />
+<meta property="article:published_time" content="2024-02-19T21:04:18+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Inventree Zebra Plugin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2024-02-19T20:47:40+00:00","datePublished":"2024-02-19T20:47:40+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2024-02-19T21:04:18+00:00","datePublished":"2024-02-19T21:04:18+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -77,20 +77,19 @@
         <p>Zebra Label Printer Plugin for Inventree</p>
 
 <p>This is a label printing plugin for <a href="https://inventree.org">InvenTree</a>, which provides support for Zebra Label printers .
-It supports printing to just GK420T with one label size (50x30) so far. So it is very simple. It uses the zpl library to
-convert the png data provided by InvenTree to Zebras bitmap format.</p>
+It was only tested with  GK420T but should work for other ZPL printers too. It uses the ZPL library to
+convert the png data provided by InvenTree to Zebra’s bitmap format.</p>
 
 <p>It can output the print data either to a local printer connected to the computer via USB or to a network printer
-with an IP address. The output can be configured in the InvenTree plugin user interface. So the source code is 
-a good example for this.</p>
+with an IP address. The output can be configured in the InvenTree plugin user interface.</p>
 
 <p>Error handling is very basic.</p>
 
 <h2 id="installation">Installation</h2>
 
-<p>Install this plugin using pip with the following command::</p>
+<p>The plugin is on pypi. Install this plugin using pip with the following command:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install git+https://github.com/SergeoLacruz/inventree-zebra-plugin
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install inventree-zebra-plugin
 </code></pre></div></div>
 
 <h2 id="configuration-options">Configuration Options</h2>
@@ -105,11 +104,54 @@ a good example for this.</p>
 
 <h3 id="local-device">Local Device</h3>
 <p>In case of a local printer set the device here. The plugin actually puts the data directly to the
-device libe /dev/usb/lp0. No printer spooler is involved so far.</p>
+device /dev/usb/lp0. No printer spooler is involved so far.</p>
+
+<h3 id="threshold">Threshold</h3>
+<p>The image from pillow comes in greyscale. The plugin converts it ti pure BW because this gives a much 
+better print result. The threshold between black and white can be adjusted here.</p>
+
+<h3 id="darkness">Darkness</h3>
+<p>This is a value that influences the darkness of the print. Allowed values are 0 (white) to 30 (black).
+It is directly converted to a SD command in ZPL. If your black areas tend to blur out reduce the 
+darkness.</p>
+
+<h3 id="dots-per-mm">Dots per mm</h3>
+<p>This sets the resolution of the printer. You can choose between 8, 12 and 24
+dpmm depending on your printer model.</p>
+
+<h3 id="printer-init">Printer init</h3>
+<p>This string added to the printer output. It can be used to set special commands
+e.g. label rotation, mirror or white on black. Please refer to the ZPL manual
+for more information.</p>
+
+<p>Zebra printers store settings after printing. So if a rotated label has been
+printed all following label will be rotated unless you change it. The default
+sets the printer to settings that have been useful for me. You might want to
+change it according to your requirements. Please keep in mind that this string
+is passed directly to the printer without any checks. So be careful when editing
+here.</p>
+
+<h2 id="label-template">Label Template</h2>
+<p>The label needs a template described in html and css. The template should start with a page definition
+that defines the label size as shown below:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    @page {
+        {% localize off %}
+        height: mm;
+        width: mm;
+        {% endlocalize %}
+        padding: 0mm;
+        margin: 0px 0px 0px 0px;
+        background-color: white;
+    }
+</code></pre></div></div>
+
+<p>The height and width parameters are defined in the InvenTree admin panel in the label section. These values
+have to fit the label size that is in the printer. See the example templates for details on template definition.</p>
 
 <h2 id="how-it-works">How it works</h2>
-<p>First import all the stuff you need. Here we use the translation mechanism from django for multi language support.
-The import the InvenTree libs and everything you need for plugin. Here we have zpl for the Zebra bitmaps and socket
+<p>First import all the stuff you need. Here we use the translation mechanism from Django for multi language support.
+The import the InvenTree libs and everything you need for plugin. Here we have ZPL for the Zebra bitmaps and socket
 for the IP connection to the printer.</p>
 
 <p>The next part is this:</p>
@@ -150,7 +192,7 @@ need to be like that. The values are found in the UI as shown in the pictures be
 
 <p>We need to define a dict with the name SETTINGS. Please be aware the keys need to be in all CAPITAL letters like CONNECTION.
 Simple parameters are just text strings like the port. We can set a default. The name and description shows up in the UI. 
-Instead of ta simple test we can also use choices. The first string like “local” it the key you use in the code. The second
+Instead of a simple text we can also use choices. The first string like “local” it the key you use in the code. The second
 one is the description in the UI. 
 After that we need to define a function:</p>
 
@@ -164,12 +206,15 @@ After that we need to define a function:</p>
   <li>user</li>
   <li>filename</li>
   <li>label_instance</li>
+  <li>item_instance</li>
   <li>width</li>
   <li>height</li>
   <li>png_file</li>
 </ul>
 
-<p>For the Zebra printer we use the png_file. This is a PIL (python Pillow) object with the graphic of the label in PNG format. 
+<p>The item_instance is the part to be printed. This allows direct access to all part data. The arguments width and height 
+come from the settings of the label in the admin interface. NOT from the html template. 
+For the Zebra printer we use the png_file. This is a PIL (python Pillow) object with the graphic of the label in PNG format. 
 The PIL object is a greyscale image. Because the printer can just print pure BW we convert this to a BW picture.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fn</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">255</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">Threshold</span> <span class="k">else</span> <span class="mi">0</span>
@@ -177,33 +222,61 @@ The PIL object is a greyscale image. Because the printer can just print pure BW 
 </code></pre></div></div>
 
 <p>The threshold can by modified by a plugin parameter. 200 is a good starting value.  This trick gives much better prints. 
-We can put the result this directly into the zpl library.</p>
+We can put the result of this directly into the ZPL library.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="n">zpl</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">l</span> <span class="o">=</span> <span class="n">zpl</span><span class="p">.</span><span class="nc">Label</span><span class="p">(</span><span class="n">Height</span><span class="p">,</span> <span class="n">Width</span><span class="p">,</span> <span class="n">dpmm</span><span class="p">)</span>
 <span class="n">l</span><span class="p">.</span><span class="nf">origin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">l</span><span class="p">.</span><span class="nf">write_graphic</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="bp">...</span>
+<span class="n">l</span><span class="p">.</span><span class="nf">write_graphic</span><span class="p">(</span><span class="n">label_image</span><span class="p">,</span> <span class="n">Width</span><span class="p">)</span>
 <span class="n">l</span><span class="p">.</span><span class="nf">endorigin</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p>50,30 is the size of the label in millimeters. The third parameter is the resolution of the printer in
-dots per mm. As the Zebra printer has 200dpi we put an eight here. write_graphic converts the pillow data
-to zpl. 50 is the with of the image in mm.</p>
+<p>Width and Height define is the size of the label in millimeters as described above.
+The third parameter is the resolution of the printer in dots per mm. 
+write_graphic converts the pillow data to ZPL.</p>
 
-<p>The plugin was tested with a label of 50x30 mm defined using css and html in InvenTree as shown below. The DPI scaling
-can be chosen in the InvenTree settings. 400 is a good value because it is just double of the printers
-resolution. If you save the pillow data to a png file you get a size of 788x473 which fits well to that data.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style&gt;
-    @page {
-        width: 50mm;
-        height: 30mm;
-        padding: 0mm;
-        margin: 0px 0px 0px 0px;
-        background-color: white;
-    }
-</code></pre></div></div>
+<p>The plugin was tested with a labels of various sizes defined using css and html. The DPI scaling
+can be chosen in the InvenTree settings. 800 is a good value because it gives high quality.</p>
 
 <p>The rest of the code is just output to the printer on different interfaces.</p>
+
+<h2 id="quality-matters">Quality matters</h2>
+<p>The InvenTree printer system uses a graphical representation of the label. The label is described
+in HTML, converted to a pixel graphic and printed. The advantage is independency from  printer
+models and systems. Disadvantage is larger data and quality problems with darkness and scaling.
+Let’s have a look at the following printout:</p>
+
+<p><img src="/assets/plugins/qr.png" alt="QRCodes"></p>
+
+<p>Both codes have been printed with the same printer on the same reel. The left one is 
+hardly readable using my mobile. The right one reads easily even as it is smaller.</p>
+
+<h3 id="secret-1-scale">Secret 1, Scale</h3>
+<p>The printer resolution is 8 dots per mm resulting in a dot size of 0.125mm. The QR code pixel 
+and the printer pixel size should be integrally divisible. The code in the picture has 21
+pixels plus one in the frame, so 23 pixel. The frame is set in the HTML description.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% qrcode qr_data border=1 %}
+</code></pre></div></div>
+
+<p>I selected two dots per pixel. So 23 * 2 * 0.125 = 6.125mm. If the size is something different
+scaling takes place and the result might be worse. If you like a larger printout select more 
+dots per pixel. From a certain size upwards the value does not matter any more because the code
+gets large enough to be readable in any quality.</p>
+
+<h3 id="secret-2-darkness">Secret 2: Darkness</h3>
+<p>Zebra printers allow to set the darkness of the print in values between 0 (white) and 30 (max)
+The left code was printed with a value 0r 30. The black dots tend to blur out a bit resulting
+in smaller white areas. The right code was printed with a value of 25 resulting in larger white
+pixels.  The darkness values are just examples. Your values will differ based on printer model,
+media type and printer age. The printer head tends to wear out and the darkness value might
+need an adjustment from time to time.</p>
+
+<h3 id="alternative">Alternative</h3>
+<p>You can also bypass the InvenTree template and printing system and directly create ZPL from 
+the parts data. The printer knows best how to render the label and the print quality is best.
+If you are interested in this way have a look at the <a href="https://github.com/yellowcrescent/inventree-zpl-plugin">inventree-zpl-plugin</a> 
+that does exactly that.</p>
 
     </div>
 
