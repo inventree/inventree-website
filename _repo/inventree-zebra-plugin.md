@@ -79,10 +79,10 @@ that defines the label size as shown below:
 
 ```
     @page {
-        {% localize off %}
+        {% raw  %}{% localize off %}{% endraw  %}
         height: {{ height }}mm;
         width: {{ width }}mm;
-        {% endlocalize %}
+        {% raw  %}{% endlocalize %}{% endraw  %}
         padding: 0mm;
         margin: 0px 0px 0px 0px;
         background-color: white;
@@ -204,7 +204,7 @@ and the printer pixel size should be integrally divisible. The code in the pictu
 pixels plus one in the frame, so 23 pixel. The frame is set in the HTML description. 
 
 ```
-{% qrcode qr_data border=1 %}
+{% raw  %}{% qrcode qr_data border=1 %}{% endraw  %}
 ```
 
 I selected two dots per pixel. So 23 * 2 * 0.125 = 6.125mm. If the size is something different
