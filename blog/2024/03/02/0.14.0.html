@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - 0.14.0 Stable Release</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>0.14.0 Stable Release | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="0.14.0 Stable Release" />
+<meta name="author" content="SchrodingersGat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.14.0. With ith over 200 pull requests since the 0.13.0 stable release, this release once again represents a significant step forward for the project." />
+<meta property="og:description" content="The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.14.0. With ith over 200 pull requests since the 0.13.0 stable release, this release once again represents a significant step forward for the project." />
+<link rel="canonical" href="/blog/2024/03/02/0.14.0" />
+<meta property="og:url" content="/blog/2024/03/02/0.14.0" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-03-02T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="0.14.0 Stable Release" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2024-03-02T00:00:00+00:00","datePublished":"2024-03-02T00:00:00+00:00","description":"The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.14.0. With ith over 200 pull requests since the 0.13.0 stable release, this release once again represents a significant step forward for the project.","headline":"0.14.0 Stable Release","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2024/03/02/0.14.0"},"url":"/blog/2024/03/02/0.14.0"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>0.14.0 Stable Release</h1>
+    <p>
+      02 Mar 2024
+      
+
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.14.0. With ith over 200 pull requests since the <a href="/blog/2023/12/15/0.13.0">0.13.0 stable release</a>, this release once again represents a significant step forward for the project.</p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<p>This release includes a number of changes which may affect existing installations of InvenTree. If you are upgrading from a previous release, read the following section carefully. You should also refer to the <a href="#release-notes">release notes</a> for a full set of changes in this release.</p>
+
+<h3 id="django-42">Django 4.2</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/6173">PR 6173</a>, InvenTree has been updated to use Django 4.2. This is a major version update for Django, and required a number of changes to the InvenTree codebase and dependencies.</p>
+
+<p>Most (hopefully <em>all</em>) of the required changes have been made, but there may be some edge cases which have been missed. If you encounter any issues with the Django 4.2 update, please report them on <a href="https://github.com/inventree/inventree">our github page</a>.</p>
+
+<p>You should also refer to the <a href="https://docs.djangoproject.com/en/5.0/releases/4.2/">Django 4.2 release notes</a> for a full list of changes.</p>
+
+<h3 id="site-access-changes">Site Access Changes</h3>
+
+<p>Django 4.2 has introduced some changes to how cross-site protection is handled. Your existing InvenTree installation may require some changes to continue to operate as expected. In particular, the <code class="language-plaintext highlighter-rouge">CORS</code> and <code class="language-plaintext highlighter-rouge">CSRF</code> settings have been made more strict by default. Refer to the <a href="https://docs.inventree.org/en/latest/start/config/#server-access">server access configuration guide</a> for instructions on which settings will need to be updated.</p>
+
+<h3 id="multi-site-support">Multi Site Support</h3>
+
+<p>InvenTree has, by default, shipped with <a href="https://docs.djangoproject.com/en/4.2/ref/contrib/sites/">multi site support</a> enabled. This is an advanced django feature which 99% of users will not need, and only serves to complicate the installation process.</p>
+
+<p>So, in <a href="https://github.com/inventree/InvenTree/pull/6390">PR 6390</a> we have disabled multi-site support by default. This should simplify the installation process for most users.</p>
+
+<p>For any users who have been using multi-site support, you will need to manually re-enable it after upgrading to 0.14.0. Refer to the <a href="https://docs.inventree.org/en/latest/start/advanced/#multi-site-support">InvenTree documentation</a> for more information.</p>
+
+<h3 id="test-results">Test Results</h3>
+
+<p>InvenTree has long supported <a href="https://docs.inventree.org/en/latest/stock/test/">test results for stock items</a>. In <a href="https://github.com/inventree/InvenTree/pull/6430">PR 6430</a>, a significant enhancement was made to the test result system. Previously, test results were not linked to a specific test template in the database. Instead, the results and templates were loosely linked via a string key.</p>
+
+<p>In 0.14.0, the test result system has been updated to use a proper database relationship between test results and test templates. This means that test results are now linked to a specific test template, and the test result system has been updated to reflect this change.</p>
+
+<p>This change should be transparent to most users, but if you have been using the test result system in a custom way, you may need to update your code to reflect the new database structure.</p>
+
+<p>In particular, any external systems which upload test results via the InvenTree API will need to be examined and tested. While the changes to the API have been implemented to ensure backwards compatibility with existing systems, it is possible that some edge cases have been missed.</p>
+
+<h3 id="docker-compose">Docker Compose</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/6551">PR 6551</a> we have made a significant change to the way that InvenTree is deployed using Docker Compose. Previously, the provided docker compose template used <a href="https://nginx.org/">nginx</a> as a reverse proxy for the InvenTree web server, and for serving static and media files.</p>
+
+<p>In this release, we have switched to using <a href="https://caddyserver.com/">Caddy</a> as the reverse proxy. Caddy is a modern, easy-to-use web server which is designed to be simple to configure and use. It confers a number of significant advantages to the InvenTree setup:</p>
+
+<p><strong>Simplified Configuration</strong></p>
+
+<p>Caddy is designed to be easy to configure, and the Caddyfile syntax is much simpler than the equivalent nginx configuration.</p>
+
+<p><strong>Automatic HTTPS</strong></p>
+
+<p>Caddy is designed to automatically handle HTTPS certificates using <a href="https://letsencrypt.org/">Let’s Encrypt</a>. This means that InvenTree can be deployed with HTTPS enabled by default, without any additional configuration.</p>
+
+<p>For users who have been running with the previous nginx based setup, no changes are required. Existing nginx configurations will continue to work as expected. However, for new installations, the Caddy based setup is now the recommended approach. We would also recommend that existing installations consider migrating to the Caddy based setup.</p>
+
+<h3 id="devcontainer">Devcontainer</h3>
+
+<p>In <a href="https://github.com/inventree/InvenTree/pull/6590">PR 6590</a> we have made some changes to our devcontainer setup in vscode. The devcontainer is a docker-based development environment which is designed to make it easy to contribute to the InvenTree project. We now use postgresql as the database backend in the devcontainer setup - previously this setup used sqlite for a local development database.</p>
+
+<p>However, as sqlite is not suitable for a multi-user development environment, we have switched to using postgresql. This should make the devcontainer setup more closely match a production environment.</p>
+
+<p>Users who have been using the devcontainer setup will need to update their local vscode setup. At a minimum, you will need to rebuild the devcontainer.</p>
+
+<p>If you encounter any issues updating your devcontainer setup, try deleting the <code class="language-plaintext highlighter-rouge">dev</code> directory and re-creating the devcontainer.</p>
+
+<h2 id="new-features">New Features</h2>
+
+<p>A significant number of new features have been added to InvenTree in this release. Some of the highlights include:</p>
+
+<h3 id="machine-integration">Machine Integration</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/4824">PR 4824</a> provides a new machine integration system for InvenTree. This system allows InvenTree to communicate with external machines, and to track the status of those machines. This is a significant new feature which will allow InvenTree to be used in a wider range of manufacturing environments.</p>
+
+<h3 id="tracing-support">Tracing Support</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/6211">PR 6211</a> adds support for OpenTelemetry tracing. This allows InvenTree to be integrated with a wide range of tracing systems, and provides a powerful tool for monitoring and debugging InvenTree installations.</p>
+
+<h3 id="enhanced-validation">Enhanced Validation</h3>
+
+<p>Enhanced custom validation is implemented in <a href="https://github.com/inventree/InvenTree/pull/6410">PR 6410</a>. This addition allows for more comprehensive validation of models by integrated plugins. Refer to the <a href="https://docs.inventree.org/en/latest/extend/plugins/validation/">updated validation plugin docs</a> for more information.</p>
+
+<h3 id="api-documentation">API Documentation</h3>
+
+<p>Multiple PR (including <a href="https://github.com/inventree/InvenTree/pull/6319">PR 6319</a>) have been submitted to enable the generation of API documentation. This will allow for the automatic generation of API documentation, and will make it easier for developers to understand and use the InvenTree API. In fact, we now track all API changes in a <a href="https://github.com/inventree/schema/">separate repository</a>.</p>
+
+<h3 id="plugin-error-logging">Plugin Error Logging</h3>
+
+<p>We have improved error logging for plugin code - see <a href="https://github.com/inventree/InvenTree/pull/6455">PR 6455</a>. This will make it easier to debug issues with custom plugins.</p>
+
+<h3 id="unit-system-updates">Unit System Updates</h3>
+
+<p>Multiple new features have been added to the physical unit management  system in InvenTree.</p>
+
+<ul>
+  <li>
+<a href="https://github.com/inventree/InvenTree/pull/6539">PR 6539</a> adds support for engineering units.</li>
+  <li>
+<a href="https://github.com/inventree/InvenTree/pull/6584">PR 6584</a> adds support for temperature units.</li>
+</ul>
+
+<h3 id="and-more">And More</h3>
+
+<p>Refer to the <a href="#release-notes">release notes</a> for a full list of changes in this release!</p>
+
+<h2 id="react-interface">React Interface</h2>
+
+<p>Development of the new React frontend interface continues at a rapid pace. The new interface is designed to replace the existing frontend, and will provide a modern, responsive, and fast user interface for InvenTree.</p>
+
+<p>The new interface is not yet feature complete, but is rapidly approaching a point where it can be used for day-to-day operations. We are very excited about the new interface, and we are looking forward to sharing it with the community.</p>
+
+<p>The new interface is enabled by default, and can be accessed by navigating to <code class="language-plaintext highlighter-rouge">/platform/</code> on your InvenTree installation. You can see it live at <a href="https://demo.inventree.org/platform/">https://demo.inventree.com/platform/</a>. If you encounter any issues with the new interface, please report them on our github page!</p>
+
+<h3 id="developers-wanted">Developers Wanted</h3>
+
+<p>We are looking for developers to help with the React frontend. If you are interested in contributing to the project, please get in touch! There are many outstanding issues which need to be addressed, and many would make good starter issues - perfect for new contributors!</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>As always, this release includes a number of bug fixes and performance improvements. We would like to thank everyone who has contributed to the project by reporting issues, and by submitting pull requests to fix them.</p>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<p>This release has been enhanced by the contributions of many developers, and we would like to thank everyone who has contributed to the project!</p>
+
+<p>Thanks to the following contributor who made their first contribution to the project in this release:</p>
+
+<ul>
+  <li><a href="https://github.com/mcollins-DL">mcollins-DL</a></li>
+</ul>
+
+<p>Without the support of our contributors, InvenTree would not be where it is today. Thank you to everyone who has contributed to the project!</p>
+
+<h2 id="new-languages">New Languages</h2>
+
+<p>In this release we have added support for 1 new language:</p>
+
+<ul>
+  <li>Slovak</li>
+</ul>
+
+<p>If you would like to help translate InvenTree into your language, please <a href="https://inventree.org/contribute.html#translate">read our translation guide</a>. We currently support 32 languages, but there are many more that we would like to support!</p>
+
+<h2 id="release-notes">Release Notes</h2>
+
+<p>For a full list of changes, please see the <a href="https://github.com/inventree/InvenTree/releases/tag/0.14.0">release notes on GitHub</a>.</p>
+
+<h2 id="deploying-inventree">Deploying InvenTree</h2>
+
+<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrations</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+    </div>
+</body>
+
+</html>
