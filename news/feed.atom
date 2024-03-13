@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-03-13T00:56:07+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.13.3 Release</title><link href="/news/2024/01/22/0.13.3" rel="alternate" type="text/html" title="0.13.3 Release" /><published>2024-01-22T00:00:00+00:00</published><updated>2024-01-22T00:00:00+00:00</updated><id>/news/2024/01/22/0.13.3</id><content type="html" xml:base="/news/2024/01/22/0.13.3"><![CDATA[<h3 id="0133-release">0.13.3 Release</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-03-13T11:35:47+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.14.2 Release</title><link href="/news/2024/03/13/0.14.2" rel="alternate" type="text/html" title="0.14.2 Release" /><published>2024-03-13T00:00:00+00:00</published><updated>2024-03-13T00:00:00+00:00</updated><id>/news/2024/03/13/0.14.2</id><content type="html" xml:base="/news/2024/03/13/0.14.2"><![CDATA[<h3 id="0142-release">0.14.2 Release</h3>
+
+<p>We are pleased to announce the 0.14.2 bug fix release, which represents a number of small bug fixes and stability improvements to the software</p>
+
+<ul>
+  <li>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.14.2">release notes</a></li>
+</ul>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.14.2 Release]]></summary></entry><entry><title type="html">0.13.3 Release</title><link href="/news/2024/01/22/0.13.3" rel="alternate" type="text/html" title="0.13.3 Release" /><published>2024-01-22T00:00:00+00:00</published><updated>2024-01-22T00:00:00+00:00</updated><id>/news/2024/01/22/0.13.3</id><content type="html" xml:base="/news/2024/01/22/0.13.3"><![CDATA[<h3 id="0133-release">0.13.3 Release</h3>
 
 <p>We are pleased to announce the 0.13.3 bug fix release, which represents a number of small bug fixes and stability improvements to the software</p>
 
@@ -85,30 +91,4 @@
 
 <h3 id="credits">Credits</h3>
 
-<p>Thanks to <a href="https://github.com/matmair">@matmair</a> for bringing the new website into existence</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Introducing the new InvenTree website!]]></summary></entry><entry><title type="html">We have news now!</title><link href="/news/2022/04/23/news-are-starting" rel="alternate" type="text/html" title="We have news now!" /><published>2022-04-23T00:00:00+00:00</published><updated>2022-04-23T00:00:00+00:00</updated><id>/news/2022/04/23/news-are-starting</id><content type="html" xml:base="/news/2022/04/23/news-are-starting"><![CDATA[<p>News!</p>
-
-<p>These news items will automatically show up for all admins in the <strong>homepage</strong> as the <em>lowest</em> category (starting with the next minor release <strong>0.9.0</strong>).
-If you do not want to see them there you can <strong>disable</strong> the function in your user-settings. There is also the option to disable news globally in the general server settings.</p>
-
-<h3 id="but-why">But why?</h3>
-<p>The good news first: We will <strong>not</strong> spam you with this function daily.<br />
-It is more of a tool to <em>communicate</em> with the <em>power users</em> and <em>admins</em>. There is wide array of reasons for the dev-team to want to communicate with you.<br />
-For example when we</p>
-<ul>
-  <li>are looking for inputs on new big, roadmap worthy FRs</li>
-  <li>want to show you a cool show-and-tell as an inspiration</li>
-  <li>have security advisories (please also follow releases - we always try to push new releases as fast as possible)</li>
-  <li>are planning to depreciate a function and want to gauge if there are still users</li>
-</ul>
-
-<h3 id="how-does-it-work">How does it work?</h3>
-<p>Like the update-checks we are using the infrastructure GitHub provides.<br />
-While the checks use the GitHub APIs, news are gathered from an <strong>RSS-feed</strong> that is served via <strong>GitHub Pages</strong>. The Jekyll-based website generates through a <strong>GitHub Action</strong> and then passes the <strong>static output</strong> to Pages, where it gets hosted for free (thank you GitHub) and delivered through CDNs worldwide.
-On your InvenTree instance the <strong>background worker</strong> loads the RSS-feed on a regular basis and creates <strong>entries</strong> for the news items and <strong>notifications</strong> for all applicable users.</p>
-
-<h3 id="and-my-data">And my data?</h3>
-<p>As listed above we are using GitHub pages for this feature. We are not introducing additional trackers to that so the <a href="https://docs.inventree.org/en/latest/privacy/">general InvenTree privacy statement</a> applies.<br />
-The short version: we <strong>do not sell your data</strong> or share it with third parties. We cannot guarantee what readthedocs and GitHub do with the metrics. We might use them as a metric for the stats section of the site. However, we get very little <em>actionable</em> information from that, a screenshot of the total info available is shown below.</p>
-
-<p><img src="/assets/news/2022-04-23-news-are-starting/media1.png" alt="Sample screenshot of the collected analytics" />
-<em>Sample screenshot of the collected analytics</em></p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[News!]]></summary></entry></feed>
+<p>Thanks to <a href="https://github.com/matmair">@matmair</a> for bringing the new website into existence</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Introducing the new InvenTree website!]]></summary></entry></feed>
