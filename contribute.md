@@ -17,6 +17,7 @@ We welcome everyone to help with InvenTree however they can!
 
 If you or your company uses InvenTree, please consider sponsoring the project to show your support. Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!
 
+- [Polar.sh](https://polar.sh/inventree)
 - [GitHub](https://github.com/sponsors/inventree)
 - [Patreon](https://www.patreon.com/inventree)
 - [Ko-fi](https://ko-fi.com/inventree)
