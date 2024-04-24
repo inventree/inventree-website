@@ -114,9 +114,10 @@ in another printer.
 Only the IP address and darkness can be overwritten so far. All other settings remain.
 
 ## How it works
-First import all the stuff you need. Here we use the translation mechanism from Django for multi language support.
-The import the InvenTree libs and everything you need for plugin. Here we have ZPL for the Zebra bitmaps and socket
-for the IP connection to the printer.
+First import all the stuff you need. Here we use the translation mechanism from
+Django for multi language support. The import the InvenTree libs and everything
+you need for plugin. Here we have ZPL for the Zebra bitmaps and socket for the
+IP connection to the printer.
 
 The next part is this:
 
