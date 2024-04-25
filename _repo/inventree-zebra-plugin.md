@@ -80,15 +80,17 @@ The label needs a template described in html and css. The template should
 start with a page definition that defines the label size as shown below:
 
 ```
+{% raw %}
     @page {
-        {% raw  %}{% localize off %}{% endraw  %}
+        {% localize off %}
         height: {{ height }}mm;
         width: {{ width }}mm;
-        {% raw  %}{% endlocalize %}{% endraw  %}
+        {% endlocalize %}
         padding: 0mm;
         margin: 0px 0px 0px 0px;
         background-color: white;
     }
+{% endraw %}
 ```
 
 The height and width parameters are defined in the InvenTree admin panel
