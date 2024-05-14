@@ -1,4 +1,114 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-05-14T09:53:16+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Docker Setup Guide</title><link href="/blog/2024/03/13/docker" rel="alternate" type="text/html" title="Docker Setup Guide" /><published>2024-03-13T00:00:00+00:00</published><updated>2024-03-13T00:00:00+00:00</updated><id>/blog/2024/03/13/docker</id><content type="html" xml:base="/blog/2024/03/13/docker"><![CDATA[<p>In this post, we will run though a tutorial for setting up InvenTree in a Docker container. We are installing a <em>stable</em> version of InvenTree, which (at the time of posting) is version 0.14.2.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-05-14T11:49:20+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.15.0 Stable Release</title><link href="/blog/2024/05/14/0.15.0" rel="alternate" type="text/html" title="0.15.0 Stable Release" /><published>2024-05-14T00:00:00+00:00</published><updated>2024-05-14T00:00:00+00:00</updated><id>/blog/2024/05/14/0.15.0</id><content type="html" xml:base="/blog/2024/05/14/0.15.0"><![CDATA[<p>Development on InvenTree continues at a rapid pace, and we are pleased to announce the release of InvenTree version 0.15.0. With more than 300 commits since the <a href="/blog/2024/03/02/0.14.0">0.14.0 stable release</a>, this release includes a wide range of new features, bug fixes, and improvements.</p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<h3 id="code-restructure">Code Restructure</h3>
+
+<p>The code structure has been refactored to improve maintainability and readability. As we work to refactor the entire frontend interface, there is a significant split between the backend code (Python) and the frontend code (React). This refactor has been a long time coming, and we are excited to see it finally merged into the main branch.</p>
+
+<p>The code is now split into two main directories:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">./src/backend/</code> contains all the server code (Python, Django)</li>
+  <li><code class="language-plaintext highlighter-rouge">./src/frontend/</code> contains all the client code (JavaScript, React)</li>
+</ul>
+
+<p>Additionally, we are working to improve the test coverage of the frontend code, and have added a number of new tests to ensure that the frontend code is as robust as possible.</p>
+
+<p>You can read more about the code refactor in <a href="https://github.com/inventree/InvenTree/pull/5582">this PR</a>.</p>
+
+<h2 id="security-patches">Security Patches</h2>
+
+<p>A number of patches were applied to the InvenTree codebase to address security vulnerabilities. These updates were implemented as part of our ongoing commitment to security and privacy.</p>
+
+<p>These patches include:</p>
+
+<ul>
+  <li>Add OSSF Scorecard - <a href="https://github.com/inventree/InvenTree/pull/6769">#6769</a></li>
+  <li>Bump django from 4.2.10 to 4.2.11 - <a href="https://github.com/inventree/InvenTree/pull/6745">#6745</a></li>
+  <li>Pin hashes in requirement files <a href="https://github.com/inventree/InvenTree/pull/7081">#7081</a></li>
+</ul>
+
+<h2 id="new-features">New Features</h2>
+
+<p>A number of significant new features and enhancements have been added in this release. Some of these new features are described below:</p>
+
+<h3 id="template-editor">Template Editor</h3>
+
+<p>An interactive template editor (for editing report and label templates) has been added to the React frontend. This feature allows users to create and edit templates directly within the InvenTree interface, and also provides a live preview for label and report templates.</p>
+
+<p>This presents a significant improvement over the previous template editing process, which required users to manually edit template files in an offline editor.</p>
+
+<p>Full details can be found in <a href="https://github.com/inventree/InvenTree/pull/6541">this PR</a>.</p>
+
+<h3 id="backup-and-restore-functionality">Backup and Restore Functionality</h3>
+
+<p>Backup and restore functionality has been improved by adding new command line options for the <code class="language-plaintext highlighter-rouge">backup</code> and <code class="language-plaintext highlighter-rouge">restore</code> management commands. These commands allow users greater control when creating a backup of the InvenTree database, and restoring it at a later time.</p>
+
+<h3 id="company-active-field">Company Active Field</h3>
+
+<p>An “active” field has been added to the Company model. This field allows users to mark a company as “active” or “inactive”, which can be useful for managing company records in InvenTree.</p>
+
+<p>Read more in <a href="https://github.com/inventree/InvenTree/pull/7024">this PR</a>.</p>
+
+<h2 id="react-interface-development">React Interface Development</h2>
+
+<p>Development of the new React interface continues steadily. This is our major focus now, and we are working to migrate all frontend code to React. From this point onwards, major bug fixes and security patches will still be applied to the old frontend, but new features will only be added to the React frontend.</p>
+
+<p>We intend to depreciate the old frontend in the future, so we encourage all users to start using the new React interface as soon as possible.</p>
+
+<h3 id="url-redirects">URL Redirects</h3>
+
+<p>URL redirects have been implemented in the React frontend to ensure that users are redirected to the correct page when they navigate to a specific URL. This feature improves the user experience and ensures that users are always directed to the correct page.</p>
+
+<p>Refer to <a href="https://github.com/inventree/InvenTree/pull/6872">this PR</a>.</p>
+
+<h3 id="login-state-management">Login State Management</h3>
+
+<p>Login management for the React frontend has received some significant updates in <a href="https://github.com/inventree/InvenTree/pull/7158">#7158</a>. This PR improves the login state management for the React frontend, and ensures that the login state is correctly maintained across the application.</p>
+
+<h2 id="new-language-support">New Language Support</h2>
+
+<p>We have added translation support for the following languages.</p>
+
+<ul>
+  <li>Add Latvian language in <a href="https://github.com/inventree/InvenTree/pull/6749">#6749</a></li>
+</ul>
+
+<h2 id="devops-changes">Devops Changes</h2>
+
+<p>This release cycle has seen a focus on improving the development and testing process for InvenTree. We have updated our unit testing framework, improved our CI/CD pipeline, and made a number of other changes to improve the development process.</p>
+
+<h3 id="code-coverage">Code Coverage</h3>
+
+<p>We have moved our code coverage reporting to <a href="https://app.codecov.io/gh/inventree/InvenTree">codecov</a>. This change allows us to better track code coverage across the entire codebase, and ensure that we are maintaining a high level of test coverage.</p>
+
+<h3 id="playwright-tests">Playwright Tests</h3>
+
+<p>We now run Playwright tests in our CI pipeline. This allows us to test the frontend interface in a more automated way, and ensures that the frontend code is functioning correctly. As the React frontend makes heavy use of the InvenTree API, this testing also helps increase test coverage of the API and backend code.</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>As always, a number of bug fixes have been implemented in this release. For a full list of the bugs squashed in this release, refer to <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+milestone%3A0.15.0+label%3Abug+">our GitHub page</a>.</p>
+
+<h2 id="new-contributors">New Contributors</h2>
+
+<p>Two new contributors have made their first contribution to the InvenTree project in this release:</p>
+
+<ul>
+  <li>@XanderLuciano made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/6694">#6694</a></li>
+  <li>@emmanuel-ferdman made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/7019">#7019</a></li>
+</ul>
+
+<p>As always, we welcome new contributors to the project! If you are interested in contributing to InvenTree, whether it be code, documentation, or translations, please get in touch!</p>
+
+<h2 id="release-notes">Release Notes</h2>
+
+<p>For a full list of changes, please see the <a href="https://github.com/inventree/InvenTree/releases/tag/0.15.0">release notes on GitHub</a>.</p>
+
+<h2 id="deploying-inventree">Deploying InvenTree</h2>
+
+<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Development on InvenTree continues at a rapid pace, and we are pleased to announce the release of InvenTree version 0.15.0. With more than 300 commits since the 0.14.0 stable release, this release includes a wide range of new features, bug fixes, and improvements.]]></summary></entry><entry><title type="html">Docker Setup Guide</title><link href="/blog/2024/03/13/docker" rel="alternate" type="text/html" title="Docker Setup Guide" /><published>2024-03-13T00:00:00+00:00</published><updated>2024-03-13T00:00:00+00:00</updated><id>/blog/2024/03/13/docker</id><content type="html" xml:base="/blog/2024/03/13/docker"><![CDATA[<p>In this post, we will run though a tutorial for setting up InvenTree in a Docker container. We are installing a <em>stable</em> version of InvenTree, which (at the time of posting) is version 0.14.2.</p>
 
 <h2 id="digital-ocean">Digital Ocean</h2>
 
@@ -897,107 +1007,4 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <h4 id="development-assistance">Development Assistance</h4>
 
-<p>One major goal of the refactor is to attract more developers by using a well-established modern framework. If you would like to contribute to the new interface, please raise a PR over on our <a href="https://github.com/inventree/inventree">GitHub page</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is thrilled to share some exciting news about the ongoing efforts to significantly overhaul our user interface. To provide a major facelift to InvenTree, we are migrating our entire user interface to the React framework.]]></summary></entry><entry><title type="html">0.12.0 Stable Release</title><link href="/blog/2023/06/26/0.12.0" rel="alternate" type="text/html" title="0.12.0 Stable Release" /><published>2023-06-26T00:00:00+00:00</published><updated>2023-06-26T00:00:00+00:00</updated><id>/blog/2023/06/26/0.12.0</id><content type="html" xml:base="/blog/2023/06/26/0.12.0"><![CDATA[<p>Once again, it’s time to announce a new stable release! The InvenTree development team, aided by a number of new contributors, are pleased to announce a new stable release version - 0.12.0.</p>
-
-<h2 id="deploying-inventree">Deploying InvenTree</h2>
-
-<p>InvenTree deployment is supported with multiple approaches. Refer to our <a href="/deploy.html">deployment guide</a> for more information!</p>
-
-<h2 id="new-features">New Features</h2>
-
-<p>In today’s fast-paced business environment, effective inventory management plays a vital role in the success of any organization. Keeping track of stock, orders, and projects is essential for efficient operations and customer satisfaction. To address the evolving needs of businesses, we are excited to announce the release of InvenTree, our advanced inventory management software. This latest version of InvenTree introduces several key features and enhancements, focusing on improving business functionality and reliability. Let’s explore the major highlights of this release:</p>
-
-<h3 id="units-of-measurement">Units of Measurement</h3>
-
-<p>InvenTree now supports physical units for parts, allowing you to define and track different units of measurement for your inventory items. With seamless conversion between compatible types, you can manage your stock in a way that aligns with your specific requirements and industry standards.</p>
-
-<p>Physical unit management is provided via the <a href="https://pint.readthedocs.io/en/stable/">pint</a> library. Units of measure can be defined for internal parts, and for parts supplied by external companies. In the case of supplier parts, different units of measure can be specified, and converted to internal units on point of purchase.</p>
-
-<p>Additionally, part parameters can now also specify real world units!</p>
-
-<p>For more information on this new feature, refer to the documentation:</p>
-
-<ul>
-  <li><a href="https://docs.inventree.org/en/latest/part/part/#units-of-measure">Part units</a></li>
-  <li><a href="https://docs.inventree.org/en/latest/part/parameter/#parameter-units">Part parameter units</a></li>
-</ul>
-
-<h3 id="project-codes">Project Codes</h3>
-
-<p>To streamline project management and order tracking, InvenTree now offers configurable project codes. These codes can be created and assigned to orders, providing a convenient way to organize and categorize your inventory based on specific projects. This enhancement enhances overall visibility and enables efficient project-based inventory management.</p>
-
-<p>Read more about project code support <a href="https://docs.inventree.org/en/latest/order/project_codes/">in the documentation</a></p>
-
-<h3 id="parameter-types">Parameter Types</h3>
-
-<p>Part parameters in InvenTree now support dynamic typing, empowering you to define and validate various parameter types. With this flexibility, you can customize and validate part parameters to suit your specific needs. Furthermore, the addition of plugin support ensures seamless integration of third-party validation mechanisms, enhancing the reliability of your inventory data.</p>
-
-<p>More information about part parameters is available <a href="https://docs.inventree.org/en/latest/part/parameter/">in the documentation</a>.</p>
-
-<h3 id="parameter-sorting">Parameter Sorting</h3>
-
-<p>To enhance the usability and efficiency of InvenTree’s part parameters, the latest release introduces the ability to sort parameters by value. This functionality enables you to quickly identify and analyze specific parameter values across your inventory. Moreover, the conversion between real unit values of compatible types allows for seamless comparison and analysis. By easily sorting parts based on parameter values, you gain deeper insights into your inventory, facilitating better decision-making and process optimization.</p>
-
-<h3 id="report-plugins">Report Plugins</h3>
-
-<p>InvenTree introduces a new <a href="https://docs.inventree.org/en/latest/extend/plugins/report/">plugin mixin class</a> that allows for custom context variables to be injected into reports. This enhancement provides extensive customization options when generating reports, enabling you to include additional information relevant to your business processes. With improved report functionality, you can present inventory data in a more comprehensive and meaningful way.</p>
-
-<h3 id="build-orders-consume-stock">Build Orders Consume Stock</h3>
-
-<p>The build order interface in InvenTree has received a major overhaul, resulting in a significantly improved API interface. This update simplifies the process of managing build orders and ensures a smoother workflow. Additionally, build orders now track stock consumption, allowing for lifecycle tracking of consumed stock. This feature enables better monitoring of stock usage and enhances traceability.</p>
-
-<h3 id="scrap-build-order-outputs">Scrap Build Order Outputs</h3>
-
-<p>InvenTree’s latest release introduces a valuable feature that allows users to <a href="https://docs.inventree.org/en/latest/build/output/#scrap-build-output">scrap partially completed or failed build outputs</a> while retaining traceability. In real-world manufacturing scenarios, it is common for builds to encounter challenges or errors, resulting in the need to discard certain outputs. With the new scrap build outputs functionality, you can easily identify and remove faulty or incomplete build outputs from your inventory. This feature ensures accurate stock tracking and maintains a clear audit trail, improving reliability and efficiency in your manufacturing processes.</p>
-
-<h3 id="image-uploads">Image Uploads</h3>
-
-<p>To enrich documentation and enhance visual representation, InvenTree now supports image uploads. Images can be uploaded and seamlessly integrated into markdown notes fields, providing a more comprehensive overview of inventory items. With the ability to include images, you can easily document and visualize important aspects of your inventory, increasing reliability and improving communication.</p>
-
-<h3 id="address-management">Address Management</h3>
-
-<p>InvenTree now offers <a href="https://docs.inventree.org/en/latest/order/company/#addresses">increased support for address management</a> with a more complex address database model. This enhancement enables businesses to manage addresses more effectively, accommodating various scenarios such as multiple shipping locations, customer addresses, and supplier information. With improved address management, you can maintain accurate records and ensure smooth logistics operations.</p>
-
-<h3 id="svg-support">SVG Support</h3>
-
-<p>With the growing importance of visual data representation, InvenTree now supports the embedding of SVG images into generated reports. By incorporating SVG images into your reports, you can create visually appealing and informative documentation, making it easier for stakeholders to understand and engage with your inventory data.</p>
-
-<p>Read more about <a href="https://docs.inventree.org/en/latest/report/helpers/#svg-images">SVG support in generated reports</a> in the documentation.</p>
-
-<h3 id="update-to-openapi">Update to OpenAPI</h3>
-
-<p>InvenTree’s API documentation has been updated to utilize OpenAPI, resulting in improved readability and enhanced functionality. The transition to OpenAPI brings a standardized and user-friendly interface for developers, enabling easier integration with other systems and applications. This update enhances the reliability and compatibility of InvenTree within your existing software ecosystem.</p>
-
-<h2 id="bug-fixes">Bug Fixes</h2>
-
-<p>As always, we have worked hard to address any identified bugs or inconsistencies in system performance. These bug fixes and usability improvements represent our commitment to delivering a robust, reliable, and user-friendly inventory management solution. We value user feedback and continuously strive to enhance the software based on user needs and industry best practices. With each iteration, InvenTree becomes more refined, reliable, and user-centric, empowering businesses to efficiently manage their inventory and drive success.</p>
-
-<h2 id="and-more">And More!</h2>
-
-<p>With over 175 merged requests, this new stable release represents a major step forward in the InvenTree project. Please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.0">release notes</a> for a full listing of new features, bug fixes, and other updates.</p>
-
-<h2 id="support-for-inventree">Support for InvenTree</h2>
-
-<p>We believe in the power of open-source software and its ability to drive innovation and empower businesses worldwide. InvenTree has always been developed with a community-driven approach, with contributors and users collaborating to make it a robust and reliable inventory management solution. To continue providing high-quality software and ensure its long-term sustainability, we rely on the support of the community.</p>
-
-<p>Maintaining and continuously improving a software project requires time, effort, and resources. We are committed to dedicating our expertise and energy to enhancing InvenTree, but we also need your support to sustain its development at the highest standards. By contributing financially to the project, you can play a crucial role in ensuring that InvenTree remains a cutting-edge, reliable, and feature-rich inventory management solution.</p>
-
-<p>Your financial support will help us in several ways:</p>
-
-<p><strong>Continued Development</strong></p>
-
-<p>Funds raised through your contributions will enable us to allocate more resources to the ongoing development of InvenTree. This means that we can invest in additional development hours, hire talented developers, and accelerate the implementation of new features, bug fixes, and usability improvements.</p>
-
-<p><strong>Bug Fixing and Quality Assurance</strong></p>
-
-<p>With your financial support, we can dedicate more attention to addressing reported bugs promptly. By investing in rigorous quality assurance processes, we can ensure that InvenTree operates smoothly, minimizing disruptions and maximizing reliability for users like you.</p>
-
-<p><strong>Documentation and User Support</strong></p>
-
-<p>High-quality documentation and responsive user support are vital components of a successful software project. Your contributions will enable us to allocate resources to improving documentation, creating helpful tutorials, and providing timely assistance to users, enhancing their experience and understanding of InvenTree.</p>
-
-<p><strong>Infrastructure and Hosting Costs</strong></p>
-
-<p>Maintaining reliable infrastructure and hosting services is essential for ensuring the ongoing development and maintenance of the InvenTree project. Your support will help us cover the various ongoing costs associated with hosting.</p>
-
-<p>To support InvenTree financially, please view the <a href="/contribute.html#sponsor">contribution page</a> or contact our team for more information on how you can contribute. We extend our heartfelt gratitude to the entire InvenTree community for your ongoing support, contributions, and belief in the power of open-source software. Your involvement is invaluable, and we look forward to building a brighter future for InvenTree together.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Once again, it’s time to announce a new stable release! The InvenTree development team, aided by a number of new contributors, are pleased to announce a new stable release version - 0.12.0.]]></summary></entry></feed>
+<p>One major goal of the refactor is to attract more developers by using a well-established modern framework. If you would like to contribute to the new interface, please raise a PR over on our <a href="https://github.com/inventree/inventree">GitHub page</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is thrilled to share some exciting news about the ongoing efforts to significantly overhaul our user interface. To provide a major facelift to InvenTree, we are migrating our entire user interface to the React framework.]]></summary></entry></feed>

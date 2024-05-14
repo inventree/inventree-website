@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-05-14T09:53:16+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.14.2 Release</title><link href="/news/2024/03/13/0.14.2" rel="alternate" type="text/html" title="0.14.2 Release" /><published>2024-03-13T00:00:00+00:00</published><updated>2024-03-13T00:00:00+00:00</updated><id>/news/2024/03/13/0.14.2</id><content type="html" xml:base="/news/2024/03/13/0.14.2"><![CDATA[<h3 id="0142-release">0.14.2 Release</h3>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/news/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-05-14T11:49:20+00:00</updated><id>/news/feed.atom</id><title type="html">InvenTree | News</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.15.0 Release</title><link href="/news/2024/05/14/0.15.0" rel="alternate" type="text/html" title="0.15.0 Release" /><published>2024-05-14T00:00:00+00:00</published><updated>2024-05-14T00:00:00+00:00</updated><id>/news/2024/05/14/0.15.0</id><content type="html" xml:base="/news/2024/05/14/0.15.0"><![CDATA[<h3 id="0150-release">0.15.0 Release</h3>
+
+<p>We are pleased to announce the 0.15.0 stable release, which represents a significant milestone in the development of InvenTree.</p>
+
+<ul>
+  <li>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.15.0">release notes</a></li>
+</ul>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.15.0 Release]]></summary></entry><entry><title type="html">0.14.2 Release</title><link href="/news/2024/03/13/0.14.2" rel="alternate" type="text/html" title="0.14.2 Release" /><published>2024-03-13T00:00:00+00:00</published><updated>2024-03-13T00:00:00+00:00</updated><id>/news/2024/03/13/0.14.2</id><content type="html" xml:base="/news/2024/03/13/0.14.2"><![CDATA[<h3 id="0142-release">0.14.2 Release</h3>
 
 <p>We are pleased to announce the 0.14.2 bug fix release, which represents a number of small bug fixes and stability improvements to the software</p>
 
@@ -73,22 +79,4 @@
 
 <h3 id="mobile-app">Mobile App</h3>
 
-<p>We’ve also released an updated version of the <a href="https://docs.inventree.org/en/latest/app/app/">mobile app</a> - available for Android and iOS devices.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[InvenTree 0.9.0 stable release now available!]]></summary></entry><entry><title type="html">New Website</title><link href="/news/2022/11/14/website" rel="alternate" type="text/html" title="New Website" /><published>2022-11-14T00:00:00+00:00</published><updated>2022-11-14T00:00:00+00:00</updated><id>/news/2022/11/14/website</id><content type="html" xml:base="/news/2022/11/14/website"><![CDATA[<p>Introducing the new InvenTree website!</p>
-
-<p>InvenTree now has a new website (the one you’re looking at right now), which is intended to act as a landing page for anyone wanting to learn more about InvenTree. This new website will provide general information about what InvenTree <em>is</em> and how it can be used.</p>
-
-<p>We will share periodic updates on new features, which provides greater visibility into what the latest-and-greatest versions of InvenTree have to offer.</p>
-
-<p>Additionally as the InvenTree community grows, we’ll share information on new plugins, or feature “show and tell” sections in our blog to show how InvenTree is being used around the world!</p>
-
-<h3 id="documentation">Documentation</h3>
-
-<p>inventree.org will no longer host the InvenTree software documentation. Documentation has been moved to <a href="https://docs.inventree.org">docs.inventree.org</a></p>
-
-<h3 id="demo-server">Demo Server</h3>
-
-<p>The <a href="/demo.html">demo server</a> remains available at <a href="https://demo.inventree.org">demo.inventree.org</a></p>
-
-<h3 id="credits">Credits</h3>
-
-<p>Thanks to <a href="https://github.com/matmair">@matmair</a> for bringing the new website into existence</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Introducing the new InvenTree website!]]></summary></entry></feed>
+<p>We’ve also released an updated version of the <a href="https://docs.inventree.org/en/latest/app/app/">mobile app</a> - available for Android and iOS devices.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[InvenTree 0.9.0 stable release now available!]]></summary></entry></feed>
