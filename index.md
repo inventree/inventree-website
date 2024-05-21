@@ -23,3 +23,5 @@ main_page: True
 {% include block/cta.html cta=site.data.ctas.end %}
 
 {% include block/plugins.html %}
+
+<a rel="me" href="https://chaos.social/@InvenTree">Mastodon</a>
