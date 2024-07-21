@@ -8,7 +8,6 @@ maintained: true                                                                
 pypi: true                                                                        # Is available via PyPi
 package_name: inventree-adv-sheet-label                                           # Name of the package on the index, required if pypi true
 github: https://github.com/melektron/inventree-adv-sheet-label/                   # Ĺink to repo in GitHub, one of github, gitlab or source is required
-source: https://github.com/melektron/inventree-adv-sheet-label/                   # Link to source, one of github, gitlab or source is required
 issue_tracker: https://github.com/melektron/inventree-adv-sheet-label/issues      # Link to Issue tracker, optional
 website: https://elektron.work                                                    # Website, full path with protocol, optional
 categories:                                                                       # Mixins/integrations that are used, optional
