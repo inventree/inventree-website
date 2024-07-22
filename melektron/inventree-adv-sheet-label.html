@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - Inventree Adv Sheet Label</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Inventree Adv Sheet Label | InvenTree</title>
+<meta name="generator" content="Jekyll v4.3.3" />
+<meta property="og:title" content="Inventree Adv Sheet Label" />
+<meta name="author" content="melektron" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A label printing plugin for InvenTree which provides support for printing labels on off-the-shelf label sheet layouts and adds some more useful features compared to the sheet label plugin included with InvenTree." />
+<meta property="og:description" content="A label printing plugin for InvenTree which provides support for printing labels on off-the-shelf label sheet layouts and adds some more useful features compared to the sheet label plugin included with InvenTree." />
+<link rel="canonical" href="/melektron/inventree-adv-sheet-label" />
+<meta property="og:url" content="/melektron/inventree-adv-sheet-label" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-07-22T01:47:16+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Inventree Adv Sheet Label" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melektron"},"dateModified":"2024-07-22T01:47:16+00:00","datePublished":"2024-07-22T01:47:16+00:00","description":"A label printing plugin for InvenTree which provides support for printing labels on off-the-shelf label sheet layouts and adds some more useful features compared to the sheet label plugin included with InvenTree.","headline":"Inventree Adv Sheet Label","mainEntityOfPage":{"@type":"WebPage","@id":"/melektron/inventree-adv-sheet-label"},"url":"/melektron/inventree-adv-sheet-label"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <article class="max-w-p90">
+    
+    <h2>InvenTree Advanced Sheet Label
+<span class="sm:ml-2 text-sm">
+<a href="/melektron">
+<span class="inline-flex">
+    <img src="https://github.com/melektron.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px">
+    <p> melektron</p>
+</span>
+</a></span>
+<span class="sm:ml-2 text-sm">last modified: 22 Jul 2024</span>
+</h2>
+
+<div class="flex-wrap md:flex md:flex-nowrap">
+    <div class="w-full md:w-auto md:mr-4">
+        <p>A label printing plugin for <a href="https://inventree.org">InvenTree</a> which provides support for printing labels on off-the-shelf label sheet layouts and adds some more useful features compared to the sheet label plugin included with InvenTree.</p>
+
+<h2 id="index">Index</h2>
+
+<ol>
+  <li><a href="#installation">Installation</a></li>
+  <li>
+<a href="#usage-and-features">Usage and Features</a>
+    <ol>
+      <li><a href="#sheet-layout">Sheet layout</a></li>
+      <li><a href="#number-of-labels">Number of labels</a></li>
+      <li><a href="#skip-label-positions">Skip label positions</a></li>
+      <li><a href="#ignore-label-size-mismatch">Ignore label size mismatch</a></li>
+      <li><a href="#print-border">Print border</a></li>
+      <li><a href="#label-fill-color">Label fill color</a></li>
+    </ol>
+  </li>
+  <li><a href="#errors">Errors</a></li>
+  <li>
+<a href="#settings">Settings</a>
+    <ol>
+      <li><a href="#default-sheet-layout">Default sheet layout</a></li>
+    </ol>
+  </li>
+  <li>
+<a href="#contribution">Contribution</a>
+    <ol>
+      <li><a href="#reporting-and-fixing-bugs">Reporting and fixing bugs</a></li>
+      <li><a href="#adding-new-layouts">Adding new layouts</a></li>
+    </ol>
+  </li>
+  <li><a href="#plugin-development-setup">Plugin development setup</a></li>
+</ol>
+
+<h2 id="installation">Installation</h2>
+
+<blockquote>
+  <p>Note:
+This plugin currently supports InvenTree versions <strong>0.15.x</strong>. As of writing, version <strong>0.16.x</strong> is under development and its new API is partially supported. However, since that might still change at any time, compatibility is not yet guaranteed.</p>
+</blockquote>
+
+<p>The simplest way of installing is by using the <code class="language-plaintext highlighter-rouge">Install Plugin</code> button on the InvenTree <code class="language-plaintext highlighter-rouge">Plugin Settings</code> page and then entering the package name:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/install_via_ui.png" alt='Plugin installation via UI: The "Install Plugin" modal window'></p>
+
+<p>Alternatively, you can install this plugin manually in the InvenTree container as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install inventree-adv-sheet-label
+</code></pre></div></div>
+
+<p>Or, add the package name to your plugins.txt file (this is automatically done when using the UI method) to install automatically when using the <code class="language-plaintext highlighter-rouge">invoke install</code> command:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inventree-adv-sheet-label
+</code></pre></div></div>
+
+<p>In any case, after installation, the plugin needs to be enabled in the above mentioned plugin settings page:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/enable_plugin.png" alt='Plugin list with mouse cursor over "Enable Plugin" button'></p>
+
+<h2 id="usage-and-features">Usage and Features</h2>
+
+<p>This plugin adds the “AdvancedLabelSheet” printing option to the label printing dialog:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/plugin_selection.png" alt="Printing dialog with plugin selection open"></p>
+
+<h3 id="sheet-layout">Sheet layout</h3>
+
+<p>Unlike the builtin sheet label printing plugin of InvenTree, this plugin presents a selection of preconfigured sheet label layout options corresponding to various kinds of off-the-shelf label printing paper that can be purchased from most office supply shops and easily printed on any standard 2D printer.</p>
+
+<p>You can select the layout corresponding your paper in the <code class="language-plaintext highlighter-rouge">Sheet layout</code> dropdown:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/sheet_layout_select.png" alt='"Sheet layout" dropdown in open state, with various layout options shown'></p>
+
+<p>These layouts are identified by a several digit number written on the paper packaging, which (as far as I can tell) is unique to the layout independent of the manufacturer (at least where I live). The identifier is however just a string, so any other scheme can also be used in the future.</p>
+
+<p>The dropdown list also shows some additional information about the layout for orientation:</p>
+
+<ul>
+  <li>Paper size (e.g. A4)</li>
+  <li>Dimensions of the individual labels</li>
+  <li>How many rows and columns are on one page</li>
+  <li>Whether the labels have rounded corners</li>
+</ul>
+
+<p>Currently supported layouts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Layout Identifier</th>
+      <th>Paper size</th>
+      <th>Label dimensions</th>
+      <th>Label layout</th>
+      <th>Corner style</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>4780</td>
+      <td>A4</td>
+      <td>48.5mm x 25.4mm</td>
+      <td>4 columns x 10 rows</td>
+      <td>sharp</td>
+    </tr>
+    <tr>
+      <td>4737</td>
+      <td>A4</td>
+      <td>63.5mm x 29.6mm</td>
+      <td>3 columns x 9 rows</td>
+      <td>round</td>
+    </tr>
+    <tr>
+      <td>4201</td>
+      <td>A4</td>
+      <td>45.7mm x 16.9mm</td>
+      <td>4 columns x 16 rows</td>
+      <td>round</td>
+    </tr>
+    <tr>
+      <td>7160-10</td>
+      <td>A4</td>
+      <td>63.5mm x 38.1mm</td>
+      <td>3 columns x 7 rows</td>
+      <td>round</td>
+    </tr>
+    <tr>
+      <td>4360</td>
+      <td>A4</td>
+      <td>70.0mm x 36.0mm</td>
+      <td>3 columns x 8 rows</td>
+      <td>sharp</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>As of right now, this selection is limited to whatever layouts I personally own and use. If the paper layout you need is not included, please file an <a href="https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&amp;labels=sheet+layout&amp;projects=&amp;template=sheet-layout.md&amp;title=New+Sheet+layout%3A+%5Blayout+name%5D">Issue with the “Sheet Layout” template</a>. See the <a href="#adding-new-layouts">Adding new layouts</a> for details.</p>
+
+<p>You can also select one of the two <code class="language-plaintext highlighter-rouge">Auto</code> sheet layout presets. These will automatically select the correct sheet layout for the label template you are printing. This is done in one of three ways:</p>
+<ul>
+  <li>If you have a specific layout that’s always used for a specific template, you can add the <code class="language-plaintext highlighter-rouge">{"sheet_layout": "..."}</code> metadata key to your label template configuration (replace … with the identifier of the layout. This might not be the same as the display name, see <a href="https://github.com/melektron/inventree-adv-sheet-label/blob/main/advanced_sheet_label/layouts.py#L77">here</a> what the identifier is). This is the cleanest way configure the correct layout for your templates.</li>
+  <li>If the selected template template has no such metadata, the plugin will attempt to find a layout with exactly the required label size and use that one. If multiple matches are found, the first one is selected while preferring ones with round or sharp corners depending on your selection.</li>
+  <li>If no exact matches are found, the closest layout that can fit your label template will be selected and shown to the user in an error message. The user can then decide to use this option by selecting the <a href="#ignore-label-size-mismatch">‘Ignore label size mismatch’</a> switch.</li>
+</ul>
+
+<h3 id="number-of-labels">Number of labels</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">Number of labels</code> field lets you print multiple of the same label in one go. By default, the number of labels printed is 1, resulting in an output like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/one_label.png" alt="Top of a page with one label printed on it">
+(The label template is only an example and this is only part of a page)</p>
+
+<p>Let’s say you want to print two of the same label. By entering the desired amount in the field, multiple of the same label will be printed at once, of course arranged according to the selected layout:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/two_identical_labels.png" alt="Top of a page with two identical labels printed on it"></p>
+
+<p>If you are printing labels for multiple items at once, such as for an entire selection of parts, this amount is applied to all items. For example, lets print two labels for each of those four capacitors:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/multi_item_select.png" alt="Selection of multiple items to print labels for">
+<img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/multi_label_print_config.png" alt="Configuration for multi label print"></p>
+
+<p>This results in a printout looking like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/multi_item_multi_labels.png" alt="Top of a page with two labels each for four parts into total"></p>
+
+<p>You can also specify to print zero labels. This is useful in combination with the “Skip label positions” and “Debug: Print border” options to print an empty grid of cells for testing.</p>
+
+<h3 id="skip-label-positions">Skip label positions</h3>
+
+<p>When printing on label sheets, it is likely that you don’t use up the entire sheet of labels at once. Maybe you only want to print a single label and then another one later. To do so, you can enter the number of labels on a sheet that are already used up in the <code class="language-plaintext highlighter-rouge">Skip label positions</code> fields (counting from top left to bottom right). These positions are then skipped and labels will start to print at the next unused position. This also works when printing multiple labels.</p>
+
+<p>For example, let’s assume the first two labels are already used up and we want to start printing at the third one:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/skip_two_positions_config.png" alt="Settings for printing two labels, skipping the first two positions"></p>
+
+<p>This results in the following output:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/skip_two_positions_result.png" alt="Page with two labels printed and the first two positions skipped"></p>
+
+<p>When printing small labels with many of them on a single sheet, it can be confusing and annoying to keep track of the amount of labels skipped. Since this is such a common task, the plugin automatically remembers how many labels have been used up already and populates the <code class="language-plaintext highlighter-rouge">Skip label positions</code> field with the correct number of labels to skip after the previous printing operations. For example, after the above shown printing operation, the plugin automatically remembers that next time, it needs to skip four labels and pre-populates the field with that value:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/skip_positions_pre_populated.png" alt="Skip label positions field pre-populated with correct skip amount"></p>
+
+<p>When an entire page or more is used up, this counter automatically wraps around to the correct value for the next page.</p>
+
+<p>Of course, this feature only makes sense when printing a lot of labels on the same label sheet (and therefore label sheet layout) back-to-back. Since this value is stored only once globally, when switching between different label sheets (for example because multiple users are printing on different sheets at once) the value is probably not accurate and needs to be manually checked and possibly adjusted each time.</p>
+
+<h3 id="ignore-label-size-mismatch">Ignore label size mismatch</h3>
+
+<p>To ensure the desired result, the plugin automatically check whether the size of the label according to the selected template matches the size of the labels on the selected sheet layout.</p>
+
+<p>If that is not the case, the user is presented with an error message. This can happen in a few different scenarios:</p>
+<ul>
+  <li>Manually selecting a sheet layout that doesn’t match the label template: <img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/err_selected_layout.png" alt="Error selected layout size does not match">
+</li>
+  <li>When automatic layout selection is enabled and the label template specifies a sheet layout but its label size does not match that of the template: <img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/err_metadata_layout.png" alt="Error template metadata layout does not have the expected size">
+</li>
+  <li>When automatic layout selection is enabled but the label template doesn’t specify any layout in the metadata and no exact size match was found: <img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/err_no_size_match.png" alt="Error no metadata and no exact size match found">
+</li>
+</ul>
+
+<p>In any of these cases, you might want to continue anyway, e.g. because you may not have the correct sheet at hand. To do so, you can enable the <code class="language-plaintext highlighter-rouge">Ignore label size mismatch</code> switch to override these safety checks and print anyway. If the label template doesn’t fit exactly, it is aligned at the top left corner of the physical label. The result might look something like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/layout_larger_than_template.png" alt="Label printed on larger label sheet layout"></p>
+
+<h3 id="print-border">Print border</h3>
+
+<p>When debugging or testing your sheet layouts and templates, it might be useful to see the shape of the physical label (e.g. for the previous image). For this purpose, you can enable the <code class="language-plaintext highlighter-rouge">Debug: Print border</code> switch, to print a 0.25mm border around the label. This border is aligned on the INSIDE of the label, so it doesn’t overlap other labels but will cover up a tiny bit of area on the edge of your label. The scale and position of the label content are not affected by the border.</p>
+
+<p>When skipping labels, the skipped positions also have a border.</p>
+
+<p>The result looks something like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/sheet_with_border.png" alt="Label sheet with border"></p>
+
+<h3 id="label-fill-color">Label fill color</h3>
+
+<p>Similarly to the border, you might want to fill the background of the labels with a color to debug your template and see what is covered. This can be achieved by entering the desired color in the <code class="language-plaintext highlighter-rouge">Debug: Label fill color</code> field. Any CSS color string is valid. To have no fill color, use the value “unset”, which is also the default. Leaving the field empty doesn’t work unfortunately since I wasn’t able to get the form to accept an empty field.</p>
+
+<p>The result might look something like this with color “lightgreen”:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/fill_lightgreen.png" alt="Labels with lightgreen fill colo ">
+(White lines between rows are just rendering defects of my browser)</p>
+
+<p>You can also combine this option with the border.</p>
+
+<h2 id="errors">Errors</h2>
+
+<p>In addition to the errors covered in section <a href="#ignore-label-size-mismatch">Ignore label size mismatch</a> you might encounter the following error messages when printing:</p>
+
+<ul>
+  <li>
+<strong>Sheet layout ‘[sheet_layout_code]’ does not exist.</strong>: This means that an API request was received with an invalid sheet layout in the selection. During normal operation, this should never happen because the dropdown list is automatically populated with all valid options. If you are using the API from a 3rd party application, this could mean that the application has requested to print using a sheet layout which is either not supported by this plugin or the application has a typo in the sheet layout code.</li>
+  <li>
+<strong>No labels were generated</strong>: This means that you are not printing any labels (Number of labels = 0) and are not generating any empty fields either (Skip label positions = 0). This would result in a blank page and is likely not what you want.</li>
+  <li>
+<strong>Error printing label</strong>: This error along with another error box containing a Python exception string means that something has gone wrong in the plugin code that is not an intentional error message. Example: <img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/err_unintentional.png" alt="Unintentional plugin error">If you see this, feel free to file a bug report. See <a href="#reporting-and-fixing-bugs">Reporting and fixing bugs</a> on how to do so.</li>
+</ul>
+
+<h2 id="settings">Settings</h2>
+
+<p>This section describes the settings available in the plugins settings page.</p>
+
+<h3 id="default-sheet-layout">Default sheet layout</h3>
+
+<p>This setting allows you to specify which sheet layout is selected by default when opening the printing dialog. It makes sense to set this either to some <em>Auto</em> option or to the layout you are using the most. The default is <code class="language-plaintext highlighter-rouge">Auto (round)</code>, which is probably fine for most use-cases.</p>
+
+<h2 id="contribution">Contribution</h2>
+
+<p>If you have ideas for new features, found typos, have encountered a bug or want to add more sheet layouts, feel free to contribute to this plugin by <a href="https://github.com/melektron/inventree-adv-sheet-label/issues/new/choose">filing an Issue</a> or <a href="https://github.com/melektron/inventree-adv-sheet-label/compare">creating a Pull Request</a>. See <a href="#plugin-development-setup">Plugin development setup</a> to learn how you can set up your development environment to test your modifications.</p>
+
+<p>See the below information and instructions for common contribution types.</p>
+
+<h3 id="reporting-and-fixing-bugs">Reporting and fixing bugs</h3>
+
+<p>If you have encountered a problem or a bug with the plugin, please file an <a href="https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&amp;labels=bug&amp;projects=&amp;template=bug-report.md&amp;title=">Issue with the Bug Report template</a>.</p>
+
+<p>The template requires you to provide a screenshot of your label template configuration. You can get this by going to https://your.inventree.url/admin/label/ for InvenTree 0.15.x or https://your.inventree.url/admin/report/labeltemplate/ for InvenTree 0.16.x and selecting the template you were trying to print when the problem ocurred. You need administrator privileges to do this. If you don’t have them, ask your administrator. This page might look something like this:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/template_config_example.png" alt="Example template configuration screenshot"></p>
+
+<p>In addition to this screenshot, you will be asked to attach the label template file which can be downloaded by clicking on the link next to “Currently:” in the above shown page. Please make sure this file doesn’t contain any confidential data and remove it if it does.</p>
+
+<p>You will also be asked to provide some other information about when and how the bug ocurred which is described in the template.</p>
+
+<h4 id="prs">PRs</h4>
+
+<p>If you know how to fix a bug, feel free to <a href="https://github.com/melektron/inventree-adv-sheet-label/compare">create a Pull Request</a> with the solution.</p>
+
+<h3 id="adding-new-layouts">Adding new layouts</h3>
+
+<p>If you have a label paper layout that is not yet supported by this plugin, please <a href="https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&amp;labels=sheet+layout&amp;projects=&amp;template=sheet-layout.md&amp;title=New+Sheet+layout%3A+%5Blayout+name%5D">file an Issue with the Sheet Layout template</a></p>
+
+<p>In the template you will be asked to provide some basic information about the sheet layout such as possible manufacturers/suppliers and where the product can be purchased.</p>
+
+<p>Then, you will be presented with a code template of a layout configuration which you must fill out with your values. The options are commented and mostly self-explanatory.</p>
+
+<p>If your layout uses a page size that has never been used before, you will also be asked to define the paper format with a name and its dimensions. Otherwise you can simply reference an existing format and omit that part of the issue template.</p>
+
+<h4 id="adding-sheet-layouts-yourself">Adding sheet layouts yourself</h4>
+
+<p>We will review your layout and add it to the main plugin distribution as soon as possible. However, if you need the layout immediately and cannot wait for it to be added officially, you can fork the repository and include it yourself.</p>
+
+<p>To do so, you can edit the <a href="https://github.com/melektron/inventree-adv-sheet-label/blob/main/advanced_sheet_label/layouts.py">advanced_sheet_label/layouts.py</a> file. In there you will find a dictionary of all defined paper sizes and a dictionary of all defined sheet layouts. After filling out the code in the Issue template, you can simply append the new definitions at the end of the dictionaries.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ... more file content
+</span>
+<span class="n">PAPER_SIZES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">A4</span><span class="sh">"</span><span class="p">:</span> <span class="nc">PaperSize</span><span class="p">(</span><span class="sh">"</span><span class="s">A4</span><span class="sh">"</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">297</span><span class="p">)</span>
+    <span class="c1"># ... possibly more paper sizes
+</span>    <span class="c1"># add your new paper size here if required
+</span><span class="p">}</span>
+
+<span class="n">LAYOUTS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="sh">"</span><span class="s">4780</span><span class="sh">"</span><span class="p">:</span> <span class="nc">SheetLayout</span><span class="p">(</span>
+        <span class="n">display_name</span><span class="o">=</span><span class="sh">"</span><span class="s">4780</span><span class="sh">"</span><span class="p">,</span>
+        <span class="n">page_size</span><span class="o">=</span><span class="n">PAPER_SIZES</span><span class="p">[</span><span class="sh">"</span><span class="s">A4</span><span class="sh">"</span><span class="p">],</span>
+        <span class="n">label_width</span><span class="o">=</span><span class="mf">48.5</span><span class="p">,</span>
+        <span class="n">label_height</span><span class="o">=</span><span class="mf">25.4</span><span class="p">,</span>
+        <span class="n">columns</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
+        <span class="n">rows</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+        <span class="n">column_spacing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">row_spacing</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">corner_radius</span><span class="o">=</span><span class="mi">0</span>
+    <span class="p">),</span>
+    <span class="c1"># ... more sheet layouts
+</span>    <span class="c1"># add your new sheet layout here
+</span><span class="p">}</span>
+
+<span class="c1"># ... more file content
+</span></code></pre></div></div>
+
+<p>Make sure that the layout codes (the strings before the colon) are UNIQUE, otherwise the plugin will not work.</p>
+
+<p>To install the modified plugin in your InvenTree instance, simply enter <strong>YOUR</strong> repository link instead of the package name in the installation modal. Example with this repository:</p>
+
+<p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/install_from_vcs.png" alt="Install plugin from VCS"></p>
+
+<blockquote>
+  <p>Make sure to uninstall the official plugin before you install your fork, otherwise they will conflict!</p>
+</blockquote>
+
+<blockquote>
+  <p>It appears that this doesn’t work. It also didn’t seem to work when placing the “git+…” URL in package field in the UI. For me, I have been able to install the plugin directly from GitHub by stopping the InvenTree server and then installing directly using pip:</p>
+  <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code>pip uninstall inventree-adv-sheet-label <span class="c"># uninstall normal package</span>
+pip <span class="nb">install </span>git+https://github.com/melektron/inventree-adv-sheet-label.git
+</code></pre></div>  </div>
+  <p>You have to adjust the link to your repo.</p>
+</blockquote>
+
+<p>If you have added a sheet layout yourself, you are still encouraged to <a href="https://github.com/melektron/inventree-adv-sheet-label/compare">create a Pull Request</a> with your changes so the changes can be added to the mainline plugin for everyone to benefit.</p>
+
+<h2 id="plugin-development-setup">Plugin development setup</h2>
+
+<p>When making bigger changes than just adding layouts, it is recommended to set up a proper development environment.</p>
+
+<p>To develop the plugin, setup an InvenTree development instance using devcontainers according to this <a href="https://docs.inventree.org/en/latest/develop/devcontainer/">this</a> official documentation. It is also recommended to setup the example dataset for experimenting.</p>
+
+<p>Then clone this repo (or your fork) separately on your host computer and link it to the devserver according to <a href="https://docs.inventree.org/en/latest/develop/devcontainer/#plugin-development">the documentation</a>.</p>
+
+<p>It is also recommended to save the workspace as a file (maybe somewhere in inventree repo but don’t commit it) and include the intellisenseconfig as well as editor layout there.</p>
+
+<p>The InvenTree intellisense path might be something like  <code class="language-plaintext highlighter-rouge">/home/inventree/src/backend/InvenTree</code> instead of the path from the documentation.</p>
+
+<p>After that, start the InvenTree server with the debugger and the plugin should now be usable and debugable.</p>
+
+    </div>
+
+    <div class="w-full md:w-1/4">
+      <h2 class="block sm:hidden">Detail section</h2>
+      <div>
+        <p class="mb-0">License:
+          <small>
+          <i class="fa-brands fa-osi"></i>
+          MIT<br>
+          </small>
+          </p>
+<div class="">
+            Status:<br>
+            <div>
+              <small>
+                
+                <i class="fa-regular fa-circle-check success"></i>Stable
+                
+              </small>
+            </div>
+            <div>
+              <small>
+                
+                <i class="fa-regular fa-circle-check success"></i>Maintained
+                
+              </small>
+            </div>
+          </div>
+          Package on PyPI:<pre class="my-0">inventree-adv-sheet-label</pre>
+        
+
+        
+        <a href="https://elektron.work" class="no-underline" aria-label="open website">
+          <div>
+            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+            <p class="font-normal">https://elektron.work</p>
+          </div>
+        </a>
+        
+
+        
+        <a href="https://github.com/melektron/inventree-adv-sheet-label/issues" class="no-underline" aria-label="open the issue tracker">
+        <div>
+          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+        </div>
+        </a>
+        
+
+        
+        <a href="https://github.com/melektron/inventree-adv-sheet-label/" class="no-underline" aria-label="open source on GitHub">
+        <div>
+          <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+</h4>
+          <p class="font-normal">melektron/inventree-adv-sheet-label/</p>
+        </div>
+        </a>
+        
+        
+        
+
+        <div>
+          <h4 class="plugin_links">Categories</h4>
+          <div>
+            
+            <a href="/plugins/categories/#label"><span class="plugin_cat">Label</span></a>
+            
+            <a href="/plugins/categories/#settings"><span class="plugin_cat">Settings</span></a>
+            
+          </div>
+        </div>
+
+        <div>
+          <h4 class="plugin_links">Tags</h4>
+          <div>
+            
+            <a href="/plugins/tags/#sheet-layout"><span class="plugin_tag">Sheet layout</span></a>
+            
+            <a href="/plugins/tags/#office"><span class="plugin_tag">Office</span></a>
+            
+            <a href="/plugins/tags/#printing"><span class="plugin_tag">Printing</span></a>
+            
+            <a href="/plugins/tags/#label"><span class="plugin_tag">Label</span></a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+</article>
+
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrations</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+        <a href="https://chaos.social/@InvenTree" rel="me" alt="Mastodon" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Mastodon logo" src="/assets/mastodon.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
