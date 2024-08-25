@@ -19,8 +19,6 @@ If you or your company uses InvenTree, please consider sponsoring the project to
 
 - [Polar.sh](https://polar.sh/inventree)
 - [GitHub](https://github.com/sponsors/inventree)
-- [Patreon](https://www.patreon.com/inventree)
-- [Ko-fi](https://ko-fi.com/inventree)
 - [PayPal](https://paypal.me/inventree?locale.x=en_AU) 
 
 Financial donations directly support the ongoing development of the InvenTree project. If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!
