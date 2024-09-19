@@ -40,7 +40,7 @@ GEM
     fiber-annotation (0.2.0)
     fiber-local (1.0.0)
     forwardable-extended (2.6.0)
-    google-protobuf (3.25.2-x86_64-linux)
+    google-protobuf (3.25.5-x86_64-linux)
     hashery (2.1.2)
     html-pipeline (2.14.3)
       activesupport (>= 2)
