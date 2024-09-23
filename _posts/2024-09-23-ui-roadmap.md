@@ -3,7 +3,7 @@ author: matmair
 title: UI Roadmap - going 1.0
 ---
 
-In August 2023 we announced [in a blog post](./2023-08-28-react.md) that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
+In August 2023 we announced [in a blog post](/blog/2023/08/28/react) that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
 The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release.  
 The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.
 
@@ -12,7 +12,7 @@ Most of this article is probaly only interesting for (plugin) developers, but we
 ## PUI / CUI - A short overview
 
 The new interface is called PUI (Platform User Interface) and the old one CUI (Classic User Interface). PUI is built with React and is a single-page application. CUI is built with Django templates and uses a mixture of jquery, templated JS and some libaries.
-PUI is designed to more consistent, use the API everywhere and support better testing (end to end, typing). The original blog post has more information on the [design goals](./2023-08-28-react.md#design-goals).
+PUI is designed to more consistent, use the API everywhere and support better testing (end to end, typing). The original blog post has more information on the [design goals](/blog/2023/08/28/react#design-goals).
 
 ## Why remove CUI?
 
