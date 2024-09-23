@@ -17,9 +17,8 @@ We welcome everyone to help with InvenTree however they can!
 
 If you or your company uses InvenTree, please consider sponsoring the project to show your support. Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!
 
+- [Polar.sh](https://polar.sh/inventree)
 - [GitHub](https://github.com/sponsors/inventree)
-- [Patreon](https://www.patreon.com/inventree)
-- [Ko-fi](https://ko-fi.com/inventree)
 - [PayPal](https://paypal.me/inventree?locale.x=en_AU) 
 
 Financial donations directly support the ongoing development of the InvenTree project. If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!
@@ -49,7 +48,7 @@ To contribute to the translation effort, navigate to the [InvenTree crowdin proj
 
 ### Documentation
 
-Documenting a large software project is a challenging and ongoing effort. If you are able to provide assistance in improving the documentation set, please consider doing so! Documentation contributions can be made on [GitHub](https://github.com/inventree/inventree-docs).
+Documenting a large software project is a challenging and ongoing effort. If you are able to provide assistance in improving the documentation set, please consider doing so! Documentation contributions can be made on [GitHub](https://github.com/inventree/InvenTree/tree/master/docs).
 
 If you see any sections of the documentation that require work (i.e. denoted with "TODO") - please consider providing assistance in these sections!
 
@@ -57,6 +56,6 @@ If you see any sections of the documentation that require work (i.e. denoted wit
 
 New users tend to ask questions in the [issues](https://github.com/inventree/InvenTree/issues) or [discussions](https://github.com/inventree/InvenTree/discussions). Be there, answer questions or [show off](https://github.com/inventree/InvenTree/discussions/categories/show-and-tell) your projects. Together we learn new things and get inspired for our usage.
 
-Our offical channels are:
+Our official channels are:
 - Twitter [@inventreedb](https://twitter.com/inventreedb)
-- Reddit [r/InvenTree](https://www.reddit.com/r/InvenTree/)
+- Reddit [r/InvenTree](https://www.reddit.com/r/inventree/)

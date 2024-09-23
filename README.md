@@ -1,6 +1,6 @@
 # InvenTree website
 This project contains the source for InvenTree's website.
-It is built on Jekyll and GitHub pages for backend / hosting, tailtwindcss for design and Netlify for preview builds.
+It is built on Jekyll and GitHub pages for backend / hosting, tailwindcss for design and Netlify for preview builds.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f84340d0-bc2f-4f7f-ad4c-877c50b33a27/deploy-status)](https://app.netlify.com/sites/inventree-org-preview/deploys)
 
@@ -42,7 +42,7 @@ Structure:
 
 Layouts:
 `_includes` contains partials that can be used in layouts  
-`_layouts` contains the page defintions  
+`_layouts` contains the page definitions  
 
 Assets:
 `assets` contains static assets for the pages
@@ -73,7 +73,7 @@ Build site locally
 bundle exec jekyll build
 ```
 
-Run debug server that automatically updates. This does not recompile the tailwindcss stylesheet. If you change something in the css file, you neet to build the site fully with the command above.
+Run debug server that automatically updates. This does not recompile the tailwindcss stylesheet. If you change something in the css file, you need to build the site fully with the command above.
 
 ```bash
 bundle exec jekyll serve --incremental
