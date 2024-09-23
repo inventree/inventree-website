@@ -7,11 +7,11 @@ In August 2023 we announced [in a blog post](/blog/2023/08/28/react) that we are
 The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release.  
 The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.
 
-Most of this article is probaly only interesting for (plugin) developers, but we hope it gives you a good overview of what is happening.
+Most of this article is probably only interesting for (plugin) developers, but we hope it gives you a good overview of what is happening.
 
 ## PUI / CUI - A short overview
 
-The new interface is called PUI (Platform User Interface) and the old one CUI (Classic User Interface). PUI is built with React and is a single-page application. CUI is built with Django templates and uses a mixture of jquery, templated JS and some libaries.
+The new interface is called PUI (Platform User Interface) and the old one CUI (Classic User Interface). PUI is built with React and is a single-page application. CUI is built with Django templates and uses a mixture of jQuery, templated JS and some libraries.
 PUI is designed to more consistent, use the API everywhere and support better testing (end to end, typing). The original blog post has more information on the [design goals](/blog/2023/08/28/react#design-goals).
 
 ## Why remove CUI?
@@ -23,7 +23,7 @@ This will probably remove around 2k files from the repo, around 370k lines. As o
 
 ## Effect on plugins
 
-Plugins that render into the UI will need to be updated to work with PUI. This could effect you if your plugins use the mixins `PanelMixin`, `SettingsContentMixin`, `NavigationMixin` or `UrlsMixin`. Rendering into PUI is best done with `UserInterfaceMixin` (available in 0.17.0) - which is acitvely expanded to support rendering more tightly integrated cpmared to ``PanelMixin` and CUI. For example [#8137](https://github.com/inventree/InvenTree/pull/8137) support rendering custom template editors in PUI.
+Plugins that render into the UI will need to be updated to work with PUI. This could effect you if your plugins use the mixins `PanelMixin`, `SettingsContentMixin`, `NavigationMixin` or `UrlsMixin`. Rendering into PUI is best done with `UserInterfaceMixin` (available in 0.17.0) - which is actively expanded to support rendering more tightly integrated compared to ``PanelMixin` and CUI. For example [#8137](https://github.com/inventree/InvenTree/pull/8137) support rendering custom template editors in PUI.
 
 ## How can you help?
 
@@ -35,8 +35,8 @@ Plugins that render into the UI will need to be updated to work with PUI. This c
 
 ## The big 1.0
 
-1.0 will be a big milestone for InvenTree. InvenTree has been running in the heart of many companies for years. The switch to PUI enables much safer work on the UI. The release number 1.0 signals that the last part of the system is now modernized and ready for the future. We are looking forward to it and hope you are too.
+1.0 will be a big milestone for InvenTree. InvenTree has been running in the heart of many companies for years. The switch to PUI enables much safer work on the UI. The release number 1.0 signals that the last part of the system is now modernised and ready for the future. We are looking forward to it and hope you are too.
 
-The switch to 1.0 will also mean that we will follow semver fully. Big breaking changes will only be in mayor releases, feature releases (1.0, 1.1, 1.2) will follow the semver rules. This will make it easier for our enterprise users that face backlash because of the below 1.0 version number.
+The switch to 1.0 will also mean that we will follow SemVer fully. Big breaking changes will only be in mayor releases, feature releases (1.0, 1.1, 1.2) will follow the SemVer rules. This will make it easier for our enterprise users that face backlash because of the below 1.0 version number.
 
 We are discussion a few more breaking changes in 1.0 - feel free to chime in on the dedicated issue [#6417](https://github.com/inventree/InvenTree/issues/6417).
