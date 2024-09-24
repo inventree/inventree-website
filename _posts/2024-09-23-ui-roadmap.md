@@ -25,6 +25,8 @@ This will probably remove around 2k files from the repo, around 370k lines. As o
 
 Plugins that render into the UI will need to be updated to work with PUI. This could affect you if your plugins use the mixins `PanelMixin`, `SettingsContentMixin`, `NavigationMixin` or `UrlsMixin`. Rendering into PUI is best done with `UserInterfaceMixin` (available in 0.17.0) - which is actively expanded to support rendering more tightly integrated than `PanelMixin` and CUI. For example [#8137](https://github.com/inventree/InvenTree/pull/8137) supports rendering custom template editors in PUI.
 
+We will issue guidance regarding the transition of plugins into the new mechanisms before 1.0 goes to production.
+
 ## How can you help?
 
 - Use the new UI - if you are on the 0.16.x release train your instance should already be serving it
