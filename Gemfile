@@ -9,5 +9,5 @@ group :jekyll_plugins do
     gem 'jekyll-mentions'
     gem 'jekyll_custom_permalink'
 end
-gem "webrick", "~> 1.7"
+gem "webrick", "~> 1.8"
 gem 'html-proofer'
