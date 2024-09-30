@@ -1,4 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-09-20T01:05:46+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.16.0 Stable Release</title><link href="/blog/2024/08/25/0.16.0" rel="alternate" type="text/html" title="0.16.0 Stable Release" /><published>2024-08-25T00:00:00+00:00</published><updated>2024-08-25T00:00:00+00:00</updated><id>/blog/2024/08/25/0.16.0</id><content type="html" xml:base="/blog/2024/08/25/0.16.0"><![CDATA[<p>The InvenTree development team is pleased to announce the release of InvenTree stable version 0.16.0. This release once again includes a wide range of new features, bug fixes, and improvements. We have closed out over <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+is%3Aclosed+milestone%3A0.16.0">250 pull requests</a> against this release target!</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-09-30T09:12:39+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">UI Roadmap - going 1.0</title><link href="/blog/2024/09/23/ui-roadmap" rel="alternate" type="text/html" title="UI Roadmap - going 1.0" /><published>2024-09-23T00:00:00+00:00</published><updated>2024-09-23T00:00:00+00:00</updated><id>/blog/2024/09/23/ui-roadmap</id><content type="html" xml:base="/blog/2024/09/23/ui-roadmap"><![CDATA[<p>In August 2023 we announced <a href="/blog/2023/08/28/react">in a blog post</a> that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
+The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release.<br />
+The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.</p>
+
+<p>Most of this article is probably only interesting for (plugin) developers, but we hope it gives you a good overview of what is happening.</p>
+
+<h2 id="pui--cui---a-short-overview">PUI / CUI - A short overview</h2>
+
+<p>The new interface is called PUI (Platform User Interface) and the old one CUI (Classic User Interface). PUI is built with React and is a single-page application. CUI is built with Django templates and uses a mixture of jQuery, templated JS and some libraries.
+PUI is designed to be more consistent, use the API everywhere and support better testing (end-to-end, typing). The original blog post has more information on the <a href="/blog/2023/08/28/react#design-goals">design goals</a>.</p>
+
+<h2 id="why-remove-cui">Why remove CUI?</h2>
+
+<p>CUI has proven to be hard to understand for new contributors and hard to maintain in a consistent quality. Some common issues like cache invalidation, inconsistent rendering and hard-to-enforce permissions are easier to solve in PUI.
+Therefore 1.0 will be PUI only. The compiled javascript, CSS and html files will be removed from the repository. CUI-only endpoints/tags will also be removed. Some HTML rendering will be kept as the report/label generation uses that.</p>
+
+<p>This will probably remove around 2k files from the repo, around 370k lines. As of writing, we have 4.4k files and 2.4M lines in the repo.</p>
+
+<h2 id="effect-on-plugins">Effect on plugins</h2>
+
+<p>Plugins that render into the UI will need to be updated to work with PUI. This could affect you if your plugins use the mixins <code class="language-plaintext highlighter-rouge">PanelMixin</code>, <code class="language-plaintext highlighter-rouge">SettingsContentMixin</code>, <code class="language-plaintext highlighter-rouge">NavigationMixin</code> or <code class="language-plaintext highlighter-rouge">UrlsMixin</code>. Rendering into PUI is best done with <code class="language-plaintext highlighter-rouge">UserInterfaceMixin</code> (available in 0.17.0) - which is actively expanded to support rendering more tightly integrated than <code class="language-plaintext highlighter-rouge">PanelMixin</code> and CUI. For example <a href="https://github.com/inventree/InvenTree/pull/8137">#8137</a> supports rendering custom template editors in PUI.</p>
+
+<p>We will issue guidance regarding the transition of plugins into the new mechanisms before 1.0 goes to production.</p>
+
+<h2 id="how-can-you-help">How can you help?</h2>
+
+<ul>
+  <li>Use the new UI - if you are on the 0.16.x release train your instance should already be serving it</li>
+  <li>Report bugs - if you find something that is not working as expected please report it</li>
+  <li>Report missing features - if you are missing something from CUI please report it (we have an EPIC<a href="https://github.com/inventree/InvenTree/issues/5212"> that tracks them</a>)</li>
+  <li>Start looking into developing PUI and contributing - we use React and Mantine, widely used technologies</li>
+  <li>Support the development - we have been developing PUI for over a year with more or less 3 people. Donations could help us spend more time or awarding bounties for features/design improvements.</li>
+</ul>
+
+<h2 id="the-big-10">The big 1.0</h2>
+
+<p>1.0 will be a big milestone for InvenTree. InvenTree has been running in the heart of many companies for years. The switch to PUI enables much safer work on the UI. The release number 1.0 signals that the last part of the system is now modernised and ready for the future. We are looking forward to it and hope you are too.</p>
+
+<p>Switching to 1.0 will also mean that we will follow SemVer fully. Big breaking changes will only be in major releases, feature releases (1.0, 1.1, 1.2) will follow the SemVer rules. This will make it easier for some of our enterprise users who face backlash or difficulty because of the below 1.0 version number.</p>
+
+<p>We are discussing a few more breaking changes in 1.0 - feel free to chime in on the dedicated issue <a href="https://github.com/inventree/InvenTree/issues/6417">#6417</a>.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[In August 2023 we announced in a blog post that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next. The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release. The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.]]></summary></entry><entry><title type="html">0.16.0 Stable Release</title><link href="/blog/2024/08/25/0.16.0" rel="alternate" type="text/html" title="0.16.0 Stable Release" /><published>2024-08-25T00:00:00+00:00</published><updated>2024-08-25T00:00:00+00:00</updated><id>/blog/2024/08/25/0.16.0</id><content type="html" xml:base="/blog/2024/08/25/0.16.0"><![CDATA[<p>The InvenTree development team is pleased to announce the release of InvenTree stable version 0.16.0. This release once again includes a wide range of new features, bug fixes, and improvements. We have closed out over <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+is%3Aclosed+milestone%3A0.16.0">250 pull requests</a> against this release target!</p>
 
 <h2 id="release-notes">Release Notes</h2>
 
@@ -1007,30 +1047,4 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <h3 id="acknowledgements">Acknowledgements</h3>
 
-<p>We would particularly like to acknowledge the superb contributions of <a href="https://github.com/30350n">Bobbe</a> who was instrumental in developing these new barcode features and mobile app integration. The InvenTree community continues to help us develop the software into a more functional and feature-packed product!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.]]></summary></entry><entry><title type="html">0.12.8 Bugfix Release</title><link href="/blog/2023/10/03/0.12.8" rel="alternate" type="text/html" title="0.12.8 Bugfix Release" /><published>2023-10-03T00:00:00+00:00</published><updated>2023-10-03T00:00:00+00:00</updated><id>/blog/2023/10/03/0.12.8</id><content type="html" xml:base="/blog/2023/10/03/0.12.8"><![CDATA[<p>The InvenTree development team is proud to announce the release of <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.8">version 0.12.8</a>, which provides fixes for a number of bugs reported by our community of users.</p>
-
-<h2 id="currency-exchange">Currency Exchange</h2>
-
-<p>One key issue addressed in this release is a fix for fetching exchange rate information from the internet.</p>
-
-<p>To date, InvenTree has made use of the <a href="https://exchangerate.host/">exchangerate.host</a> service for updating currency exchange rate data. This has (until now) been provided as a free service which did not require authentication.</p>
-
-<p>However recent changes to the exchangerate backend have broken our exchange rate implementation, and required an immediate fix.</p>
-
-<h3 id="frankfurterapp">frankfurter.app</h3>
-
-<p>For now, the quick approach to get everyone up and running again is to migrate to using the <a href="https://www.frankfurter.app/">frankfurter.app</a> API. This provides a near-identical API, without needing an API key or paid subscription.</p>
-
-<h3 id="future-improvements">Future Improvements</h3>
-
-<p>Future work on supporting exchange rates will involve supporting different backend APIs, including the ability for users to provide their own API keys. We will also implement the ability for custom plugins to provide exchange rate data - allowing users to define their own exchange rate interface if required.</p>
-
-<h2 id="other-improvements">Other Improvements</h2>
-
-<p>For a full description of other issues addressed in this release, refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/0.12.8">release notes</a></p>
-
-<h2 id="sponsor-the-project">Sponsor the Project</h2>
-
-<p>Maintaining and continuously improving a software project requires time, effort, and resources. We are committed to patching critical bugs in a timely manner, to ensure that everyone who is using InvenTree has the best possible experience with our software.</p>
-
-<p>If you would like to financially support the project, please refer to the <a href="/contribute.html#sponsor">contribution guide</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is proud to announce the release of version 0.12.8, which provides fixes for a number of bugs reported by our community of users.]]></summary></entry></feed>
+<p>We would particularly like to acknowledge the superb contributions of <a href="https://github.com/30350n">Bobbe</a> who was instrumental in developing these new barcode features and mobile app integration. The InvenTree community continues to help us develop the software into a more functional and feature-packed product!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.]]></summary></entry></feed>
