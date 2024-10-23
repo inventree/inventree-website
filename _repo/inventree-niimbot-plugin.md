@@ -5,7 +5,7 @@ license: MIT
 open_source: true
 stable: true
 maintained: true
-pypi: false
+pypi: true
 package_name: inventree-niimbot-plugin
 github: https://github.com/piramja/inventree-niimbot-plugin
 issue_tracker: https://github.com/piramja/inventree-niimbot-plugin/issues
