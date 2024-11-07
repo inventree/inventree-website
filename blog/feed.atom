@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-11-07T01:07:24+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">UI Roadmap - going 1.0</title><link href="/blog/2024/09/23/ui-roadmap" rel="alternate" type="text/html" title="UI Roadmap - going 1.0" /><published>2024-09-23T00:00:00+00:00</published><updated>2024-09-23T00:00:00+00:00</updated><id>/blog/2024/09/23/ui-roadmap</id><content type="html" xml:base="/blog/2024/09/23/ui-roadmap"><![CDATA[<p>In August 2023 we announced <a href="/blog/2023/08/28/react">in a blog post</a> that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-11-07T22:54:00+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.16.8 Release</title><link href="/blog/2024/11/07/0.16.8" rel="alternate" type="text/html" title="0.16.8 Release" /><published>2024-11-07T00:00:00+00:00</published><updated>2024-11-07T00:00:00+00:00</updated><id>/blog/2024/11/07/0.16.8</id><content type="html" xml:base="/blog/2024/11/07/0.16.8"><![CDATA[<h2 id="0168-release">0.16.8 Release</h2>
+
+<p>We have just released version 0.16.8 which includes a patch for a critical bug in the InvenTree package installer. We recommend that users upgrade to this version as soon as possible.</p>
+
+<h3 id="missing-translation-files">Missing Translation Files</h3>
+
+<p>Some users were experiencing reports of missing translation files when installing InvenTree using the package installer. The issue was identified and resolved in this release. Refer to the release notes (linked below) for more information.</p>
+
+<h3 id="release-notes">Release Notes</h3>
+
+<p>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.16.8">release notes</a></p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.16.8 Release]]></summary></entry><entry><title type="html">UI Roadmap - going 1.0</title><link href="/blog/2024/09/23/ui-roadmap" rel="alternate" type="text/html" title="UI Roadmap - going 1.0" /><published>2024-09-23T00:00:00+00:00</published><updated>2024-09-23T00:00:00+00:00</updated><id>/blog/2024/09/23/ui-roadmap</id><content type="html" xml:base="/blog/2024/09/23/ui-roadmap"><![CDATA[<p>In August 2023 we announced <a href="/blog/2023/08/28/react">in a blog post</a> that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
 The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release.<br />
 The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.</p>
 
@@ -979,72 +989,4 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <h3 id="available-soon">Available Soon</h3>
 
-<p>The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available now in the master code branch!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.]]></summary></entry><entry><title type="html">New Barcode Features</title><link href="/blog/2023/10/29/barcodes" rel="alternate" type="text/html" title="New Barcode Features" /><published>2023-10-29T00:00:00+00:00</published><updated>2023-10-29T00:00:00+00:00</updated><id>/blog/2023/10/29/barcodes</id><content type="html" xml:base="/blog/2023/10/29/barcodes"><![CDATA[<p>Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.</p>
-
-<h3 id="barcode-workflows">Barcode Workflows</h3>
-
-<p>To date, InvenTree has provided relatively simple “workflows” for barcode scanning. Scanning a barcode returns information about the database item associated with that barcode - such as a stock item, supplier part, purchase order, etc. This already allows users to perform many stock operations using barcode scanning - and is integrated into the native mobile app.</p>
-
-<p>Recent updates (such as <a href="https://github.com/inventree/InvenTree/pull/5509">this pull request</a>) have started to introduce more complex barcode workflows, which will allow for context sensitive barcode actions.</p>
-
-<h3 id="ecia-barcodes-for-purchase-orders">ECIA Barcodes for Purchase Orders</h3>
-
-<p>Many electronics manufacturers provide data-rich barcodes on items received against incoming purchase orders. The <em>Electronics Component Industry Association</em> (ECIA) has developed a <a href="https://ecia.identificationlabs.com">2D barcode standard</a> which is now implemented by a number of major electronics suppliers.</p>
-
-<p>Purchase orders line items received from these suppliers are often provided with comprehensive barcodes, such as the example below, from Digikey:</p>
-
-<p><img src="/assets/blog/digikey-barcode.png" alt="Digikey Barcode" /></p>
-
-<p>This 2D barcode contains the following data fields (and other information):</p>
-
-<ul>
-  <li>Purchase order reference</li>
-  <li>Manufacturer part number (MPN)</li>
-  <li>Digikey part number</li>
-  <li>Item quantity</li>
-</ul>
-
-<p>These data are sufficient to receive stock items into the InvenTree database with a simple barcode scan. By matching against an open purchase order, and finding the right line item, the item can be marked as <em>received</em> without any manual data entry on the part of the user. A data-driven automated barcode workflow can also reduce data entry errors.</p>
-
-<p>To capitalize on this available data, InvenTree now supports scan-in of items received against purchase orders, from suppliers who support ECIA barcodes. A new barcode scan API endpoint is provided which handles all of the back-end operations.</p>
-
-<p>Currently, the following suppliers are supported:</p>
-
-<ul>
-  <li>Digikey</li>
-  <li>Mouser</li>
-  <li>LCSC</li>
-  <li>TME</li>
-</ul>
-
-<p>This functionality will be available in the upcoming <code class="language-plaintext highlighter-rouge">0.13.0</code> stable release.</p>
-
-<h4 id="app-integration">App Integration</h4>
-
-<p>The new purchase order barcode functionality is supported by the <a href="/extend/app.html">InvenTree mobile app</a>:</p>
-
-<p><img src="/assets/blog/barcode_po_actions.png" alt="App barcode support" /></p>
-
-<h4 id="web-integration">Web Integration</h4>
-
-<p>We are working on integration into the web interface as part of our <a href="https://github.com/inventree/InvenTree/issues/5212">move to react</a></p>
-
-<h4 id="further-workflows">Further Workflows</h4>
-
-<p>Other advanced barcode workflows are also planned for future development, particularly around build orders and sales orders.</p>
-
-<p>Note that barcodes functionality can also be extended by plugins as required, for custom integrations or features.</p>
-
-<h3 id="app-barcode-scanner-support">App Barcode Scanner Support</h3>
-
-<p>To further improve barcode support, the mobile app has been updated to work with external barcode scanners (in addition to providing barcode scanning using the internal camera). The new scanner support provides <a href="https://github.com/inventree/inventree-app/pull/437">keyboard wedge scanning</a>, which means that it can interface with any barcode scanners which act as virtual keyboards.</p>
-
-<p>In addition to working with external bluetooth scanners, this means that the app is now supported on barcode scanners which natively run android:</p>
-
-<p><img src="/assets/blog/barcode_scanner.jpeg" alt="Barcode scanner" /></p>
-
-<p>Any scanner which supports <em>wedge</em> or <em>keyboard</em> mode should now be able to integrate seamlessly with the InvenTree app.</p>
-
-<h3 id="acknowledgements">Acknowledgements</h3>
-
-<p>We would particularly like to acknowledge the superb contributions of <a href="https://github.com/30350n">Bobbe</a> who was instrumental in developing these new barcode features and mobile app integration. The InvenTree community continues to help us develop the software into a more functional and feature-packed product!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Integrating barcode scanning into your InvenTree workflow can provide major efficiency improvements. To help streamline inventory management processes, the InvenTree development community has recently introduced some major new barcode features.]]></summary></entry></feed>
+<p>The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available now in the master code branch!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.]]></summary></entry></feed>
