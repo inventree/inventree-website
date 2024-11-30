@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-11-30T01:11:31+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.16.8 Release</title><link href="/blog/2024/11/07/0.16.8" rel="alternate" type="text/html" title="0.16.8 Release" /><published>2024-11-07T00:00:00+00:00</published><updated>2024-11-07T00:00:00+00:00</updated><id>/blog/2024/11/07/0.16.8</id><content type="html" xml:base="/blog/2024/11/07/0.16.8"><![CDATA[<h2 id="0168-release">0.16.8 Release</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2024-11-30T13:20:16+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.16.9 Release</title><link href="/blog/2024/11/30/0.16.9" rel="alternate" type="text/html" title="0.16.9 Release" /><published>2024-11-30T00:00:00+00:00</published><updated>2024-11-30T00:00:00+00:00</updated><id>/blog/2024/11/30/0.16.9</id><content type="html" xml:base="/blog/2024/11/30/0.16.9"><![CDATA[<h2 id="0169-release">0.16.9 Release</h2>
+
+<p>We have just released version 0.16.9 which includes a number of patches and bug fixes.</p>
+
+<h3 id="release-notes">Release Notes</h3>
+
+<p>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.16.9">release notes</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.16.9 Release]]></summary></entry><entry><title type="html">0.16.8 Release</title><link href="/blog/2024/11/07/0.16.8" rel="alternate" type="text/html" title="0.16.8 Release" /><published>2024-11-07T00:00:00+00:00</published><updated>2024-11-07T00:00:00+00:00</updated><id>/blog/2024/11/07/0.16.8</id><content type="html" xml:base="/blog/2024/11/07/0.16.8"><![CDATA[<h2 id="0168-release">0.16.8 Release</h2>
 
 <p>We have just released version 0.16.8 which includes a patch for a critical bug in the InvenTree package installer. We recommend that users upgrade to this version as soon as possible.</p>
 
@@ -919,74 +925,4 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <h2 id="deploying-inventree">Deploying InvenTree</h2>
 
-<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the 0.12.0 stable release.]]></summary></entry><entry><title type="html">Label Printing Updates</title><link href="/blog/2023/12/06/label-printing" rel="alternate" type="text/html" title="Label Printing Updates" /><published>2023-12-06T00:00:00+00:00</published><updated>2023-12-06T00:00:00+00:00</updated><id>/blog/2023/12/06/label-printing</id><content type="html" xml:base="/blog/2023/12/06/label-printing"><![CDATA[<p>Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.</p>
-
-<h3 id="label-printing-plugins">Label Printing Plugins</h3>
-
-<p>Previously, we had separate concepts for “native label printing” and “printing via plugins”, with different software pipelines for each. This meant that:</p>
-
-<ul>
-  <li>We had a lot of duplicated or inefficient code</li>
-  <li>External printing plugins did not have the same available features</li>
-</ul>
-
-<p>In <a href="https://github.com/inventree/InvenTree/pull/5251">#5251</a> we refactored the label printing codebase entirely, and now all label printing is handled via plugins. A builtin plugin is provided which simply renders a single label as a <code class="language-plaintext highlighter-rouge">.pdf</code> file (maintaining previous behavior).</p>
-
-<p>The refactor also provided a number of significant improvements and new functionality:</p>
-
-<h4 id="background-printing">Background Printing</h4>
-
-<p>Printing plugins can run in the <em>foreground</em> - and return a <code class="language-plaintext highlighter-rouge">.pdf</code> object - or in the <em>background</em>. Background printing plugins return a response immediately (to prevent blocking of the web application) and the printing is offloaded to the background worker process. This allows flexibility to (for example) communicate with an external physical printing device.</p>
-
-<h4 id="multiple-labels">Multiple Labels</h4>
-
-<p>Before this refactor, plugins received each label individually, with a single “print job” being sent to the printing plugin for each selected label. This was inefficient, and also meant that the printing plugin did not have the flexibility to handle simultaneous printing of multiple labels.</p>
-
-<p>Now, printing plugins have access to the <code class="language-plaintext highlighter-rouge">print_labels</code> method, which receives <em>all</em> labels to be printed. If desired, multiple labels could be printed together onto a single paper sheet (<em>an example of this is below</em>).</p>
-
-<p>The default implementation of <code class="language-plaintext highlighter-rouge">print_labels</code> simply calls the existing <code class="language-plaintext highlighter-rouge">print_label</code> method in sequence for each separate label - maintaining backwards compatibility for existing plugins.</p>
-
-<h3 id="printing-options">Printing Options</h3>
-
-<p>In <a href="https://github.com/inventree/InvenTree/pull/5786">PR #5786</a> we introduced the concept of “printing options”. Each printing plugin can provide a set of printing options which are presented to the user before initiating label printing. This allows for greater flexibility for label printing plugins.</p>
-
-<p>For example, these run-time options could be used to:</p>
-
-<ul>
-  <li>Select paper size</li>
-  <li>Switch between multiple connected printers</li>
-  <li>Specify the number of copies of each label to print</li>
-  <li>etc</li>
-</ul>
-
-<h3 id="label-sheets">Label Sheets</h3>
-
-<p>In <a href="https://github.com/inventree/InvenTree/pull/5883">PR #5883</a>, a builtin plugin was developed to print multiple labels to a single “sheet”. This could be used to print a set of labels onto a specialized label sheet with peelable labels, or just a sheet of paper where the individual labels can be cut from the sheet.</p>
-
-<p>This plugin also provides an example of how the <a href="#printing-options">printing options</a> can be used to customize printing behavior at runtime.</p>
-
-<h4 id="example">Example</h4>
-
-<p>The images below demonstrate how the new label sheet plugin works.</p>
-
-<p><strong>Select Items to Print</strong></p>
-
-<p>Select a number of individual stock items, for which labels will be printed:</p>
-
-<p><img src="/assets/blog/select-labels.png" alt="Select Items" /></p>
-
-<p><strong>Label Printing Dialog</strong></p>
-
-<p>Select the <em>InvenTree Sheet Label Printer</em> plugin:</p>
-
-<p><img src="/assets/blog/printer-dialog.png" alt="Select printer" /></p>
-
-<p><strong>Print Labels</strong></p>
-
-<p>Labels are printed in a regular grid on the resulting sheet. Note that the first three cells have been skipped, as per the selected option in the printing dialog:</p>
-
-<p><img src="/assets/blog/print-labels.png" alt="Print labels" /></p>
-
-<h3 id="available-soon">Available Soon</h3>
-
-<p>The new label printing features will be available in the upcoming 0.13.0 stable release. Or, available now in the master code branch!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.]]></summary></entry></feed>
+<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is very excited to announce the latest stable release of InvenTree - v0.13.0. This represents the largest release of InvenTree to date, with over 450 pull requests since the 0.12.0 stable release.]]></summary></entry></feed>
