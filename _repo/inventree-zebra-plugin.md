@@ -157,8 +157,8 @@ need an adjustment from time to time.
 
 ## In printer rendering
 You can also bypass the InvenTree print engine and render the label inside the printer.
-The printer knows how to render the label for best quality. Inspired by the
-[inventree-zpl-plugin](https://github.com/yellowcrescent/inventree-zpl-plugin) a similar
+The printer knows how to render the label for best quality. Inspired by
+the [inventree-zpl-plugin](https://github.com/yellowcrescent/inventree-zpl-plugin) a similar
 function was aded to the zebra printer driver. You can write a ZPL template and upload
 it to the InvenTree Label templates as usual. Add a command to the template's metadata:
 
