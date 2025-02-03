@@ -31,11 +31,11 @@
 <meta property="og:url" content="/SergeoLacruz/inventree-zebra-plugin" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-02-03T01:08:16+00:00" />
+<meta property="article:published_time" content="2025-02-03T11:33:13+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Inventree Zebra Plugin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2025-02-03T01:08:16+00:00","datePublished":"2025-02-03T01:08:16+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SergeoLacruz"},"dateModified":"2025-02-03T11:33:13+00:00","datePublished":"2025-02-03T11:33:13+00:00","description":"Zebra Label Printer Plugin for Inventree","headline":"Inventree Zebra Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/SergeoLacruz/inventree-zebra-plugin"},"url":"/SergeoLacruz/inventree-zebra-plugin"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -77,9 +77,13 @@
         <p>Zebra Label Printer Plugin for Inventree</p>
 
 <p>This is a label printing plugin for <a href="https://inventree.org">InvenTree</a>, which provides
-support for Zebra Label printers. It was only tested with  GK420T but should work for
-other ZPL printers too. It uses the ZPL library to convert the png data provided by
-InvenTree to Zebra’s bitmap format.</p>
+support for Zebra Label printers. It allows two modes of operation:</p>
+
+<ul>
+  <li>Use the ZPL library to convert the png data provided by InvenTree to Zebra’s bitmap
+format and send this to the printer.</li>
+  <li>Write a ZPL template and let the printer do the rendering.</li>
+</ul>
 
 <p>It can output the print data either to a local printer connected to the computer via
 USB or to a network printer with an IP address. The output can be configured in the
@@ -96,7 +100,9 @@ InvenTree plugin user interface.</p>
 
 <h2 id="configuration-options">Configuration Options</h2>
 <h3 id="printer-interface">Printer Interface</h3>
-<p>Here you can chose between Local printer or network printer. Default value is a local printer.</p>
+<p>Here you can chose between local printer, network printer or the labelary.com API.
+The last one is useful for preview of labels, especially when ZPL templates are used.
+Default value is a local printer.</p>
 
 <h3 id="ip-address">IP address</h3>
 <p>In case you use an IP printer set the IPv4 address here.</p>
@@ -132,6 +138,9 @@ sets the printer to settings that have been useful for me. You might want to
 change it according to your requirements. Please keep in mind that this string
 is passed directly to the printer without any checks. So be careful when editing
 here.</p>
+
+<h3 id="get-printer-info">Get Printer info</h3>
+<p>Turn this switch on to display a collection of all IP printers below on this page.</p>
 
 <h2 id="label-template">Label Template</h2>
 <p>The label needs a template described in html and css. The template should
@@ -171,11 +180,104 @@ in another printer.</p>
 
 <p>Only the IP address and darkness can be overwritten so far. All other settings remain.</p>
 
+<h2 id="quality-matters">Quality matters</h2>
+<p>The InvenTree printer system uses a graphical representation of the label. The label is described
+in HTML, converted to a pixel graphic and printed. The advantage is independency from  printer
+models and systems. Disadvantage is larger data and quality problems with darkness and scaling.
+Let’s have a look at the following printout:</p>
+
+<p><img src="/assets/plugins/qr.png" alt="QRCodes"></p>
+
+<p>Both codes have been printed with the same printer on the same reel. The left one is
+hardly readable using my mobile. The right one reads easily even as it is smaller.</p>
+
+<h3 id="secret-1-scale">Secret 1, Scale</h3>
+<p>The printer resolution is 8 dots per mm resulting in a dot size of 0.125mm. The QR code pixel
+and the printer pixel size should be integrally divisible. The code in the picture has 21
+pixels plus one in the frame, so 23 pixel. The frame is set in the HTML description.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% qrcode qr_data border=1 %}
+</code></pre></div></div>
+
+<p>I selected two dots per pixel. So 23 * 2 * 0.125 = 6.125mm. If the size is something different
+scaling takes place and the result might be worse. If you like a larger printout select more
+dots per pixel. From a certain size upwards the value does not matter any more because the code
+gets large enough to be readable in any quality.</p>
+
+<h3 id="secret-2-darkness">Secret 2: Darkness</h3>
+<p>Zebra printers allow to set the darkness of the print in values between 0 (white) and 30 (max)
+The left code was printed with a value of 30. The black dots tend to blur out a bit resulting
+in smaller white areas. The right code was printed with a value of 25 resulting in larger white
+pixels.  The darkness values are just examples. Your values will differ based on printer model,
+media type and printer age. The printer head tends to wear out and the darkness value might
+need an adjustment from time to time.</p>
+
+<h2 id="in-printer-rendering">In printer rendering</h2>
+<p>You can also bypass the InvenTree print engine and render the label inside the printer.
+The printer knows how to render the label for best quality. Inspired by the 
+inventree-zpl-plugin <a href="https://github.com/yellowcrescent/inventree-zpl-plugin">inventree-zpl-plugin</a> a similar
+function was aded to the zebra printer driver. You can write a ZPL template and upload
+it to the InvenTree Label templates as usual. Add a command to the template’s metadata:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{"zpl_template": "True"}
+</code></pre></div></div>
+
+<p>In that case the printer driver ignores the picture rendered by WeasyPrint. Instead
+it calls the render_to_string function of the template and sends the
+result to the printer. The result can look like:</p>
+
+<p><img src="/assets/plugins/example_label.png" alt="Label Example"></p>
+
+<p>The upper label was created using this template:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% autoescape off %}
+^FT30,25^A0N,18,22^FDIPN^FS
+^FT150,30^FB100,1,,C,,^A0N,24,32^FDACME^FS
+^FT320,25^A0N,18,22^FD{{ item.pk }}^FS
+^FT100,70^FB200,2,,C,,^A0N,18,22^FD{{ part.name }}^FS
+^FT100,100^FB200,1,,C,,^A0N,18,22^FD{{ part.manufacturer_parts.first.manufacturer.name }}^FS
+^FT30,150^FB340,1,,C,,^A0N,30,40^FD{{ part.IPN }}^FS
+^FT20,210^FB360,3,,L,,^A0N,18,22^FD{{ part.description }}^FS
+^FT15,110^BQ,2,3^FDQA,{{ part.IPN }}^FS
+^FT310,130^BQ,2,3^FDQA,{{ qr_data }}^FS
+{% endautoescape %}
+
+</code></pre></div></div>
+
+<p>Autoescape must be off. We do not need &amp;quot and similar escapes here.
+Context variables can be used as usual.</p>
+
+<p>!!! warning “Limitation”
+    ZPL commands starting with backslash like \&amp; cannot be used so far.</p>
+
+<h3 id="preview">Preview</h3>
+<p>The printer driver allows an output device called “preview”. If this is selected
+the ZPL code is sent to the API of labelary.com. The API sends back pdf data
+which is displayed in a new browser window. This is helpful while writing ZPL
+templates but works with HTML templates too. Please be careful and do not send
+confidential information to the API.</p>
+
+<p>In case you need to pass a proxy for the POST requests set the environment
+variables PROXY_CON and PROXY_URL on the server. The plugin does not have
+settings for this.</p>
+
+<h2 id="getting-printer-info">Getting printer info</h2>
+<p>With the multi printer feature it can happen that you have several printers in
+your setup. When the Get Printer Info switch is set ON, the driver calls each printer
+once a minute and collects some info about it. It calls the printer configured
+in the settings as well as all printers it finds in the label templates.
+In case a printer is unreachable, an error message is shown. If a printer is used
+in several templates it is listed only once.</p>
+
+<p>The printer info feature works for local USB printers too.</p>
+
+<p><img src="/assets/plugins/printer_info.png" alt="Printer Info"></p>
+
 <h2 id="how-it-works">How it works</h2>
-<p>First import all the stuff you need. Here we use the translation mechanism from
-Django for multi language support. The import the InvenTree libs and everything
-you need for plugin. Here we have ZPL for the Zebra bitmaps and socket for the
-IP connection to the printer.</p>
+<p>First import all the stuff you need. Here we use the translation mechanism from Django for multi language support.
+The import the InvenTree libs and everything you need for plugin. Here we have ZPL for the Zebra bitmaps and socket
+for the IP connection to the printer.</p>
 
 <p>The next part is this:</p>
 
@@ -184,17 +286,17 @@ IP connection to the printer.</p>
     <span class="n">AUTHOR</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Michael Buchmann</span><span class="sh">"</span>
     <span class="n">DESCRIPTION</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Label printing plugin for Zebra printers</span><span class="sh">"</span>
     <span class="n">VERSION</span> <span class="o">=</span> <span class="n">ZEBRA_PLUGIN_VERSION</span>
-    <span class="n">NAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Zebra</span><span class="sh">"</span>
+    <span class="n">NAME</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Zebra labels</span><span class="sh">"</span>
     <span class="n">SLUG</span> <span class="o">=</span> <span class="sh">"</span><span class="s">zebra</span><span class="sh">"</span>
     <span class="n">TITLE</span> <span class="o">=</span> <span class="sh">"</span><span class="s">Zebra Label Printer</span><span class="sh">"</span>
 </code></pre></div></div>
 
-<p>The name of the class can be freely chosen. You reference to it in the entry_points section of the setup.py file.
+<p>The name of the class can be freely chosen but should be different from SLUG. Otherwise it does not
+show up. You reference to it in the entry_points section of the setup.py file.
 The parameters need to be like in the example. Then there is the description block. The keywords are fixed and
-need to be like that. The values are found in the UI as shown in the pictures below.</p>
+need to be like that. The values are found in the UI as shown in the picture below.</p>
 
-<p><img src="/assets/plugins/plugin_admin.png" alt="Admin">
-<img src="/assets/plugins/plugin.png" alt="Config"></p>
+<p><img src="/assets/plugins/plugin.png" alt="Config"></p>
 
 <p>Then we add the configuration parameters.</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">SETTINGS</span> <span class="o">=</span> <span class="p">{</span>
@@ -263,43 +365,7 @@ can be chosen in the InvenTree settings. 800 is a good value because it gives hi
 
 <p>The rest of the code is just output to the printer on different interfaces.</p>
 
-<h2 id="quality-matters">Quality matters</h2>
-<p>The InvenTree printer system uses a graphical representation of the label. The label is described
-in HTML, converted to a pixel graphic and printed. The advantage is independency from  printer
-models and systems. Disadvantage is larger data and quality problems with darkness and scaling.
-Let’s have a look at the following printout:</p>
-
-<p><img src="/assets/plugins/qr.png" alt="QRCodes"></p>
-
-<p>Both codes have been printed with the same printer on the same reel. The left one is
-hardly readable using my mobile. The right one reads easily even as it is smaller.</p>
-
-<h3 id="secret-1-scale">Secret 1, Scale</h3>
-<p>The printer resolution is 8 dots per mm resulting in a dot size of 0.125mm. The QR code pixel
-and the printer pixel size should be integrally divisible. The code in the picture has 21
-pixels plus one in the frame, so 23 pixel. The frame is set in the HTML description.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{% qrcode qr_data border=1 %}
-</code></pre></div></div>
-
-<p>I selected two dots per pixel. So 23 * 2 * 0.125 = 6.125mm. If the size is something different
-scaling takes place and the result might be worse. If you like a larger printout select more
-dots per pixel. From a certain size upwards the value does not matter any more because the code
-gets large enough to be readable in any quality.</p>
-
-<h3 id="secret-2-darkness">Secret 2: Darkness</h3>
-<p>Zebra printers allow to set the darkness of the print in values between 0 (white) and 30 (max)
-The left code was printed with a value 0r 30. The black dots tend to blur out a bit resulting
-in smaller white areas. The right code was printed with a value of 25 resulting in larger white
-pixels.  The darkness values are just examples. Your values will differ based on printer model,
-media type and printer age. The printer head tends to wear out and the darkness value might
-need an adjustment from time to time.</p>
-
-<h3 id="alternative">Alternative</h3>
-<p>You can also bypass the InvenTree template and printing system and directly create ZPL from
-the parts data. The printer knows best how to render the label and the print quality is best.
-If you are interested in this way have a look at the <a href="https://github.com/yellowcrescent/inventree-zpl-plugin">inventree-zpl-plugin</a>
-that does exactly that.</p>
+<p>Happy printing.</p>
 
     </div>
 
