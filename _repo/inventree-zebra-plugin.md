@@ -175,6 +175,7 @@ result to the printer. The result can look like:
 The upper label was created using this template:
 
 ```
+{% raw %}
 {% autoescape off %}
 ^FT30,25^A0N,18,22^FDIPN^FS
 ^FT150,30^FB100,1,,C,,^A0N,24,32^FDACME^FS
@@ -186,6 +187,7 @@ The upper label was created using this template:
 ^FT15,110^BQ,2,3^FDQA,{{ part.IPN }}^FS
 ^FT310,130^BQ,2,3^FDQA,{{ qr_data }}^FS
 {% endautoescape %}
+{% endraw %}
 ```
 
 Autoescape must be off. We do not need &quot and similar escapes here.
