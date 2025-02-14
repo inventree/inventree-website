@@ -19,13 +19,21 @@ Core app features include:
 - Barcode integrations simplify stock operations
 - Receive purchase orders and check in stock items
 
-### Download
+### Installation
 
-The InvenTree app can be downloaded from either the Android or Apple app stores, or accessed via the links below:
+You can install the app via the following channels:
 
-<span class='fab fa-android'></span> [Android Play Store](https://play.google.com/store/apps/details?id=inventree.inventree_app).
+### Google Play Store (Android)
 
-<span class='fab fa-apple'></span> [Apple App Store](https://apps.apple.com/au/app/inventree/id1581731101?platform=iphone)
+Download and install from the [Google Play Store](https://play.google.com/store/apps/details?id=inventree.inventree_app&hl=en_AU)
+
+### Apple Store (iOS)
+
+Download and install from the [Apple App Store](https://apps.apple.com/au/app/inventree/id1581731101)
+
+### Direct Download (Android)
+
+We provide direct downloads for Android users - view our [download page via polar.sh](https://polar.sh/inventree/products/299bf0d5-af88-4e0f-becf-c007ad37ecf2)
 
 ### Documentation
 
