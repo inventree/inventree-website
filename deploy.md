@@ -8,10 +8,10 @@ There are multiple methods to deploy InvenTree. The most popular methods (suppor
 
 InvenTree supports a simple containerized installation via docker. An official [docker image](https://hub.docker.com/r/inventree/inventree/) is provided with regular updates. 
 
-Refer to the [docker installation guide](https://docs.inventree.org/en/latest/start/docker/) for more information
+Refer to the [docker installation guide](https://docs.inventree.org/en/stable/start/docker/) for more information
 
 ### Installer
-We provide a [single-line installer](https://docs.inventree.org/en/latest/start/installer/) that enables a quick installation and updates using the packager manager.
+We provide a [single-line installer](https://docs.inventree.org/en/stable/start/installer/) that enables a quick installation and updates using the packager manager.
 
 ### AppJail
 
@@ -19,7 +19,7 @@ InvenTree can be installed on FreeBSD using AppJail. An [AppJail Makejail](https
 
 ### Manual Bare Metal Install
 
-A [bare metal installation guide](https://docs.inventree.org/en/latest/start/intro/) is provided for users who are looking for a low-level or custom installation. 
+A [bare metal installation guide](https://docs.inventree.org/en/stable/start/intro/) is provided for users who are looking for a low-level or custom installation. 
 
 ### Cloud
 
