@@ -8,7 +8,7 @@ description: >-
 # Links
 demo-link:
   internal: demo.md
-doc-link: https://docs.inventree.org/en/latest/
+doc-link: https://docs.inventree.org/en/stable/
 deploy-link:
   internal: deploy.md
 blog-link:

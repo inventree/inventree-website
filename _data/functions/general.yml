@@ -5,15 +5,15 @@ text:
 functions:
   - title: Organize Parts
     text: Parts are the fundamental element of any inventory. InvenTree groups parts into structured categories which allow you to arrange parts to meet your particular needs. 
-    link: https://docs.inventree.org/en/latest/part/part/
+    link: https://docs.inventree.org/en/stable/part/part/
   - title: Manage Suppliers
     text: InvenTree allows you to easily create, modify or delete suppliers and supplier items linked to any part in your inventory.
-    link: https://docs.inventree.org/en/latest/order/company/#suppliers
+    link: https://docs.inventree.org/en/stable/order/company/#suppliers
   - title: Instant Stock Knowledge
     text: Instantly view current stock for a certain part, in a particular location, or required for an individual build.
     extend: Stock items are organized in cascading locations and sub-locations, allowing flexible inspection of stock under any location. Stock items can be serialized for tracking of individual items, and test results can be stored against a serialized stock item for the purpose of acceptance testing and commissioning.
-    link: https://docs.inventree.org/en/latest/stock/stock/
+    link: https://docs.inventree.org/en/stable/stock/stock/
   - title: BOM Management
     text: Intelligent <strong>B</strong>ill <strong>o</strong>f <strong>M</strong>aterial management provides a clear understanding of the sub-parts required to make a new part.
     extend: InvenTree allows you to upload simple BOM files in multiple formats, and download a detailed BOM with all the information stored in its database.
-    link: https://docs.inventree.org/en/latest/build/bom/
+    link: https://docs.inventree.org/en/stable/build/bom/

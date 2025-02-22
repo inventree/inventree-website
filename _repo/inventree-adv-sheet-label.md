@@ -293,9 +293,9 @@ If you have added a sheet layout yourself, you are still encouraged to [create a
 
 When making bigger changes than just adding layouts, it is recommended to set up a proper development environment.
 
-To develop the plugin, setup an InvenTree development instance using devcontainers according to this [this](https://docs.inventree.org/en/latest/develop/devcontainer/) official documentation. It is also recommended to setup the example dataset for experimenting.
+To develop the plugin, setup an InvenTree development instance using devcontainers according to this [this](https://docs.inventree.org/en/stable/develop/devcontainer/) official documentation. It is also recommended to setup the example dataset for experimenting.
 
-Then clone this repo (or your fork) separately on your host computer and link it to the devserver according to [the documentation](https://docs.inventree.org/en/latest/develop/devcontainer/#plugin-development).
+Then clone this repo (or your fork) separately on your host computer and link it to the devserver according to [the documentation](https://docs.inventree.org/en/stable/develop/devcontainer/#plugin-development).
 
 It is also recommended to save the workspace as a file (maybe somewhere in inventree repo but don't commit it) and include the intellisenseconfig as well as editor layout there.
 

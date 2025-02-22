@@ -37,7 +37,7 @@ We provide direct downloads for Android users - view our [download page via pola
 
 ### Documentation
 
-Mobile app documentation can be found on the [InvenTree documentation site](https://docs.inventree.org/en/latest/app/app/).
+Mobile app documentation can be found on the [InvenTree documentation site](https://docs.inventree.org/en/stable/app/app/).
 
 ### Code
 
