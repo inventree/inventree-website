@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-02-21T01:09:24+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.17.1 Release</title><link href="/blog/2024/12/27/0.17.1" rel="alternate" type="text/html" title="0.17.1 Release" /><published>2024-12-27T00:00:00+00:00</published><updated>2024-12-27T00:00:00+00:00</updated><id>/blog/2024/12/27/0.17.1</id><content type="html" xml:base="/blog/2024/12/27/0.17.1"><![CDATA[<h2 id="0171-release">0.17.1 Release</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-02-22T00:18:41+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">0.17.1 Release</title><link href="/blog/2024/12/27/0.17.1" rel="alternate" type="text/html" title="0.17.1 Release" /><published>2024-12-27T00:00:00+00:00</published><updated>2024-12-27T00:00:00+00:00</updated><id>/blog/2024/12/27/0.17.1</id><content type="html" xml:base="/blog/2024/12/27/0.17.1"><![CDATA[<h2 id="0171-release">0.17.1 Release</h2>
 
 <p>We have just released version 0.17.1 which includes a number of patches and bug fixes.</p>
 
@@ -740,7 +740,7 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <h3 id="site-access-changes">Site Access Changes</h3>
 
-<p>Django 4.2 has introduced some changes to how cross-site protection is handled. Your existing InvenTree installation may require some changes to continue to operate as expected. In particular, the <code class="language-plaintext highlighter-rouge">CORS</code> and <code class="language-plaintext highlighter-rouge">CSRF</code> settings have been made more strict by default. Refer to the <a href="https://docs.inventree.org/en/latest/start/config/#server-access">server access configuration guide</a> for instructions on which settings will need to be updated.</p>
+<p>Django 4.2 has introduced some changes to how cross-site protection is handled. Your existing InvenTree installation may require some changes to continue to operate as expected. In particular, the <code class="language-plaintext highlighter-rouge">CORS</code> and <code class="language-plaintext highlighter-rouge">CSRF</code> settings have been made more strict by default. Refer to the <a href="https://docs.inventree.org/en/stable/start/config/#server-access">server access configuration guide</a> for instructions on which settings will need to be updated.</p>
 
 <h3 id="multi-site-support">Multi Site Support</h3>
 
@@ -748,11 +748,11 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <p>So, in <a href="https://github.com/inventree/InvenTree/pull/6390">PR 6390</a> we have disabled multi-site support by default. This should simplify the installation process for most users.</p>
 
-<p>For any users who have been using multi-site support, you will need to manually re-enable it after upgrading to 0.14.0. Refer to the <a href="https://docs.inventree.org/en/latest/start/advanced/#multi-site-support">InvenTree documentation</a> for more information.</p>
+<p>For any users who have been using multi-site support, you will need to manually re-enable it after upgrading to 0.14.0. Refer to the <a href="https://docs.inventree.org/en/stable/start/advanced/#multi-site-support">InvenTree documentation</a> for more information.</p>
 
 <h3 id="test-results">Test Results</h3>
 
-<p>InvenTree has long supported <a href="https://docs.inventree.org/en/latest/stock/test/">test results for stock items</a>. In <a href="https://github.com/inventree/InvenTree/pull/6430">PR 6430</a>, a significant enhancement was made to the test result system. Previously, test results were not linked to a specific test template in the database. Instead, the results and templates were loosely linked via a string key.</p>
+<p>InvenTree has long supported <a href="https://docs.inventree.org/en/stable/stock/test/">test results for stock items</a>. In <a href="https://github.com/inventree/InvenTree/pull/6430">PR 6430</a>, a significant enhancement was made to the test result system. Previously, test results were not linked to a specific test template in the database. Instead, the results and templates were loosely linked via a string key.</p>
 
 <p>In 0.14.0, the test result system has been updated to use a proper database relationship between test results and test templates. This means that test results are now linked to a specific test template, and the test result system has been updated to reflect this change.</p>
 
@@ -800,7 +800,7 @@ wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfi
 
 <h3 id="enhanced-validation">Enhanced Validation</h3>
 
-<p>Enhanced custom validation is implemented in <a href="https://github.com/inventree/InvenTree/pull/6410">PR 6410</a>. This addition allows for more comprehensive validation of models by integrated plugins. Refer to the <a href="https://docs.inventree.org/en/latest/extend/plugins/validation/">updated validation plugin docs</a> for more information.</p>
+<p>Enhanced custom validation is implemented in <a href="https://github.com/inventree/InvenTree/pull/6410">PR 6410</a>. This addition allows for more comprehensive validation of models by integrated plugins. Refer to the <a href="https://docs.inventree.org/en/stable/extend/plugins/validation/">updated validation plugin docs</a> for more information.</p>
 
 <h3 id="api-documentation">API Documentation</h3>
 

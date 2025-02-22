@@ -53,7 +53,7 @@
 
         <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
             <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
-            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/latest/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/stable/">Docs</a>
             <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
         </nav>
 
@@ -92,7 +92,7 @@
 
 <h3 id="site-access-changes">Site Access Changes</h3>
 
-<p>Django 4.2 has introduced some changes to how cross-site protection is handled. Your existing InvenTree installation may require some changes to continue to operate as expected. In particular, the <code class="language-plaintext highlighter-rouge">CORS</code> and <code class="language-plaintext highlighter-rouge">CSRF</code> settings have been made more strict by default. Refer to the <a href="https://docs.inventree.org/en/latest/start/config/#server-access">server access configuration guide</a> for instructions on which settings will need to be updated.</p>
+<p>Django 4.2 has introduced some changes to how cross-site protection is handled. Your existing InvenTree installation may require some changes to continue to operate as expected. In particular, the <code class="language-plaintext highlighter-rouge">CORS</code> and <code class="language-plaintext highlighter-rouge">CSRF</code> settings have been made more strict by default. Refer to the <a href="https://docs.inventree.org/en/stable/start/config/#server-access">server access configuration guide</a> for instructions on which settings will need to be updated.</p>
 
 <h3 id="multi-site-support">Multi Site Support</h3>
 
@@ -100,11 +100,11 @@
 
 <p>So, in <a href="https://github.com/inventree/InvenTree/pull/6390">PR 6390</a> we have disabled multi-site support by default. This should simplify the installation process for most users.</p>
 
-<p>For any users who have been using multi-site support, you will need to manually re-enable it after upgrading to 0.14.0. Refer to the <a href="https://docs.inventree.org/en/latest/start/advanced/#multi-site-support">InvenTree documentation</a> for more information.</p>
+<p>For any users who have been using multi-site support, you will need to manually re-enable it after upgrading to 0.14.0. Refer to the <a href="https://docs.inventree.org/en/stable/start/advanced/#multi-site-support">InvenTree documentation</a> for more information.</p>
 
 <h3 id="test-results">Test Results</h3>
 
-<p>InvenTree has long supported <a href="https://docs.inventree.org/en/latest/stock/test/">test results for stock items</a>. In <a href="https://github.com/inventree/InvenTree/pull/6430">PR 6430</a>, a significant enhancement was made to the test result system. Previously, test results were not linked to a specific test template in the database. Instead, the results and templates were loosely linked via a string key.</p>
+<p>InvenTree has long supported <a href="https://docs.inventree.org/en/stable/stock/test/">test results for stock items</a>. In <a href="https://github.com/inventree/InvenTree/pull/6430">PR 6430</a>, a significant enhancement was made to the test result system. Previously, test results were not linked to a specific test template in the database. Instead, the results and templates were loosely linked via a string key.</p>
 
 <p>In 0.14.0, the test result system has been updated to use a proper database relationship between test results and test templates. This means that test results are now linked to a specific test template, and the test result system has been updated to reflect this change.</p>
 
@@ -152,7 +152,7 @@
 
 <h3 id="enhanced-validation">Enhanced Validation</h3>
 
-<p>Enhanced custom validation is implemented in <a href="https://github.com/inventree/InvenTree/pull/6410">PR 6410</a>. This addition allows for more comprehensive validation of models by integrated plugins. Refer to the <a href="https://docs.inventree.org/en/latest/extend/plugins/validation/">updated validation plugin docs</a> for more information.</p>
+<p>Enhanced custom validation is implemented in <a href="https://github.com/inventree/InvenTree/pull/6410">PR 6410</a>. This addition allows for more comprehensive validation of models by integrated plugins. Refer to the <a href="https://docs.inventree.org/en/stable/extend/plugins/validation/">updated validation plugin docs</a> for more information.</p>
 
 <h3 id="api-documentation">API Documentation</h3>
 
@@ -252,7 +252,7 @@
           
           <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
           
-          <li><a href="https://docs.inventree.org/en/latest/" class="footer-link">Docs</a></li>
+          <li><a href="https://docs.inventree.org/en/stable/" class="footer-link">Docs</a></li>
           
           <li><a href="/news" class="footer-link">News</a></li>
           
