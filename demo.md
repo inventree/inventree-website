@@ -10,10 +10,10 @@ Multiple default accounts are provided, as detailed below. Each account is affor
 
 | Username | Password | Description | Login |
 | --- | --- | --- | --- |
-| allaccess | nolimits | View / create / edit all pages and items | <a href="https://demo.inventree.org/platform/login?login=allaccess&password=nolimits" data-umami-event="demo-allaccess">log in</a> |
-| reader | readonly | Can view all pages but cannot create, edit or delete database records | <a href="https://demo.inventree.org/platform/login?login=reader&password=readonly" data-umami-event="demo-reader">log in</a> |
-| engineer | partsonly | Can manage parts, view stock, but no access to purchase orders or sales orders | <a href="https://demo.inventree.org/platform/login?login=engineer&password=partsonly" data-umami-event="demo-engineer">log in</a> |
-| admin | inventree | Superuser account, access all areas plus administrator actions | <a href="https://demo.inventree.org/platform/login?login=admin&password=inventree" data-umami-event="demo-admin">log in</a> |
+| allaccess | nolimits | View / create / edit all pages and items | <a href="https://demo.inventree.org/web/login?login=allaccess&password=nolimits" data-umami-event="demo-allaccess">log in</a> |
+| reader | readonly | Can view all pages but cannot create, edit or delete database records | <a href="https://demo.inventree.org/web/login?login=reader&password=readonly" data-umami-event="demo-reader">log in</a> |
+| engineer | partsonly | Can manage parts, view stock, but no access to purchase orders or sales orders | <a href="https://demo.inventree.org/web/login?login=engineer&password=partsonly" data-umami-event="demo-engineer">log in</a> |
+| admin | inventree | Superuser account, access all areas plus administrator actions | <a href="https://demo.inventree.org/web/login?login=admin&password=inventree" data-umami-event="demo-admin">log in</a> |
 
 ### Data Persistence
 
