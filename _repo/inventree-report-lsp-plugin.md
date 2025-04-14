@@ -21,10 +21,10 @@ tags:
   - LSP
 ---
 
+A report editor plugin that is powered by [django-template-lsp](https://github.com/fourdigits/django-template-lsp).
+
 [![License: GPL3](https://img.shields.io/badge/License-GPLv3-yellow.svg)](https://opensource.org/license/gpl-3-0)
 ![CI](https://github.com/wolflu05/inventree-report-lsp-plugin/actions/workflows/ci.yml/badge.svg)
-
-A report editor plugin that is powered by [django-template-lsp](https://github.com/fourdigits/django-template-lsp).
 
 ![Screenshot](https://github.com/user-attachments/assets/7ef62cea-ab03-4e6e-a25b-5e67df56ad5b)
 
