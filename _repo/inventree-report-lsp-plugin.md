@@ -21,7 +21,7 @@ tags:
   - LSP
 ---
 
-A report editor plugin that is powered by [django-template-lsp](https://github.com/fourdigits/django-template-lsp).
+A report editor with auto completion, diagnostic messages and many more capabilities to help with creating custom templates, powered by [django-template-lsp](https://github.com/fourdigits/django-template-lsp). 
 
 [![License: GPL3](https://img.shields.io/badge/License-GPLv3-yellow.svg)](https://opensource.org/license/gpl-3-0)
 ![CI](https://github.com/wolflu05/inventree-report-lsp-plugin/actions/workflows/ci.yml/badge.svg)
