@@ -1,12 +1,12 @@
 stats:
   - name: Docker pulls
-    number: 2614072
+    number: 2614553
     icon: fa-brands fa-docker
   - name: GitHub Stars
-    number: 4972
+    number: 4978
     icon: fa-solid fa-star
   - name: Forks
-    number: 927
+    number: 928
     icon: fa-solid fa-code-branch
   - name: Contributors
     number: 99
