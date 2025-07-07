@@ -15,27 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - Inventree Report Lsp Plugin</title>
+<title>InvenTree - Inventree Stock Forecasting</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Inventree Report Lsp Plugin | InvenTree</title>
+<title>Inventree Stock Forecasting | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Inventree Report Lsp Plugin" />
-<meta name="author" content="wolflu05" />
+<meta property="og:title" content="Inventree Stock Forecasting" />
+<meta name="author" content="SchrodingersGat" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A report editor with auto completion, diagnostic messages and many more capabilities to help with creating custom templates, powered by django-template-lsp." />
-<meta property="og:description" content="A report editor with auto completion, diagnostic messages and many more capabilities to help with creating custom templates, powered by django-template-lsp." />
-<link rel="canonical" href="/wolflu05/inventree-report-lsp-plugin" />
-<meta property="og:url" content="/wolflu05/inventree-report-lsp-plugin" />
+<meta name="description" content="Stock Forecasting for InvenTree" />
+<meta property="og:description" content="Stock Forecasting for InvenTree" />
+<link rel="canonical" href="/SchrodingersGat/inventree-stock-forecasting" />
+<meta property="og:url" content="/SchrodingersGat/inventree-stock-forecasting" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2025-07-07T00:32:53+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Inventree Report Lsp Plugin" />
+<meta property="twitter:title" content="Inventree Stock Forecasting" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"wolflu05"},"dateModified":"2025-07-07T00:32:53+00:00","datePublished":"2025-07-07T00:32:53+00:00","description":"A report editor with auto completion, diagnostic messages and many more capabilities to help with creating custom templates, powered by django-template-lsp.","headline":"Inventree Report Lsp Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/wolflu05/inventree-report-lsp-plugin"},"url":"/wolflu05/inventree-report-lsp-plugin"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2025-07-07T00:32:53+00:00","datePublished":"2025-07-07T00:32:53+00:00","description":"Stock Forecasting for InvenTree","headline":"Inventree Stock Forecasting","mainEntityOfPage":{"@type":"WebPage","@id":"/SchrodingersGat/inventree-stock-forecasting"},"url":"/SchrodingersGat/inventree-stock-forecasting"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -61,12 +61,12 @@
     </div>
 </header> <article class="max-w-p90">
     
-    <h2>inventree-report-lsp-plugin
+    <h2>inventree-stock-forecasting
 <span class="sm:ml-2 text-sm">
-<a href="/wolflu05">
+<a href="/schrodingersgat">
 <span class="inline-flex">
-    <img src="https://github.com/wolflu05.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px">
-    <p> wolflu05</p>
+    <img src="https://github.com/SchrodingersGat.png?size=40" alt="mdo" class="self-center w-5 h-5 rounded-full" style="margin:0px">
+    <p> SchrodingersGat</p>
 </span>
 </a></span>
 <span class="sm:ml-2 text-sm">last modified: 07 Jul 2025</span>
@@ -74,14 +74,22 @@
 
 <div class="flex-wrap md:flex md:flex-nowrap">
     <div class="w-full md:w-auto md:mr-4">
-        <p>A report editor with auto completion, diagnostic messages and many more capabilities to help with creating custom templates, powered by <a href="https://github.com/fourdigits/django-template-lsp">django-template-lsp</a>.</p>
+        <p>Stock Forecasting for InvenTree</p>
 
-<p><a href="https://opensource.org/license/gpl-3-0"><img src="https://img.shields.io/badge/License-GPLv3-yellow.svg" alt="License: GPL3"></a>
-<img src="https://github.com/wolflu05/inventree-report-lsp-plugin/actions/workflows/ci.yml/badge.svg" alt="CI"></p>
+<p>A plugin which generates stock forecasting data for parts in InvenTree</p>
 
-<p><img src="https://github.com/user-attachments/assets/7ef62cea-ab03-4e6e-a25b-5e67df56ad5b" alt="Screenshot"></p>
+<h2 id="installation">Installation</h2>
 
-<p>To install this plugin, follow the guide on the <a href="https://github.com/wolflu05/inventree-report-lsp-plugin?tab=readme-ov-file#%EF%B8%8F-installation">Readme</a>. Note, that at least InvenTree v0.18.0 is required to use this plugin.</p>
+<p>The easiest way to install the plugin is via the InvenTree user interface.</p>
+
+<p>Alternatively, you can install the plugin manually as follows:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install inventree-stock-forecasting
+</code></pre></div></div>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>Refer to the <a href="https://github.com/inventree/inventree-stock-forecasting">plugin documentation</a> for further instructions and information.</p>
 
     </div>
 
@@ -91,7 +99,7 @@
         <p class="mb-0">License:
           <small>
           <i class="fa-brands fa-osi"></i>
-          GPL-3.0+<br>
+          MIT<br>
           </small>
           </p>
 <div class="">
@@ -111,26 +119,27 @@
               </small>
             </div>
           </div>
-          Package on PyPI:<pre class="my-0">inventree-report-lsp-plugin</pre>
+          Package on PyPI:<pre class="my-0">inventree-stock-forecasting</pre>
         
 
         
-
-        
-        <a href="https://github.com/wolflu05/inventree-report-lsp-plugin/issues" class="no-underline" aria-label="open the issue tracker">
-        <div>
-          <h4 class="plugin_links">Issue Tracker <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
+        <a href="https://inventree.org" class="no-underline" aria-label="open website">
+          <div>
+            <h4 class="plugin_links">Website <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
 </h4>
-        </div>
+            <p class="font-normal">https://inventree.org</p>
+          </div>
         </a>
         
 
         
-        <a href="https://github.com/wolflu05/inventree-report-lsp-plugin" class="no-underline" aria-label="open source on GitHub">
+
+        
+        <a href="https://github.com/inventree/inventree-stock-forecasting" class="no-underline" aria-label="open source on GitHub">
         <div>
           <h4 class="plugin_links">Sourcecode on GitHub <i class="fa-solid fa-arrow-up-right-from-square" title="External link"></i>
 </h4>
-          <p class="font-normal">wolflu05/inventree-report-lsp-plugin</p>
+          <p class="font-normal">inventree/inventree-stock-forecasting</p>
         </div>
         </a>
         
@@ -141,8 +150,6 @@
           <h4 class="plugin_links">Categories</h4>
           <div>
             
-            <a href="/plugins/categories/#label"><span class="plugin_cat">Label</span></a>
-            
             <a href="/plugins/categories/#reporting"><span class="plugin_cat">Reporting</span></a>
             
           </div>
@@ -152,11 +159,11 @@
           <h4 class="plugin_links">Tags</h4>
           <div>
             
-            <a href="/plugins/tags/#label"><span class="plugin_tag">Label</span></a>
+            <a href="/plugins/tags/#stock"><span class="plugin_tag">stock</span></a>
             
-            <a href="/plugins/tags/#report"><span class="plugin_tag">report</span></a>
+            <a href="/plugins/tags/#forecasting"><span class="plugin_tag">forecasting</span></a>
             
-            <a href="/plugins/tags/#lsp"><span class="plugin_tag">LSP</span></a>
+            <a href="/plugins/tags/#data"><span class="plugin_tag">data</span></a>
             
           </div>
         </div>
