@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-08-21T01:16:10+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Celebrating 5k Stars on GitHub!</title><link href="/blog/2025/05/22/5k" rel="alternate" type="text/html" title="Celebrating 5k Stars on GitHub!" /><published>2025-05-22T00:00:00+00:00</published><updated>2025-05-22T00:00:00+00:00</updated><id>/blog/2025/05/22/5k</id><content type="html" xml:base="/blog/2025/05/22/5k"><![CDATA[<p>The team is rejoiced to acknowledge that the project has now reached 5.000 Stars on GitHub. This and the nearly 1k forks are a reminder of how widely InvenTree has spread in recent years.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-08-21T09:49:13+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Machine Plugin Refactor</title><link href="/blog/2025/08/21/machine-refactor" rel="alternate" type="text/html" title="Machine Plugin Refactor" /><published>2025-08-21T00:00:00+00:00</published><updated>2025-08-21T00:00:00+00:00</updated><id>/blog/2025/08/21/machine-refactor</id><content type="html" xml:base="/blog/2025/08/21/machine-refactor"><![CDATA[<h2 id="machine-plugin-refactor">Machine Plugin Refactor</h2>
+
+<p>In preparation for the upcoming 1.0.0 release, we have made some <em>breaking</em> changes to the machine registry plugin system.</p>
+
+<p>These changes require that any existing plugins which implement custom machine drivers must be updated to use the new plugin system. A new <em>mixin</em> class, <code class="language-plaintext highlighter-rouge">MachineDriverMixin</code>, has been introduced to facilitate this transition.</p>
+
+<p>Plugin developers should refer to the notes below to determine how to update their plugins.</p>
+
+<h3 id="references">References</h3>
+
+<ul>
+  <li><a href="https://github.com/inventree/InvenTree/pull/10150">Machine Plugin Refactor PR</a></li>
+  <li><a href="https://docs.inventree.org/en/latest/plugins/mixins/machine/">MachineDriverMixin Documentation</a></li>
+</ul>
+
+<h3 id="changes">Changes</h3>
+
+<p>The <a href="https://github.com/inventree/InvenTree/pull/10150">linked pull request</a> makes a number of changes to both the <a href="https://docs.inventree.org/en/latest/plugins/">plugin system</a> and <a href="https://docs.inventree.org/en/latest/plugins/machines/overview/">machine registry</a>.</p>
+
+<p>The most significant of these changes is the introduction of the <a href="https://docs.inventree.org/en/latest/plugins/mixins/machine/">MachineDriverMixin class</a>, which now provides a standard interface for plugins which register custom machine drivers, or custom machine types.</p>
+
+<p>Plugin developers can refer to linked pull request, in addition to the updated plugin mixin documentation, for more information on how to implement this new interface.</p>
+
+<p>The required changes to existing plugins are minimal, and should be straightforward to implement.</p>
+
+<h3 id="example">Example</h3>
+
+<p>As an example, the <a href="https://github.com/inventree/inventree-brother-plugin/">inventree-brother-plugin</a> has been updated to use the new <code class="language-plaintext highlighter-rouge">MachineDriverMixin</code> class.</p>
+
+<p>Refer to <a href="https://github.com/inventree/inventree-brother-plugin/pull/60">this pull request</a> to see the changes made to the plugin.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Machine Plugin Refactor]]></summary></entry><entry><title type="html">Celebrating 5k Stars on GitHub!</title><link href="/blog/2025/05/22/5k" rel="alternate" type="text/html" title="Celebrating 5k Stars on GitHub!" /><published>2025-05-22T00:00:00+00:00</published><updated>2025-05-22T00:00:00+00:00</updated><id>/blog/2025/05/22/5k</id><content type="html" xml:base="/blog/2025/05/22/5k"><![CDATA[<p>The team is rejoiced to acknowledge that the project has now reached 5.000 Stars on GitHub. This and the nearly 1k forks are a reminder of how widely InvenTree has spread in recent years.</p>
 
 <p>We are getting the last setup-improvements and a few smaller features ready to publish the 1.0 release to signify the stability that fellow contributors and users have been experiencing since 2017.</p>
 
@@ -490,243 +519,4 @@ Therefore 1.0 will be PUI only. The compiled javascript, CSS and html files will
 
 <h2 id="deploying-inventree">Deploying InvenTree</h2>
 
-<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Development on InvenTree continues at a rapid pace, and we are pleased to announce the release of InvenTree version 0.15.0. With more than 300 commits since the 0.14.0 stable release, this release includes a wide range of new features, bug fixes, and improvements.]]></summary></entry><entry><title type="html">Docker Setup Guide</title><link href="/blog/2024/03/13/docker" rel="alternate" type="text/html" title="Docker Setup Guide" /><published>2024-03-13T00:00:00+00:00</published><updated>2024-03-13T00:00:00+00:00</updated><id>/blog/2024/03/13/docker</id><content type="html" xml:base="/blog/2024/03/13/docker"><![CDATA[<p>In this post, we will run though a tutorial for setting up InvenTree in a Docker container. We are installing a <em>stable</em> version of InvenTree, which (at the time of posting) is version 0.14.2.</p>
-
-<h2 id="digital-ocean">Digital Ocean</h2>
-
-<p>We will be using a Digital Ocean droplet to host our InvenTree installation. Digital Ocean provides a simple and cost-effective way to host web applications, and is a great choice for hosting InvenTree.</p>
-
-<p>While we use Digital Ocean for this tutorial, the steps outlined here should be applicable to any cloud hosting provider.</p>
-
-<p><em>Note: Digital Ocean is a sponsor of the InvenTree project, and provides hosting for our <a href="https://demo.inventree.org">demo server</a>. We are grateful to the Digital Ocean team for their ongoing support of the InvenTree project.</em></p>
-
-<h2 id="inventree-in-docker">InvenTree in Docker</h2>
-
-<p>InvenTree can be run in a Docker container, which provides a simple and consistent way to run the application. This is the recommended way to run InvenTree in a production environment, without needing to worry about the complexities of setting up all the required software dependencies.</p>
-
-<p>Our documentation server provides the following docker guides, which are a great starting point for anyone looking to run InvenTree in a Docker container:</p>
-
-<h3 id="docker-basics">Docker Basics</h3>
-
-<p>The <a href="https://docs.inventree.org/en/stable/start/docker/">Docker Basics</a> guide provides a good introduction to how InvenTree works in Docker, and includes a lot of useful background information about Docker itself.</p>
-
-<h3 id="docker-installation">Docker Installation</h3>
-
-<p>The <a href="https://docs.inventree.org/en/stable/start/docker_install/">Docker Installation</a> guide provides a step-by-step guide to setting up a production InvenTree installation using Docker / Docker Compose.</p>
-
-<p>In this blog post, we will follow through the steps outlined in the Docker Installation guide, to get an InvenTree installation off the ground with minimal fuss.</p>
-
-<h2 id="docker-setup-tutorial">Docker Setup Tutorial</h2>
-
-<h3 id="prerequisites">Prerequisites</h3>
-
-<p>Before we start, you will need a <a href="https://www.digitalocean.com/">Digital Ocean</a> account. The following steps assume that you have created an account, and are logged in!</p>
-
-<p>Also, if you are going to be using a custom domain name, you will need to have access to the domain name settings (e.g. via your domain registrar). <em>This is outside the scope of this tutorial, but is required if you want to access InvenTree using a custom domain name.</em></p>
-
-<h3 id="digital-ocean-droplet">Digital Ocean Droplet</h3>
-
-<p>First, we need to create a new Digital Ocean droplet. We will be using the <em>Docker</em> base image, which provides a simple and consistent environment for running Docker containers.</p>
-
-<h4 id="create-droplet">Create Droplet</h4>
-
-<p>Head to <a href="https://cloud.digitalocean.com/droplets">https://cloud.digitalocean.com/droplets</a> and click the “Create Droplet” button.</p>
-
-<p>Choose the server region which you would like to use, and select the “Docker” base image under “Marketplace”:</p>
-
-<p><img src="/assets/blog/docker-droplet.png" alt="Docker Droplet" /></p>
-
-<p>Then, click the “Create Droplet” button at the bottom of the screen.</p>
-
-<h4 id="login-to-droplet">Login to Droplet</h4>
-
-<p>After a few moments, the droplet will be created and ready for use. Select your newly created droplet, and navigate to the “Access” tab:</p>
-
-<p><img src="/assets/blog/docker-access.png" alt="Droplet Access" /></p>
-
-<p>You can login to the droplet using multiple methods. Here, for simplicity, we will use the online console window. Select the “Launch Droplet Console” button to open a new window.</p>
-
-<p>You should now be logged into the new droplet, and see the following shell prompt:</p>
-
-<p><img src="/assets/blog/docker-login.png" alt="Droplet Console" /></p>
-
-<h3 id="droplet-setup">Droplet Setup</h3>
-
-<p>Before we start to setup InvenTree, we will create a new user account.</p>
-
-<h4 id="create-user">Create User</h4>
-
-<p>Create a new user account using the <em>adduser</em> command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adduser inventree
-</code></pre></div></div>
-
-<p>(run through the prompts to create a new user account).</p>
-
-<h4 id="add-user-to-docker-group">Add User to Docker Group</h4>
-
-<p>Add the new user to the <em>docker</em> group, so that they can run Docker commands:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>usermod <span class="nt">-aG</span> docker inventree
-</code></pre></div></div>
-
-<h4 id="change-to-inventree-user">Change to InvenTree User</h4>
-
-<p>Switch to the new user account:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>su - inventree
-<span class="nb">cd</span> ~
-</code></pre></div></div>
-
-<p>You should now be logged in as the <em>inventree</em> user, and running from the <em>/home/inventree/</em> directory.</p>
-
-<h3 id="docker-setup">Docker Setup</h3>
-
-<p>We will now grab the required setup files for the InvenTree Docker installation.</p>
-
-<h4 id="download-files">Download Files</h4>
-
-<p>The following files are required to setup InvenTree in Docker:</p>
-
-<ul>
-  <li><a href="https://github.com/inventree/InvenTree/blob/master/docker/docker-compose.yml">docker-compose.yml</a> - the <em>Docker Composer</em> file which defines the InvenTree setup</li>
-  <li><a href="https://github.com/inventree/InvenTree/blob/master/docker/.env">.env</a> - the environment file which defines the InvenTree configuration</li>
-  <li><a href="https://github.com/inventree/InvenTree/blob/master/docker/Caddyfile">Caddyfile</a> - the Caddy web server configuration file</li>
-</ul>
-
-<p>These files can be downloaded directly from our <a href="https://github.com/inventree/inventree">GitHub repository</a>:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/docker-compose.yml
-wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/.env
-wget https://raw.githubusercontent.com/inventree/InvenTree/master/docker/Caddyfile
-</code></pre></div></div>
-
-<p>You should now have the three required files located in <em>/home/inventree/</em></p>
-
-<h4 id="configure-environment">Configure Environment</h4>
-
-<p>Edit the <em>.env</em> file to configure the InvenTree environment. This file contains a number of settings which define the InvenTree installation.</p>
-
-<p><em>Most</em> of these settings can remain untouched. The only setting we are going to change for this installation is the <strong>INVENTREE_SITE_URL</strong> setting. This is the URL which InvenTree will be accessed from.</p>
-
-<p><em>Note: You can adjust other settings in the *.env</em> file now, if required. However, the defaults should be suitable for most installations, and certainly for this tutorial.*</p>
-
-<p>In this example, we will set <strong>INVENTREE_SITE_URL</strong> to <em>https://tutorial.inventree.org</em>.</p>
-
-<p><img src="/assets/blog/docker-env.png" alt="Environment File" /></p>
-
-<h3 id="inventree-setup">InvenTree Setup</h3>
-
-<p>Now, we will start the InvenTree installation. Note that we are simply following the <a href="https://docs.inventree.org/en/stable/start/docker_install/">docker setup guide</a> at this point!</p>
-
-<h4 id="initial-database-setup">Initial Database Setup</h4>
-
-<p>Run the following command to perform initial database setup:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run <span class="nt">--rm</span> inventree-server invoke update <span class="nt">-s</span>
-</code></pre></div></div>
-
-<p>This command will create the initial InvenTree database, and run required database migrations, which will take a few minute to complete.</p>
-
-<p>Once the process is complete, you can proceed to the next step!</p>
-
-<h4 id="start-inventree-containers">Start InvenTree Containers</h4>
-
-<p>The docker compose file defines the InvenTree setup, and sequences a number of containers which are required to run InvenTree. To start the InvenTree installation, run the following command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up <span class="nt">-d</span>
-</code></pre></div></div>
-
-<p>This will start the InvenTree containers in the background, and you should see a number of messages as the containers are started:</p>
-
-<p><img src="/assets/blog/docker-compose-up.png" alt="Docker Compose" /></p>
-
-<p>Note that you can view the status of the containers at any time using the following command:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose ps
-</code></pre></div></div>
-
-<p><img src="/assets/blog/docker-compose-ps.png" alt="Docker Status" /></p>
-
-<h3 id="access-inventree">Access InvenTree</h3>
-
-<p>InvenTree should now be running, and ready to receive requests from the configured URL (in our case, <em>https://tutorial.inventree.org</em>).</p>
-
-<p>However, we need to ensure that the URL is correctly configured to point to the Digital Ocean droplet!</p>
-
-<p><em>Note: If you do not have a domain name, you can use the public IP address of the Digital Ocean droplet to access InvenTree. Just remember to set that IP address to the <strong>INVENTREE_SITE_URL</strong> setting in the *.env</em> file.*</p>
-
-<h4 id="add-domain">Add Domain</h4>
-
-<p>Navigate to <a href="https://cloud.digitalocean.com/networking/domains">https://cloud.digitalocean.com/networking/domains</a> and add a new domain, which matches the <strong>INVENTREE_SITE_URL</strong> setting, and points to the public IP address of the Digital Ocean droplet.</p>
-
-<p>For our setup, we only need to create a new <strong>A</strong> record (as the root domain and DNS has already been configured).</p>
-
-<p><img src="/assets/blog/docker-a-record.png" alt="A Record" /></p>
-
-<h4 id="chill-out">Chill Out</h4>
-
-<p>It may take a few minutes for the DNS changes to propagate. You can check the status of the DNS changes using a tool like <a href="https://dnschecker.org/">https://dnschecker.org/</a>.</p>
-
-<h4 id="restart-caddy">Restart Caddy</h4>
-
-<p>Once the DNS changes have propagated, you may need to restart the Caddy web server to pick up the new domain name settings:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose restart inventree-proxy
-</code></pre></div></div>
-
-<h4 id="access-inventree-1">Access InvenTree</h4>
-
-<p>You should now be able to access InvenTree using the configured domain name (e.g. <em>https://tutorial.inventree.org</em>):</p>
-
-<p><img src="/assets/blog/docker-success.png" alt="Success" /></p>
-
-<p>Success! You have now setup InvenTree in a Docker container, and can access the application from the configured domain name.</p>
-
-<p>But, we’re not done yet! We need to setup some initial data in the InvenTree installation.</p>
-
-<h3 id="setup-data">Setup Data</h3>
-
-<p>The InvenTree installation is now running, but it is empty! We need to add some initial data to the system. We could create an admin user, add some parts, and setup some stock locations. But, let’s take a shortcut!</p>
-
-<h4 id="demo-dataset">Demo Dataset</h4>
-
-<p>InvenTree provides a demo dataset which can be loaded into the system to provide some initial data. This dataset includes a number of parts, stock items, and other data which can be used to explore the InvenTree system.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run <span class="nt">--rm</span> inventree-server invoke setup-test <span class="nt">-i</span>
-</code></pre></div></div>
-
-<p>We should now be able to login to the InvenTree installation using the default admin user account:</p>
-
-<ul>
-  <li>Username: <em>admin</em></li>
-  <li>Password: <em>inventree</em></li>
-</ul>
-
-<p><img src="/assets/blog/docker-in.png" alt="We are in" /></p>
-
-<p>And, now we are in! We have successfully setup InvenTree in a Docker container, and have loaded the demo dataset to explore the system.</p>
-
-<h3 id="conclusions">Conclusions</h3>
-
-<p>In this tutorial, we have setup InvenTree in a Docker container, running on a Digital Ocean droplet. We have configured the InvenTree environment, and loaded the demo dataset to explore the system.</p>
-
-<h4 id="cloud-provider">Cloud Provider</h4>
-
-<p>We have used <a href="https://www.digitalocean.com/">Digital Ocean</a> as our cloud provider, but the steps outlined here should be applicable to any cloud hosting provider - with some tweaking!</p>
-
-<h4 id="ssl-certificate">SSL Certificate</h4>
-
-<p>Caddy, the proxy server used in the InvenTree Docker setup, automatically configures SSL certificates using Let’s Encrypt. This means that your InvenTree installation is automatically secured using HTTPS (and you don’t need to worry about setting up SSL certificates).</p>
-
-<p><em>Note: There are some caveats here, you should read the <a href="https://caddyserver.com/docs/automatic-https">Caddy documentation</a>!</em></p>
-
-<h4 id="further-reading">Further Reading</h4>
-
-<p>This tutorial is a simple guide to getting InvenTree up and running in a Docker container. For more advanced usage, you should read the <a href="https://docs.inventree.org/en/stable/start/intro/">InvenTree Setup Guide</a> guide, which provides a lot more detail about the InvenTree Docker setup.</p>
-
-<h4 id="project-sponsorship">Project Sponsorship</h4>
-
-<p>InvenTree is an open-source project, and is sponsored by a number of companies and individuals. We are grateful to the Digital Ocean team for their ongoing support of the InvenTree project!</p>
-
-<p>If you would like to sponsor the InvenTree project, please refer to our <a href="/contribute#sponsor">contribution page</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[In this post, we will run though a tutorial for setting up InvenTree in a Docker container. We are installing a stable version of InvenTree, which (at the time of posting) is version 0.14.2.]]></summary></entry></feed>
+<p>If you are new to the InvenTree project, there are multiple ways to deploy InvenTree for your own use. Please refer to the <a href="/deploy.html">deployment guide</a> for more information.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[Development on InvenTree continues at a rapid pace, and we are pleased to announce the release of InvenTree version 0.15.0. With more than 300 commits since the 0.14.0 stable release, this release includes a wide range of new features, bug fixes, and improvements.]]></summary></entry></feed>

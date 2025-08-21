@@ -15,26 +15,27 @@
 <!-- Fontawesome integration -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 
-<title>InvenTree - Schrodingersgat</title>
+<title>InvenTree - Machine Plugin Refactor</title>
 <meta itemprop="description" name="description"
     content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Schrodingersgat | InvenTree</title>
+<title>Machine Plugin Refactor | InvenTree</title>
 <meta name="generator" content="Jekyll v4.3.3" />
-<meta property="og:title" content="Schrodingersgat" />
+<meta property="og:title" content="Machine Plugin Refactor" />
+<meta name="author" content="SchrodingersGat" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Maintainer of InvenTree." />
-<meta property="og:description" content="Maintainer of InvenTree." />
-<link rel="canonical" href="/schrodingersgat" />
-<meta property="og:url" content="/schrodingersgat" />
+<meta name="description" content="Machine Plugin Refactor" />
+<meta property="og:description" content="Machine Plugin Refactor" />
+<link rel="canonical" href="/blog/2025/08/21/machine-refactor" />
+<meta property="og:url" content="/blog/2025/08/21/machine-refactor" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-21T09:49:13+00:00" />
+<meta property="article:published_time" content="2025-08-21T00:00:00+00:00" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Schrodingersgat" />
+<meta property="twitter:title" content="Machine Plugin Refactor" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-08-21T09:49:13+00:00","datePublished":"2025-08-21T09:49:13+00:00","description":"Maintainer of InvenTree.","headline":"Schrodingersgat","mainEntityOfPage":{"@type":"WebPage","@id":"/schrodingersgat"},"url":"/schrodingersgat"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2025-08-21T00:00:00+00:00","datePublished":"2025-08-21T00:00:00+00:00","description":"Machine Plugin Refactor","headline":"Machine Plugin Refactor","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2025/08/21/machine-refactor"},"url":"/blog/2025/08/21/machine-refactor"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -58,158 +59,57 @@
 
         
     </div>
-</header> <article>
+</header> <header>
     
-    <h2>
-  <div class="flex items-end">
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
     
-    <div class="mb-1">
-      <img src="https://github.com/SchrodingersGat.png?size=40" alt="mdo" class="rounded-full" width="40" height="40" style="margin:0px">
-    </div>
-    
-    Oliver
-  </div>
-</h2>
+</header>
 
-<div>
+<article>
+    <h1>Machine Plugin Refactor</h1>
+    <p>
+      21 Aug 2025
+      
 
-<a href="https://github.com/SchrodingersGat"><span class="badge bg-secondary">GitHub</span></a>
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <h2 id="machine-plugin-refactor">Machine Plugin Refactor</h2>
 
+<p>In preparation for the upcoming 1.0.0 release, we have made some <em>breaking</em> changes to the machine registry plugin system.</p>
 
+<p>These changes require that any existing plugins which implement custom machine drivers must be updated to use the new plugin system. A new <em>mixin</em> class, <code class="language-plaintext highlighter-rouge">MachineDriverMixin</code>, has been introduced to facilitate this transition.</p>
 
-<a href="https://inventree.org"><span class="badge bg-secondary">Website</span></a>
+<p>Plugin developers should refer to the notes below to determine how to update their plugins.</p>
 
+<h3 id="references">References</h3>
 
-
-
-<a href="/about/team"><span class="badge bg-lime-600"><span class="fa-solid fa-shield"></span>Team Member</span></a>
-
-</div>
-
-<blockquote class="blockquote">
-  <p>Maintainer of InvenTree.</p>
-
-</blockquote>
-
-
-
-<h3>Posts</h3>
-<ul class="list-unstyled">
-  
-    <li>21 Aug 2025 <a href="/blog/2025/08/21/machine-refactor" class="lead">Machine Plugin Refactor</a>
-</li>
-  
-    <li>27 Dec 2024 <a href="/blog/2024/12/27/0.17.1" class="lead">0.17.1 Release</a>
-</li>
-  
-    <li>17 Dec 2024 <a href="/blog/2024/12/17/0.17.0" class="lead">0.17.0 Stable Release</a>
-</li>
-  
-    <li>30 Nov 2024 <a href="/blog/2024/11/30/0.16.9" class="lead">0.16.9 Release</a>
-</li>
-  
-    <li>07 Nov 2024 <a href="/blog/2024/11/07/0.16.8" class="lead">0.16.8 Release</a>
-</li>
-  
-    <li>25 Aug 2024 <a href="/blog/2024/08/25/0.16.0" class="lead">0.16.0 Stable Release</a>
-</li>
-  
-    <li>26 May 2024 <a href="/blog/2024/05/26/0.15.2" class="lead">0.15.2 Bugfix Release</a>
-</li>
-  
-    <li>14 May 2024 <a href="/blog/2024/05/14/0.15.0" class="lead">0.15.0 Stable Release</a>
-</li>
-  
-    <li>13 Mar 2024 <a href="/blog/2024/03/13/docker" class="lead">Docker Setup Guide</a>
-</li>
-  
-    <li>02 Mar 2024 <a href="/blog/2024/03/02/0.14.0" class="lead">0.14.0 Stable Release</a>
-</li>
-  
-    <li>13 Jan 2024 <a href="/blog/2024/01/13/upcoming" class="lead">2023 in Review</a>
-</li>
-  
-    <li>15 Dec 2023 <a href="/blog/2023/12/15/0.13.0" class="lead">0.13.0 Stable Release</a>
-</li>
-  
-    <li>06 Dec 2023 <a href="/blog/2023/12/06/label-printing" class="lead">Label Printing Updates</a>
-</li>
-  
-    <li>29 Oct 2023 <a href="/blog/2023/10/29/barcodes" class="lead">New Barcode Features</a>
-</li>
-  
-    <li>03 Oct 2023 <a href="/blog/2023/10/03/0.12.8" class="lead">0.12.8 Bugfix Release</a>
-</li>
-  
-    <li>26 Sep 2023 <a href="/blog/2023/09/26/kicad" class="lead">KiCad Integration</a>
-</li>
-  
-    <li>28 Aug 2023 <a href="/blog/2023/08/28/react" class="lead">User Interface Refactor</a>
-</li>
-  
-    <li>26 Jun 2023 <a href="/blog/2023/06/26/0.12.0" class="lead">0.12.0 Stable Release</a>
-</li>
-  
-    <li>17 Apr 2023 <a href="/blog/2023/04/17/0.11.0" class="lead">0.11.0 Stable Release</a>
-</li>
-  
-    <li>25 Feb 2023 <a href="/blog/2023/02/25/0.10.1" class="lead">0.10.1 Bugfix Release</a>
-</li>
-  
-    <li>06 Feb 2023 <a href="/blog/2023/02/06/0.10.0" class="lead">0.10.0 Stable Release</a>
-</li>
-  
-    <li>02 Jan 2023 <a href="/blog/2023/01/02/upcoming" class="lead">2022 in Review</a>
-</li>
-  
-    <li>12 Dec 2022 <a href="/blog/2022/12/12/0.9.0" class="lead">0.9.0 Stable Release</a>
-</li>
-  
-    <li>22 Nov 2021 <a href="/blog/2021/11/22/translation" class="lead">Translating InvenTree</a>
-</li>
-  
+<ul>
+  <li><a href="https://github.com/inventree/InvenTree/pull/10150">Machine Plugin Refactor PR</a></li>
+  <li><a href="https://docs.inventree.org/en/latest/plugins/mixins/machine/">MachineDriverMixin Documentation</a></li>
 </ul>
 
+<h3 id="changes">Changes</h3>
+
+<p>The <a href="https://github.com/inventree/InvenTree/pull/10150">linked pull request</a> makes a number of changes to both the <a href="https://docs.inventree.org/en/latest/plugins/">plugin system</a> and <a href="https://docs.inventree.org/en/latest/plugins/machines/overview/">machine registry</a>.</p>
+
+<p>The most significant of these changes is the introduction of the <a href="https://docs.inventree.org/en/latest/plugins/mixins/machine/">MachineDriverMixin class</a>, which now provides a standard interface for plugins which register custom machine drivers, or custom machine types.</p>
+
+<p>Plugin developers can refer to linked pull request, in addition to the updated plugin mixin documentation, for more information on how to implement this new interface.</p>
+
+<p>The required changes to existing plugins are minimal, and should be straightforward to implement.</p>
+
+<h3 id="example">Example</h3>
+
+<p>As an example, the <a href="https://github.com/inventree/inventree-brother-plugin/">inventree-brother-plugin</a> has been updated to use the new <code class="language-plaintext highlighter-rouge">MachineDriverMixin</code> class.</p>
+
+<p>Refer to <a href="https://github.com/inventree/inventree-brother-plugin/pull/60">this pull request</a> to see the changes made to the plugin.</p>
 
 
-
-<h3>Plugins</h3>
-<ul class="list-unstyled">
-  
-    <li>
-      <a href="/SchrodingersGat/inventree-brother-plugin">
-      Inventree Brother Plugin
-      </a>
-    </li>
-  
-    <li>
-      <a href="/SchrodingersGat/inventree-order-history">
-      Inventree Order History
-      </a>
-    </li>
-  
-    <li>
-      <a href="/SchrodingersGat/inventree-stock-forecasting">
-      Inventree Stock Forecasting
-      </a>
-    </li>
-  
-    <li>
-      <a href="/SchrodingersGat/inventree-test-statistics">
-      Inventree Test Statistics
-      </a>
-    </li>
-  
-    <li>
-      <a href="/SchrodingersGat/inventree-wireviz">
-      Inventree Wireviz
-      </a>
-    </li>
-  
-</ul>
 
 </article>
-
     </div>
 
     <div class="flex-grow"></div>
