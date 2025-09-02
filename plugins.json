@@ -18,12 +18,11 @@ layout: none
     "issue_tracker": {{ p.issue_tracker | jsonify }},
     "github": {{ p.github | jsonify }},
     "gitlab": {{ p.gitlab | jsonify }},
-    "source": {{ p.source | jsonify }},
+    "source": {{ p.source | jsonify }}
   },
   "categories": {{ p.categories | jsonify }},
   "tags": {{ p.tags | jsonify }},
-  "content": {{ p.content | markdownify | strip_html | jsonify }},
-
+  "content": {{ p.content | markdownify | strip_html | jsonify }}
 }
 {%- unless forloop.last %},{% endunless -%}
 {% endfor %}
