@@ -1,0 +1,43 @@
+---
+layout: none
+---
+{"plugins":{
+{% for p in site.repo %}
+{{ p.url | jsonify }}: {
+  "name": {{ p.name | jsonify }},
+  "author": {{ p.author | jsonify }},
+  "last_modified": {{ p.last-modified-date | jsonify }},
+  "open_source": {{ p.open-source | jsonify }},
+  "license": {{ p.license | jsonify }},
+  "stable": {{ p.stable | jsonify }},
+  "maintained": {{ p.maintained | jsonify }},
+  "pypi": {{ p.pypi | jsonify }},
+  "package_name": {{ p.package_name | jsonify }},
+  "links":{
+    "website": {{ p.website | jsonify }},
+    "issue_tracker": {{ p.issue_tracker | jsonify }},
+    "github": {{ p.github | jsonify }},
+    "gitlab": {{ p.gitlab | jsonify }},
+    "source": {{ p.source | jsonify }}
+  },
+  "categories": {{ p.categories | jsonify }},
+  "tags": {{ p.tags | jsonify }},
+  "content_txt" : {{ p.content | markdownify | strip_html | jsonify }},
+  "content": {{ p.content | jsonify }}
+}
+{%- unless forloop.last %},{% endunless -%}
+{% endfor %}
+},
+"publishers":{
+  {% for p in site.publishers %}
+{{ p.url | jsonify }}: {
+  "short_name": {{p.short_name | jsonify}},
+  "name": {{ p.name | jsonify }},
+  "github": {{ p.github | jsonify }},
+  "website": {{ p.website | jsonify }},
+  "content_txt" : {{ p.content | markdownify | strip_html | jsonify }},
+  "content": {{ p.content | jsonify }}
+}
+  {%- unless forloop.last %},{% endunless -%}
+  {% endfor %}
+}}
