@@ -19,7 +19,7 @@ InvenTree can be installed on FreeBSD using AppJail. An [AppJail Makejail](https
 
 ### Manual Bare Metal Install
 
-A [bare metal installation guide](https://docs.inventree.org/en/stable/start/intro/) is provided for users who are looking for a low-level or custom installation. 
+A [bare metal installation guide](https://docs.inventree.org/en/stable/start/) is provided for users who are looking for a low-level or custom installation. 
 
 ### Cloud
 

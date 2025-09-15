@@ -5,7 +5,7 @@ We supply core-dev and community built plugins to get you started with extending
 
 We expose some internal Python APIs to speed up your development and keep the instance running while you discover the possibilities.
 
-You can read more about the plugin architecture, including information on developing new plugins, on our [documentation](https://docs.inventree.org/en/stable/extend/plugins/)
+You can read more about the plugin architecture, including information on developing new plugins, on our [documentation](https://docs.inventree.org/en/stable/plugins/)
 
 ### Highlights
 
