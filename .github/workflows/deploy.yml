@@ -21,7 +21,7 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-      - run: bundle exec htmlproofer ./_site --no-check-external-hash --no-enforce-https --ignore-urls "/localhost/,/www.linkedin.com/,/cloud.digitalocean.com/,marketplace.digitalocean.com/,/reddit.com/r/inventree/,/twitter.com/inventreedb/,/github.com/,/developer.digikey.com/,/patreon.com/,/partkeepr.org/,/download.dymo.com/"
+      - run: bundle exec htmlproofer ./_site --no-check-external-hash --no-enforce-https --ignore-urls "/localhost/,/www.linkedin.com/,/cloud.digitalocean.com/,marketplace.digitalocean.com/,polar.sh,/reddit.com/r/inventree/,/twitter.com/inventreedb/,/github.com/,/developer.digikey.com/,/patreon.com/,/partkeepr.org/,/download.dymo.com/"
         name: Check links
       - name: Deploy
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
