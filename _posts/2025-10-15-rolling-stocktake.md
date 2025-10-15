@@ -11,4 +11,4 @@ This plugin encourgaes users to perform regular stocktakes of inventory items in
 
 By presenting users with a dashboard widget that highlights stock items that are overdue for stocktake, the plugin helps maintain inventory accuracy and reduces the risk of stock discrepancies.
 
-For more information about the plugin, please refer to the [plugin reference](/extend/plugin/inventree-rolling-stocktake.md) or the [GitHub page](https://github.com/inventree/rolling-stocktake-plugin).
+For more information about the plugin, please refer to the [plugin reference]({% link _repo/inventree-rolling-stocktake.md %}) or the [GitHub page](https://github.com/inventree/rolling-stocktake-plugin).
