@@ -1,6 +1,7 @@
 ---
 name: inventree-consolidated-shipment-lines
 title: InvenTree Consolidated Shipping Lines
+author: SchrodingersGat
 license: MIT
 open_source: true
 stable: true
@@ -8,7 +9,7 @@ maintained: true
 pypi: true
 package_name: inventree-consolidated-shipment-lines
 github: https://github.com/SchrodingersGat/inventree-consolidated-shipping-report
-issue_tracked: https://github.com/SchrodingersGat/inventree-consolidated-shipping-report/issues
+issue_tracker: https://github.com/SchrodingersGat/inventree-consolidated-shipping-report/issues
 website: https://inventree.org
 categories: Shipping
 tags: shipping consolidated report
