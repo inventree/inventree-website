@@ -21,6 +21,10 @@ InvenTree can be installed on FreeBSD using AppJail. An [AppJail Makejail](https
 
 A [bare metal installation guide](https://docs.inventree.org/en/stable/start/) is provided for users who are looking for a low-level or custom installation. 
 
+### Cloud
+
+A member of the team provides a [1-click app for InvenTree](digitalocean) on the DigitalOcean marketplace.
+
 ### Other Options
 
 The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all platforms and architectures. 
