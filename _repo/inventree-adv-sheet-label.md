@@ -269,7 +269,7 @@ If your layout uses a page size that has never been used before, you will also b
 
 We will review your layout and add it to the main plugin distribution as soon as possible. However, if you need the layout immediately and cannot wait for it to be added officially, you can fork the repository and include it yourself.
 
-To do so, you can edit the [advanced_sheet_label/layouts.py](advanced_sheet_label/layouts.py) file. In there you will find a dictionary of all defined paper sizes and a dictionary of all defined sheet layouts. After filling out the code in the Issue template, you can simply append the new definitions at the end of the dictionaries.
+To do so, you can edit the [advanced_sheet_label/layouts.py](https://github.com/melektron/inventree-adv-sheet-label/blob/main/advanced_sheet_label/layouts.py) file. In there you will find a dictionary of all defined paper sizes and a dictionary of all defined sheet layouts. After filling out the code in the Issue template, you can simply append the new definitions at the end of the dictionaries.
 
 ```python
 # ... more file content
