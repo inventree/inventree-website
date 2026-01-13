@@ -3,7 +3,7 @@
 "/melektron/inventree-adv-sheet-label": {
   "name": "InvenTree Advanced Sheet Label",
   "author": "melektron",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -25,7 +25,7 @@
 "/matmair/inventree-apprise": {
   "name": "InvenTree Apprise",
   "author": "matmair",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -47,7 +47,7 @@
 "/SchrodingersGat/inventree-brother-plugin": {
   "name": "inventree-brother-plugin",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": false,
@@ -69,7 +69,7 @@
 "/wolflu05/inventree-bulk-plugin": {
   "name": "inventree-bulk-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -91,7 +91,7 @@
 "/SchrodingersGat/inventree-consolidated-shipping": {
   "name": "inventree-consolidated-shipment-lines",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -113,7 +113,7 @@
 "/wolflu05/inventree-cups-plugin": {
   "name": "inventree-cups-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -135,7 +135,7 @@
 "/lippoliv/inventree-default-salesorder-items": {
   "name": "Default sales order items",
   "author": "lippoliv",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -157,7 +157,7 @@
 "/wolflu05/inventree-dymo-plugin": {
   "name": "inventree-dymo-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "GPL-3.0+",
   "stable": true,
@@ -179,7 +179,7 @@
 "/SchrodingersGat/inventree-harmonized-codes": {
   "name": "inventree-harmonized-codes",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -201,7 +201,7 @@
 "/LavissaWoW/inventree-ipn-generator": {
   "name": "inventree-ipn-generator",
   "author": "LavissaWoW",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -223,7 +223,7 @@
 "/afkiwers/inventree-kicad": {
   "name": "inventree-kicad-plugin",
   "author": "afkiwers",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -245,7 +245,7 @@
 "/piramja/inventree-niimbot-plugin": {
   "name": "inventree-niimbot-plugin",
   "author": "piramja",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -267,7 +267,7 @@
 "/SchrodingersGat/inventree-order-history": {
   "name": "inventree-order-history",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -289,7 +289,7 @@
 "/matmair/inventree-rapidoc": {
   "name": "Inventree RapiDoc",
   "author": "matmair",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT license",
   "stable": true,
@@ -311,7 +311,7 @@
 "/wolflu05/inventree-report-lsp-plugin": {
   "name": "inventree-report-lsp-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "GPL-3.0+",
   "stable": true,
@@ -333,7 +333,7 @@
 "/SchrodingersGat/inventree-rolling-stocktake": {
   "name": "inventree-rolling-stocktake",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -355,7 +355,7 @@
 "/SchrodingersGat/inventree-stock-forecasting": {
   "name": "inventree-stock-forecasting",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -377,7 +377,7 @@
 "/SergeoLacruz/inventree-supplier-panel": {
   "name": "inventree-supplier-panel",
   "author": "SergeoLacruz",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -399,7 +399,7 @@
 "/SchrodingersGat/inventree-test-statistics": {
   "name": "inventree-test-statistics",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -421,7 +421,7 @@
 "/SchrodingersGat/inventree-wireviz": {
   "name": "inventree-wireviz-plugin",
   "author": "SchrodingersGat",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -443,7 +443,7 @@
 "/matmair/inventree-zapier": {
   "name": "inventree-zapier",
   "author": "matmair",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": false,
@@ -465,7 +465,7 @@
 "/SergeoLacruz/inventree-zebra-plugin": {
   "name": "inventree-zebra-plugin",
   "author": "SergeoLacruz",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -487,7 +487,7 @@
 "/wolflu05/inventree-zebra": {
   "name": "inventree-zebra",
   "author": "wolflu05",
-  "last_modified": "2026-01-12 01:39:35 +0000",
+  "last_modified": "2026-01-13 01:22:22 +0000",
   "open_source": null,
   "license": "GPL-3.0+",
   "stable": true,
