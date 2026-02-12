@@ -3,8 +3,6 @@ author: SchrodingersGat
 title: Rolling Stocktake Plugin
 ---
 
-## Rolling Stocktake Plugin
-
 The InvenTree development team has released a new plugin which provides a "Rolling Stocktake" mechanism for InvenTree.
 
 This plugin encourgaes users to perform regular stocktakes of inventory items in a rolling fashion, ensuring that stock levels are consistently accurate without the need for a complete inventory shutdown.

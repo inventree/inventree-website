@@ -3,8 +3,6 @@ author: SchrodingersGat
 title: Machine Plugin Refactor
 ---
 
-## Machine Plugin Refactor
-
 In preparation for the upcoming 1.0.0 release, we have made some *breaking* changes to the machine registry plugin system.
 
 These changes require that any existing plugins which implement custom machine drivers must be updated to use the new plugin system. A new *mixin* class, `MachineDriverMixin`, has been introduced to facilitate this transition.
