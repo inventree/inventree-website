@@ -1,4 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-02-12T01:58:29+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">1.1.0 Release</title><link href="/blog/2025/11/02/1.1.0" rel="alternate" type="text/html" title="1.1.0 Release" /><published>2025-11-02T00:00:00+00:00</published><updated>2025-11-02T00:00:00+00:00</updated><id>/blog/2025/11/02/1.1.0</id><content type="html" xml:base="/blog/2025/11/02/1.1.0"><![CDATA[<h2 id="110-release">1.1.0 Release</h2>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-02-12T21:22:02+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">1.2.0 Release</title><link href="/blog/2026/02/12/1.2.0" rel="alternate" type="text/html" title="1.2.0 Release" /><published>2026-02-12T00:00:00+00:00</published><updated>2026-02-12T00:00:00+00:00</updated><id>/blog/2026/02/12/1.2.0</id><content type="html" xml:base="/blog/2026/02/12/1.2.0"><![CDATA[<h2 id="120-release">1.2.0 Release</h2>
+
+<p>The InvenTree team is excited to announce the release of version 1.2.0.</p>
+
+<p>This release includes numerous new features, improvements, and bug fixes.</p>
+
+<h3 id="changelog">Changelog</h3>
+
+<p>Major changes are documented in the <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> file in the InvenTree repository.</p>
+
+<p>For a full list of changes made in this release, please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/1.2.0">release notes</a>.</p>
+
+<h3 id="update-procedure">Update Procedure</h3>
+
+<p>To update to the latest version of InvenTree, please follow the updating instructions provided in the <a href="https://docs.inventree.org">InvenTree documentation</a>. Note that the particular update procedure may vary depending on your installation method.</p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<h3 id="django-update">Django Update</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/10730">#10730</a> updated the core Django version to 5.2 lts. As part of this update, the minimum required python version has been increased to 3.11.</p>
+
+<h3 id="api-changes">API changes</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/11035">#11035</a> all metadata endpoints were unified into a generic one.</p>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/11021">#11021</a> tags were removed from a few APIs by default, they can be enabled using a dedicated filter if need be</p>
+
+<h2 id="new-features">New Features</h2>
+
+<h3 id="generic-parameters">Generic Parameters</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/10699">#10699</a> adds support for generic parameters across multiple model types. Previously, parameters were only support for parts. Read more about parameter support on the <a href="https://docs.inventree.org/en/latest/concepts/parameters/">InvenTree documentation</a>.</p>
+
+<h3 id="pdf-input-controls">PDF Input Controls</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/10969">#10969</a> adds support for input controls (check boxes, text boxes, etc) to the <a href="https://docs.inventree.org/en/latest/report/">report generation framework</a>.</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>There have been a significant number of <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr%20label%3Abug%20is%3Aclosed%20milestone%3A1.2.0">bug fixes</a> in this release. Thanks to the many community members who have contributed to identifying and resolving these issues!</p>
+
+<p>Some long standing issues with SSO registration settings being enforced too strict have been resolved. User feedback and flow during multifactor-registration enforcement was also improved greatly.</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<h3 id="new-contributors">New Contributors</h3>
+
+<p>As always we would like to thank all of our contributors for their hard work and dedication to the InvenTree project. In particular, we would like to welcome the following new contributors who have made their first contributions in this release:</p>
+
+<ul>
+  <li>@lehoangnam040 made their first contribution in https://github.com/inventree/InvenTree/pull/10751</li>
+  <li>@kquinsland made their first contribution in https://github.com/inventree/InvenTree/pull/10900</li>
+  <li>@ttftw made their first contribution in https://github.com/inventree/InvenTree/pull/10952</li>
+  <li>@mlam19 made their first contribution in https://github.com/inventree/InvenTree/pull/10969</li>
+  <li>@CapnKernel made their first contribution in https://github.com/inventree/InvenTree/pull/11011</li>
+  <li>@fargito made their first contribution in https://github.com/inventree/InvenTree/pull/11095</li>
+  <li>@B-z-F made their first contribution in https://github.com/inventree/InvenTree/pull/11100</li>
+  <li>@plaes made their first contribution in https://github.com/inventree/InvenTree/pull/11161</li>
+  <li>@wlcx made their first contribution in https://github.com/inventree/InvenTree/pull/11147</li>
+  <li>@tomermurray made their first contribution in https://github.com/inventree/InvenTree/pull/11102</li>
+</ul>
+
+<h3 id="code-contributions">Code Contributions</h3>
+
+<p>Check out our GitHub page for a list of <a href="https://github.com/inventree/InvenTree/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22">outstanding issues</a> and feature requests. If you are a developer or want to become one, you can help to contribute to the project by submitting a pull request.</p>
+
+<h3 id="translation">Translation</h3>
+
+<p>Our <a href="https://crowdin.com/project/inventree">translation efforts</a> continue to grow, with coverage increasing across a wide range of languages. We are grateful to all of our translators who have contributed to making InvenTree accessible to users around the world.</p>
+
+<p>If you are interested in contributing to the translation efforts, please visit our <a href="https://crowdin.com/project/inventree">Crowdin project</a> and join the community of translators.</p>
+
+<h3 id="report-bugs">Report Bugs</h3>
+
+<p>If you encounter a bug in InvenTree, please report it on our <a href="https://github.com/inventree/inventree/issues">GitHub issues page</a>. Please ensure that you provide as much information as possible to help us diagnose and fix the issue.</p>
+
+<h3 id="documentation--technical-writing">Documentation / Technical Writing</h3>
+
+<p>If you have experience with technical writing, you can help to improve the InvenTree documentation. We are always looking for help to improve the documentation and make it more accessible to new users.</p>
+
+<h3 id="financial-support">Financial Support</h3>
+
+<p>Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!</p>
+
+<p>The work undertaken to keep InvenTree running is done by a very small group of core developers, who do so in their spare time (and are not sponsored by their employers to work on InvenTree). If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!</p>
+
+<ul>
+  <li><a href="https://polar.sh/inventree">Polar.sh</a></li>
+  <li><a href="https://github.com/sponsors/inventree">GitHub</a></li>
+</ul>
+
+<p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
+
+<p>If your company benefits from InvenTree, please consider a <a href="https://buy.polar.sh/polar_cl_d7lPAgS9jnW8NDOSWATqdz2gs3wUD1x5M5o7C2rPoAL">one time sponsorship</a> or a <a href="https://buy.polar.sh/polar_cl_UlGc3bUjwB7Vx89dhAY2iF3kUIVFBJC5mJyow4NlJa6">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[1.2.0 Release]]></summary></entry><entry><title type="html">1.1.0 Release</title><link href="/blog/2025/11/02/1.1.0" rel="alternate" type="text/html" title="1.1.0 Release" /><published>2025-11-02T00:00:00+00:00</published><updated>2025-11-02T00:00:00+00:00</updated><id>/blog/2025/11/02/1.1.0</id><content type="html" xml:base="/blog/2025/11/02/1.1.0"><![CDATA[<h2 id="110-release">1.1.0 Release</h2>
 
 <p>The InvenTree team is excited to announce the release of version 1.1.0.</p>
 
@@ -616,44 +710,4 @@ Refer to the <a href="https://github.com/inventree/InvenTree/pull/8401">pull req
 
 <h3 id="release-notes">Release Notes</h3>
 
-<p>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.16.8">release notes</a></p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.16.8 Release]]></summary></entry><entry><title type="html">UI Roadmap - going 1.0</title><link href="/blog/2024/09/23/ui-roadmap" rel="alternate" type="text/html" title="UI Roadmap - going 1.0" /><published>2024-09-23T00:00:00+00:00</published><updated>2024-09-23T00:00:00+00:00</updated><id>/blog/2024/09/23/ui-roadmap</id><content type="html" xml:base="/blog/2024/09/23/ui-roadmap"><![CDATA[<p>In August 2023 we announced <a href="/blog/2023/08/28/react">in a blog post</a> that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
-The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release.<br />
-The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.</p>
-
-<p>Most of this article is probably only interesting for (plugin) developers, but we hope it gives you a good overview of what is happening.</p>
-
-<h2 id="pui--cui---a-short-overview">PUI / CUI - A short overview</h2>
-
-<p>The new interface is called PUI (Platform User Interface) and the old one CUI (Classic User Interface). PUI is built with React and is a single-page application. CUI is built with Django templates and uses a mixture of jQuery, templated JS and some libraries.
-PUI is designed to be more consistent, use the API everywhere and support better testing (end-to-end, typing). The original blog post has more information on the <a href="/blog/2023/08/28/react#design-goals">design goals</a>.</p>
-
-<h2 id="why-remove-cui">Why remove CUI?</h2>
-
-<p>CUI has proven to be hard to understand for new contributors and hard to maintain in a consistent quality. Some common issues like cache invalidation, inconsistent rendering and hard-to-enforce permissions are easier to solve in PUI.
-Therefore 1.0 will be PUI only. The compiled javascript, CSS and html files will be removed from the repository. CUI-only endpoints/tags will also be removed. Some HTML rendering will be kept as the report/label generation uses that.</p>
-
-<p>This will probably remove around 2k files from the repo, around 370k lines. As of writing, we have 4.4k files and 2.4M lines in the repo.</p>
-
-<h2 id="effect-on-plugins">Effect on plugins</h2>
-
-<p>Plugins that render into the UI will need to be updated to work with PUI. This could affect you if your plugins use the mixins <code class="language-plaintext highlighter-rouge">PanelMixin</code>, <code class="language-plaintext highlighter-rouge">SettingsContentMixin</code>, <code class="language-plaintext highlighter-rouge">NavigationMixin</code> or <code class="language-plaintext highlighter-rouge">UrlsMixin</code>. Rendering into PUI is best done with <code class="language-plaintext highlighter-rouge">UserInterfaceMixin</code> (available in 0.17.0) - which is actively expanded to support rendering more tightly integrated than <code class="language-plaintext highlighter-rouge">PanelMixin</code> and CUI. For example <a href="https://github.com/inventree/InvenTree/pull/8137">#8137</a> supports rendering custom template editors in PUI.</p>
-
-<p>We will issue guidance regarding the transition of plugins into the new mechanisms before 1.0 goes to production.</p>
-
-<h2 id="how-can-you-help">How can you help?</h2>
-
-<ul>
-  <li>Use the new UI - if you are on the 0.16.x release train your instance should already be serving it</li>
-  <li>Report bugs - if you find something that is not working as expected please report it</li>
-  <li>Report missing features - if you are missing something from CUI please report it (we have an EPIC<a href="https://github.com/inventree/InvenTree/issues/5212"> that tracks them</a>)</li>
-  <li>Start looking into developing PUI and contributing - we use React and Mantine, widely used technologies</li>
-  <li>Support the development - we have been developing PUI for over a year with more or less 3 people. Donations could help us spend more time or awarding bounties for features/design improvements.</li>
-</ul>
-
-<h2 id="the-big-10">The big 1.0</h2>
-
-<p>1.0 will be a big milestone for InvenTree. InvenTree has been running in the heart of many companies for years. The switch to PUI enables much safer work on the UI. The release number 1.0 signals that the last part of the system is now modernised and ready for the future. We are looking forward to it and hope you are too.</p>
-
-<p>Switching to 1.0 will also mean that we will follow SemVer fully. Big breaking changes will only be in major releases, feature releases (1.0, 1.1, 1.2) will follow the SemVer rules. This will make it easier for some of our enterprise users who face backlash or difficulty because of the below 1.0 version number.</p>
-
-<p>We are discussing a few more breaking changes in 1.0 - feel free to chime in on the dedicated issue <a href="https://github.com/inventree/InvenTree/issues/6417">#6417</a>.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[In August 2023 we announced in a blog post that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next. The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release. The plan is to release 1.0 once PUI has all features ported, that will probably be the release after 0.18.0. 1.0 will not include CUI or the needed front- and backend code to support it.]]></summary></entry></feed>
+<p>View the <a href="https://github.com/inventree/InvenTree/releases/tag/0.16.8">release notes</a></p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[0.16.8 Release]]></summary></entry></feed>
