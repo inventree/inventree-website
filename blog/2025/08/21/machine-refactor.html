@@ -25,8 +25,8 @@
 <meta property="og:title" content="Machine Plugin Refactor" />
 <meta name="author" content="SchrodingersGat" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Machine Plugin Refactor" />
-<meta property="og:description" content="Machine Plugin Refactor" />
+<meta name="description" content="In preparation for the upcoming 1.0.0 release, we have made some breaking changes to the machine registry plugin system." />
+<meta property="og:description" content="In preparation for the upcoming 1.0.0 release, we have made some breaking changes to the machine registry plugin system." />
 <link rel="canonical" href="/blog/2025/08/21/machine-refactor" />
 <meta property="og:url" content="/blog/2025/08/21/machine-refactor" />
 <meta property="og:site_name" content="InvenTree" />
@@ -35,7 +35,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Machine Plugin Refactor" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2025-08-21T00:00:00+00:00","datePublished":"2025-08-21T00:00:00+00:00","description":"Machine Plugin Refactor","headline":"Machine Plugin Refactor","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2025/08/21/machine-refactor"},"url":"/blog/2025/08/21/machine-refactor"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2025-08-21T00:00:00+00:00","datePublished":"2025-08-21T00:00:00+00:00","description":"In preparation for the upcoming 1.0.0 release, we have made some breaking changes to the machine registry plugin system.","headline":"Machine Plugin Refactor","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2025/08/21/machine-refactor"},"url":"/blog/2025/08/21/machine-refactor"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -76,9 +76,7 @@
 
 <a href="/schrodingersgat">Oliver</a>
     </p>
-    <h2 id="machine-plugin-refactor">Machine Plugin Refactor</h2>
-
-<p>In preparation for the upcoming 1.0.0 release, we have made some <em>breaking</em> changes to the machine registry plugin system.</p>
+    <p>In preparation for the upcoming 1.0.0 release, we have made some <em>breaking</em> changes to the machine registry plugin system.</p>
 
 <p>These changes require that any existing plugins which implement custom machine drivers must be updated to use the new plugin system. A new <em>mixin</em> class, <code class="language-plaintext highlighter-rouge">MachineDriverMixin</code>, has been introduced to facilitate this transition.</p>
 
