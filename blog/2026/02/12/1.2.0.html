@@ -94,7 +94,16 @@
 
 <h3 id="django-update">Django Update</h3>
 
-<p><a href="https://github.com/inventree/InvenTree/pull/10730">#10730</a> updated the core Django version to 5.2 lts. As part of this update, the minimum required python version has been increased to 3.11.</p>
+<p><a href="https://github.com/inventree/InvenTree/pull/10730">#10730</a> updated the core Django version to 5.2 lts.</p>
+
+<p>As part of this update, the following breaking changes have been introduced:</p>
+
+<h4 id="postgresql-14">PostgreSQL 14</h4>
+
+<p>The minimum supported version of PostgreSQL has been increased to 14. This means that users running PostgreSQL 13 will need to perform a manual update of their database in order to continue using InvenTree with the latest version. For more information, please refer to our <a href="/blog/2026/02/12/db-update">update guide</a> for a walkthrough of the database update procedure.</p>
+
+<h4 id="python-311">Python 3.11</h4>
+<p>The minimum supported python version has been increased to 3.11. This means that users running Python 3.10 or earlier will need to update their python installation in order to run InvenTree 1.2.0.</p>
 
 <h3 id="api-changes">API changes</h3>
 
