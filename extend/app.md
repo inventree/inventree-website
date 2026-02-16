@@ -33,7 +33,7 @@ Download and install from the [Apple App Store](https://apps.apple.com/au/app/in
 
 ### Direct Download (Android)
 
-We provide direct downloads for Android users - view our [download page via polar.sh](https://polar.sh/inventree/products/299bf0d5-af88-4e0f-becf-c007ad37ecf2)
+We provide direct downloads for Android users - view our [download page via polar.sh](https://polar.sh/checkout/polar_c_dlEdsMuIlGPGS5Cb6DB82cRwuwpfPErjF7U4j1NfdYd)
 
 ### Documentation
 
