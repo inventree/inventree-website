@@ -17,13 +17,13 @@ We welcome everyone to help with InvenTree however they can!
 
 If you or your company uses InvenTree, please consider sponsoring the project to show your support. Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!
 
-- [GitHub](https://github.com/sponsors/inventree)
-- [PayPal](https://paypal.me/inventree?locale.x=en_AU) 
+- [GitHub](/fund.md#github)
+- [PayPal](/fund.md#paypal)
 
 You can also support us via:
 
-- A [one off sponsorship](https://buy.polar.sh/polar_cl_d7lPAgS9jnW8NDOSWATqdz2gs3wUD1x5M5o7C2rPoAL)
-- A [recurring sponsorship](https://buy.polar.sh/polar_cl_UlGc3bUjwB7Vx89dhAY2iF3kUIVFBJC5mJyow4NlJa6)
+- A [one off sponsorship](/fund#polar)
+- A [recurring sponsorship](/fund#polar)
 
 Financial donations directly support the ongoing development of the InvenTree project. If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!
 
