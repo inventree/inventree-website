@@ -125,9 +125,11 @@
 
 <p><img src="/assets/blog/db_update_old_versions.png" alt="Old Setup"></p>
 
-<p>To perform the backup, we run the following command:</p>
+<p>To perform the backup, we run the following commands:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run --rm inventree-server invoke backup
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
+docker compose run --rm inventree-server invoke backup
+docker compose down
 </code></pre></div></div>
 
 <p>This will create a backup of the database and media files in the <code class="language-plaintext highlighter-rouge">data/backup</code> directory.</p>
@@ -158,8 +160,10 @@
 
 <p>Now we can restore the data from the backup we created previously, into the new PostgreSQL 17 database. Run the following commands:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run --rm inventree-server invoke migrate
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
+docker compose run --rm inventree-server invoke migrate
 docker compose run --rm inventree-server invoke restore
+docker compose down
 </code></pre></div></div>
 
 <p>This will restore the database and media files from the backup we created previously.</p>
@@ -177,7 +181,8 @@ docker compose run --rm inventree-server invoke restore
 
 <p>Next, run the InvenTree update procedure:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose run --rm inventree-server invoke update
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
+docker compose run --rm inventree-server invoke update
 </code></pre></div></div>
 
 <h2 id="step-6-verify-new-setup">Step 6. Verify New Setup</h2>
