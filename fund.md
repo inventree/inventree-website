@@ -22,7 +22,7 @@ If your company benefits from InvenTree, please consider a [one time sponsorship
 
 ## Polar App
 
-The InvenTree app can also be bought as a one off purchase as a APK download from the [Polar app store](https://polar.sh/checkout/polar_c_dlEdsMuIlGPGS5Cb6DB82cRwuwpfPErjF7U4j1NfdYd). This is a great way to support the project if you are using the mobile app and do not want to use Google Play.
+The InvenTree app can also be bought as a one off purchase as a APK download from the [Polar app store](https://buy.polar.sh/polar_cl_UnGILJ0c7P3hQrOrJs127oyLTTDOTHKrnqfCg30XtBI). This is a great way to support the project if you are using the mobile app and do not want to use Google Play.
 
 ## PayPal
 
