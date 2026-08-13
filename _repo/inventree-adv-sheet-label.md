@@ -35,6 +35,7 @@ A label printing plugin for [InvenTree](https://inventree.org) which provides su
 1. [Errors](#errors)
 1. [Settings](#settings)
     1. [Default sheet layout](#default-sheet-layout)
+    1. [Printer offset X / Y](#printer-offset-x--y)
 1. [Contribution](#contribution)
     1. [Reporting and fixing bugs](#reporting-and-fixing-bugs)
     1. [Adding new layouts](#adding-new-layouts)
@@ -45,31 +46,36 @@ A label printing plugin for [InvenTree](https://inventree.org) which provides su
 
 > [!NOTE]
 > The latest version of this plugin currently supports the following InvenTree versions:
-> - **1.0.x** (tested with version **1.0.5**)
+> - **1.5.x** (tested with version **1.5.0**)
+> - **1.3.x** (tested with version **1.3.0** and **1.3.2**)
+> - **1.2.x** (tested with version **1.2.0**)
 > - **1.1.x** (tested with version **1.1.3**)
+> - **1.0.x** (tested with version **1.0.5**)
 > 
 > For older InvenTree versions, use version `1.2.2`, which supports the following InvenTree versions:
-> - **0.15.x**
-> - **0.16.x** (tested with version **0.16.5**)
 > - **0.17.x** (tested with version **0.17.14**)
+> - **0.16.x** (tested with version **0.16.5**)
+> - **0.15.x**
+> 
 > Some even older or newer versions might also work, but have not been tested. 
 > 
 > If you are having trouble installing, see [Common Issues](#common-issues) for possible solutions or create an issue.
 
-The simplest way of installing is by using the ```Install Plugin``` button on the InvenTree ```Plugin Settings``` page and then entering the package name:
+The simplest and recommended way of installing is by using the ```Install Plugin``` button above the plugins table on the InvenTree ```Plugins``` page in the ```Admin Center``` and then entering the package name:
 
 ![Plugin installation via UI: The "Install Plugin" modal window](https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/install_via_ui.png)
 
-Alternatively, you can install this plugin manually in the InvenTree container as follows:
 
-```
-pip install inventree-adv-sheet-label
-```
-
-Or, add the package name to your plugins.txt file (this is automatically done when using the UI method) to install automatically when using the ```invoke install``` command:
+Alternatively you can add the package name to your plugins.txt file (this is automatically done when using the UI method) to install automatically when using the ```invoke install``` command:
 
 ```
 inventree-adv-sheet-label
+```
+
+Or, you can install this plugin manually in the InvenTree server AND worker container as follows (not recommended for production):
+
+```bash
+pip install inventree-adv-sheet-label
 ```
 
 In any case, after installation, the plugin needs to be enabled in the above mentioned plugin settings page:
@@ -81,6 +87,10 @@ In any case, after installation, the plugin needs to be enabled in the above men
 This plugin adds the "AdvancedLabelSheet" printing option to the label printing dialog:
 
 ![Printing dialog with plugin selection open](https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/plugin_selection.png)
+
+Printing with this plugin generates a PDF file which will be opened in a new tab in order to subsequently be printed using a regular office printer.
+
+Rendering should not take longer than a few seconds, usually less than two.
 
 ### Sheet layout
 
@@ -101,23 +111,26 @@ The dropdown list also shows some additional information about the layout for or
 
 Currently supported layouts:
 
-| Layout Identifier | Paper size | Label dimensions | Label layout        | Corner style |
-| ----------------- | ---------- | ---------------- | ------------------- | ------------ |
-| 8160              | US Letter  | 66.7mm x 25.4mm  | 3 columns x 10 rows | round        |
-| 22805             | US Letter  | 37.0mm x 37.0mm  | 4 columns x 6 rows  | sharp        |
-| 4780              | A4         | 48.5mm x 25.4mm  | 4 columns x 10 rows | sharp        | 
-| 4737              | A4         | 63.5mm x 29.6mm  | 3 columns x 9 rows  | round        | 
-| 4201              | A4         | 45.7mm x 16.9mm  | 4 columns x 16 rows | round        |
-| 7120-25           | A4         | 35.0mm x 35.0mm  | 5 columns x 7 rows  | sharp        |
-| 7160-10           | A4         | 63.5mm x 38.1mm  | 3 columns x 7 rows  | round        |
-| 4360              | A4         | 70.0mm x 36.0mm  | 3 columns x 8 rows  | sharp        |
-| 1367853           | A4         | 48.5mm x 16.9mm  | 4 columns x 16 rows | sharp        | 
-| 4210              | A4         | 38.1mm x 12.7mm  | 5 columns x 22 rows | sharp        | 
-| 1367586           | A4         | 70.0mm x 36.0mm  | 3 columns x 8 rows  | sharp        |
-| 8724              | A4         | 46.0mm x 11.1mm  | 4 columns x 21 rows | round        | 
-| Avery 50x25-R     | A4         | 50.0mm x 25.0mm  | 3 columns x 8 rows  | round        | 
-| Avery 105x42-R    | A4         | 105.0mm x 42.0mm | 2 columns x 7 rows  | sharp        | 
-| Avery 40x12-R     | A4         | 40.0mm x 12.0mm  | 4 columns x 17 rows | round        |
+| Layout Identifier       | Paper size | Label dimensions | Label layout        | Corner style |
+| ----------------------- | ---------- | ---------------- | ------------------- | ------------ |
+| 8160                    | US Letter  | 66.7mm x 25.4mm  | 3 columns x 10 rows | round        |
+| 22805                   | US Letter  | 37.0mm x 37.0mm  | 4 columns x 6 rows  | sharp        |
+| 4780                    | A4         | 48.5mm x 25.4mm  | 4 columns x 10 rows | sharp        | 
+| 4737                    | A4         | 63.5mm x 29.6mm  | 3 columns x 9 rows  | round        | 
+| 4201                    | A4         | 45.7mm x 16.9mm  | 4 columns x 16 rows | round        |
+| 7120-25                 | A4         | 35.0mm x 35.0mm  | 5 columns x 7 rows  | sharp        |
+| 7160-10                 | A4         | 63.5mm x 38.1mm  | 3 columns x 7 rows  | round        |
+| 4360                    | A4         | 70.0mm x 36.0mm  | 3 columns x 8 rows  | sharp        |
+| 1367853                 | A4         | 48.5mm x 16.9mm  | 4 columns x 16 rows | sharp        | 
+| 4210                    | A4         | 38.1mm x 12.7mm  | 5 columns x 22 rows | sharp        | 
+| 1367586                 | A4         | 70.0mm x 36.0mm  | 3 columns x 8 rows  | sharp        |
+| 8724                    | A4         | 46.0mm x 11.1mm  | 4 columns x 21 rows | round        | 
+| Avery 50x25-R           | A4         | 50.0mm x 25.0mm  | 3 columns x 8 rows  | round        | 
+| Avery 105x42-R          | A4         | 105.0mm x 42.0mm | 2 columns x 7 rows  | sharp        | 
+| Avery 40x12-R           | A4         | 40.0mm x 12.0mm  | 4 columns x 17 rows | round        |
+| 8698                    | A4         | 52.5mm x 29.7mm  | 4 columns x 10 rows | sharp        |
+| HERMA 4336 / Avery 4732 | A4         | 35.6mm x 16.9mm  | 5 columns x 16 rows | round        |
+| Avery L7163 / J8163     | A4         | 99.1mm x 38.1mm  | 2 columns x 7 rows  | sharp        |
 
 
 This selection is limited to whatever users of this plugin have contributed. If the paper layout you need is not included, please file an [Issue with the "Sheet Layout" template](https://github.com/melektron/inventree-adv-sheet-label/issues/new?assignees=melektron&labels=sheet+layout&projects=&template=sheet-layout.md&title=New+Sheet+layout%3A+%5Blayout+name%5D) or - even better - contribute it yourself. See the [Adding new layouts](#adding-new-layouts) section for details.
@@ -224,6 +237,14 @@ This section describes the settings available in the plugins settings page.
 ### Default sheet layout
 
 This setting allows you to specify which sheet layout is selected by default when opening the printing dialog. It makes sense to set this either to some *Auto* option or to the layout you are using the most. The default is ```Auto (round)```, which is probably fine for most use-cases.
+
+### Printer offset X / Y
+
+Most office printers do not place the page exactly where the PDF says, so a sheet that is geometrically correct can still print a millimeter or two off the die. These two settings shift the whole label grid to compensate, in mm: positive X moves labels right, positive Y moves them down. Both default to 0.
+
+This is a property of your *printer*, not of the label sheet, which is why it is a global setting rather than part of a layout definition — the same correction applies whichever sheet layout you print.
+
+To calibrate, print one sheet on plain paper at 100% scaling (scaling must be off, or the measurement is meaningless), hold it against a real label sheet, and measure the offset. If the labels land 2mm too high, set ```Printer offset Y``` to ```2```.
 
 
 ## Common Issues
