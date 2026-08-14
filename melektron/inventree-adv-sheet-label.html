@@ -31,11 +31,11 @@
 <meta property="og:url" content="/melektron/inventree-adv-sheet-label" />
 <meta property="og:site_name" content="InvenTree" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2026-08-13T01:42:37+00:00" />
+<meta property="article:published_time" content="2026-08-14T01:40:49+00:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Inventree Adv Sheet Label" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melektron"},"dateModified":"2026-08-13T01:42:37+00:00","datePublished":"2026-08-13T01:42:37+00:00","description":"A label printing plugin for InvenTree which provides support for printing labels on off-the-shelf label sheet layouts and adds some more useful features compared to the sheet label plugin included with InvenTree.","headline":"Inventree Adv Sheet Label","mainEntityOfPage":{"@type":"WebPage","@id":"/melektron/inventree-adv-sheet-label"},"url":"/melektron/inventree-adv-sheet-label"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"melektron"},"dateModified":"2026-08-14T01:40:49+00:00","datePublished":"2026-08-14T01:40:49+00:00","description":"A label printing plugin for InvenTree which provides support for printing labels on off-the-shelf label sheet layouts and adds some more useful features compared to the sheet label plugin included with InvenTree.","headline":"Inventree Adv Sheet Label","mainEntityOfPage":{"@type":"WebPage","@id":"/melektron/inventree-adv-sheet-label"},"url":"/melektron/inventree-adv-sheet-label"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -69,7 +69,7 @@
     <p> melektron</p>
 </span>
 </a></span>
-<span class="sm:ml-2 text-sm">last modified: 13 Aug 2026</span>
+<span class="sm:ml-2 text-sm">last modified: 14 Aug 2026</span>
 </h2>
 
 <div class="flex-wrap md:flex md:flex-nowrap">
@@ -96,6 +96,7 @@
 <a href="#settings">Settings</a>
     <ol>
       <li><a href="#default-sheet-layout">Default sheet layout</a></li>
+      <li><a href="#printer-offset-x--y">Printer offset X / Y</a></li>
     </ol>
   </li>
   <li>
@@ -115,36 +116,43 @@
 The latest version of this plugin currently supports the following InvenTree versions:</p>
   <ul>
     <li>
-<strong>1.0.x</strong> (tested with version <strong>1.0.5</strong>)</li>
+<strong>1.5.x</strong> (tested with version <strong>1.5.0</strong>)</li>
+    <li>
+<strong>1.3.x</strong> (tested with version <strong>1.3.0</strong> and <strong>1.3.2</strong>)</li>
+    <li>
+<strong>1.2.x</strong> (tested with version <strong>1.2.0</strong>)</li>
     <li>
 <strong>1.1.x</strong> (tested with version <strong>1.1.3</strong>)</li>
+    <li>
+<strong>1.0.x</strong> (tested with version <strong>1.0.5</strong>)</li>
   </ul>
 
   <p>For older InvenTree versions, use version <code class="language-plaintext highlighter-rouge">1.2.2</code>, which supports the following InvenTree versions:</p>
   <ul>
-    <li><strong>0.15.x</strong></li>
+    <li>
+<strong>0.17.x</strong> (tested with version <strong>0.17.14</strong>)</li>
     <li>
 <strong>0.16.x</strong> (tested with version <strong>0.16.5</strong>)</li>
-    <li>
-<strong>0.17.x</strong> (tested with version <strong>0.17.14</strong>)
-Some even older or newer versions might also work, but have not been tested.</li>
+    <li><strong>0.15.x</strong></li>
   </ul>
+
+  <p>Some even older or newer versions might also work, but have not been tested.</p>
 
   <p>If you are having trouble installing, see <a href="#common-issues">Common Issues</a> for possible solutions or create an issue.</p>
 </blockquote>
 
-<p>The simplest way of installing is by using the <code class="language-plaintext highlighter-rouge">Install Plugin</code> button on the InvenTree <code class="language-plaintext highlighter-rouge">Plugin Settings</code> page and then entering the package name:</p>
+<p>The simplest and recommended way of installing is by using the <code class="language-plaintext highlighter-rouge">Install Plugin</code> button above the plugins table on the InvenTree <code class="language-plaintext highlighter-rouge">Plugins</code> page in the <code class="language-plaintext highlighter-rouge">Admin Center</code> and then entering the package name:</p>
 
 <p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/install_via_ui.png" alt='Plugin installation via UI: The "Install Plugin" modal window'></p>
 
-<p>Alternatively, you can install this plugin manually in the InvenTree container as follows:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install inventree-adv-sheet-label
-</code></pre></div></div>
-
-<p>Or, add the package name to your plugins.txt file (this is automatically done when using the UI method) to install automatically when using the <code class="language-plaintext highlighter-rouge">invoke install</code> command:</p>
+<p>Alternatively you can add the package name to your plugins.txt file (this is automatically done when using the UI method) to install automatically when using the <code class="language-plaintext highlighter-rouge">invoke install</code> command:</p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>inventree-adv-sheet-label
+</code></pre></div></div>
+
+<p>Or, you can install this plugin manually in the InvenTree server AND worker container as follows (not recommended for production):</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>inventree-adv-sheet-label
 </code></pre></div></div>
 
 <p>In any case, after installation, the plugin needs to be enabled in the above mentioned plugin settings page:</p>
@@ -156,6 +164,10 @@ Some even older or newer versions might also work, but have not been tested.</li
 <p>This plugin adds the “AdvancedLabelSheet” printing option to the label printing dialog:</p>
 
 <p><img src="https://raw.githubusercontent.com/melektron/inventree-adv-sheet-label/main/images/plugin_selection.png" alt="Printing dialog with plugin selection open"></p>
+
+<p>Printing with this plugin generates a PDF file which will be opened in a new tab in order to subsequently be printed using a regular office printer.</p>
+
+<p>Rendering should not take longer than a few seconds, usually less than two.</p>
 
 <h3 id="sheet-layout">Sheet layout</h3>
 
@@ -294,6 +306,27 @@ Some even older or newer versions might also work, but have not been tested.</li
       <td>4 columns x 17 rows</td>
       <td>round</td>
     </tr>
+    <tr>
+      <td>8698</td>
+      <td>A4</td>
+      <td>52.5mm x 29.7mm</td>
+      <td>4 columns x 10 rows</td>
+      <td>sharp</td>
+    </tr>
+    <tr>
+      <td>HERMA 4336 / Avery 4732</td>
+      <td>A4</td>
+      <td>35.6mm x 16.9mm</td>
+      <td>5 columns x 16 rows</td>
+      <td>round</td>
+    </tr>
+    <tr>
+      <td>Avery L7163 / J8163</td>
+      <td>A4</td>
+      <td>99.1mm x 38.1mm</td>
+      <td>2 columns x 7 rows</td>
+      <td>sharp</td>
+    </tr>
   </tbody>
 </table>
 
@@ -407,6 +440,14 @@ Some even older or newer versions might also work, but have not been tested.</li
 <h3 id="default-sheet-layout">Default sheet layout</h3>
 
 <p>This setting allows you to specify which sheet layout is selected by default when opening the printing dialog. It makes sense to set this either to some <em>Auto</em> option or to the layout you are using the most. The default is <code class="language-plaintext highlighter-rouge">Auto (round)</code>, which is probably fine for most use-cases.</p>
+
+<h3 id="printer-offset-x--y">Printer offset X / Y</h3>
+
+<p>Most office printers do not place the page exactly where the PDF says, so a sheet that is geometrically correct can still print a millimeter or two off the die. These two settings shift the whole label grid to compensate, in mm: positive X moves labels right, positive Y moves them down. Both default to 0.</p>
+
+<p>This is a property of your <em>printer</em>, not of the label sheet, which is why it is a global setting rather than part of a layout definition — the same correction applies whichever sheet layout you print.</p>
+
+<p>To calibrate, print one sheet on plain paper at 100% scaling (scaling must be off, or the measurement is meaningless), hold it against a real label sheet, and measure the offset. If the labels land 2mm too high, set <code class="language-plaintext highlighter-rouge">Printer offset Y</code> to <code class="language-plaintext highlighter-rouge">2</code>.</p>
 
 <h2 id="common-issues">Common Issues</h2>
 
