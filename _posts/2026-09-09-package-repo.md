@@ -39,7 +39,7 @@ sudo apt install -y inventree
 
 We are phasing out versions of Ubuntu and Debian that are at, or approaching, end of support, particularly as Python 3.11 has only one year until EOL.
 
-If you are using Ubuntu 20.04 (LTS), which many of the old Docker droplet deployments used, we strongly recommend updating to 26.04 (LTS) to continue receiving updates. This will likely also require you to update your PostgreSQL version to at least 14; version 17 or 18 is recommended. Note that PostgreSQL should be updated one major version at a time (13 -> 14 -> 15 -> 16 -> 17 -> 18), or by using [pg_upgrade](https://www.postgresql.org/docs/18/pgupgrade.html).
+If you are on Ubuntu 20.04 (LTS) - which many of the old Docker droplet deployments were on - it is strongly recommended to update to 26.04 (LTS) to continue receiving updates. This will likely also require you to update your postgres version to at least 14, recommended is 17 or 18. Note that postgres updates should be done in single version steps (13 -> 14 -> 15 -> 16 -> 17 -> 18) or with [pgupgrade](https://www.postgresql.org/docs/18/pgupgrade.html).  
 The volunteer InvenTree core team does not have the resources to assist with individual upgrades.
 
 ## Additional Notes on OS version selections
