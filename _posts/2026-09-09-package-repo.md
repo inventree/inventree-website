@@ -3,7 +3,7 @@ author: matmair
 title: Action required - Package Repository Change
 ---
 
-Due to changes in the package publishing plattform packager.io it is necessary for all users of the package based installer (most often done through the 1-line install script) to manually update their package repository configuration to continue receiving updates.
+Due to changes in the package publishing platform packager.io it is necessary for all users of the package based installer (most often done through the 1-line install script) to manually update their package repository configuration to continue receiving updates.
 
 The following few bash lines will ensure you can continue receiving updates from the new package repository configuration. The update procedure, package structure or general commands are unchanged.
 
@@ -37,7 +37,7 @@ sudo apt install -y inventree
 
 ## Supported OS - you might need to upgrade
 
-We are phasing out end of support / near end of support versions of Ubuntu and Debian - specififally with only a year left on python 3.11.
+We are phasing out end of support / near end of support versions of Ubuntu and Debian - specifically with only a year left on python 3.11.
 
 If you are on Ubuntu 20.04 (LTS) - which many of the old Docker droplet deployments were on - it is strongly recommended to update to 26.04 (LTS) to continue receiving updates. This will likely also require you to update your postgres version to at least 14, recommended is 17 or 18. Note that postgres updated should be done in single version steps (13 -> 14 -> 15 -> 16 -> 17 -> 18) or with [pgupgrade](https://www.postgresql.org/docs/18/pgupgrade.html).  
 The volunteer InvenTree core team does not have the resources to assist with individual upgrades.
