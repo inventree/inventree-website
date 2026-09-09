@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - Action required - Package Repository Change</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Action required - Package Repository Change | InvenTree</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Action required - Package Repository Change" />
+<meta name="author" content="matmair" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates." />
+<meta property="og:description" content="Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates." />
+<link rel="canonical" href="/blog/2026/09/09/package-repo" />
+<meta property="og:url" content="/blog/2026/09/09/package-repo" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-09T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Action required - Package Repository Change" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"matmair"},"dateModified":"2026-09-09T00:00:00+00:00","datePublished":"2026-09-09T00:00:00+00:00","description":"Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates.","headline":"Action required - Package Repository Change","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2026/09/09/package-repo"},"url":"/blog/2026/09/09/package-repo"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/stable/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>Action required - Package Repository Change</h1>
+    <p>
+      09 Sep 2026
+      
+
+<a href="/matmair">Matthias Mair</a>
+    </p>
+    <p>Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates.</p>
+
+<p>The following Bash commands will ensure that you continue receiving updates from the new package repository configuration. The update procedure, package structure and general commands are unchanged.</p>
+
+<h2 id="upgrade-instructions">Upgrade Instructions</h2>
+
+<h3 id="command-for-ubuntu-2604">Command for Ubuntu 26.04</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>curl <span class="nt">-fsSL</span> <span class="s2">"https://go.packager.io/srv/deb/inventree/InvenTree/gpg-key.gpg"</span> <span class="nt">-o</span> /usr/share/keyrings/InvenTree.gpg
+<span class="nb">sudo </span>curl <span class="nt">-fsSL</span> <span class="s2">"https://go.packager.io/srv/inventree/InvenTree/stable/installer/ubuntu/26.04.list"</span> <span class="nt">-o</span> /etc/apt/sources.list.d/InvenTree.list
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> inventree
+</code></pre></div></div>
+
+<h3 id="command-for-ubuntu-2404">Command for Ubuntu 24.04</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>curl <span class="nt">-fsSL</span> <span class="s2">"https://go.packager.io/srv/deb/inventree/InvenTree/gpg-key.gpg"</span> <span class="nt">-o</span> /usr/share/keyrings/InvenTree.gpg
+<span class="nb">sudo </span>curl <span class="nt">-fsSL</span> <span class="s2">"https://go.packager.io/srv/inventree/InvenTree/stable/installer/ubuntu/24.04.list"</span> <span class="nt">-o</span> /etc/apt/sources.list.d/InvenTree.list
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> inventree
+</code></pre></div></div>
+
+<h3 id="command-for-debian-13">Command for Debian 13</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>curl <span class="nt">-fsSL</span> <span class="s2">"https://go.packager.io/srv/deb/inventree/InvenTree/gpg-key.gpg"</span> <span class="nt">-o</span> /usr/share/keyrings/InvenTree.gpg
+<span class="nb">sudo </span>curl <span class="nt">-fsSL</span> <span class="s2">"https://go.packager.io/srv/inventree/InvenTree/beta/installer/debian/13.list"</span> <span class="nt">-o</span> /etc/apt/sources.list.d/InvenTree.list
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install</span> <span class="nt">-y</span> inventree
+</code></pre></div></div>
+
+<h2 id="supported-os-versions---you-might-need-to-upgrade">Supported OS versions - you might need to upgrade</h2>
+
+<p>We are phasing out versions of Ubuntu and Debian that are at, or approaching, end of support, particularly as Python 3.11 has only one year until EOL.</p>
+
+<p>If you are on Ubuntu 20.04 (LTS) - which many of the old Docker droplet deployments were on - it is strongly recommended to update to 26.04 (LTS) to continue receiving updates. This will likely also require you to update your postgres version to at least 14, recommended is 17 or 18. Note that postgres updates should be done in single version steps (13 -&gt; 14 -&gt; 15 -&gt; 16 -&gt; 17 -&gt; 18) or with <a href="https://www.postgresql.org/docs/18/pgupgrade.html">pgupgrade</a>.<br>
+The volunteer InvenTree core team does not have the resources to assist with individual upgrades.</p>
+
+<h2 id="additional-notes-on-os-version-selections">Additional Notes on OS version selections</h2>
+
+<p>As of InvenTree version 1.5.3, the supported versions are Debian 13 and Ubuntu 24.04 / 26.04 LTS. This is mainly because Bookworm is the only supported Debian release <a href="https://wiki.debian.org/Python#Supported_Python_Versions">shipping Python 3.11</a> (as does <a href="https://ubuntu.com/developers/docs/reference/availability/python/">Ubuntu 22.04</a>).</p>
+
+<p>As Python 3.11 has received only security updates since 2024 and will reach EOL in October 2027, the libraries on which we depend have increasingly announced that they will soon end support for it. Although most still support it, this is likely to change. Therefore, we are raising the minimum versions in advance so that we are not caught off guard by dependency issues that require urgent releases.</p>
+
+<p>Python 3.12 also has <a href="https://docs.python.org/3.12/whatsnew/3.12.html">some nice QoL features</a> that developers using Python 3.14 (myself included) can forget are relatively new. It also drops distutils and a few importlib functions. Raising the minimum versions allows us to drop shims and use these newer features.</p>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>We are very thankful to Cyril Rohr for packager.io and the support provided on various issues and questions throughout the years. We are not switching away from his solutions, but using the newer version, go.packager.io, as the old one is being sunset in the near future.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/stable/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrations</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <span class="invisible"><a rel="me" href="https://chaos.social/@InvenTree">Mastodon</a></span>
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+        <a href="https://chaos.social/@InvenTree" rel="me" alt="Mastodon" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Mastodon logo" src="/assets/mastodon.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
