@@ -1,4 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-09-17T03:18:19+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Action required - Package Repository Change</title><link href="/blog/2026/09/09/package-repo" rel="alternate" type="text/html" title="Action required - Package Repository Change" /><published>2026-09-09T00:00:00+00:00</published><updated>2026-09-09T00:00:00+00:00</updated><id>/blog/2026/09/09/package-repo</id><content type="html" xml:base="/blog/2026/09/09/package-repo"><![CDATA[<p>Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-09-17T11:52:04+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">InvenTree MCP Plugin</title><link href="/blog/2026/09/17/inventree-mcp" rel="alternate" type="text/html" title="InvenTree MCP Plugin" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>/blog/2026/09/17/inventree-mcp</id><content type="html" xml:base="/blog/2026/09/17/inventree-mcp"><![CDATA[<p>The InvenTree development team is excited to introduce <a href="https://github.com/inventree/inventree-mcp">InvenTreeMCP</a>, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the <a href="https://modelcontextprotocol.io">Model Context Protocol</a> (MCP).</p>
+
+<h3 id="what-is-it-for">What is it for?</h3>
+
+<p>MCP is an open standard which allows AI assistants - such as Claude - to interact with external tools and data sources in a structured way. InvenTreeMCP implements an MCP server as an InvenTree plugin, allowing any MCP client to query your InvenTree instance directly, over a Streamable HTTP endpoint.</p>
+
+<p>This means you can ask an AI assistant questions about your inventory - stock levels, open orders, BOM structures, and more - and have it query your live InvenTree data to provide an answer, without needing to write any custom integration code.</p>
+
+<p>Under the hood, InvenTreeMCP is implemented as a thin layer on top of the existing InvenTree API. Every request made by an MCP client passes through the same permission checks and filtering as a normal API call, so users only ever see the data they are already allowed to access.</p>
+
+<h3 id="what-tools-does-it-expose">What tools does it expose?</h3>
+
+<p>InvenTreeMCP currently exposes read access to the core InvenTree data model, including:</p>
+
+<ul>
+  <li>Parts and part categories</li>
+  <li>Stock items and stock locations</li>
+  <li>Purchase, sales, return and build orders (and their line items)</li>
+  <li>Companies and contacts</li>
+  <li>Manufacturer and supplier parts</li>
+  <li>Bill of materials (BOM) items</li>
+  <li>Attachments and parameters</li>
+  <li>Stock tracking history and test results</li>
+  <li>Project codes</li>
+</ul>
+
+<p>Tool schemas and available filters are generated automatically from InvenTree’s existing API serializers, so the tools exposed to MCP clients stay in sync with the underlying data model as InvenTree evolves.</p>
+
+<h3 id="how-can-it-be-used">How can it be used?</h3>
+
+<p>InvenTreeMCP can be installed like any other InvenTree plugin:</p>
+
+<ol>
+  <li>Install the plugin, e.g. via pip: <code class="language-plaintext highlighter-rouge">pip install inventree-mcp</code></li>
+  <li>Enable the plugin under <em>Admin &gt; Plugins</em></li>
+  <li>Generate an API token in InvenTree for your MCP client to use</li>
+</ol>
+
+<p>Once installed and enabled, the MCP server is available at a URL such as <code class="language-plaintext highlighter-rouge">https://&lt;your-inventree-server&gt;/plugin/inventree-mcp/mcp/</code>. Most MCP clients which support remote (Streamable HTTP) servers can be pointed directly at this endpoint, authenticating with an InvenTree API token, e.g.:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"inventree"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://&lt;your-inventree-server&gt;/plugin/inventree-mcp/mcp/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token &lt;your-api-token&gt;"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>For clients which only support local (stdio) MCP servers, the <a href="https://github.com/geelen/mcp-remote"><code class="language-plaintext highlighter-rouge">mcp-remote</code></a> bridge can be used to connect to the same endpoint.</p>
+
+<p>In addition to API tokens, the plugin also supports authentication via username/password, or OAuth2 bearer tokens with optional scope restrictions - useful if you want to issue narrowly-scoped credentials to a particular agent.</p>
+
+<p>By default, the plugin runs in <em>read only</em> mode, which blocks any write operations regardless of the permissions of the authenticating user. This is a sensible default while you get a feel for how your AI tooling of choice interacts with your InvenTree data.</p>
+
+<h3 id="feedback-welcome">Feedback Welcome</h3>
+
+<p>InvenTreeMCP is a brand new plugin, and this is very much a first step towards richer AI integration with InvenTree. We would love to hear how you’re using it, and what’s working (or not working) for your setup.</p>
+
+<p>If you run into any bugs, or have trouble with installation or configuration, please <a href="https://github.com/inventree/inventree-mcp/issues">open an issue</a> on the GitHub repository.</p>
+
+<p>If there are additional tools or data types you’d like to see exposed via MCP, we’d also love to hear your suggestions - feel free to raise a feature request on the same <a href="https://github.com/inventree/inventree-mcp/issues">issue tracker</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team is excited to introduce InvenTreeMCP, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the Model Context Protocol (MCP).]]></summary></entry><entry><title type="html">Action required - Package Repository Change</title><link href="/blog/2026/09/09/package-repo" rel="alternate" type="text/html" title="Action required - Package Repository Change" /><published>2026-09-09T00:00:00+00:00</published><updated>2026-09-09T00:00:00+00:00</updated><id>/blog/2026/09/09/package-repo</id><content type="html" xml:base="/blog/2026/09/09/package-repo"><![CDATA[<p>Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates.</p>
 
 <p>The following Bash commands will ensure that you continue receiving updates from the new package repository configuration. The update procedure, package structure and general commands are unchanged.</p>
 
@@ -969,10 +1033,4 @@ docker compose run --rm inventree-server invoke update
 
 <p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
 
-<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree team is excited to announce the release of version 1.1.0.]]></summary></entry><entry><title type="html">Rolling Stocktake Plugin</title><link href="/blog/2025/10/15/rolling-stocktake" rel="alternate" type="text/html" title="Rolling Stocktake Plugin" /><published>2025-10-15T00:00:00+00:00</published><updated>2025-10-15T00:00:00+00:00</updated><id>/blog/2025/10/15/rolling-stocktake</id><content type="html" xml:base="/blog/2025/10/15/rolling-stocktake"><![CDATA[<p>The InvenTree development team has released a new plugin which provides a “Rolling Stocktake” mechanism for InvenTree.</p>
-
-<p>This plugin encourgaes users to perform regular stocktakes of inventory items in a rolling fashion, ensuring that stock levels are consistently accurate without the need for a complete inventory shutdown.</p>
-
-<p>By presenting users with a dashboard widget that highlights stock items that are overdue for stocktake, the plugin helps maintain inventory accuracy and reduces the risk of stock discrepancies.</p>
-
-<p>For more information about the plugin, please refer to the <a href="/SchrodingersGat/inventree-rolling-stocktake">plugin reference</a> or the <a href="https://github.com/inventree/rolling-stocktake-plugin">GitHub page</a>.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree development team has released a new plugin which provides a “Rolling Stocktake” mechanism for InvenTree.]]></summary></entry></feed>
+<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree team is excited to announce the release of version 1.1.0.]]></summary></entry></feed>

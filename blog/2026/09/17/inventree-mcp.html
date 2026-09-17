@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="/assets/splide/css/splide.min.css">
+<link rel="stylesheet" href="/assets/index.css">
+<link rel="shortcut icon" type="image/png" href="/assets/icon/favicon.ico">
+
+<script src="/assets/splide/js/splide.min.js"></script>
+
+<!-- Fontawesome integration -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+<title>InvenTree - InvenTree MCP Plugin</title>
+<meta itemprop="description" name="description"
+    content="InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of a..." />
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>InvenTree MCP Plugin | InvenTree</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="InvenTree MCP Plugin" />
+<meta name="author" content="SchrodingersGat" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The InvenTree development team is excited to introduce InvenTreeMCP, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the Model Context Protocol (MCP)." />
+<meta property="og:description" content="The InvenTree development team is excited to introduce InvenTreeMCP, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the Model Context Protocol (MCP)." />
+<link rel="canonical" href="/blog/2026/09/17/inventree-mcp" />
+<meta property="og:url" content="/blog/2026/09/17/inventree-mcp" />
+<meta property="og:site_name" content="InvenTree" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2026-09-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="InvenTree MCP Plugin" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"SchrodingersGat"},"dateModified":"2026-09-17T00:00:00+00:00","datePublished":"2026-09-17T00:00:00+00:00","description":"The InvenTree development team is excited to introduce InvenTreeMCP, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the Model Context Protocol (MCP).","headline":"InvenTree MCP Plugin","mainEntityOfPage":{"@type":"WebPage","@id":"/blog/2026/09/17/inventree-mcp"},"url":"/blog/2026/09/17/inventree-mcp"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body class="flex flex-col antialiased cm-gray-1 min-h-screen">
+    <div class="flex-none">
+        <header class="cm-gray-2 body-font sticky top-0 z-50 bg-gradient-to-r from-white to-secondary">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center">
+        <a class="flex title-font font-medium items-center cm-gray-1 mb-0 mr-2" href="/">
+            <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+            <span class="ml-3 text-xl">InvenTree</span>
+        </a>
+
+        <div class="flex-grow xs:flex-none"></div>
+
+        <nav class="md:mr-auto md:py-1 xs:ml-4 xs:pl-4 xs:border-l xs:border-gray-400	flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:cm-gray-1" href="/deploy.html">Deploy</a>
+            <a class="mr-5 hover:cm-gray-1" href="https://docs.inventree.org/en/stable/">Docs</a>
+            <a class="mr-5 hover:cm-gray-1" href="/blog">Blog</a>
+        </nav>
+
+        
+    </div>
+</header> <header>
+    
+    <a href="/blog" class="flex items-center m-5 text-xl hover:underline">
+        <img class="w-6 h-6" alt="go back" src="/assets/back.svg">
+        <span>Back</span>
+    </a>
+    
+</header>
+
+<article>
+    <h1>InvenTree MCP Plugin</h1>
+    <p>
+      17 Sep 2026
+      
+
+<a href="/schrodingersgat">Oliver</a>
+    </p>
+    <p>The InvenTree development team is excited to introduce <a href="https://github.com/inventree/inventree-mcp">InvenTreeMCP</a>, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the <a href="https://modelcontextprotocol.io">Model Context Protocol</a> (MCP).</p>
+
+<h3 id="what-is-it-for">What is it for?</h3>
+
+<p>MCP is an open standard which allows AI assistants - such as Claude - to interact with external tools and data sources in a structured way. InvenTreeMCP implements an MCP server as an InvenTree plugin, allowing any MCP client to query your InvenTree instance directly, over a Streamable HTTP endpoint.</p>
+
+<p>This means you can ask an AI assistant questions about your inventory - stock levels, open orders, BOM structures, and more - and have it query your live InvenTree data to provide an answer, without needing to write any custom integration code.</p>
+
+<p>Under the hood, InvenTreeMCP is implemented as a thin layer on top of the existing InvenTree API. Every request made by an MCP client passes through the same permission checks and filtering as a normal API call, so users only ever see the data they are already allowed to access.</p>
+
+<h3 id="what-tools-does-it-expose">What tools does it expose?</h3>
+
+<p>InvenTreeMCP currently exposes read access to the core InvenTree data model, including:</p>
+
+<ul>
+  <li>Parts and part categories</li>
+  <li>Stock items and stock locations</li>
+  <li>Purchase, sales, return and build orders (and their line items)</li>
+  <li>Companies and contacts</li>
+  <li>Manufacturer and supplier parts</li>
+  <li>Bill of materials (BOM) items</li>
+  <li>Attachments and parameters</li>
+  <li>Stock tracking history and test results</li>
+  <li>Project codes</li>
+</ul>
+
+<p>Tool schemas and available filters are generated automatically from InvenTree’s existing API serializers, so the tools exposed to MCP clients stay in sync with the underlying data model as InvenTree evolves.</p>
+
+<h3 id="how-can-it-be-used">How can it be used?</h3>
+
+<p>InvenTreeMCP can be installed like any other InvenTree plugin:</p>
+
+<ol>
+  <li>Install the plugin, e.g. via pip: <code class="language-plaintext highlighter-rouge">pip install inventree-mcp</code>
+</li>
+  <li>Enable the plugin under <em>Admin &gt; Plugins</em>
+</li>
+  <li>Generate an API token in InvenTree for your MCP client to use</li>
+</ol>
+
+<p>Once installed and enabled, the MCP server is available at a URL such as <code class="language-plaintext highlighter-rouge">https://&lt;your-inventree-server&gt;/plugin/inventree-mcp/mcp/</code>. Most MCP clients which support remote (Streamable HTTP) servers can be pointed directly at this endpoint, authenticating with an InvenTree API token, e.g.:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"inventree"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://&lt;your-inventree-server&gt;/plugin/inventree-mcp/mcp/"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"headers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Token &lt;your-api-token&gt;"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>For clients which only support local (stdio) MCP servers, the <a href="https://github.com/geelen/mcp-remote"><code class="language-plaintext highlighter-rouge">mcp-remote</code></a> bridge can be used to connect to the same endpoint.</p>
+
+<p>In addition to API tokens, the plugin also supports authentication via username/password, or OAuth2 bearer tokens with optional scope restrictions - useful if you want to issue narrowly-scoped credentials to a particular agent.</p>
+
+<p>By default, the plugin runs in <em>read only</em> mode, which blocks any write operations regardless of the permissions of the authenticating user. This is a sensible default while you get a feel for how your AI tooling of choice interacts with your InvenTree data.</p>
+
+<h3 id="feedback-welcome">Feedback Welcome</h3>
+
+<p>InvenTreeMCP is a brand new plugin, and this is very much a first step towards richer AI integration with InvenTree. We would love to hear how you’re using it, and what’s working (or not working) for your setup.</p>
+
+<p>If you run into any bugs, or have trouble with installation or configuration, please <a href="https://github.com/inventree/inventree-mcp/issues">open an issue</a> on the GitHub repository.</p>
+
+<p>If there are additional tools or data types you’d like to see exposed via MCP, we’d also love to hear your suggestions - feel free to raise a feature request on the same <a href="https://github.com/inventree/inventree-mcp/issues">issue tracker</a>.</p>
+
+
+</article>
+    </div>
+
+    <div class="flex-grow"></div>
+    <div class="flex-none">
+        <footer class="cm-gray-2 body-font">
+  <div class="container px-5 pt-8 mx-auto flex md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <div class="flex title-font font-medium items-center md:justify-start justify-center cm-gray-1">
+        <img src="/assets/logo.png" alt="logo" height="32" width="32" class="h-8">
+        <span class="ml-3 text-xl">InvenTree</span>
+      </div>
+      <p class="mt-2 text-sm cm-gray-3">Intuitive Inventory Management</p>
+    </div>
+
+    <div class="flex-grow flex flex-wrap md:pl-10 mb-1 md:mt-0 mt-10 md:text-left text-center md:justify-left justify-center">
+    
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Quick
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/demo.html" class="footer-link">Demo</a></li>
+          
+          <li><a href="/deploy.html" class="footer-link">Deploy</a></li>
+          
+          <li><a href="https://docs.inventree.org/en/stable/" class="footer-link">Docs</a></li>
+          
+          <li><a href="/news" class="footer-link">News</a></li>
+          
+          <li><a href="/plugins" class="footer-link">Plugin List</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          <a href="/extend/">Ecosystem</a>
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/extend/api.html" class="footer-link">API</a></li>
+          
+          <li><a href="/extend/app.html" class="footer-link">App</a></li>
+          
+          <li><a href="/extend/plugin/" class="footer-link">Plugins</a></li>
+          
+          <li><a href="/extend/integrate/" class="footer-link">Integrations</a></li>
+          
+        </ul></nav>
+      </div>
+    
+      <div class="md:w-1/4 px-4">
+        <h2 class="footer-categorie title-font">
+          Sitemap
+        </h2>
+        <nav class="list-none mb-10"><ul>
+          
+          <li><a href="/about/" class="footer-link">About</a></li>
+          
+          <li><a href="/alternatives/" class="footer-link">Alternatives</a></li>
+          
+          <li><a href="/blog" class="footer-link">Blog</a></li>
+          
+          <li><a href="/contribute.html" class="footer-link">Contribute</a></li>
+          
+          <li><a href="/support.html" class="footer-link">Support</a></li>
+          
+        </ul></nav>
+      </div>
+    
+    </div>
+  </div>
+
+  <div class="bg-gray-100">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class="cm-gray-2 text-sm text-center sm:text-left">© 2021-now InvenTree by<a href="https://github.com/inventree" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@inventree</a>— website made with ♥ by<a href="https://github.com/matmair" rel="noopener" class="cm-gray-2 ml-1" target="_blank">@matmair</a></p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+        <span class="invisible"><a rel="me" href="https://chaos.social/@InvenTree">Mastodon</a></span>
+        <a href="https://github.com/inventree/inventree" alt="github repo" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="GitHub logo" src="/assets/github.svg">
+        </a>
+        <a href="https://reddit.com/r/inventree" alt="Reddit" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Reddit logo" src="/assets/reddit.svg">
+        </a>
+        <a href="https://twitter.com/inventreedb" alt="Twitter" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Twitter logo" src="/assets/twitter.svg">
+        </a>
+        <a href="https://chaos.social/@InvenTree" rel="me" alt="Mastodon" class="ml-3 cm-gray-3">
+          <img class="h-5 w-5" alt="Mastodon logo" src="/assets/mastodon.svg">
+        </a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

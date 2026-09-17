@@ -3,7 +3,7 @@
 "/melektron/inventree-adv-sheet-label": {
   "name": "InvenTree Advanced Sheet Label",
   "author": "melektron",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -25,7 +25,7 @@
 "/matmair/inventree-apprise": {
   "name": "InvenTree Apprise",
   "author": "matmair",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -47,7 +47,7 @@
 "/SchrodingersGat/inventree-brother-plugin": {
   "name": "inventree-brother-plugin",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": false,
@@ -69,7 +69,7 @@
 "/wolflu05/inventree-bulk-plugin": {
   "name": "inventree-bulk-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -91,7 +91,7 @@
 "/SchrodingersGat/inventree-consolidated-shipping": {
   "name": "inventree-consolidated-shipment-lines",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -113,7 +113,7 @@
 "/wolflu05/inventree-cups-plugin": {
   "name": "inventree-cups-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -135,7 +135,7 @@
 "/lippoliv/inventree-default-salesorder-items": {
   "name": "Default sales order items",
   "author": "lippoliv",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -157,7 +157,7 @@
 "/wolflu05/inventree-dymo-plugin": {
   "name": "inventree-dymo-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "GPL-3.0+",
   "stable": true,
@@ -179,7 +179,7 @@
 "/SchrodingersGat/inventree-harmonized-codes": {
   "name": "inventree-harmonized-codes",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -201,7 +201,7 @@
 "/LavissaWoW/inventree-ipn-generator": {
   "name": "inventree-ipn-generator",
   "author": "LavissaWoW",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -223,7 +223,7 @@
 "/afkiwers/inventree-kicad": {
   "name": "inventree-kicad-plugin",
   "author": "afkiwers",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -242,10 +242,32 @@
   "content_txt" : "KiCad Integration for InvenTree\n\nA plugin which allows InvenTree to serve component data to KiCad via the HTTP library interface.\n\nThis plugin provides an API wrapper which provides an API interface that conforms to the KiCad HTTP library interface specification. This allows KiCad to pull component data directly from your InvenTree database.\n\nInstallation\n\nThe plugin can be installed via the InvenTree web interface, using the tag inventree-kicad-plugin.\n\nAlternatively, install the plugin manually as follows:\n\npip install inventree-kicad-plugin\n\n\nOr, add to your plugins.txt file and run invoke install.\n\nDocumentation\n\nRefer to the plugin documentation for further instructions and information.\n",
   "content": "<p>KiCad Integration for InvenTree</p>\n\n<p>A plugin which allows InvenTree to serve component data to <a href=\"https://kicad.org\">KiCad</a> via the HTTP library interface.</p>\n\n<p>This plugin provides an API wrapper which provides an API interface that conforms to the KiCad HTTP library interface specification. This allows KiCad to pull component data directly from your InvenTree database.</p>\n\n<h2 id=\"installation\">Installation</h2>\n\n<p>The plugin can be installed via the InvenTree web interface, using the tag <code class=\"language-plaintext highlighter-rouge\">inventree-kicad-plugin</code>.</p>\n\n<p>Alternatively, install the plugin manually as follows:</p>\n\n<div class=\"language-plaintext highlighter-rouge\"><div class=\"highlight\"><pre class=\"highlight\"><code>pip install inventree-kicad-plugin\n</code></pre></div></div>\n\n<p>Or, add to your <code class=\"language-plaintext highlighter-rouge\">plugins.txt</code> file and run <code class=\"language-plaintext highlighter-rouge\">invoke install</code>.</p>\n\n<h2 id=\"documentation\">Documentation</h2>\n\n<p>Refer to the <a href=\"https://github.com/afkiwers/inventree_kicad\">plugin documentation</a> for further instructions and information.</p>\n"
 },
+"/SchrodingersGat/inventree-mcp": {
+  "name": "inventree-mcp",
+  "author": "SchrodingersGat",
+  "last_modified": "2026-09-17 11:51:50 +0000",
+  "open_source": null,
+  "license": "MIT",
+  "stable": true,
+  "maintained": true,
+  "pypi": true,
+  "package_name": "inventree-mcp",
+  "links":{
+    "website": "https://inventree.org",
+    "issue_tracker": "https://github.com/inventree/inventree-mcp/issues",
+    "github": "https://github.com/inventree/inventree-mcp",
+    "gitlab": null,
+    "source": null
+  },
+  "categories": ["AI"],
+  "tags": [],
+  "content_txt" : "InvenTree MCP\n\nA plugin which provides MCP functionality for the InvenTree platform, allowing AI agents to interact directly with InvenTree.\n\nDocumentation\n\nRefer to the plugin documentation for detailed instructions on how to use the InvenTree MCP plugin.\n\n",
+  "content": "<p>InvenTree MCP</p>\n\n<p>A plugin which provides MCP functionality for the InvenTree platform, allowing AI agents to interact directly with InvenTree.</p>\n\n<h2 id=\"documentation\">Documentation</h2>\n\n<p>Refer to the <a href=\"https://github.com/inventree/inventree-mcp\">plugin documentation</a> for detailed instructions on how to use the InvenTree MCP plugin.</p>\n\n"
+},
 "/piramja/inventree-niimbot-plugin": {
   "name": "inventree-niimbot-plugin",
   "author": "piramja",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -267,7 +289,7 @@
 "/SchrodingersGat/inventree-order-history": {
   "name": "inventree-order-history",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -289,7 +311,7 @@
 "/matmair/inventree-rapidoc": {
   "name": "Inventree RapiDoc",
   "author": "matmair",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT license",
   "stable": true,
@@ -311,7 +333,7 @@
 "/wolflu05/inventree-report-lsp-plugin": {
   "name": "inventree-report-lsp-plugin",
   "author": "wolflu05",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "GPL-3.0+",
   "stable": true,
@@ -333,7 +355,7 @@
 "/SchrodingersGat/inventree-rolling-stocktake": {
   "name": "inventree-rolling-stocktake",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -355,7 +377,7 @@
 "/SchrodingersGat/inventree-stock-forecasting": {
   "name": "inventree-stock-forecasting",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -377,7 +399,7 @@
 "/SergeoLacruz/inventree-supplier-panel": {
   "name": "inventree-supplier-panel",
   "author": "SergeoLacruz",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -399,7 +421,7 @@
 "/SchrodingersGat/inventree-test-statistics": {
   "name": "inventree-test-statistics",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -421,7 +443,7 @@
 "/SchrodingersGat/inventree-wireviz": {
   "name": "inventree-wireviz-plugin",
   "author": "SchrodingersGat",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -443,7 +465,7 @@
 "/matmair/inventree-zapier": {
   "name": "inventree-zapier",
   "author": "matmair",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": false,
@@ -465,7 +487,7 @@
 "/SergeoLacruz/inventree-zebra-plugin": {
   "name": "inventree-zebra-plugin",
   "author": "SergeoLacruz",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "MIT",
   "stable": true,
@@ -487,7 +509,7 @@
 "/wolflu05/inventree-zebra": {
   "name": "inventree-zebra",
   "author": "wolflu05",
-  "last_modified": "2026-09-17 03:18:08 +0000",
+  "last_modified": "2026-09-17 11:51:50 +0000",
   "open_source": null,
   "license": "GPL-3.0+",
   "stable": true,
