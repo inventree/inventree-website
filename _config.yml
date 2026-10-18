@@ -18,6 +18,11 @@ blog-link:
 baseurl: ""
 url: ""
 
+# Allow building/publishing posts and collection entries dated "in the future"
+# (CI runners build in UTC, so a post authored later in the day in other timezones
+# can otherwise appear future-dated and get silently excluded from the build)
+future: true
+
 # Rendering settings - do not touch
 collections:
   publishers:
