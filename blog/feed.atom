@@ -1,4 +1,244 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-10-13T05:38:27+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">InvenTree MCP Plugin</title><link href="/blog/2026/09/17/inventree-mcp" rel="alternate" type="text/html" title="InvenTree MCP Plugin" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>/blog/2026/09/17/inventree-mcp</id><content type="html" xml:base="/blog/2026/09/17/inventree-mcp"><![CDATA[<p>The InvenTree development team is excited to introduce <a href="https://github.com/inventree/inventree-mcp">InvenTreeMCP</a>, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the <a href="https://modelcontextprotocol.io">Model Context Protocol</a> (MCP).</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-10-18T00:36:42+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">1.6.0 Release</title><link href="/blog/2026/10/18/1.6.0" rel="alternate" type="text/html" title="1.6.0 Release" /><published>2026-10-18T00:00:00+00:00</published><updated>2026-10-18T00:00:00+00:00</updated><id>/blog/2026/10/18/1.6.0</id><content type="html" xml:base="/blog/2026/10/18/1.6.0"><![CDATA[<p>InvenTree 1.6.0 has been released! This release includes a number of new features, improvements, and bug fixes. We recommend all users to update to this version as soon as possible.</p>
+
+<h3 id="changelog">Changelog</h3>
+
+<p>Major changes are documented in the <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> file in the repository. For a full list of changes, please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/1.6.0">release notes</a>.</p>
+
+<h3 id="update-procedure">Update Procedure</h3>
+
+<p>To update to the latest version of InvenTree, please follow the updating instructions provided in the <a href="https://docs.inventree.org">InvenTree documentation</a>. Note that the particular update procedure may vary depending on your installation method.</p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<p>While we strive to maintain backward compatibility, there are some breaking changes in this release. While many of these are minor, and should not affect most users, we recommend that you review the list of breaking changes to ensure that your installation will continue to function as expected after the update. Each breaking change is documented in detail at the links below:</p>
+
+<h3 id="notes-refactor">Notes Refactor</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/11971">PR #11971</a> is a major refactor of how notes are handled throughout InvenTree. Notes are now stored in a dedicated table (in line with how attachments and parameters are handled), support multiple separate notes per item, and are accessed via the new <code class="language-plaintext highlighter-rouge">/api/note/</code> endpoint rather than a <code class="language-plaintext highlighter-rouge">notes</code> field on individual models. Existing notes data (including embedded images) is automatically migrated into the new table, with markdown content converted to HTML. Any external client applications which read or write the <code class="language-plaintext highlighter-rouge">notes</code> field directly via the API will need to be updated to use the new endpoint.</p>
+
+<h3 id="formal-state-transitions">Formal State Transitions</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12507">PR #12507</a> switches build and order status transitions to a more formal finite-state-machine approach. As part of this change, attempting an invalid or repeated state transition now raises a <code class="language-plaintext highlighter-rouge">ValidationError</code> instead of silently failing. Plugins which implement custom transitions should review this change and adjust their usage accordingly to take advantage of the new safeguards.</p>
+
+<h3 id="tags-filter-renamed">Tags Filter Renamed</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12672">PR #12672</a> renames the <code class="language-plaintext highlighter-rouge">tags</code> filter — added in 1.4.0 for filtering models by tag — to <code class="language-plaintext highlighter-rouge">tag_name</code>, to avoid a name clash with the <code class="language-plaintext highlighter-rouge">tags</code> field exposed on the same endpoints. Any integration filtering tagged objects via <code class="language-plaintext highlighter-rouge">?tags=</code> must be updated to use <code class="language-plaintext highlighter-rouge">?tag_name=</code> instead.</p>
+
+<h3 id="squash-migrations-prior-to-100">Squash Migrations Prior to 1.0.0</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12830">PR #12830</a> squashes all database migrations predating the 1.0.0 release. Any installation still running a pre-1.0.0 version of InvenTree must first update to 1.0.0 before updating to this release.</p>
+
+<h3 id="api-token-storage-hardened">API Token Storage Hardened</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12850">PR #12850</a> changes how API tokens are stored, replacing plaintext storage with a peppered HMAC-SHA256 digest, so that gaining read access to the database (for example via a side-channel or IDOR vulnerability) can no longer be used to recover usable API tokens. Newly-issued tokens use a longer “v2” format; existing tokens continue to work, but since the raw token value can no longer be read back from the database, calling <code class="language-plaintext highlighter-rouge">/api/user/me/token/</code> now always reissues (and invalidates) the token rather than returning the existing value.</p>
+
+<h2 id="security-fixes">Security Fixes</h2>
+
+<p>A number of security vulnerabilities have been fixed in this release.</p>
+
+<h3 id="attachment-api-permission-bypass">Attachment API Permission Bypass</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12689">PR #12689</a> fixes a flaw in the Attachment API where user role permissions were not checked against the owning model, allowing any authenticated user to enumerate and download attachments they should not have had access to. The API now checks the requesting user’s view permissions and returns <code class="language-plaintext highlighter-rouge">PermissionDenied</code> where appropriate.</p>
+
+<h3 id="metadata-endpoint-information-disclosure">Metadata Endpoint Information Disclosure</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12771">PR #12771</a> restricts the generic metadata API endpoints to a fixed set of safe lookup fields, closing a path where arbitrary field names could be used to perform unintended database queries and recover data outside the intended scope.</p>
+
+<h3 id="data-import-session-retargeting">Data Import Session Retargeting</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12809">PR #12809</a> prevents the target model type of a data import session from being changed after the import has started, closing a gap where a user could bypass the authorization check performed against the original target model.</p>
+
+<h3 id="stock-locate-permission-check">Stock Locate Permission Check</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13000">PR #13000</a> adds a missing permission check to the “locate stock” plugin action endpoint, which previously allowed any authenticated user to trigger the action and enumerate stock regardless of their assigned role.</p>
+
+<h3 id="additional-hardening">Additional Hardening</h3>
+
+<p>A number of smaller permission and hardening fixes are also included in this release:</p>
+
+<ul>
+  <li>Calendar <code class="language-plaintext highlighter-rouge">.ics</code> feeds (<a href="https://github.com/inventree/InvenTree/pull/12764">PR #12764</a>) and the <code class="language-plaintext highlighter-rouge">SelectionList</code> API (<a href="https://github.com/inventree/InvenTree/pull/12763">PR #12763</a>) now correctly check user permissions</li>
+  <li>Users may only edit their own profile, and may only access notes or parameters against models they are scoped to (<a href="https://github.com/inventree/InvenTree/pull/12766">PR #12766</a>)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">/api/user/me/</code> endpoint can no longer be used to delete your own account (<a href="https://github.com/inventree/InvenTree/pull/12770">PR #12770</a>)</li>
+  <li>The <code class="language-plaintext highlighter-rouge">MachineSettingList</code> endpoint now requires the admin role, and barcode generation is permission-checked (<a href="https://github.com/inventree/InvenTree/pull/12886">PR #12886</a>)</li>
+  <li>Potentially dangerous tags are stripped from uploaded SVG files (<a href="https://github.com/inventree/InvenTree/pull/12687">PR #12687</a>)</li>
+  <li>User-facing input is sanitized more robustly before being rendered into WeasyPrint reports (<a href="https://github.com/inventree/InvenTree/pull/12997">PR #12997</a>)</li>
+  <li>New secret keys are now generated using Django’s own helper rather than a custom implementation (<a href="https://github.com/inventree/InvenTree/pull/12999">PR #12999</a>)</li>
+  <li>Installer scripts have been hardened against a number of possible injection points (<a href="https://github.com/inventree/InvenTree/pull/12819">PR #12819</a>)</li>
+  <li>InvenTree now warns administrators if an unsafe wildcard CORS configuration is detected (<a href="https://github.com/inventree/InvenTree/pull/12773">PR #12773</a>)</li>
+</ul>
+
+<h3 id="security-advisories">Security Advisories</h3>
+
+<p>The following security advisories have been published in relation to this release:</p>
+
+<ul>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-9mm7-c3mq-6c99</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-hv74-9q5w-p8v3</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-p9q2-5w65-82g5</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-q6vh-g752-53g8</li>
+</ul>
+
+<p>For more information, please refer to our <a href="https://github.com/inventree/InvenTree/security/advisories?state=published">security advisories page</a></p>
+
+<h2 id="database-changes">Database Changes</h2>
+
+<p>This release includes a number of changes to the underlying database schema and data validation. As always, a backup of your database is recommended before performing the update.</p>
+
+<h3 id="legacy-session-table-cleanup">Legacy Session Table Cleanup</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12675">PR #12675</a> removes a legacy database table left behind on older installations that predate the removal of the <code class="language-plaintext highlighter-rouge">django-user-sessions</code> package, fixing a foreign-key error that could occur when deleting a user. <a href="https://github.com/inventree/InvenTree/pull/12697">PR #12697</a> is a follow-up fix ensuring this migration also runs correctly on MySQL-backed installations.</p>
+
+<h3 id="notes-migration-fix-for-mysql">Notes Migration Fix for MySQL</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12808">PR #12808</a> fixes the data migration introduced by the notes refactor (<a href="https://github.com/inventree/InvenTree/pull/11971">PR #11971</a>), which did not run correctly on MySQL due to differences in how that backend returns rows created via <code class="language-plaintext highlighter-rouge">bulk_create</code>. Migration regression testing is now performed against all supported database backends to catch this class of issue earlier.</p>
+
+<h3 id="shipment--address-contact-fields">Shipment &amp; Address Contact Fields</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13016">PR #13016</a> adds a <code class="language-plaintext highlighter-rouge">contact</code> field to the <code class="language-plaintext highlighter-rouge">SalesOrderShipment</code> model, and <code class="language-plaintext highlighter-rouge">phone_number</code> and <code class="language-plaintext highlighter-rouge">email</code> fields to the <code class="language-plaintext highlighter-rouge">Address</code> model, allowing more complete contact details to be recorded against shipments and addresses.</p>
+
+<h2 id="new-features">New Features</h2>
+
+<h3 id="internal-companies--purchase-order-delivery-address">Internal Companies &amp; Purchase Order Delivery Address</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13017">PR #13017</a> introduces the concept of an “internal” company — a flag on the <code class="language-plaintext highlighter-rouge">Company</code> model used to represent your own organization, configurable via the new <code class="language-plaintext highlighter-rouge">INVENTREE_DEFAULT_INTERNAL_COMPANY</code> setting and exposed to report templates as <code class="language-plaintext highlighter-rouge">internal_company</code>. Building on this, <a href="https://github.com/inventree/InvenTree/pull/9768">PR #9768</a> adds a dedicated delivery address field to purchase orders, which must reference an internal company.</p>
+
+<h3 id="docker-compose-health-checks">Docker Compose Health Checks</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12124">PR #12124</a> adds health checks to each container in the Docker Compose stack, with dependent containers now waiting for their dependencies to report healthy before starting (for example, the worker waits on the server, and the server waits on the database and cache).</p>
+
+<h3 id="cut-to-length-bom-items">Cut-to-Length BOM Items</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12422">PR #12422</a> adds <code class="language-plaintext highlighter-rouge">piece_count</code> and <code class="language-plaintext highlighter-rouge">piece_size</code> fields to BOM items, for assemblies that require a number of discrete pieces cut from continuous stock such as cable, tubing, or structural profiles. When a piece size is specified, the total required quantity is calculated automatically, while still preserving the per-piece information needed for purchasing and production.</p>
+
+<h3 id="persistent-previousnext-navigation">Persistent Previous/Next Navigation</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12585">PR #12585</a> improves detail-page navigation from filtered tables: Previous and Next controls now remember the filtered result set via the URL, and a subtle “x of y” indicator shows your position within it, making it much easier to step through a filtered list of parts, orders, or other items.</p>
+
+<h3 id="bulk-edit-return-order-line-items">Bulk-Edit Return Order Line Items</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12635">PR #12635</a> allows the outcome of multiple return order line items to be changed at once, rather than editing each line individually.</p>
+
+<h3 id="expanded-identity-federation-scim-oidc--saml">Expanded Identity Federation: SCIM, OIDC &amp; SAML</h3>
+
+<p>This release brings together a larger identity federation initiative. <a href="https://github.com/inventree/InvenTree/pull/12713">PR #12713</a> adds SCIM 2.0 support for provisioning users and groups from an external identity provider. <a href="https://github.com/inventree/InvenTree/pull/12731">PR #12731</a> switches the built-in OIDC/OAuth2 provider on by default (previously available but opt-in), and consolidates the related settings into the Admin Center. <a href="https://github.com/inventree/InvenTree/pull/12799">PR #12799</a> rounds this out with a guided SAML configuration helper in the frontend, making it easier to connect InvenTree to a SAML-based identity provider.</p>
+
+<h3 id="plugin-well-known-urls">Plugin Well-Known URLs</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12698">PR #12698</a> adds a mixin allowing plugins to register entries under the <code class="language-plaintext highlighter-rouge">.well-known</code> path, useful for authentication discovery and other system integrations.</p>
+
+<h3 id="faster-bulk-data-import">Faster Bulk Data Import</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12792">PR #12792</a> adds an opt-in bulk-create mode to the <code class="language-plaintext highlighter-rouge">import-records</code> management task, dramatically speeding up large dataset imports (in testing, a 1.2 million row dataset dropped from around 16 minutes to roughly 1 minute).</p>
+
+<h3 id="stock-location-owner-field-in-the-ui">Stock Location Owner Field in the UI</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12826">PR #12826</a> exposes the Owner field on the stock location create/edit form, restoring parity with the stock item form and matching documented (but previously missing) UI behavior.</p>
+
+<h3 id="rotated-table-headers">Rotated Table Headers</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12837">PR #12837</a> adds a user setting which renders long table column titles vertically rather than horizontally, saving significant horizontal space in parameter-heavy tables. The option is off by default.</p>
+
+<h3 id="hide-unused-order-types-from-the-ui">Hide Unused Order Types from the UI</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12842">PR #12842</a> adds administrator toggles to fully hide Sales Order, Purchase Order, or Build Order functionality from the interface, for instances that don’t make use of them.</p>
+
+<h3 id="plugin-custom-pages">Plugin Custom Pages</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12900">PR #12900</a> adds a new <code class="language-plaintext highlighter-rouge">route</code> UI feature type, allowing plugins to register entirely new frontend pages (served under <code class="language-plaintext highlighter-rouge">/web/plugin/&lt;plugin&gt;/...</code>) in addition to the existing panel and dashboard widget integration points.</p>
+
+<h3 id="default-receive-location">Default Receive Location</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12911">PR #12911</a> adds a global setting to configure a default stock location for receiving items against purchase orders.</p>
+
+<h3 id="global-batch-code-for-purchase-order-receipt">Global Batch Code for Purchase Order Receipt</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12912">PR #12912</a> adds a batch code that can be set once when receiving a purchase order and applied across all received items, with the option to override it on individual line items.</p>
+
+<h3 id="background-task-timeouts--single-shot-mode">Background Task Timeouts &amp; Single-Shot Mode</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12913">PR #12913</a> adds per-task timeout configuration and an optional single-shot mode (disabling automatic retry on failure) for background tasks, giving more control over long-running or non-idempotent jobs.</p>
+
+<h3 id="per-user-notification-localization">Per-User Notification Localization</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12944">PR #12944</a> renders notification emails and in-app messages in each recipient’s own language preference, rather than the server process’s default locale, with efficient per-locale batching for email delivery.</p>
+
+<h3 id="nested-bom-display">Nested BOM Display</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12952">PR #12952</a> implements a true nested BOM view, replacing the previous reduced-dataset subassembly table and displaying the total quantity of each sub-item — including across multiplier chains of nested subassemblies.</p>
+
+<h3 id="pinned-resizable-navigation-sidebar">Pinned, Resizable Navigation Sidebar</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12974">PR #12974</a> adds an optional side-by-side navigation tree that stays pinned alongside the main content. It can be resized via a splitter (collapsing automatically when dragged small), and toggled on from user settings or a pin button in the header.</p>
+
+<h3 id="first-time-user-guide">First-Time User Guide</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12978">PR #12978</a> adds a short, dismissible onboarding tour for new users, along with backend data structures to support further guided tours in future releases.</p>
+
+<h3 id="plugin-reload-cycle-detection">Plugin Reload Cycle Detection</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13007">PR #13007</a> improves automatic plugin reload handling and documents its limitations — binary plugins and changed dependencies cannot be hot-reloaded. The system now detects and reports plugin reload cycles instead of looping indefinitely.</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>As always, we have provided a number of <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr%20label%3Abug%20is%3Aclosed%20milestone%3A1.6.0">bug fixes</a> with this release. Thanks to the many community members who have contributed to identifying and resolving these issues!</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>InvenTree is an open source project, and we welcome contributions from the community. There are many ways to contribute to the project, including code contributions, translation efforts, documentation improvements, and financial support.</p>
+
+<h3 id="new-contributors">New Contributors</h3>
+
+<p>As always we would like to thank all of our contributors for their hard work and dedication to the InvenTree project. In particular, we would like to welcome the following new contributors who have made their first contributions in this release:</p>
+
+<ul>
+  <li>@FurinaDog made their first contribution in https://github.com/inventree/InvenTree/pull/12616</li>
+  <li>@ribsey made their first contribution in https://github.com/inventree/InvenTree/pull/12550</li>
+  <li>@amanjain57-gif made their first contribution in https://github.com/inventree/InvenTree/pull/12422</li>
+  <li>@Alonso-Lopez-1 made their first contribution in https://github.com/inventree/InvenTree/pull/12286</li>
+  <li>@Jr-kenny made their first contribution in https://github.com/inventree/InvenTree/pull/12585</li>
+  <li>@psxjt5 made their first contribution in https://github.com/inventree/InvenTree/pull/12703</li>
+  <li>@wyyd-yxc made their first contribution in https://github.com/inventree/InvenTree/pull/12826</li>
+  <li>@lizerui1608-dev made their first contribution in https://github.com/inventree/InvenTree/pull/12888</li>
+  <li>@fquinto made their first contribution in https://github.com/inventree/InvenTree/pull/12926</li>
+  <li>@BI7KHI made their first contribution in https://github.com/inventree/InvenTree/pull/12784</li>
+  <li>@xyz-is-best made their first contribution in https://github.com/inventree/InvenTree/pull/12944</li>
+  <li>@maxgr0 made their first contribution in https://github.com/inventree/InvenTree/pull/12973</li>
+  <li>@gotoUSA made their first contribution in https://github.com/inventree/InvenTree/pull/12990</li>
+  <li>@tijsmoree made their first contribution in https://github.com/inventree/InvenTree/pull/12966</li>
+</ul>
+
+<h3 id="code-contributions">Code Contributions</h3>
+
+<p>Check out our GitHub page for a list of <a href="https://github.com/inventree/InvenTree/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22">outstanding issues</a> and feature requests. If you are a developer or want to become one, you can help to contribute to the project by submitting a pull request.</p>
+
+<h3 id="translation">Translation</h3>
+
+<p>Our <a href="https://crowdin.com/project/inventree">translation efforts</a> continue to grow, with coverage increasing across a wide range of languages. We are grateful to all of our translators who have contributed to making InvenTree accessible to users around the world.</p>
+
+<p>If you are interested in contributing to the translation efforts, please visit our <a href="https://crowdin.com/project/inventree">Crowdin project</a> and join the community of translators.</p>
+
+<h3 id="documentation--technical-writing">Documentation / Technical Writing</h3>
+
+<p>If you have experience with technical writing, you can help to improve the InvenTree documentation. We are always looking for help to improve the documentation and make it more accessible to new users.</p>
+
+<h3 id="report-bugs">Report Bugs</h3>
+
+<p>If you encounter a bug in InvenTree, please report it on our <a href="https://github.com/inventree/inventree/issues">GitHub issues page</a>. Please ensure that you provide as much information as possible to help us diagnose and fix the issue.</p>
+
+<h3 id="financial-contributions">Financial Contributions</h3>
+
+<p>Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!</p>
+
+<p>The work undertaken to keep InvenTree running is done by a very small group of core developers, who do so in their spare time (and are not sponsored by their employers to work on InvenTree). If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!</p>
+
+<ul>
+  <li><a href="/fund#github-sponsors">GitHub</a></li>
+</ul>
+
+<p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
+
+<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[InvenTree 1.6.0 has been released! This release includes a number of new features, improvements, and bug fixes. We recommend all users to update to this version as soon as possible.]]></summary></entry><entry><title type="html">InvenTree MCP Plugin</title><link href="/blog/2026/09/17/inventree-mcp" rel="alternate" type="text/html" title="InvenTree MCP Plugin" /><published>2026-09-17T00:00:00+00:00</published><updated>2026-09-17T00:00:00+00:00</updated><id>/blog/2026/09/17/inventree-mcp</id><content type="html" xml:base="/blog/2026/09/17/inventree-mcp"><![CDATA[<p>The InvenTree development team is excited to introduce <a href="https://github.com/inventree/inventree-mcp">InvenTreeMCP</a>, a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the <a href="https://modelcontextprotocol.io">Model Context Protocol</a> (MCP).</p>
 
 <h3 id="what-is-it-for">What is it for?</h3>
 
@@ -949,88 +1189,4 @@ docker compose run --rm inventree-server invoke update
 
 <p>Congratulations! You have successfully migrated your InvenTree installation to the latest version, with an updated PostgreSQL database. You can now enjoy the new features and improvements that come with InvenTree 1.2.0, while also benefiting from the enhanced performance and security of PostgreSQL 17.</p>
 
-<p>Please consider <a href="/contribute.html#sponsor">sponsoring the project</a>, to help us continue to maintain and improve InvenTree for all users. Your support is greatly appreciated!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[In our recent 1.2.0 release, we updated our underlying django version to from 4.2 to 5.2.]]></summary></entry><entry><title type="html">1.1.0 Release</title><link href="/blog/2025/11/02/1.1.0" rel="alternate" type="text/html" title="1.1.0 Release" /><published>2025-11-02T00:00:00+00:00</published><updated>2025-11-02T00:00:00+00:00</updated><id>/blog/2025/11/02/1.1.0</id><content type="html" xml:base="/blog/2025/11/02/1.1.0"><![CDATA[<p>The InvenTree team is excited to announce the release of version 1.1.0.</p>
-
-<p>This is the first major update since our <a href="/blog/2025/09/15/1.0.0">1.0.0 stable release</a>, and includes numerous new features, improvements, and bug fixes to enhance your experience with InvenTree.</p>
-
-<h3 id="changelog">Changelog</h3>
-
-<p>Major changes are documented in the <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> file in the InvenTree repository.</p>
-
-<p>For a full list of changes made in this release, please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/1.1.0">release notes</a>.</p>
-
-<h3 id="update-procedure">Update Procedure</h3>
-
-<p>To update to the latest version of InvenTree, please follow the updating instructions provided in the <a href="https://docs.inventree.org">InvenTree documentation</a>. Note that the particular update procedure may vary depending on your installation method.</p>
-
-<h2 id="new-features">New Features</h2>
-
-<h3 id="partial-build-output-complete">Partial Build Output Complete</h3>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/10499">#10499</a> adds the ability to complete only a partial quantity of a build output. This allows for finer control over the manufacturing process.</p>
-
-<h3 id="build-output-adjustments">Build Output Adjustments</h3>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/10600">#10600</a> allows users to perform stock adjustment actions (count, transfer, etc) on stock items which are in production, i.e. associated with a build output. This provides greater flexibility in managing stock during the manufacturing process.</p>
-
-<h3 id="report-helper-functions">Report Helper Functions</h3>
-
-<p>There have been several additions to the report helper functions, in particular relating to maths and currency operations. Refer to the report documentation for more information on how to use these new functions.</p>
-
-<h3 id="supplier-part-attachments">Supplier Part Attachments</h3>
-
-<p>In <a href="https://github.com/inventree/InvenTree/pull/10724">#10724</a> we added support for uploading attachments against supplier parts. This allows users to associate relevant documents (e.g. datasheets, certifications, etc) directly with supplier parts.</p>
-
-<h2 id="bug-fixes">Bug Fixes</h2>
-
-<p>There have been a significant number of <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr%20label%3Abug%20is%3Aclosed%20milestone%3A1.1.0">bug fixes</a> in this release. Thanks to the many community members who have contributed to identifying and resolving these issues!</p>
-
-<h2 id="contributing">Contributing</h2>
-
-<h3 id="new-contributors">New Contributors</h3>
-
-<p>As always we would like to thank all of our contributors for their hard work and dedication to the InvenTree project. In particular, we would like to welcome the following new contributors who have made their first contributions in this release:</p>
-
-<ul>
-  <li>@BbqGamer made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10426">#10426</a></li>
-  <li>@hhhapz made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10485">#10485</a></li>
-  <li>@wolfpackmars2 made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10481">#10481</a></li>
-  <li>@neilbeukes made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10497">#10497</a></li>
-  <li>@austenwho made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10551">#10551</a></li>
-  <li>@KaranLala made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10549">#10549</a></li>
-  <li>@akhilsingh-git made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10722">#10722</a></li>
-</ul>
-
-<h3 id="translation">Translation</h3>
-
-<p>Our <a href="https://crowdin.com/project/inventree">translation efforts</a> continue to grow, with coverage increasing across a wide range of languages. We are grateful to all of our translators who have contributed to making InvenTree accessible to users around the world.</p>
-
-<p>If you are interested in contributing to the translation efforts, please visit our <a href="https://crowdin.com/project/inventree">Crowdin project</a> and join the community of translators.</p>
-
-<h3 id="code-contributions">Code Contributions</h3>
-
-<p>Check out our GitHub page for a list of outstanding issues and feature requests. If you are a developer, you can help to contribute to the project by submitting a pull request.</p>
-
-<p>In particular, we are looking for assistance with frontend development, as we work to complete the new user interface and improve the overall UI/UX of the project.</p>
-
-<h3 id="report-bugs">Report Bugs</h3>
-
-<p>If you encounter a bug in InvenTree, please report it on our <a href="https://github.com/inventree/inventree/issues">GitHub issues page</a>. Please ensure that you provide as much information as possible to help us diagnose and fix the issue.</p>
-
-<h3 id="documentation--technical-writing">Documentation / Technical Writing</h3>
-
-<p>If you have experience with technical writing, you can help to improve the InvenTree documentation. We are always looking for help to improve the documentation and make it more accessible to new users.</p>
-
-<h3 id="financial-support">Financial Support</h3>
-
-<p>Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!</p>
-
-<p>The work undertaken to keep InvenTree running is done by a very small group of core developers, who do so in their spare time (and are not sponsored by their employers to work on InvenTree). If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!</p>
-
-<ul>
-  <li><a href="/fund#github-sponsors">GitHub</a></li>
-</ul>
-
-<p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
-
-<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree team is excited to announce the release of version 1.1.0.]]></summary></entry></feed>
+<p>Please consider <a href="/contribute.html#sponsor">sponsoring the project</a>, to help us continue to maintain and improve InvenTree for all users. Your support is greatly appreciated!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[In our recent 1.2.0 release, we updated our underlying django version to from 4.2 to 5.2.]]></summary></entry></feed>
