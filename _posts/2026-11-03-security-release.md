@@ -3,7 +3,7 @@ author: matmair
 title: Action required - Upcoming Security Release
 ---
 
-The InvenTree core development team has received a report of *critical security vulnerabilities*  affecting a large range of releases since 2025. We will release a disclosure and a fixed release as the part of the 1.7.0 release on 2026-11-03 21:00 UTC.  
+The InvenTree core development team has received a report of *critical security vulnerabilities*  affecting a large range of releases since 2025. We will release a disclosure and a fixed release as the part of the 1.7.0 release on 2026-11-03 13:00 UTC.  
 The vulnerabilities allow known users to privilege escalate within an InvenTree instance. It has a low attack complexity.
 
 ## Steps to take now
