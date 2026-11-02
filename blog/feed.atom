@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-02T04:16:09+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">1.6.0 Release</title><link href="/blog/2026/10/18/1.6.0" rel="alternate" type="text/html" title="1.6.0 Release" /><published>2026-10-18T00:00:00+00:00</published><updated>2026-10-18T00:00:00+00:00</updated><id>/blog/2026/10/18/1.6.0</id><content type="html" xml:base="/blog/2026/10/18/1.6.0"><![CDATA[<p>InvenTree 1.6.0 has been released! This release includes a number of new features, improvements, and bug fixes. We recommend all users to update to this version as soon as possible.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-02T23:39:54+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Action required - Upcoming Security Release</title><link href="/blog/2026/11/03/security-release" rel="alternate" type="text/html" title="Action required - Upcoming Security Release" /><published>2026-11-03T00:00:00+00:00</published><updated>2026-11-03T00:00:00+00:00</updated><id>/blog/2026/11/03/security-release</id><content type="html" xml:base="/blog/2026/11/03/security-release"><![CDATA[<p>The InvenTree core development team has received a report of <em>critical security vulnerabilities</em>  affecting a large range of releases since 2025. We will release a disclosure and a fixed release as the part of the 1.7.0 release on 2026-11-03 13:00 UTC.<br />
+The vulnerabilities allow known users to privilege escalate within an InvenTree instance. It has a low attack complexity.</p>
+
+<h2 id="steps-to-take-now">Steps to take now</h2>
+
+<p>We are not aware of active exploitation of this vulnerability, but we recommend that users take the following steps to mitigate risks:</p>
+<ul>
+  <li>Do <em>not</em> expose your InvenTree instance to the public internet without hardening steps as laid out in the <a href="https://docs.inventree.org/en/stable/concepts/threat_model/">threat model</a></li>
+  <li>Ensure <em>registration is disabled</em> till the release</li>
+  <li>Ensure you <em>trust all users registered</em> on your instance, especially those with staff or higher permissions</li>
+</ul>
+
+<p>The vulnerabilities have a low complexity and can be expected to be exploited once released. It is important to prepare to update or take your system off the public internet.</p>
+
+<h2 id="security-policy">Security Policy</h2>
+
+<p>As always with security related themes we remind all users, security researchers, and intrested parties of our <a href="https://inventree.readthedocs.io/en/stable/security/">security policy</a>.</p>
+
+<p>If you have discovered a security vulnerability, please report it to us via the channels described in the policy. We take all reports seriously and will work to address any vulnerabilities in a timely manner.</p>
+
+<p>We would like to thank the security researchers who reported these and several other vulnerabilities in a responsible manner, and we encourage others to do the same in the future. The reporters will be credited in the disclosure and CVE entry.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[The InvenTree core development team has received a report of critical security vulnerabilities affecting a large range of releases since 2025. We will release a disclosure and a fixed release as the part of the 1.7.0 release on 2026-11-03 13:00 UTC. The vulnerabilities allow known users to privilege escalate within an InvenTree instance. It has a low attack complexity.]]></summary></entry><entry><title type="html">1.6.0 Release</title><link href="/blog/2026/10/18/1.6.0" rel="alternate" type="text/html" title="1.6.0 Release" /><published>2026-10-18T00:00:00+00:00</published><updated>2026-10-18T00:00:00+00:00</updated><id>/blog/2026/10/18/1.6.0</id><content type="html" xml:base="/blog/2026/10/18/1.6.0"><![CDATA[<p>InvenTree 1.6.0 has been released! This release includes a number of new features, improvements, and bug fixes. We recommend all users to update to this version as soon as possible.</p>
 
 <h3 id="changelog">Changelog</h3>
 
@@ -1027,166 +1047,4 @@ The vulnerability allows for lateral movement and privilege escalation within an
 
 <p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
 
-<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree team is excited to announce the release of version 1.2.0.]]></summary></entry><entry><title type="html">Database Update Procedure</title><link href="/blog/2026/02/12/db-update" rel="alternate" type="text/html" title="Database Update Procedure" /><published>2026-02-12T00:00:00+00:00</published><updated>2026-02-12T00:00:00+00:00</updated><id>/blog/2026/02/12/db-update</id><content type="html" xml:base="/blog/2026/02/12/db-update"><![CDATA[<p>In our <a href="/blog/2026/02/12/1.2.0">recent 1.2.0 release</a>, we updated our underlying <a href="https://www.djangoproject.com/">django</a> version to from 4.2 to 5.2.</p>
-
-<p>For users running with a PostgreSQL database, Django 5.2 requires a minimum version of PostgreSQL 14. This means that users running PostgreSQL 13 will need to perform a manual update of their database in order to continue using InvenTree with the latest version.</p>
-
-<p>If you are attempting to update to InvenTree 1.2.0 while still running PostgreSQL 13, you will encounter the following error message:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django.db.utils.NotSupportedError: PostgreSQL 14 or later is required (found 13.23).
-</code></pre></div></div>
-
-<p>In such a case, you will need to perform a database update procedure to migrate your existing database from PostgreSQL 13 to PostgreSQL 14 (or later). This process involves backing up your existing database, installing the new version of PostgreSQL, and then restoring your data into the new database.</p>
-
-<h2 id="migration-guide">Migration Guide</h2>
-
-<p><em>Note: This procedure was updated on 2026-02-19</em></p>
-
-<p>Our documentation provides a detailed <a href="https://docs.inventree.org/en/stable/start/migrate/#migrating-between-incompatible-database-versions">database migration guide</a> to assist users with this process. We recommend that users perform a backup of their database before attempting the migration, and follow the instructions carefully to ensure a smooth transition to the new database version.</p>
-
-<p>Following is an example of the steps involved in migrating an InvenTree installation from a PostgreSQL 13 database to a PostgreSQL 17 database, in the context of a docker installation. The same principles apply for non-docker installations, but the particular commands may differ.</p>
-
-<p>PostgreSQL 17 is recommended as the target version, as it is supported by both the 1.1.x and 1.2.x versions of InvenTree.</p>
-
-<h2 id="starting-conditions">Starting Conditions</h2>
-
-<p>The starting conditions for this migration are as follows:</p>
-
-<ul>
-  <li>InvenTree is installed via docker / docker compose (as per the <a href="https://docs.inventree.org/en/stable/start/docker_install/">docker installation instructions</a>)</li>
-  <li>The InvenTree version is pinned to 1.1.12 in the <code class="language-plaintext highlighter-rouge">.env</code> file</li>
-  <li>The database is running PostgreSQL 13 (set via the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file).</li>
-</ul>
-
-<p><img src="/assets/blog/db_update_env.png" alt=".env file" /></p>
-
-<p><img src="/assets/blog/db_update_compose.png" alt=".docker-compose.yml file" /></p>
-
-<p>We also have a data directory, external to the docker containers, with the following structure:</p>
-
-<p><img src="/assets/blog/db_update_data.png" alt="Data directory" /></p>
-
-<h3 id="target-conditions">Target Conditions</h3>
-
-<p>The new installation will be running InvenTree 1.2.0 with PostgreSQL 17</p>
-
-<h3 id="data-backup">Data Backup</h3>
-
-<p>It is prudent to perform a regular backup of the database, before following the migration procedure. This can be done using the <code class="language-plaintext highlighter-rouge">invoke backup</code> command, as described in the documentation. This will create a backup of the database and media files in the <code class="language-plaintext highlighter-rouge">data/backup</code> directory.</p>
-
-<h2 id="step-1-ensure-starting-conditions-are-met">Step 1. Ensure Starting Conditions are Met</h2>
-
-<ul>
-  <li><code class="language-plaintext highlighter-rouge">postgres:13</code> is set in <code class="language-plaintext highlighter-rouge">docker-compose.yml</code></li>
-  <li><code class="language-plaintext highlighter-rouge">INVENTREE_VERSION=1.1.12</code> is set in <code class="language-plaintext highlighter-rouge">.env</code></li>
-  <li>Database schema has been updated to the latest version:</li>
-</ul>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
-docker compose run --rm inventree-server invoke update
-docker compose down
-</code></pre></div></div>
-
-<h2 id="step-2-perform-manual-backup">Step 2. Perform Manual Backup</h2>
-
-<p>The first step is to perform a backup of the existing database. This step must be performed with the old setup (postgres 13 / InvenTree 1.1.12), before we perform any updates to the software.</p>
-
-<p>First, let’s confirm that we are running the expected version of InvenTree (1.1.12).</p>
-
-<p><img src="/assets/blog/db_update_old_versions.png" alt="Old Setup" /></p>
-
-<p>To perform the backup, we run the following commands:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
-docker compose run --rm inventree-server pg_dump postgresql://pguser@inventree-db:5432/inventree -f /home/inventree/data/backup/db_migrations.sql
-docker compose down
-</code></pre></div></div>
-
-<p><em>Note: You will be prompted for the password for the <code class="language-plaintext highlighter-rouge">pguser</code> user. This is the password that you set in the <code class="language-plaintext highlighter-rouge">.env</code> file (default is <code class="language-plaintext highlighter-rouge">pgpassword</code>).</em></p>
-
-<p><em>Note: Do not change the path to the migrations file, this is the internal docker container path, and should not be changed.</em></p>
-
-<p>This will create a backup of the database and media files in the <code class="language-plaintext highlighter-rouge">inventree-data/backup</code> directory (external to the docker containers). The database backup will be saved as <code class="language-plaintext highlighter-rouge">db_migrations.sql</code>.</p>
-
-<p>Confirm that the backup files have been created before continuing to the next step.</p>
-
-<h2 id="step-3-move-database-directory">Step 3. Move Database Directory</h2>
-
-<p>The PostgreSQL database files are stored in the <code class="language-plaintext highlighter-rouge">inventree-data/pgdb</code> directory. We need to remove these files, as they are specific to PostgreSQL 13 and will not be compatible with PostgreSQL 17. Rather than deleting them, we will move them to a backup location, just in case we need to revert back to the old setup.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mv inventree-data/pgdb inventree-data/pgdb_backup
-</code></pre></div></div>
-
-<p>Confirm that the <code class="language-plaintext highlighter-rouge">pgdb</code> directory has been moved to the backup location before continuing to the next step. The <code class="language-plaintext highlighter-rouge">pgdb</code> directory should no longer exist in the <code class="language-plaintext highlighter-rouge">inventree-data</code> directory.</p>
-
-<h2 id="step-4-update-postgresql-version">Step 4. Update PostgreSQL Version</h2>
-
-<p>Next, we need to update the PostgreSQL version in the <code class="language-plaintext highlighter-rouge">docker-compose.yml</code> file. Change the version from <code class="language-plaintext highlighter-rouge">postgres:13</code> to <code class="language-plaintext highlighter-rouge">postgres:17</code>:</p>
-
-<p><img src="/assets/blog/db_update_new_postgres.png" alt="Update PostgreSQL version" /></p>
-
-<p>Pull down the updated docker images:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose pull
-</code></pre></div></div>
-
-<h2 id="step-4-restore-data-from-backup">Step 4. Restore Data from Backup</h2>
-
-<p>Now we can restore the data from the backup we created previously, into the new PostgreSQL 17 database. Run the following commands:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
-docker compose run --rm inventree-server psql postgresql://pguser@inventree-db:5432/inventree -f /home/inventree/data/backup/db_migrations.sql
-docker compose down
-</code></pre></div></div>
-
-<p>This will restore the database and media files from the backup we created previously.</p>
-
-<h2 id="step-5-verify-database-update">Step 5. Verify Database Update</h2>
-
-<p>Launch the InvenTree server, and confirm that you can still access your data via the web interface.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up -d
-</code></pre></div></div>
-
-<p>Once you have confirmed that the data is accessible, you can stop the server again:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose down
-</code></pre></div></div>
-
-<h2 id="step-6-update-inventree-version">Step 6. Update InvenTree Version</h2>
-
-<p>Next, we need to update the InvenTree version in the <code class="language-plaintext highlighter-rouge">.env</code> file. Change the version from <code class="language-plaintext highlighter-rouge">1.1.12</code> to <code class="language-plaintext highlighter-rouge">1.2.0</code>:</p>
-
-<p><img src="/assets/blog/db_update_new_inventree.png" alt="Update InvenTree version" /></p>
-
-<p>Then, we need to pull down the updated InvenTree server image:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose pull
-</code></pre></div></div>
-
-<p>Next, run the InvenTree update procedure:</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up inventree-db -d
-docker compose run --rm inventree-server invoke update
-</code></pre></div></div>
-
-<h2 id="step-7-verify-new-setup">Step 7. Verify New Setup</h2>
-
-<p>Finally, we can start the new setup and verify that everything is working as expected.</p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up -d
-</code></pre></div></div>
-
-<p>Then, you should be able to access your InvenTree instance again, and confirm that you are running the new version (1.2.0):</p>
-
-<p><img src="/assets/blog/db_update_new_versions.png" alt="New Setup" /></p>
-
-<p>We can also see that the correct versions of both PostgreSQL and InvenTree are running in the docker containers:</p>
-
-<p><img src="/assets/blog/db_update_docker.png" alt="Docker containers" /></p>
-
-<h2 id="step-8-celebrate">Step 8. Celebrate!</h2>
-
-<p>Congratulations! You have successfully migrated your InvenTree installation to the latest version, with an updated PostgreSQL database. You can now enjoy the new features and improvements that come with InvenTree 1.2.0, while also benefiting from the enhanced performance and security of PostgreSQL 17.</p>
-
-<p>Please consider <a href="/contribute.html#sponsor">sponsoring the project</a>, to help us continue to maintain and improve InvenTree for all users. Your support is greatly appreciated!</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[In our recent 1.2.0 release, we updated our underlying django version to from 4.2 to 5.2.]]></summary></entry></feed>
+<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree team is excited to announce the release of version 1.2.0.]]></summary></entry></feed>
