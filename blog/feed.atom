@@ -1,4 +1,145 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-03T05:14:15+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">Action required - Upcoming Security Release</title><link href="/blog/2026/11/03/security-release" rel="alternate" type="text/html" title="Action required - Upcoming Security Release" /><published>2026-11-03T00:00:00+00:00</published><updated>2026-11-03T00:00:00+00:00</updated><id>/blog/2026/11/03/security-release</id><content type="html" xml:base="/blog/2026/11/03/security-release"><![CDATA[<p>The InvenTree core development team has received a report of <em>critical security vulnerabilities</em>  affecting a large range of releases since 2025. We will release a disclosure and a fixed release as the part of the 1.7.0 release on 2026-11-03 13:00 UTC.<br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/blog/feed.atom" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2026-11-03T13:03:20+00:00</updated><id>/blog/feed.atom</id><title type="html">InvenTree</title><subtitle>InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.</subtitle><entry><title type="html">1.7.0 Release</title><link href="/blog/2026/11/03/1.7.0" rel="alternate" type="text/html" title="1.7.0 Release" /><published>2026-11-03T00:00:00+00:00</published><updated>2026-11-03T00:00:00+00:00</updated><id>/blog/2026/11/03/1.7.0</id><content type="html" xml:base="/blog/2026/11/03/1.7.0"><![CDATA[<p>InvenTree 1.7.0 has been released! This release includes a critical security fix, a number of new features, improvements, and bug fixes. We recommend all users to update to this version as soon as possible.</p>
+
+<h3 id="changelog">Changelog</h3>
+
+<p>Major changes are documented in the <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> file in the repository. For a full list of changes, please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/1.7.0">release notes</a>.</p>
+
+<h3 id="update-procedure">Update Procedure</h3>
+
+<p>To update to the latest version of InvenTree, please follow the updating instructions provided in the <a href="https://docs.inventree.org">InvenTree documentation</a>. Note that the particular update procedure may vary depending on your installation method.</p>
+
+<h2 id="security-fixes">Security Fixes</h2>
+
+<p><strong>This release contains a fix for a critical, low-complexity privilege escalation vulnerability, affecting a range of releases since 2025.</strong> Full details, including the associated security advisory, will be published shortly after release — please see our <a href="/blog/2026/11/03/security-release">earlier announcement</a> and watch our <a href="https://github.com/inventree/InvenTree/security/advisories?state=published">security advisories page</a> for the disclosure. If you have not already done so, please update to 1.7.0 as a priority.</p>
+
+<p>A number of other security vulnerabilities and hardening improvements are also included in this release.</p>
+
+<h3 id="security-advisories">Security Advisories</h3>
+
+<p>The following security advisories have been published in relation to this release:</p>
+
+<ul>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-wx67-9cjx-8cr8</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-mw93-g6gp-wvqr</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-q3pw-mh42-p63c</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-vv2m-4hv4-5qr8</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-whr7-8gj9-rqvm</li>
+  <li>https://github.com/inventree/InvenTree/security/advisories/GHSA-m4r7-7rrj-gfm2</li>
+</ul>
+
+<h3 id="csv-export-formula-injection">CSV Export Formula Injection</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13084">PR #13084</a> sanitizes user-controlled data before it is written into exported CSV files, preventing <a href="https://owasp.org/www-community/attacks/CSV_Injection">CSV injection</a> attacks where a crafted cell value could execute a formula when the export is opened in a spreadsheet application. <a href="https://github.com/inventree/InvenTree/pull/13110">PR #13110</a> is a follow-up fix which relaxes this escaping for legitimate numeric values.</p>
+
+<h3 id="report-data-hardening">Report Data Hardening</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13111">PR #13111</a> hardens data access during report generation, excluding sensitive data from the report rendering context and preventing database writes from being triggered as a side effect of generating a report or label.</p>
+
+<h3 id="session--token-hardening">Session &amp; Token Hardening</h3>
+
+<p>Several related fixes tighten up session and API token handling in this release:</p>
+
+<ul>
+  <li>Revoking an already-revoked token no longer overwrites the original revocation details (<a href="https://github.com/inventree/InvenTree/pull/13149">PR #13149</a>)</li>
+  <li>Token validity checks now also confirm that the owning user account is still active (<a href="https://github.com/inventree/InvenTree/pull/13148">PR #13148</a>)</li>
+  <li>Tokens are now masked more securely when displayed, with a fixed lowercase-handling bug and more consistent expiry date checking (<a href="https://github.com/inventree/InvenTree/pull/13155">PR #13155</a>)</li>
+  <li>Deleting a <code class="language-plaintext highlighter-rouge">UserSession</code> via the Django admin interface now also logs out the associated user, rather than leaving the session active (<a href="https://github.com/inventree/InvenTree/pull/13145">PR #13145</a>)</li>
+</ul>
+
+<h3 id="additional-hardening">Additional Hardening</h3>
+
+<p>This release also includes routine security-related dependency updates, including CA certificate updates (<a href="https://github.com/inventree/InvenTree/pull/13057">PR #13057</a>) and a batch of Python dependency security patches (<a href="https://github.com/inventree/InvenTree/pull/13108">PR #13108</a>).</p>
+
+<h2 id="breaking-changes">Breaking Changes</h2>
+
+<p>While we strive to maintain backward compatibility, there are some breaking changes in this release. While many of these are minor, and should not affect most users, we recommend that you review the list of breaking changes to ensure that your installation will continue to function as expected after the update. Each breaking change is documented in detail at the links below:</p>
+
+<h3 id="pricing-model-refactor">Pricing Model Refactor</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13034">PR #13034</a> moves pricing functionality into a new, dedicated <code class="language-plaintext highlighter-rouge">pricing</code> app, with its own API endpoints and a new “pricing” permission role. Existing users with <code class="language-plaintext highlighter-rouge">part</code> role permissions automatically retain pricing access via a data migration, laying the groundwork for further pricing improvements in future releases.</p>
+
+<h3 id="stock-tracking-replaced-by-audit-log">Stock Tracking Replaced by Audit Log</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13101">PR #13101</a> removes the legacy “stock item tracking” model and its associated API endpoints, migrating existing entries into the new global audit log introduced in this same release (see “Changelog / Edit History” under New Features, below). The old stock tracking table only ever captured a subset of model changes; the audit log provides a more complete and consistent record. Any external client applications which read stock tracking data via the old API will need to be updated to use the new <code class="language-plaintext highlighter-rouge">/api/audit/</code> endpoints.</p>
+
+<h2 id="new-features">New Features</h2>
+
+<h3 id="changelog--edit-history">Changelog / Edit History</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13069">PR #13069</a> introduces a global audit log, built on <a href="https://django-auditlog.readthedocs.io/en/latest/">django-auditlog</a>, which tracks changes made to internal data throughout the system. The log is exposed via new read-only <code class="language-plaintext highlighter-rouge">/api/audit/</code> endpoints, and replaces the previous, more limited stock tracking table (see Breaking Changes, above).</p>
+
+<h3 id="token-issuance-notifications">Token Issuance Notifications</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13141">PR #13141</a> notifies a user whenever a new API token is issued against their account — whether via the API, the UI, or by an administrator — and separately warns administrators if no email backend is configured, meaning such security alerts cannot be delivered.</p>
+
+<h3 id="plugin-launched-forms--action-context">Plugin-Launched Forms &amp; Action Context</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13174">PR #13174</a> allows plugins to dynamically launch native modal forms without needing to supply their own React components — for example, triggering a built-in API form from a custom primary action. <a href="https://github.com/inventree/InvenTree/pull/13172">PR #13172</a> complements this by passing the current page’s target model and instance ID through to plugin-registered primary actions, giving plugins more context about where they were triggered from.</p>
+
+<h3 id="stock-adjustment-barcode-actions">Stock Adjustment Barcode Actions</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13170">PR #13170</a> implements a number of previously-stubbed stock adjustment actions for barcode scanning, rounding out barcode-driven workflows for adjusting stock.</p>
+
+<h3 id="default-stock-location-from-part">Default Stock Location from Part</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/12916">PR #12916</a> automatically selects the default stock location for a new stock item, if one has been configured against the part being stocked.</p>
+
+<h3 id="instance-identity-proof-for-federation">Instance Identity Proof for Federation</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13030">PR #13030</a> adds an optional mechanism for an InvenTree instance to cryptographically prove its identity to a federation participant, without exposing its instance ID directly. A time-limited, replayable proof is computed using HKDF and HMAC, and can be requested as an optional parameter on the root API response — early groundwork for future <a href="https://github.com/inventree/InvenTree/issues/4562">federation</a> work.</p>
+
+<h3 id="badge-tooltips">Badge Tooltips</h3>
+
+<p><a href="https://github.com/inventree/InvenTree/pull/13074">PR #13074</a> adds explanatory tooltips to the status badges shown on detail pages, making it clearer at a glance what each badge represents.</p>
+
+<h2 id="bug-fixes">Bug Fixes</h2>
+
+<p>As always, we have provided a number of <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr%20label%3Abug%20is%3Aclosed%20milestone%3A1.7.0">bug fixes</a> with this release. Thanks to the many community members who have contributed to identifying and resolving these issues!</p>
+
+<h2 id="contributing">Contributing</h2>
+
+<p>InvenTree is an open source project, and we welcome contributions from the community. There are many ways to contribute to the project, including code contributions, translation efforts, documentation improvements, and financial support.</p>
+
+<h3 id="new-contributors">New Contributors</h3>
+
+<p>As always we would like to thank all of our contributors for their hard work and dedication to the InvenTree project. In particular, we would like to welcome the following new contributors who have made their first contributions in this release:</p>
+
+<ul>
+  <li>@Nero7991 made their first contribution in https://github.com/inventree/InvenTree/pull/13100</li>
+  <li>@highvoltagescientist-arch made their first contribution in https://github.com/inventree/InvenTree/pull/13122</li>
+</ul>
+
+<h3 id="code-contributions">Code Contributions</h3>
+
+<p>Check out our GitHub page for a list of <a href="https://github.com/inventree/InvenTree/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22">outstanding issues</a> and feature requests. If you are a developer or want to become one, you can help to contribute to the project by submitting a pull request.</p>
+
+<h3 id="translation">Translation</h3>
+
+<p>Our <a href="https://crowdin.com/project/inventree">translation efforts</a> continue to grow, with coverage increasing across a wide range of languages. We are grateful to all of our translators who have contributed to making InvenTree accessible to users around the world.</p>
+
+<p>If you are interested in contributing to the translation efforts, please visit our <a href="https://crowdin.com/project/inventree">Crowdin project</a> and join the community of translators.</p>
+
+<h3 id="documentation--technical-writing">Documentation / Technical Writing</h3>
+
+<p>If you have experience with technical writing, you can help to improve the InvenTree documentation. We are always looking for help to improve the documentation and make it more accessible to new users.</p>
+
+<h3 id="report-bugs">Report Bugs</h3>
+
+<p>If you encounter a bug in InvenTree, please report it on our <a href="https://github.com/inventree/inventree/issues">GitHub issues page</a>. Please ensure that you provide as much information as possible to help us diagnose and fix the issue.</p>
+
+<h3 id="financial-contributions">Financial Contributions</h3>
+
+<p>Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!</p>
+
+<p>The work undertaken to keep InvenTree running is done by a very small group of core developers, who do so in their spare time (and are not sponsored by their employers to work on InvenTree). If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!</p>
+
+<ul>
+  <li><a href="/fund#github-sponsors">GitHub</a></li>
+</ul>
+
+<p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
+
+<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[InvenTree 1.7.0 has been released! This release includes a critical security fix, a number of new features, improvements, and bug fixes. We recommend all users to update to this version as soon as possible.]]></summary></entry><entry><title type="html">Action required - Upcoming Security Release</title><link href="/blog/2026/11/03/security-release" rel="alternate" type="text/html" title="Action required - Upcoming Security Release" /><published>2026-11-03T00:00:00+00:00</published><updated>2026-11-03T00:00:00+00:00</updated><id>/blog/2026/11/03/security-release</id><content type="html" xml:base="/blog/2026/11/03/security-release"><![CDATA[<p>The InvenTree core development team has received a report of <em>critical security vulnerabilities</em>  affecting a large range of releases since 2025. We will release a disclosure and a fixed release as the part of the 1.7.0 release on 2026-11-03 13:00 UTC.<br />
 The vulnerabilities allow known users to privilege escalate within an InvenTree instance. It has a low attack complexity.</p>
 
 <h2 id="steps-to-take-now">Steps to take now</h2>
@@ -945,106 +1086,4 @@ The vulnerability allows for lateral movement and privilege escalation within an
 
 <p>If you have discovered a security vulnerability, please report it to us via the channels described in the policy. We take all reports seriously and will work to address any vulnerabilities in a timely manner.</p>
 
-<p>We would like to thank the security researcher who reported this and several other vulnerabilities in a responsible manner, and we encourage others to do the same in the future. The reporter will be credited in the disclosure and CVE entry.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[The InvenTree core development team has received a report of a critical security vulnerability affecting a large range of releases since 2024. We will release a disclosure and a fixed release for the 1.2.x release series on 2026-04-08 21:00 UTC. The vulnerability allows for lateral movement and privilege escalation within an InvenTree instance. It has a low attack complexity.]]></summary></entry><entry><title type="html">1.2.0 Release</title><link href="/blog/2026/02/12/1.2.0" rel="alternate" type="text/html" title="1.2.0 Release" /><published>2026-02-12T00:00:00+00:00</published><updated>2026-02-12T00:00:00+00:00</updated><id>/blog/2026/02/12/1.2.0</id><content type="html" xml:base="/blog/2026/02/12/1.2.0"><![CDATA[<p>The InvenTree team is excited to announce the release of version 1.2.0.</p>
-
-<p>Attention: This release has no support for PostgreSQL 13 - our docs contain information regading <a href="https://docs.inventree.org/en/latest/start/migrate/#migrating-between-incompatible-database-versions">PostgreSQL updates</a>. At least PostgreSQL 14 is required, we recommend PostgreSQL 18.</p>
-
-<p>This release includes numerous new features, improvements, and bug fixes.</p>
-
-<h3 id="changelog">Changelog</h3>
-
-<p>Major changes are documented in the <code class="language-plaintext highlighter-rouge">CHANGELOG.md</code> file in the InvenTree repository.</p>
-
-<p>For a full list of changes made in this release, please refer to the <a href="https://github.com/inventree/InvenTree/releases/tag/1.2.0">release notes</a>.</p>
-
-<h3 id="update-procedure">Update Procedure</h3>
-
-<p>To update to the latest version of InvenTree, please follow the updating instructions provided in the <a href="https://docs.inventree.org">InvenTree documentation</a>. Note that the particular update procedure may vary depending on your installation method.</p>
-
-<h2 id="breaking-changes">Breaking Changes</h2>
-
-<h3 id="django-update">Django Update</h3>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/10730">#10730</a> updated the core Django version to 5.2 lts.</p>
-
-<p>As part of this update, the following breaking changes have been introduced:</p>
-
-<h4 id="postgresql-14">PostgreSQL 14</h4>
-
-<p>The minimum supported version of PostgreSQL has been increased to 14. This means that users running PostgreSQL 13 will need to perform a manual update of their database in order to continue using InvenTree with the latest version. For more information, please refer to our <a href="/blog/2026/02/12/db-update">update guide</a> for a walkthrough of the database update procedure.</p>
-
-<h4 id="python-311">Python 3.11</h4>
-<p>The minimum supported python version has been increased to 3.11. This means that users running Python 3.10 or earlier will need to update their python installation in order to run InvenTree 1.2.0.</p>
-
-<h3 id="api-changes">API changes</h3>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/11035">#11035</a> all metadata endpoints were unified into a generic one.</p>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/11021">#11021</a> tags were removed from a few APIs by default, they can be enabled using a dedicated filter if need be</p>
-
-<h2 id="new-features">New Features</h2>
-
-<h3 id="generic-parameters">Generic Parameters</h3>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/10699">#10699</a> adds support for generic parameters across multiple model types. Previously, parameters were only support for parts. Read more about parameter support on the <a href="https://docs.inventree.org/en/latest/concepts/parameters/">InvenTree documentation</a>.</p>
-
-<h3 id="pdf-input-controls">PDF Input Controls</h3>
-
-<p><a href="https://github.com/inventree/InvenTree/pull/10969">#10969</a> adds support for input controls (check boxes, text boxes, etc) to the <a href="https://docs.inventree.org/en/latest/report/">report generation framework</a>.</p>
-
-<h2 id="bug-fixes">Bug Fixes</h2>
-
-<p>There have been a significant number of <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr%20label%3Abug%20is%3Aclosed%20milestone%3A1.2.0">bug fixes</a> in this release. Thanks to the many community members who have contributed to identifying and resolving these issues!</p>
-
-<p>Some long standing issues with SSO registration settings being enforced too strict have been resolved. User feedback and flow during multifactor-registration enforcement was also improved greatly.</p>
-
-<h2 id="contributing">Contributing</h2>
-
-<h3 id="new-contributors">New Contributors</h3>
-
-<p>As always we would like to thank all of our contributors for their hard work and dedication to the InvenTree project. In particular, we would like to welcome the following new contributors who have made their first contributions in this release:</p>
-
-<ul>
-  <li>@lehoangnam040 made their first contribution in https://github.com/inventree/InvenTree/pull/10751</li>
-  <li>@kquinsland made their first contribution in https://github.com/inventree/InvenTree/pull/10900</li>
-  <li>@ttftw made their first contribution in https://github.com/inventree/InvenTree/pull/10952</li>
-  <li>@mlam19 made their first contribution in https://github.com/inventree/InvenTree/pull/10969</li>
-  <li>@CapnKernel made their first contribution in https://github.com/inventree/InvenTree/pull/11011</li>
-  <li>@fargito made their first contribution in https://github.com/inventree/InvenTree/pull/11095</li>
-  <li>@B-z-F made their first contribution in https://github.com/inventree/InvenTree/pull/11100</li>
-  <li>@plaes made their first contribution in https://github.com/inventree/InvenTree/pull/11161</li>
-  <li>@wlcx made their first contribution in https://github.com/inventree/InvenTree/pull/11147</li>
-  <li>@tomermurray made their first contribution in https://github.com/inventree/InvenTree/pull/11102</li>
-</ul>
-
-<h3 id="code-contributions">Code Contributions</h3>
-
-<p>Check out our GitHub page for a list of <a href="https://github.com/inventree/InvenTree/issues?q=is%3Aissue%20state%3Aopen%20label%3A%22help%20wanted%22">outstanding issues</a> and feature requests. If you are a developer or want to become one, you can help to contribute to the project by submitting a pull request.</p>
-
-<h3 id="translation">Translation</h3>
-
-<p>Our <a href="https://crowdin.com/project/inventree">translation efforts</a> continue to grow, with coverage increasing across a wide range of languages. We are grateful to all of our translators who have contributed to making InvenTree accessible to users around the world.</p>
-
-<p>If you are interested in contributing to the translation efforts, please visit our <a href="https://crowdin.com/project/inventree">Crowdin project</a> and join the community of translators.</p>
-
-<h3 id="report-bugs">Report Bugs</h3>
-
-<p>If you encounter a bug in InvenTree, please report it on our <a href="https://github.com/inventree/inventree/issues">GitHub issues page</a>. Please ensure that you provide as much information as possible to help us diagnose and fix the issue.</p>
-
-<h3 id="documentation--technical-writing">Documentation / Technical Writing</h3>
-
-<p>If you have experience with technical writing, you can help to improve the InvenTree documentation. We are always looking for help to improve the documentation and make it more accessible to new users.</p>
-
-<h3 id="financial-support">Financial Support</h3>
-
-<p>Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!</p>
-
-<p>The work undertaken to keep InvenTree running is done by a very small group of core developers, who do so in their spare time (and are not sponsored by their employers to work on InvenTree). If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!</p>
-
-<ul>
-  <li><a href="/fund#github-sponsors">GitHub</a></li>
-</ul>
-
-<p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
-
-<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>]]></content><author><name>SchrodingersGat</name></author><summary type="html"><![CDATA[The InvenTree team is excited to announce the release of version 1.2.0.]]></summary></entry></feed>
+<p>We would like to thank the security researcher who reported this and several other vulnerabilities in a responsible manner, and we encourage others to do the same in the future. The reporter will be credited in the disclosure and CVE entry.</p>]]></content><author><name>matmair</name></author><summary type="html"><![CDATA[The InvenTree core development team has received a report of a critical security vulnerability affecting a large range of releases since 2024. We will release a disclosure and a fixed release for the 1.2.x release series on 2026-04-08 21:00 UTC. The vulnerability allows for lateral movement and privilege escalation within an InvenTree instance. It has a low attack complexity.]]></summary></entry></feed>
