@@ -1,35 +1,128 @@
-# Core features - shown on the home page and the features page
+# Feature tiles - rendered by the 'feature_cards' macro in main.py
+#
+# Each tile has:
+#   title:  Short title (Title Case, use "and" rather than "&")
+#   icon:   Tabler icon class (https://tabler.io/icons)
+#   text:   Summary - one or two sentences, shown everywhere
+#   extend: One further sentence of detail - only shown on the features page
+#   link:   Documentation page (https://docs.inventree.org/en/stable/...)
+
+# Core workflows - shown on the home page and the features page
 general:
   - title: Organize Parts
     icon: ti-category
-    text: Parts are the fundamental element of any inventory. InvenTree groups parts into structured categories which allow you to arrange parts to meet your particular needs.
-    link: https://docs.inventree.org/en/stable/part
-  - title: Manage Suppliers
-    icon: ti-truck-delivery
-    text: InvenTree allows you to easily create, modify or delete suppliers and supplier items linked to any part in your inventory.
-    link: https://docs.inventree.org/en/stable/concepts/company/#suppliers
+    text: Parts are the foundation of your inventory. Arrange them in a structured category tree, with templates, variants and revisions to match the way you work.
+    extend: Parts can be purchased, sold, assembled, tracked or consumed, and each part keeps its own stock, pricing, order and build history.
+    link: https://docs.inventree.org/en/stable/part/
+
   - title: Instant Stock Knowledge
     icon: ti-packages
-    text: Instantly view current stock for a certain part, in a particular location, or required for an individual build.
-    extend: Stock items are organized in cascading locations and sub-locations, allowing flexible inspection of stock under any location. Stock items can be serialized for tracking of individual items, and test results can be stored against a serialized stock item for the purpose of acceptance testing and commissioning.
-    link: https://docs.inventree.org/en/stable/stock
+    text: See current stock for any part, in any location, at a glance - including how much is allocated to orders and builds.
+    extend: Stock items are organized in nested locations, and can be moved, counted, merged, split, or given a status and an expiry date.
+    link: https://docs.inventree.org/en/stable/stock/
+
   - title: BOM Management
     icon: ti-list-tree
-    text: Intelligent <strong>B</strong>ill <strong>o</strong>f <strong>M</strong>aterial management provides a clear understanding of the sub-parts required to make a new part.
-    extend: InvenTree allows you to upload simple BOM files in multiple formats, and download a detailed BOM with all the information stored in its database.
+    text: Define multi-level Bills of Materials, so you know exactly which sub-parts are needed to make each assembly.
+    extend: Substitute parts, BOM validation and BOM pricing are built in, and BOMs can be imported from and exported to spreadsheets.
     link: https://docs.inventree.org/en/stable/manufacturing/bom/
+
+  - title: Purchasing
+    icon: ti-shopping-cart
+    text: Manage suppliers, manufacturers and their part numbers, and place purchase orders for the parts you need.
+    extend: Received items are added straight into stock, and supplier price breaks feed into part pricing.
+    link: https://docs.inventree.org/en/stable/purchasing/
+
+  - title: Sales Orders
+    icon: ti-truck-delivery
+    text: Track customers and sales orders, allocate stock to each order, and ship it in one or more shipments.
+    extend: Allocated stock is reserved for the order, so you always know what is available to sell.
+    link: https://docs.inventree.org/en/stable/sales/
+
+  - title: Barcodes
+    icon: ti-barcode
+    text: Scan barcodes to find, receive, move and count stock - using InvenTree's own barcodes or those printed by your suppliers.
+    extend: Supplier barcodes from DigiKey, LCSC, Mouser and TME are supported out of the box, and plugins can add custom barcode formats.
+    link: https://docs.inventree.org/en/stable/barcodes/
 
 # Additional features - shown on the features page only
 extras:
-  - title: Build Parts
+  - title: Build Orders
     icon: ti-tools
-    text: InvenTree features a build management system to help you track the progress of your builds. Builds consume stock items to make new parts, you can decide to automatically or manually allocate parts from your current inventory.
+    text: Plan and track production. Build orders allocate stock from your inventory and turn it into finished assemblies.
+    extend: Track individual build outputs, consume components automatically or manually, and outsource builds to external manufacturers.
     link: https://docs.inventree.org/en/stable/manufacturing/build/
-  - title: Report
-    icon: ti-report
-    text: Generate a wide range of reports using custom templates.
-    link: https://docs.inventree.org/en/stable/report
-  - title: Extend and Customize
-    icon: ti-puzzle
-    text: InvenTree is designed to be highly extensible. If the core InvenTree functionality does not meet your particular need, InvenTree provides a RESTful API, a native Python library, and a powerful plugin system.
+
+  - title: Return Orders
+    icon: ti-arrow-back-up
+    text: Handle customer returns (RMAs) for repair, replacement or refund, and bring returned items back into stock.
+    link: https://docs.inventree.org/en/stable/sales/return_order/
+
+  - title: Transfer Orders
+    icon: ti-transfer
+    text: Request and document stock movements between locations, grouping many transfers into a single order.
+    link: https://docs.inventree.org/en/stable/stock/transfer_order/
+
+  - title: Traceability and Testing
+    icon: ti-route
+    text: Track stock with serial numbers and batch codes, with a full history of every change to each item.
+    extend: Test results can be recorded against stock items for acceptance testing and commissioning.
+    link: https://docs.inventree.org/en/stable/stock/traceability/
+
+  - title: Pricing
+    icon: ti-currency-dollar
+    text: Combine supplier price breaks, purchase history and BOM costs into pricing for every part, in multiple currencies.
+    extend: Currency exchange rates are updated automatically.
+    link: https://docs.inventree.org/en/stable/concepts/pricing/
+
+  - title: Stocktake
+    icon: ti-clipboard-check
+    text: Record snapshots of stock levels and stock value, and review the stock history of any part over time.
+    link: https://docs.inventree.org/en/stable/part/stocktake/
+
+  - title: Labels and Reports
+    icon: ti-printer
+    text: Print labels and generate reports from fully customizable templates, edited with a live preview.
+    extend: Labels can be sent directly to supported label printers, or printed on label sheets.
+    link: https://docs.inventree.org/en/stable/report/
+
+  - title: Mobile App
+    icon: ti-device-mobile
+    text: Take stock control with you. The InvenTree app for Android and iOS provides parts, stock, orders and barcode scanning on the go.
+    link: https://docs.inventree.org/en/stable/app/
+
+  - title: Data Import and Export
+    icon: ti-file-import
+    text: Import existing data from spreadsheets, and export any table to CSV, Excel or TSV files.
+    link: https://docs.inventree.org/en/stable/concepts/data_import/
+
+  - title: Users and Security
+    icon: ti-shield-lock
+    text: Control access with role-based permissions, single sign-on and multi-factor authentication.
+    extend: An audit log records who changed what, and when.
+    link: https://docs.inventree.org/en/stable/settings/permissions/
+
+  - title: Parameters and Units
+    icon: ti-ruler-measure
+    text: Attach custom parameters to parts, with real physical units which are converted and validated automatically.
+    link: https://docs.inventree.org/en/stable/concepts/parameters/
+
+  - title: Notifications
+    icon: ti-bell
+    text: Subscribe to parts and categories to be notified about low stock and build orders, in the app or by email.
+    link: https://docs.inventree.org/en/stable/part/notification/
+
+  - title: Translations
+    icon: ti-language
+    text: Use InvenTree in your own language. The web interface and mobile app are translated by the community into dozens of languages.
+    link: https://crowdin.com/project/inventree
+
+  - title: REST API
+    icon: ti-api
+    text: Every feature is available through a comprehensive, self-documenting REST API, along with a native Python library.
     link: https://docs.inventree.org/en/stable/api/
+
+  - title: Plugins
+    icon: ti-puzzle
+    text: Extend InvenTree with plugins - add user interface panels, integrations, barcode formats, label printers and much more.
+    link: https://docs.inventree.org/en/stable/plugins/

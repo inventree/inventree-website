@@ -63,7 +63,7 @@ nav:
     - Blog: blog/index.md
     - News: news/index.md
   - Features:
-    - Features: functions.md
+    - Features: features.md
     - Deploy: deploy.md
     - DigitalOcean: digitalocean.md
     - Demo: demo.md
@@ -148,6 +148,7 @@ plugins:
       redirect_maps:
         # Old Jekyll pages
         'publishers.md': 'plugins/publishers.md'
+        'functions.md': 'features.md'
         # Old publisher pages (/<publisher>)
         'LavissaWoW.md': 'plugins/publishers.md#lavissawow'
         'SergeoLacruz.md': 'plugins/publishers.md#sergeolacruz'

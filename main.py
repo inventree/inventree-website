@@ -301,11 +301,12 @@ def define_env(env):
         return '\n'.join(out)
 
     @env.macro
-    def feature_cards(group: str = 'general', extend: bool = False) -> str:
-        """Render a grid of feature cards from data/functions.yml."""
+    def feature_cards(*groups: str, extend: bool = False) -> str:
+        """Render a single grid of feature cards from one or more groups in data/functions.yml."""
+        data = load_yaml('functions.yml')
         out = ['<div class="grid cards" markdown>', '']
 
-        for item in load_yaml('functions.yml').get(group, []):
+        for item in (item for group in groups or ('general',) for item in data.get(group, [])):
             out += [
                 f'-   <i class="ti {item.get("icon", "ti-point")} iv-card-icon"></i> __{item["title"]}__',
                 '',
