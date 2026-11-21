@@ -59,26 +59,27 @@ extra_javascript:
 # discovered automatically (posts by the blog plugin, plugins by the index pages).
 nav:
   - Home: index.md
+  - Blog:
+    - Blog: blog/index.md
+    - News: news/index.md
   - Features:
     - Features: functions.md
     - Deploy: deploy.md
     - DigitalOcean: digitalocean.md
     - Demo: demo.md
     - Alternatives: alternatives.md
-  - Blog:
-    - Blog: blog/index.md
-    - News: news/index.md
-  - Plugins:
-    - Plugin List: plugins/index.md
-    - By Category: plugins/categories.md
-    - By Tag: plugins/tags.md
-    - Publishers: plugins/publishers.md
-  - Ecosystem:
-    - Overview: extend/index.md
+    - Ecosystem: extend/index.md
     - API: extend/api.md
     - Mobile App: extend/app.md
     - Plugins: extend/plugin/index.md
     - Integrations: extend/integrate/index.md
+  - Plugins:
+    - Plugins: plugins/index.md
+    - Community Plugins:
+      - All Plugins: plugins/community.md
+      - By Category: plugins/categories.md
+      - By Tag: plugins/tags.md
+      - Publishers: plugins/publishers.md
   - Community:
     - About: about.md
     - Team: about/team.md

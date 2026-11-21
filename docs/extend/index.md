@@ -2,6 +2,8 @@
 title: Ecosystem
 ---
 
+# Ecosystem
+
 InvenTree is designed to be part of a larger system of tools to support both hobbyists and SMEs with their management needs.
 
 - [Plugins](plugin/index.md)

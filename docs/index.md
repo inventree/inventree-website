@@ -37,6 +37,6 @@ Ready for a glimpse into the future? Together we make InvenTree better, faster a
 
 ## Plugins
 
-Explore plugins provided by the community. [Browse the plugin list](plugins/index.md).
+Explore plugins provided by the community. [Browse the plugin list](plugins/community.md).
 
 {{ plugin_cards(limit=4, recent=true) }}

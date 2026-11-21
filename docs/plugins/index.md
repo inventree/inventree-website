@@ -1,17 +1,42 @@
 ---
-title: Plugin List
+title: Plugins
 template: main.html
-render_macros: true
 ---
 
-# InvenTree Plugin List
+# Plugins
 
-InvenTree is a modular application and can be extended with plugins. This list is a collection of plugins that have been developed by the community.
+InvenTree is a modular application with a powerful plugin system. Plugins run inside the InvenTree server and can extend almost every part of it, without any changes to the core code. Plugins can:
 
-!!! warning "Community plugins"
-    Being on this list does not mean that the plugin is officially supported by the InvenTree core team. We also do not check for security, privacy or performance issues or compatibility with the latest InvenTree version.
+- **Extend the user interface**: add custom panels, dashboard widgets, navigation items and settings pages
+- **React to events**: run custom code when parts, stock items or orders are created or changed
+- **Integrate with external systems**: connect to suppliers, ERP, accounting or notification services
+- **Print and report**: add label printer drivers, custom report templates and data exports
+- **Scan barcodes**: support custom barcode formats and supplier barcodes
+- **Add API endpoints and URLs**: expose new functionality to other applications
+- **Run scheduled tasks** and **validate data** against your own business rules
 
-You can also browse plugins [by category](categories.md), [by tag](tags.md) or [by publisher](publishers.md).
-To add your own plugin to this list, follow the [instructions on GitHub](https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list).
+Plugins are standard Python packages, and can be installed from PyPI via the InvenTree admin interface, or placed in the plugins directory of your installation.
+Read more about the [plugin architecture](https://docs.inventree.org/en/stable/plugins/) and [installing plugins](https://docs.inventree.org/en/stable/plugins/install/) in the documentation.
 
-{{ plugin_cards() }}
+## Create Your Own Plugin
+
+The [InvenTree Plugin Creator](https://github.com/inventree/plugin-creator) is a command line tool which scaffolds a new plugin in a few seconds. Select the features you need, and it generates a ready-to-develop project:
+
+- Plugin metadata, licence and the plugin features (mixins) you select
+- Frontend setup for custom panels and dashboard items, with a hot-reloading development server
+- Optional Git, pre-commit and CI configuration (GitHub or GitLab), including automated PyPI publishing
+
+```bash
+pip install -U inventree-plugin-creator
+create-inventree-plugin
+```
+
+!!! info "InvenTree 1.0 or later"
+    Plugins generated with the plugin creator target InvenTree version 1.0.0 or later.
+
+Refer to the [plugin creator guide](https://docs.inventree.org/en/stable/plugins/creator/) and the [plugin walkthrough](https://docs.inventree.org/en/stable/plugins/walkthrough/) for step-by-step instructions.
+Once your plugin is published, add it to the [community plugin list](community.md) by following the [instructions on GitHub](https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list).
+
+## Community Plugins
+
+Browse the [community plugin list](community.md) to find plugins developed by the InvenTree community, or browse them [by category](categories.md), [by tag](tags.md) or [by publisher](publishers.md).

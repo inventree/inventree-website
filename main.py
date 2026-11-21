@@ -21,7 +21,7 @@ publisher_dir = here.joinpath('publishers')
 data_dir = here.joinpath('data')
 
 # Pages in the plugins directory which are not plugin entries
-PLUGIN_INDEX_PAGES = {'index.md', 'tags.md', 'categories.md', 'publishers.md'}
+PLUGIN_INDEX_PAGES = {'index.md', 'community.md', 'tags.md', 'categories.md', 'publishers.md'}
 
 FRONT_MATTER = re.compile(r'^---\s*\n(.*?)\n---\s*\n?', re.S)
 
