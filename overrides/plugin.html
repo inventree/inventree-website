@@ -10,13 +10,10 @@
   {% endfor -%}
 {%- endmacro %}
 
-{% block content %}
-{% set meta = page.meta %}
-{% if "<h1" not in page.content %}
-  <h1>{{ meta.name | d(page.title, true) }}</h1>
-{% endif %}
-
-<aside class="iv-plugin-meta">
+{#- Plugin details - shown in the left sidebar on wide screens, and above the content otherwise -#}
+{% macro plugin_meta(meta, extra_class) -%}
+<aside class="iv-plugin-meta md-typeset {{ extra_class }}">
+  <a href="{{ 'plugins/community/' | url }}" class="iv-plugin-meta__back"><i class="ti ti-arrow-left"></i> All Plugins</a>
   <h2 class="iv-plugin-meta__title">{{ meta.name }}</h2>
 
   {% if meta.author %}
@@ -79,6 +76,48 @@
   </div>
   {% endif %}
 </aside>
+{%- endmacro %}
+
+{% block site_nav %}
+  {#- The primary sidebar also holds the navigation drawer on narrow screens, so keep nav.html -#}
+  <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+    <div class="md-sidebar__scrollwrap">
+      <div class="md-sidebar__inner">
+        {% include "partials/nav.html" %}
+        {{ plugin_meta(page.meta, 'iv-plugin-meta--sidebar') }}
+      </div>
+    </div>
+  </div>
+  {#- Table of contents - as in the theme's base.html -#}
+  {% if page.meta and page.meta.hide %}
+    {% set hidden = "hidden" if "toc" in page.meta.hide %}
+  {% endif %}
+  <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" {{ hidden }}>
+    <div class="md-sidebar__scrollwrap">
+      {% set toc = page.toc %}
+      {% set first = toc | first %}
+      {% if first and first.level == 1 %}
+        {% set toc = first.children %}
+      {% endif %}
+      {% if toc %}
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        <div class="md-sidebar-button__wrapper">
+          <label class="md-sidebar-button" for="__toc"></label>
+        </div>
+      {% endif %}
+      <div class="md-sidebar__inner">
+        {% include "partials/toc.html" %}
+      </div>
+    </div>
+  </div>
+{% endblock site_nav %}
+
+{% block content %}
+{% if "<h1" not in page.content %}
+  <h1>{{ page.meta.name | d(page.title, true) }}</h1>
+{% endif %}
+
+{{ plugin_meta(page.meta, 'iv-plugin-meta--content') }}
 
 {{ page.content }}
 {% endblock content %}
