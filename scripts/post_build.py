@@ -131,4 +131,4 @@ if __name__ == '__main__':
 
     build_plugins_json()
     copy_legacy_feeds()
-    write_legacy_redirects()
+    # write_legacy_redirects()
