@@ -58,21 +58,16 @@ extra_javascript:
 # Blog posts, news items and plugin pages are not listed here - they are
 # discovered automatically (posts by the blog plugin, plugins by the index pages).
 nav:
-  - Home: index.md
   - Blog:
     - Blog: blog/index.md
     - News: news/index.md
   - Features:
     - Features: features.md
     - Deploy: deploy.md
-    - DigitalOcean: digitalocean.md
     - Demo: demo.md
     - Alternatives: alternatives.md
     - Ecosystem: extend/index.md
-    - API: extend/api.md
     - Mobile App: extend/app.md
-    - Plugins: extend/plugin/index.md
-    - Integrations: extend/integrate/index.md
   - Plugins:
     - Plugins: plugins/index.md
     - Community Plugins:
@@ -88,6 +83,7 @@ nav:
     - Fund InvenTree: fund.md
     - Newsletter: newsletter.md
   - Docs: https://docs.inventree.org/en/stable/
+  - Demo: https://demo.inventree.org/
 
 # Plugins
 plugins:
@@ -149,6 +145,10 @@ plugins:
         # Old Jekyll pages
         'publishers.md': 'plugins/publishers.md'
         'functions.md': 'features.md'
+        'digitalocean.md': 'deploy.md#digitalocean'
+        'extend/api.md': 'extend/index.md#rest-api'
+        'extend/plugin/index.md': 'plugins/index.md'
+        'extend/integrate/index.md': 'extend/index.md#third-party-tools'
         # Old publisher pages (/<publisher>)
         'LavissaWoW.md': 'plugins/publishers.md#lavissawow'
         'SergeoLacruz.md': 'plugins/publishers.md#sergeolacruz'

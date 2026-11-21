@@ -20,7 +20,7 @@ We are also actively working on:
 
 - **raising the profile** of InvenTree to get a wider developer base
 - supporting **translation** into every wanted language - [learn more](contribute.md)
-- creating [integrations](extend/plugin/index.md) into other business and EE-systems via the **plugin system**
+- creating [integrations](plugins/index.md) into other business and EE-systems via the **plugin system**
 
 ### Motivations
 

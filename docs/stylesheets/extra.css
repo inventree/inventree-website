@@ -40,8 +40,16 @@
 }
 
 .md-header .iv-header-tabs .md-tabs__list {
+	display: flex;
+	flex-grow: 1;
 	margin-left: 0;
 	white-space: nowrap;
+}
+
+/* External links (Docs, Demo) are marked with an icon */
+.md-header .iv-header-tabs .iv-tab-external .ti {
+	font-size: 0.7rem;
+	vertical-align: -0.05rem;
 }
 
 .md-header .iv-header-tabs .md-tabs__item {

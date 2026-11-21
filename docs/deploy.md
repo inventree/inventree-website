@@ -6,11 +6,12 @@ There are multiple methods to deploy InvenTree. The most popular methods (suppor
 
 ### Docker
 
-InvenTree supports a simple containerized installation via docker. An official [docker image](https://hub.docker.com/r/inventree/inventree/) is provided with regular updates. 
+InvenTree supports a simple containerized installation via docker. An official [docker image](https://hub.docker.com/r/inventree/inventree/) is provided with regular updates.
 
 Refer to the [docker installation guide](https://docs.inventree.org/en/stable/start/docker/) for more information
 
 ### Installer
+
 We provide a [single-line installer](https://docs.inventree.org/en/stable/start/installer/) that enables a quick installation and updates using the packager manager.
 
 ### AppJail
@@ -19,12 +20,22 @@ InvenTree can be installed on FreeBSD using AppJail. An [AppJail Makejail](https
 
 ### Manual Bare Metal Install
 
-A [bare metal installation guide](https://docs.inventree.org/en/stable/start/) is provided for users who are looking for a low-level or custom installation. 
+A [bare metal installation guide](https://docs.inventree.org/en/stable/start/) is provided for users who are looking for a low-level or custom installation.
 
-### Cloud
+### DigitalOcean
 
-A member of the team provides a [1-click app for InvenTree](digitalocean.md) on the DigitalOcean marketplace.
+<a href="https://marketplace.digitalocean.com/apps/inventree?refcode=d6172576d014"><img src="https://www.deploytodo.com/do-btn-blue-ghost.svg" alt="Deploy to DO" width="auto" height="40" /></a>
+
+InvenTree is available as a one-click install on the DigitalOcean marketplace. The image makes use of the installer and is maintained by team member [matmair](plugins/publishers.md#matmair). The source is available [here](https://github.com/invenhost/inventree_droplet).
+
+<p>
+  <a href="https://www.digitalocean.com/">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/PoweredByDO/DO_Powered_by_Badge_blue.svg" alt="Powered by DigitalOcean badge" width="201px">
+  </a>
+</p>
+
+DigitalOcean is kind enough to provide open source projects with free credits to use their services. InvenTree is a proud recipient of these credits. If you are interested in applying for credits, you can do so [here](https://www.digitalocean.com/open-source/credits-for-projects).
 
 ### Other Options
 
-The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are  deployment methods for nearly all platforms and architectures. 
+The core InvenTree server is built using the widely used python-based framework [Django](https://djangoproject.com/). Therefore there are deployment methods for nearly all platforms and architectures.
