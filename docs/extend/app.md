@@ -12,35 +12,14 @@ The InvenTree Mobile App brings stock control to your pocket. Integrating seamle
 Native barcode support provides a multitude of context-sensitive stock control actions, allowing streamlined inventory management at your fingertips.  
 The app has been optimized for speed, providing instant access to stock knowledge and handy on-site functionality.
 
-### Features
+## Download
 
-Core app features include:
+[<i class="ti ti-brand-google-play"></i> Google Play Store](https://play.google.com/store/apps/details?id=inventree.inventree_app){ .md-button }
+[<i class="ti ti-brand-apple"></i> Apple App Store](https://apps.apple.com/au/app/inventree/id1581731101){ .md-button }
 
-- View and edit part and stock information in a blazing fast interface
-- Perform stock control actions on the go
-- Barcode integrations simplify stock operations
-- Receive purchase orders and check in stock items
+Android users can also download the APK file directly - view our [download page via Polar](../fund.md#polar-app).
 
-### Installation
+## Learn More
 
-You can install the app via the following channels:
-
-### Google Play Store (Android)
-
-Download and install from the [Google Play Store](https://play.google.com/store/apps/details?id=inventree.inventree_app&hl=en_AU)
-
-### Apple Store (iOS)
-
-Download and install from the [Apple App Store](https://apps.apple.com/au/app/inventree/id1581731101)
-
-### Direct Download (Android)
-
-We provide direct downloads for Android users - view our [download page via polar](../fund.md#polar-app) to get the latest APK file.
-
-### Documentation
-
-Mobile app documentation can be found on the [InvenTree documentation site](https://docs.inventree.org/en/stable/app/).
-
-### Code
-
-The source code for the InvenTree app is available on [GitHub](https://github.com/inventree/inventree-app/) under the MIT license.
+- Read the [mobile app documentation](https://docs.inventree.org/en/stable/app/) for a full guide to the app's features
+- The source code for the app is available on [GitHub](https://github.com/inventree/inventree-app/) under the MIT license

@@ -359,7 +359,9 @@ def define_env(env):
 
     @env.macro
     def team_intro() -> str:
-        return load_yaml('team.yml').get('text', '')
+        stats = {item['name']: item['number'] for item in load_yaml('stats.yml').get('stats', [])}
+        contributors = stats.get('Contributors', 0) // 10 * 10
+        return load_yaml('team.yml').get('text', '').replace('{contributors}', str(contributors))
 
     @env.macro
     def gallery(directory: str, per_page: int = 1) -> str:

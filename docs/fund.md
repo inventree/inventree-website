@@ -28,4 +28,4 @@ The InvenTree app can also be bought as a one off purchase as a APK download fro
 
 PayPal is a great way to provide a one-off sponsorship, and does not require you to have a GitHub account.
 
-https://paypal.me/inventree?locale.x=en_AU
+- [PayPal](https://paypal.me/inventree)

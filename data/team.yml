@@ -1,4 +1,5 @@
-text: InvenTree has had 40+ contributors since the project started in March 2017. Here are some of the currently most active devs.
+# '{contributors}' is replaced with the contributor count from stats.yml (rounded down)
+text: InvenTree has had {contributors}+ contributors since the project started in March 2017. Here are some of the people behind the project.
 team:
   - tag: SchrodingersGat
     name: Oliver

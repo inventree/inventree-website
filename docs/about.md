@@ -1,31 +1,41 @@
 ---
 title: About
 ---
-InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
-It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
 
-### Open Source
-We are open source all the way. Webserver, Docs, App and Website are MIT licensed. Please check the [source directory](https://github.com/inventree/InvenTree/) if you want to look at the source code.
+# About InvenTree
 
-### Open governance
-The roadmap for InvenTree is created by the [contributors](about/team.md). There is no solid roadmap but the team has general areas of interest and [milestones](https://github.com/inventree/InvenTree/milestones) to provide an outlook to what is to come. As this project is done in spare/free time; there is no set release timeline.
+InvenTree is an open-source inventory management system which provides intuitive parts management and stock control. It is used by hobbyists, makers, laboratories and businesses to keep track of parts, stock, manufacturing, purchasing and sales.
 
-Big ticket items that have the interest of the maintainer or a dedicated developer get the label `roadmap`: those projects are likely to be worked on in the assigned milestones. [Take a peek](https://github.com/inventree/InvenTree/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap)!
+InvenTree is at the center of an ecosystem of tools - a [mobile app](extend/app.md), a [REST API and Python library](extend/index.md#rest-api), a [plugin system](plugins/index.md) and a range of [third-party tools](extend/index.md#third-party-tools) - so it can be fitted to the way you work.
 
-### Goals
+## Open Source
 
-The **main goal** is to keep existing instances **stable** and provide a transparent way to migrate to newer versions - no matter how old the install. This does not absolve the deployers from reading the changelogs!
+InvenTree is open source all the way. The server, mobile app, documentation and this website are all MIT licensed, and developed in the open on [GitHub](https://github.com/inventree).
 
-We are also actively working on:
+## How the Project is Run
 
-- **raising the profile** of InvenTree to get a wider developer base
-- supporting **translation** into every wanted language - [learn more](contribute.md)
-- creating [integrations](plugins/index.md) into other business and EE-systems via the **plugin system**
+InvenTree was started in 2017 by [Oliver](plugins/publishers.md#schrodingersgat), who is the project maintainer. Development, issue triage and code review are carried out by a small [core team](about/team.md) of volunteers, along with contributions from the wider community.
 
-### Motivations
+The project's governance - including the roles of the maintainer, core team and translation proofreaders - is described in the [documentation](https://docs.inventree.org/en/stable/project/governance/).
 
-InvenTree is built and maintained by users who are passionate about the project. The core team members use InvenTree in their companies, laboratories and organisations to make their life easier.
+## Releases
 
-The InvenTree project is driven by the support of its developers and users. We all want to see the project grow and be embraced by others, who may in turn be inspired to contribute themselves.
+InvenTree follows [semantic versioning](https://semver.org/):
 
-There is no inherent monetary interest but if you would like to [support the project](contribute.md) - we appreciate it.
+- **Minor releases** (e.g. 1.7.0) bring new features, and are made every couple of months
+- **Patch releases** (e.g. 1.7.1) fix bugs and security issues in the current release
+- **Major releases** (e.g. 2.0.0) are reserved for breaking changes, with deprecated features announced in advance
+
+Each release is announced on the [blog](blog/index.md), and the full release notes are available on [GitHub](https://github.com/inventree/InvenTree/releases).
+
+A key goal of the project is to keep existing installations **stable**, with a clear upgrade path from any older version. Please read the release notes before upgrading.
+
+## Security
+
+The InvenTree team takes security seriously. Please report any security vulnerabilities privately, as described in our [security policy](https://docs.inventree.org/en/stable/security/) - not on the public issue tracker.
+
+## Get Involved
+
+InvenTree is built and maintained by people who use it - the core team members use InvenTree in their own companies, laboratories and organisations. There is no commercial entity behind the project.
+
+If InvenTree is useful to you, there are many ways to [contribute](contribute.md) - and if you use InvenTree in a business, please consider [funding the project](fund.md).

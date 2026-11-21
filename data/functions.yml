@@ -5,7 +5,7 @@
 #   icon:   Tabler icon class (https://tabler.io/icons)
 #   text:   Summary - one or two sentences, shown everywhere
 #   extend: One further sentence of detail - only shown on the features page
-#   link:   Documentation page (https://docs.inventree.org/en/stable/...)
+#   link:   Documentation page (https://docs.inventree.org/en/stable/...), or a page on this site
 
 # Core workflows - shown on the home page and the features page
 general:
@@ -121,6 +121,11 @@ extras:
     icon: ti-api
     text: Every feature is available through a comprehensive, self-documenting REST API, along with a native Python library.
     link: https://docs.inventree.org/en/stable/api/
+
+  - title: AI Assistants
+    icon: ti-robot
+    text: Connect AI assistants to your inventory with the InvenTree MCP plugin, and ask questions about stock, orders and BOMs using your live data.
+    link: plugins/inventree-mcp.md
 
   - title: Plugins
     icon: ti-puzzle

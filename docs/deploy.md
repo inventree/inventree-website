@@ -2,17 +2,25 @@
 title: Deploying InvenTree
 ---
 
-There are multiple methods to deploy InvenTree. The most popular methods (supported by the development team) are:
+There are multiple methods to deploy InvenTree. The most popular methods (supported by the development team) are listed below.
+
+!!! success "Docker Recommended"
+    The recommended method of installing InvenTree is with Docker, which provides a simple, reliable and repeatable setup on any operating system.
+
+Before deploying InvenTree in production, read the [security considerations](https://docs.inventree.org/en/stable/concepts/threat_model/) in the documentation.
 
 ### Docker
 
 InvenTree supports a simple containerized installation via docker. An official [docker image](https://hub.docker.com/r/inventree/inventree/) is provided with regular updates.
 
-Refer to the [docker installation guide](https://docs.inventree.org/en/stable/start/docker/) for more information
+Refer to the [docker installation guide](https://docs.inventree.org/en/stable/start/docker/) for more information.
 
 ### Installer
 
-We provide a [single-line installer](https://docs.inventree.org/en/stable/start/installer/) that enables a quick installation and updates using the packager manager.
+We provide a [single-line installer](https://docs.inventree.org/en/stable/start/installer/) for Debian and Ubuntu, which installs InvenTree as a system package, and allows updates via the package manager.
+
+!!! warning "Package repository change"
+    The package repository changed in September 2026. Existing installations must update their package repository configuration to continue receiving updates - see [the announcement](blog/posts/2026-09-09-package-repo.md) for instructions.
 
 ### AppJail
 
@@ -20,7 +28,7 @@ InvenTree can be installed on FreeBSD using AppJail. An [AppJail Makejail](https
 
 ### Manual Bare Metal Install
 
-A [bare metal installation guide](https://docs.inventree.org/en/stable/start/) is provided for users who are looking for a low-level or custom installation.
+A [bare metal installation guide](https://docs.inventree.org/en/stable/start/install/) is provided for users who are looking for a low-level or custom installation.
 
 ### DigitalOcean
 

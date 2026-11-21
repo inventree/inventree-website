@@ -4,7 +4,7 @@ title: Contribute
 
 InvenTree is an open source project which is supported by a small group of volunteer contributors. Developing and maintaining an open source project is a lot of work, and requires a lot of developer time, a resource which is quite scarce.
 
-We welcome everyone to help with InvenTree however they can!  
+We welcome everyone to help with InvenTree however they can!
 
 - [Sponsor](#sponsor)
 - [Report Bugs](#report-bugs)
@@ -15,40 +15,26 @@ We welcome everyone to help with InvenTree however they can!
 
 ### Sponsor
 
-If you or your company uses InvenTree, please consider sponsoring the project to show your support. Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!
-
-- [GitHub](fund.md#github-sponsors)
-- [PayPal](fund.md#paypal)
-
-You can also support us via:
-
-- A [one off sponsorship](fund.md#polar)
-- A [recurring sponsorship](fund.md#polar)
-
-Financial donations directly support the ongoing development of the InvenTree project. If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!
+If you or your company uses InvenTree, please consider [sponsoring the project](fund.md) to show your support. Sponsorships help to keep this project sustainable, and buy time for the core developers to commit to the project.
 
 ### Report Bugs
 
 If you find a bug or a feature that does not work correctly, please report it on [GitHub](https://github.com/inventree/inventree/issues).
 Reporting bugs is critical to improving the software. If you are able and willing, providing a fix for any outstanding issues is greatly appreciated.
 
+Security vulnerabilities should **not** be reported publicly - please follow our [security policy](https://docs.inventree.org/en/stable/security/) instead.
+
 ### Code
 
-InvenTree is built using [Python3](https://www.python.org/) and [Django](https://www.djangoproject.com/). Source code is available on [GitHub](https://github.com/inventree/inventree).
+The InvenTree server is built with [Python](https://www.python.org/) and [Django](https://www.djangoproject.com/), with a [React](https://react.dev/) frontend written in TypeScript. The [mobile app](https://github.com/inventree/inventree-app) is built with Flutter. All source code is available on [GitHub](https://github.com/inventree).
 
-Contributions towards the core InvenTree code base are welcomed and encouraged; either extending current functionality, prodiving new features, or addressing outstanding issues.
+Contributions towards the core InvenTree code base are welcomed and encouraged; either extending current functionality, providing new features, or addressing outstanding issues.
 
-Check out the [starter issues](https://github.com/inventree/InvenTree/issues?q=is%3Aissue+is%3Aopen+label%3Astarter) if you are looking for a good place to get started.
+Read the [contribution guide](https://docs.inventree.org/en/stable/develop/contributing/) to set up a development environment and learn how the project is organised. Check out the [starter issues](https://github.com/inventree/InvenTree/issues?q=is%3Aissue+is%3Aopen+label%3Astarter) if you are looking for a good place to get started.
 
 ### Translate
 
-InvenTree provides a translation layer for both the web interface and mobile app. Native language translation requires effort from translators to provide multi-lingual support. If you wish to translate InvenTree to a new language (or improve an existing translation), such contributions would be greatly appreciated!.
-
-Native language translations of the InvenTree web application and mobile app are [community contributed via crowdin](https://crowdin.com/project/inventree).
-
-_**Contributions are welcomed and encouraged!**._
-
-To contribute to the translation effort, navigate to the [InvenTree crowdin project](https://crowdin.com/project/inventree), create a free account, and start making translations for your language of choice!
+The InvenTree web interface and mobile app are translated by the community via [Crowdin](https://crowdin.com/project/inventree). To help translate InvenTree into your language (or improve an existing translation), create a free Crowdin account and start translating!
 
 ### Documentation
 
@@ -62,5 +48,6 @@ New users tend to ask questions in the [issues](https://github.com/inventree/Inv
 
 Our official channels are:
 
-- Twitter [@inventreedb](https://twitter.com/inventreedb)
+- Mastodon [@InvenTree@chaos.social](https://chaos.social/@InvenTree)
 - Reddit [r/InvenTree](https://www.reddit.com/r/inventree/)
+- X (Twitter) [@inventreedb](https://twitter.com/inventreedb)
