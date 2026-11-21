@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="alternate" type="application/rss+xml" title="InvenTree Blog" href="{{ 'blog/feed_rss_created.xml' | url }}">
+  <link rel="alternate" type="application/rss+xml" title="InvenTree News" href="{{ 'news/feed_rss_created.xml' | url }}">
+  <!-- Mastodon profile verification -->
+  <link rel="me" href="https://chaos.social/@InvenTree">
+{% endblock extrahead %}
+
+{#- Navigation tabs are rendered inside the header (see partials/header.html) -#}
+{% block tabs %}{% endblock tabs %}

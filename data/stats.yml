@@ -1,0 +1,16 @@
+stats:
+  - name: Docker pulls
+    number: 3897935
+    icon: ti-brand-docker
+  - name: GitHub Stars
+    number: 7884
+    icon: ti-star
+  - name: Forks
+    number: 1627
+    icon: ti-git-fork
+  - name: Contributors
+    number: 188
+    icon: ti-users
+  - name: Languages
+    number: 39
+    icon: ti-language

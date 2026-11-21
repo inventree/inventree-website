@@ -1,0 +1,231 @@
+# The website is built with Zensical (https://zensical.org), which reads this
+# mkdocs-format config. Build with:
+#   zensical build && python scripts/post_build.py
+#
+# The theme setup mirrors the InvenTree documentation (docs.inventree.org).
+
+# Project
+site_name: InvenTree
+site_url: https://inventree.org/
+site_description: >-
+  InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
+  It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
+site_author: InvenTree
+copyright: Copyright &copy; 2021-now InvenTree
+
+# No repo_url - the GitHub repository widget is not shown in the header
+
+# Theme
+theme:
+  name: material
+  variant: modern
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to light mode
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  features:
+    - content.code.copy
+    - header.autohide
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.top
+    - toc.follow
+
+extra_css:
+  - stylesheets/splide.min.css
+  - stylesheets/extra.css
+  - https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css
+extra_javascript:
+  - javascripts/splide.min.js
+  - javascripts/extra.js
+
+# Navigation
+# Blog posts, news items and plugin pages are not listed here - they are
+# discovered automatically (posts by the blog plugin, plugins by the index pages).
+nav:
+  - Home: index.md
+  - Get Started:
+    - Deploy: deploy.md
+    - DigitalOcean: digitalocean.md
+    - Demo: demo.md
+    - Features: functions.md
+    - Get Support: support.md
+    - Alternatives: alternatives/index.md
+  - Blog: blog/index.md
+  - News: news/index.md
+  - Plugins:
+    - plugins/index.md
+    - By Category: plugins/categories.md
+    - By Tag: plugins/tags.md
+    - Publishers: plugins/publishers.md
+  - Ecosystem:
+    - extend/index.md
+    - API: extend/api.md
+    - Mobile App: extend/app.md
+    - Plugins: extend/plugin/index.md
+    - Integrations: extend/integrate/index.md
+  - Community:
+    - About: about/index.md
+    - Team: about/team.md
+    - Contribute: contribute.md
+    - Fund InvenTree: fund.md
+    - Newsletter: newsletter.md
+  - Docs: https://docs.inventree.org/en/stable/
+
+# Plugins
+plugins:
+  - search:
+      enabled: false
+  - meta
+  - blog:
+      blog_dir: blog
+      blog_toc: true
+      authors_file: .authors.yml
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      post_url_date_format: yyyy/MM/dd
+      post_readtime: true
+      archive_name: Archive
+      archive_toc: true
+      pagination_per_page: 10
+  - blog:
+      blog_dir: news
+      blog_toc: true
+      authors_file: .authors.yml
+      post_date_format: long
+      post_url_format: "{date}/{slug}"
+      post_url_date_format: yyyy/MM/dd
+      post_readtime: false
+      archive_name: Archive
+      archive_toc: true
+      pagination_per_page: 20
+  - rss:
+      match_path: "blog/posts/.*"
+      feed_title: InvenTree Blog
+      date_from_meta:
+        as_creation: date
+        as_update: date
+      feeds_filenames:
+        rss_created: blog/feed_rss_created.xml
+        rss_updated: blog/feed_rss_updated.xml
+        json_created: blog/feed_json_created.json
+        json_updated: blog/feed_json_updated.json
+  - rss:
+      match_path: "news/posts/.*"
+      feed_title: InvenTree News
+      date_from_meta:
+        as_creation: date
+        as_update: date
+      feeds_filenames:
+        rss_created: news/feed_rss_created.xml
+        rss_updated: news/feed_rss_updated.xml
+        json_created: news/feed_json_created.json
+        json_updated: news/feed_json_updated.json
+  - macros:
+      module_name: main
+      # Only pages with 'render_macros: true' are rendered, so that template
+      # syntax in posts and plugin READMEs (e.g. Django label templates) is left alone
+      render_by_default: false
+      on_error_fail: true
+  - redirects:
+      redirect_maps:
+        # Old Jekyll pages
+        'publishers.md': 'plugins/publishers.md'
+        # Old publisher pages (/<publisher>)
+        'LavissaWoW.md': 'plugins/publishers.md#lavissawow'
+        'SergeoLacruz.md': 'plugins/publishers.md#sergeolacruz'
+        'afwkiers.md': 'plugins/publishers.md#afkiwers'
+        'lippoliv.md': 'plugins/publishers.md#lippoliv'
+        'matmair.md': 'plugins/publishers.md#matmair'
+        'melektron.md': 'plugins/publishers.md#melektron'
+        'piramja.md': 'plugins/publishers.md#piramja'
+        'schrodingersgat.md': 'plugins/publishers.md#schrodingersgat'
+        'wolflu05.md': 'plugins/publishers.md#wolflu05'
+        # Old plugin pages (/<author>/<plugin>)
+        'melektron/inventree-adv-sheet-label.md': 'plugins/inventree-adv-sheet-label.md'
+        'matmair/inventree-apprise.md': 'plugins/inventree-apprise.md'
+        'SchrodingersGat/inventree-brother-plugin.md': 'plugins/inventree-brother-plugin.md'
+        'wolflu05/inventree-bulk-plugin.md': 'plugins/inventree-bulk-plugin.md'
+        'SchrodingersGat/inventree-consolidated-shipping.md': 'plugins/inventree-consolidated-shipping.md'
+        'wolflu05/inventree-cups-plugin.md': 'plugins/inventree-cups-plugin.md'
+        'lippoliv/inventree-default-salesorder-items.md': 'plugins/inventree-default-salesorder-items.md'
+        'wolflu05/inventree-dymo-plugin.md': 'plugins/inventree-dymo-plugin.md'
+        'SchrodingersGat/inventree-harmonized-codes.md': 'plugins/inventree-harmonized-codes.md'
+        'LavissaWoW/inventree-ipn-generator.md': 'plugins/inventree-ipn-generator.md'
+        'afkiwers/inventree-kicad.md': 'plugins/inventree-kicad.md'
+        'SchrodingersGat/inventree-mcp.md': 'plugins/inventree-mcp.md'
+        'piramja/inventree-niimbot-plugin.md': 'plugins/inventree-niimbot-plugin.md'
+        'SchrodingersGat/inventree-order-history.md': 'plugins/inventree-order-history.md'
+        'matmair/inventree-rapidoc.md': 'plugins/inventree-rapidoc.md'
+        'wolflu05/inventree-report-lsp-plugin.md': 'plugins/inventree-report-lsp-plugin.md'
+        'SchrodingersGat/inventree-rolling-stocktake.md': 'plugins/inventree-rolling-stocktake.md'
+        'SchrodingersGat/inventree-stock-forecasting.md': 'plugins/inventree-stock-forecasting.md'
+        'SergeoLacruz/inventree-supplier-panel.md': 'plugins/inventree-supplier-panel.md'
+        'SchrodingersGat/inventree-test-statistics.md': 'plugins/inventree-test-statistics.md'
+        'SchrodingersGat/inventree-wireviz.md': 'plugins/inventree-wireviz.md'
+        'matmair/inventree-zapier.md': 'plugins/inventree-zapier.md'
+        'SergeoLacruz/inventree-zebra-plugin.md': 'plugins/inventree-zebra-plugin.md'
+        'wolflu05/inventree-zebra.md': 'plugins/inventree-zebra.md'
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      # Link @mentions to GitHub profiles (previously done by jekyll-mentions)
+      repo_url_shorthand: true
+      user: inventree
+      repo: InvenTree
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/inventree/inventree
+      name: InvenTree on GitHub
+    - icon: fontawesome/brands/mastodon
+      link: https://chaos.social/@InvenTree
+      name: InvenTree on Mastodon
+    - icon: fontawesome/brands/reddit
+      link: https://reddit.com/r/inventree
+      name: InvenTree on Reddit
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/inventreedb
+      name: InvenTree on Twitter
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/inventree/inventree
+      name: InvenTree on Docker
+
+use_directory_urls: true
+strict: true
+site_dir: site

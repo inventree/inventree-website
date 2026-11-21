@@ -1,0 +1,78 @@
+---
+title: Newsletter
+---
+
+# Subscribe to the Newsletter
+
+Join the InvenTree newsletter to stay up to date with releases and project news.
+
+<!-- Begin Mailchimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="https://Inventree.us12.list-manage.com/subscribe/post?u=5919cec8a3ffd28a1d60e0889&amp;id=32a53e46f9&amp;f_id=0055b0e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+<div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+<div class="mc-field-group">
+	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+</label>
+	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	<span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE1">Name </label>
+	<input type="text" value="" name="MMERGE1" class="" id="mce-MMERGE1">
+	<span id="mce-MMERGE1-HELPERTEXT" class="helper_text">Text you will be greeted with - totally optional</span>
+</div>
+<div class="mc-field-group">
+	<label for="mce-MMERGE2">GitHub </label>
+	<input type="text" value="" name="MMERGE2" class="" id="mce-MMERGE2">
+	<span id="mce-MMERGE2-HELPERTEXT" class="helper_text">Your GitHub username - totally optional</span>
+</div>
+<div class="mc-field-group input-group">
+    <strong>Send me surveys  <span class="asterisk">*</span>
+</strong>
+    <ul><li>
+    <input type="radio" value="YES" name="MMERGE3" id="mce-MMERGE3-0">
+    <label for="mce-MMERGE3-0">YES</label>
+</li>
+<li>
+    <input type="radio" value="NO" name="MMERGE3" id="mce-MMERGE3-1">
+    <label for="mce-MMERGE3-1">NO</label>
+</li>
+</ul>
+    <span id="mce-MMERGE3-HELPERTEXT" class="helper_text">Do you want to receive short questions from the team?</span>
+</div>
+<div class="mc-field-group input-group">
+    <strong>Email Format </strong>
+    <ul><li><input type="radio" value="html" name="EMAILTYPE" id="mce-EMAILTYPE-0"><label for="mce-EMAILTYPE-0">html</label></li>
+<li><input type="radio" value="text" name="EMAILTYPE" id="mce-EMAILTYPE-1"><label for="mce-EMAILTYPE-1">text</label></li>
+</ul>
+</div>
+<div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
+    <div class="content__gdpr">
+        <label>Marketing Permissions</label>
+        <p>Please select all the ways you would like to hear from us:</p>
+        <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
+		<label class="checkbox subfield" for="gdpr_90522"><input type="checkbox" id="gdpr_90522" name="gdpr[90522]" value="Y" class="av-checkbox gdpr"><span>Email</span> </label>
+        </fieldset>
+        <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
+    </div>
+    <div class="content__gdprLegal">
+        <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/terms" target="_blank">Learn more about Mailchimp's privacy practices here.</a></p>
+    </div>
+</div>
+	<div id="mce-responses" class="clear foot">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5919cec8a3ffd28a1d60e0889_32a53e46f9" tabindex="-1" value=""></div>
+        <div class="optionalParent">
+            <div class="clear foot">
+                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="md-button md-button--primary">
+                <p class="brandingLogo"><a href="https://eepurl.com/h5Mg8D" title="Mailchimp - email marketing made easy and fun"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="Mailchimp logo"></a></p>
+            </div>
+        </div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->

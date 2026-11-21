@@ -1,0 +1,82 @@
+{#- Template for entries in the plugin list (docs/plugins/<name>.md) -#}
+{% extends "main.html" %}
+
+{#- Anchors match slugify() in main.py for the tag values in use (letters, digits and spaces) -#}
+{% macro chip_list(items, page_url, extra_class='') -%}
+  {%- for item in items or [] -%}
+    <a href="{{ (page_url ~ '#' ~ (item | trim | lower | replace(' ', '-'))) | url }}" class="iv-chip {{ extra_class }}">{{ item | trim }}</a>
+  {% endfor -%}
+{%- endmacro %}
+
+{% block content %}
+{% set meta = page.meta %}
+{% if "<h1" not in page.content %}
+  <h1>{{ meta.name | d(page.title, true) }}</h1>
+{% endif %}
+
+<aside class="iv-plugin-meta">
+  <h2 class="iv-plugin-meta__title">{{ meta.name }}</h2>
+
+  {% if meta.author %}
+  <div class="iv-plugin-meta__row">
+    <span class="iv-plugin-meta__label">Publisher</span>
+    <a href="{{ ('plugins/publishers/#' ~ (meta.author | lower)) | url }}" class="iv-plugin-meta__author">
+      <img src="https://github.com/{{ meta.author }}.png?size=40" alt="" class="iv-avatar" width="20" height="20" loading="lazy">
+      {{ meta.author }}
+    </a>
+  </div>
+  {% endif %}
+
+  <div class="iv-plugin-meta__row">
+    <span class="iv-plugin-meta__label">License</span>
+    <span>
+      {% if meta.open_source %}<i class="ti ti-brand-open-source" title="Open source"></i>{% else %}<i class="ti ti-lock" title="Not open source"></i>{% endif %}
+      {{ meta.license | d('Unknown', true) }}
+    </span>
+  </div>
+
+  <div class="iv-plugin-meta__row">
+    <span class="iv-plugin-meta__label">Status</span>
+    <span>
+      {% if meta.stable %}<span class="iv-status iv-status--ok"><i class="ti ti-circle-check"></i> Stable</span>{% else %}<span class="iv-status iv-status--warn"><i class="ti ti-alert-triangle"></i> Unstable</span>{% endif %}
+      {% if meta.maintained %}<span class="iv-status iv-status--ok"><i class="ti ti-circle-check"></i> Maintained</span>{% else %}<span class="iv-status iv-status--warn"><i class="ti ti-alert-circle"></i> Unmaintained</span>{% endif %}
+    </span>
+  </div>
+
+  {% if meta.pypi and meta.package_name %}
+  <div class="iv-plugin-meta__row">
+    <span class="iv-plugin-meta__label">PyPI Package</span>
+    <a href="https://pypi.org/project/{{ meta.package_name }}/"><code>{{ meta.package_name }}</code></a>
+  </div>
+  {% endif %}
+
+  {% set links = [
+    (meta.website, 'ti-world', 'Website'),
+    (meta.issue_tracker, 'ti-bug', 'Issue Tracker'),
+    (meta.github, 'ti-brand-github', 'Source on GitHub'),
+    (meta.gitlab, 'ti-brand-gitlab', 'Source on GitLab'),
+    (meta.source, 'ti-code', 'Source Code'),
+  ] %}
+  <ul class="iv-plugin-meta__links">
+    {% for href, icon, label in links if href %}
+    <li><a href="{{ href }}"><i class="ti {{ icon }}"></i> {{ label }}</a></li>
+    {% endfor %}
+  </ul>
+
+  {% if meta.categories %}
+  <div class="iv-plugin-meta__row">
+    <span class="iv-plugin-meta__label">Categories</span>
+    <span>{{ chip_list(meta.categories, 'plugins/categories/', 'iv-chip--category') }}</span>
+  </div>
+  {% endif %}
+
+  {% if meta.tags %}
+  <div class="iv-plugin-meta__row">
+    <span class="iv-plugin-meta__label">Tags</span>
+    <span>{{ chip_list(meta.tags, 'plugins/tags/') }}</span>
+  </div>
+  {% endif %}
+</aside>
+
+{{ page.content }}
+{% endblock content %}

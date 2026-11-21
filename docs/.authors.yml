@@ -1,0 +1,13 @@
+# Authors of blog posts and news items (shared by both blogs).
+# The key must match the 'authors' entry in the post front matter.
+authors:
+  SchrodingersGat:
+    name: Oliver
+    description: Maintainer
+    avatar: https://github.com/SchrodingersGat.png
+    url: /plugins/publishers/#schrodingersgat
+  matmair:
+    name: Matthias Mair
+    description: Core Team
+    avatar: https://github.com/matmair.png
+    url: /plugins/publishers/#matmair

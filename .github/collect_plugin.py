@@ -5,7 +5,7 @@ from urllib.request import urlopen, Request
 
 inp_project = os.environ.get('PROJECT').strip()
 inp_author = os.environ.get('AUTHOR').strip()
-file_name = Path(f'_repo/{inp_project}.md')
+file_name = Path(f'docs/plugins/{inp_project}.md')
 crowdin_projet_id = 452300
 
 print(f'Collecting {inp_project} with {inp_author}...')
@@ -39,7 +39,8 @@ except:
   stable = False
 bugtracker = pypi_data['info']['bugtrack_url'] or pypi_data['info']['project_urls'].get('Bug Tracker') or ''
 homepage = pypi_data['info']['home_page'] or pypi_data['info']['project_urls'].get('Homepage')
-keywords = pypi_data['info']['keywords']
+keywords = pypi_data['info']['keywords'] or ''
+tags = ''.join(f'\n  - {k.strip()}' for k in keywords.replace(',', ' ').split() if k.strip())
 readme = pypi_data['info']['description']
 
 # Write data
@@ -56,10 +57,10 @@ package_name: {name}
 github: {homepage}
 gitlab:
 source:
-issue_tracker:{bugtracker}
+issue_tracker: {bugtracker}
 website:
 categories:
-tags: {keywords}
+tags:{tags}
 ---
 {tagline}
 

@@ -1,0 +1,7 @@
+# Netlify preview builds for pull requests
+[build]
+  command = "pip install -r requirements.txt && zensical build --clean && python scripts/post_build.py"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"

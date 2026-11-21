@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+{{ super() }}
+
+<!-- Hero for landing page -->
+<section class="iv-hero">
+  <div class="md-grid md-typeset">
+    <div class="iv-hero__inner">
+      <div class="iv-hero__content">
+        <h1>Intuitive Inventory Management <span class="iv-hero__accent">with InvenTree</span></h1>
+        <p>
+          InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
+          A wide range of features makes InvenTree the perfect choice for businesses and hobbyists alike.
+          InvenTree is designed to be extensible, and provides multiple options for integration with external applications or addition of custom plugins.
+        </p>
+        <a href="{{ 'demo/' | url }}" title="Try the InvenTree demo" class="md-button md-button--primary" data-umami-event="demo">
+          <i class="ti ti-rocket"></i> Open Demo
+        </a>
+        <a href="{{ 'deploy/' | url }}" title="Install InvenTree" class="md-button">
+          <i class="ti ti-server-bolt"></i> Deploy
+        </a>
+        <a href="https://docs.inventree.org/en/stable/" title="InvenTree documentation" class="md-button">
+          <i class="ti ti-book"></i> Docs
+        </a>
+        <a href="https://github.com/inventree/inventree" title="Explore InvenTree source code" class="md-button">
+          <i class="ti ti-code-circle"></i> Source Code
+        </a>
+      </div>
+      <div class="iv-hero__image">
+        <img src="{{ 'assets/front.png' | url }}" alt="InvenTree user interface" width="1200" height="800">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock tabs %}
+
+{% block content %}
+{{ page.content }}
+{% endblock content %}
