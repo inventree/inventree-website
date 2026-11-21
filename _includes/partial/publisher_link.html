@@ -1,3 +1,0 @@
-{% assign pub_small = include.pub %}
-{% assign publisher_ref = site.publishers | where: 'short_name', pub_small | first %}
-<a href="{{ publisher_ref.url | relative_url }}">{{ publisher_ref.name }}</a>

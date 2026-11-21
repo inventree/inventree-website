@@ -1,0 +1,479 @@
+/* ------------------------------------------------------------------------
+ * Shared with the InvenTree documentation (docs/docs/stylesheets/extra.css)
+ * ------------------------------------------------------------------------ */
+
+/* Widen the page layout (theme default is 61rem), and keep ~5% horizontal
+ * padding so the content does not run to the window edges */
+.md-grid {
+	max-width: 80rem;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+/* ...but not for grids nested inside page content (e.g. the home page hero) */
+.md-content .md-grid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* Solid primary-colour header and navigation tabs, as in the classic theme.
+ * (The Zensical "modern" variant uses a translucent neutral header.) */
+.md-header,
+.md-tabs {
+	background-color: var(--md-primary-fg-color);
+	color: var(--md-primary-bg-color);
+}
+
+.md-header {
+	backdrop-filter: none;
+}
+
+/* Navigation tabs inside the header bar (overrides/partials/header.html) */
+.md-header .iv-header-tabs {
+	flex-grow: 1;
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+	background-color: transparent;
+	overflow: visible;
+}
+
+.md-header .iv-header-tabs .md-tabs__list {
+	display: flex;
+	flex-grow: 1;
+	margin-left: 0;
+	white-space: nowrap;
+}
+
+/* External links (Docs, Demo) are marked with an icon */
+.md-header .iv-header-tabs .iv-tab-external .ti {
+	font-size: 0.8rem;
+	vertical-align: -0.05rem;
+}
+
+.md-header .iv-header-tabs .md-tabs__item {
+	height: auto;
+}
+
+.md-header .iv-header-tabs .md-tabs__link {
+	margin-top: 0;
+	font-size: 0.85rem;
+	font-weight: 500;
+}
+
+/* No repo_url is set, so the (fixed width) repository slot is empty - hide it so
+ * the colour scheme toggle sits at the right of the header */
+.md-header__source {
+	display: none;
+}
+
+/* With the tabs in the header, the page title is only needed on small screens */
+@media screen and (min-width: 76.25em) {
+	.md-header__title {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 76.234375em) {
+	.md-header .iv-header-tabs {
+		display: none;
+	}
+}
+
+/* Search button on the coloured header (darker blue box, white text) */
+.md-header .md-search__button {
+	background-color: rgba(0, 0, 0, 0.26);
+	color: var(--md-primary-bg-color);
+}
+
+.md-header .md-search__button:hover {
+	background-color: rgba(0, 0, 0, 0.32);
+}
+
+.md-header .md-search__button::before {
+	background-color: var(--md-primary-bg-color);
+}
+
+.md-header .md-search__button::after {
+	background-color: rgba(0, 0, 0, 0.2);
+	color: var(--md-primary-bg-color);
+}
+
+/* Remove top margin for first h2 header */
+.md-typeset h2:first-of-type {
+	margin-top: 0em;
+}
+
+/* Image carousel: scale every image to the slide height, keeping aspect ratio */
+.splide__slide {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.splide__slide img {
+	height: 100%;
+	width: auto;
+	/* Very wide images shrink to fit the carousel on narrow screens */
+	max-width: calc(100vw - 2rem);
+	object-fit: contain;
+}
+
+/* ------------------------------------------------------------------------
+ * Website specific
+ * ------------------------------------------------------------------------ */
+
+/* Home page hero */
+.iv-hero {
+	background: linear-gradient(
+		to bottom,
+		var(--md-primary-fg-color) 0%,
+		var(--md-primary-fg-color--dark) 100%
+	);
+	color: var(--md-primary-bg-color);
+	padding: 3rem 0 2.5rem;
+}
+
+.iv-hero__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 2.5rem;
+}
+
+.iv-hero__content {
+	flex: 1 1 22rem;
+}
+
+.iv-hero__image {
+	flex: 1 1 22rem;
+}
+
+.iv-hero__image .iv-hero__gallery {
+	margin: 0;
+	border-radius: 0.4rem;
+	overflow: hidden;
+	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* Screenshots differ in shape - crop each to the same box (keeping the top left, where
+ * the page title and navigation are) so the hero neither jumps nor shows bars */
+.iv-hero__gallery .splide__slide,
+.md-typeset .iv-hero__gallery .splide__slide {
+	height: auto;
+}
+
+.iv-hero__gallery .splide__slide img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 2.4;
+	object-fit: cover;
+	object-position: left top;
+}
+
+.iv-hero .md-typeset h1 {
+	color: inherit;
+	font-weight: 700;
+	margin-bottom: 1rem;
+}
+
+.iv-hero__accent {
+	display: block;
+	color: #b3e5fc;
+}
+
+.iv-hero p {
+	font-size: 0.85rem;
+	line-height: 1.6;
+}
+
+.iv-hero .md-typeset a.md-button {
+	color: #fff;
+	border-color: var(--md-primary-bg-color);
+	margin: 0.25rem 0.4rem 0.25rem 0;
+}
+
+.iv-hero .md-typeset a.md-button--primary {
+	background-color: #fff;
+	border-color: #fff;
+	color: var(--md-primary-fg-color);
+}
+
+.iv-hero .md-typeset a.md-button:hover {
+	background-color: var(--md-accent-fg-color);
+	border-color: var(--md-accent-fg-color);
+	color: var(--md-accent-bg-color);
+}
+
+/* Centered call-to-action blocks */
+.iv-cta {
+	text-align: center;
+	padding: 1rem 0;
+}
+
+/* Tag / category chips */
+.md-typeset .iv-chip {
+	display: inline-block;
+	margin: 0.1rem 0.1rem;
+	padding: 0.05rem 0.5rem;
+	border-radius: 1rem;
+	font-size: 0.65rem;
+	line-height: 1.6;
+	background-color: var(--md-default-fg-color--lightest);
+	color: var(--md-default-fg-color--light);
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+.md-typeset .iv-chip--category {
+	background-color: var(--md-accent-fg-color--transparent);
+	color: var(--md-typeset-a-color);
+}
+
+.md-typeset .iv-chip--team {
+	background-color: #2b8a3e;
+	color: #fff;
+}
+
+.md-typeset a.iv-chip:hover {
+	background-color: var(--md-accent-fg-color);
+	color: var(--md-accent-bg-color);
+}
+
+/* GitHub avatars */
+.md-typeset img.iv-avatar {
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-right: 0.2rem;
+}
+
+.md-typeset img.iv-avatar--large {
+	margin-right: 0.6rem;
+}
+
+/* Icons in feature cards */
+.iv-card-icon {
+	color: var(--md-primary-fg-color);
+	font-size: 1.2rem;
+	vertical-align: middle;
+}
+
+/* Project statistics */
+.iv-stats {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	margin: 1.5rem 0;
+}
+
+.iv-stat {
+	flex: 1 1 8rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	border: 0.05rem solid var(--md-default-fg-color--lightest);
+	border-radius: 0.2rem;
+}
+
+.iv-stat .ti {
+	font-size: 1.6rem;
+	color: var(--md-primary-fg-color);
+}
+
+.iv-stat__number {
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+.iv-stat__label {
+	font-size: 0.7rem;
+	color: var(--md-default-fg-color--light);
+}
+
+/* Plugin details box (overrides/plugin.html) */
+.iv-plugin-meta {
+	float: right;
+	width: 15rem;
+	margin: 0 0 1rem 1.5rem;
+	padding: 0.8rem 1rem;
+	border: 0.05rem solid var(--md-default-fg-color--lightest);
+	border-radius: 0.2rem;
+	font-size: 0.7rem;
+}
+
+.md-typeset .iv-plugin-meta__back {
+	display: inline-block;
+	margin-bottom: 0.6rem;
+	font-weight: 700;
+}
+
+.md-typeset .iv-plugin-meta__title {
+	margin: 0 0 0.6rem;
+	font-size: 0.85rem;
+}
+
+.iv-plugin-meta__row {
+	margin-bottom: 0.6rem;
+}
+
+.iv-plugin-meta__label {
+	display: block;
+	font-weight: 700;
+	color: var(--md-default-fg-color--light);
+}
+
+.iv-status {
+	display: block;
+}
+
+.iv-status--ok .ti {
+	color: #2b8a3e;
+}
+
+.iv-status--warn .ti {
+	color: #e67700;
+}
+
+.md-typeset ul.iv-plugin-meta__links {
+	list-style: none;
+	margin: 0 0 0.6rem;
+	padding: 0;
+}
+
+.md-typeset ul.iv-plugin-meta__links li {
+	margin: 0 0 0.2rem;
+}
+
+@media screen and (max-width: 44.984375em) {
+	.iv-plugin-meta {
+		float: none;
+		width: auto;
+		margin: 0 0 1rem;
+	}
+}
+
+/* On wide screens the plugin details sit in the (otherwise empty) left sidebar.
+ * Below 76.25em the sidebar becomes the navigation drawer, so they are shown in
+ * the page content instead */
+.iv-plugin-meta--sidebar {
+	float: none;
+	width: auto;
+	margin: 0 0.6rem 1rem 0;
+}
+
+@media screen and (max-width: 76.234375em) {
+	.iv-plugin-meta--sidebar {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 76.25em) {
+	.iv-plugin-meta--content {
+		display: none;
+	}
+}
+
+/* Image gallery */
+.iv-gallery {
+	margin: 1.5rem 0;
+}
+
+/* The theme's content list styles override Splide's own layout */
+.md-typeset .iv-gallery .splide__list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.md-typeset .iv-gallery .splide__slide {
+	margin: 0;
+}
+
+.md-typeset .iv-gallery .splide__slide img {
+	max-width: 100%;
+}
+
+.iv-gallery .splide__slide {
+	height: 22rem;
+}
+
+@media screen and (max-width: 44.984375em) {
+	.iv-gallery .splide__slide {
+		height: 14rem;
+	}
+}
+
+/* Mailchimp newsletter form (docs/newsletter.md) */
+#mc_embed_signup .mc-field-group {
+	margin-bottom: 0.8rem;
+}
+
+#mc_embed_signup label,
+#mc_embed_signup .mc-field-group > strong {
+	display: block;
+	font-weight: 700;
+}
+
+#mc_embed_signup input[type=email],
+#mc_embed_signup input[type=text] {
+	width: 100%;
+	max-width: 30rem;
+	padding: 0.4rem;
+	border: 0.05rem solid var(--md-default-fg-color--lighter);
+	border-radius: 0.2rem;
+	background: var(--md-default-bg-color);
+	color: var(--md-default-fg-color);
+}
+
+#mc_embed_signup .md-typeset ul,
+#mc_embed_signup ul {
+	list-style: none;
+	margin-left: 0;
+}
+
+#mc_embed_signup ul li label,
+#mc_embed_signup fieldset label {
+	display: inline;
+	font-weight: normal;
+}
+
+#mc_embed_signup input[type=checkbox],
+#mc_embed_signup input[type=radio] {
+	margin-right: 0.4rem;
+}
+
+#mc_embed_signup fieldset {
+	border: none;
+	padding: 0;
+}
+
+#mc_embed_signup .helper_text {
+	display: block;
+	font-size: 0.65rem;
+	color: var(--md-default-fg-color--light);
+}
+
+/* Home page section headings which link to their section (e.g. Features) */
+.md-typeset a.iv-heading-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.md-typeset a.iv-heading-link .ti {
+	font-size: 0.8em;
+	opacity: 0.5;
+	transition: transform 125ms, opacity 125ms;
+}
+
+.md-typeset a.iv-heading-link:hover {
+	color: var(--md-accent-fg-color);
+}
+
+.md-typeset a.iv-heading-link:hover .ti {
+	opacity: 1;
+	transform: translateX(0.2em);
+}
