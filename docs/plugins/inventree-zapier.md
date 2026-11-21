@@ -3,7 +3,7 @@ name: inventree-zapier
 author: matmair
 license: MIT
 open_source: true
-stable: False
+stable: false
 maintained: true
 pypi: true
 package_name: inventree-zapier

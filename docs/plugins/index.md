@@ -20,21 +20,8 @@ Read more about the [plugin architecture](https://docs.inventree.org/en/stable/p
 
 ## Create Your Own Plugin
 
-The [InvenTree Plugin Creator](https://github.com/inventree/plugin-creator) is a command line tool which scaffolds a new plugin in a few seconds. Select the features you need, and it generates a ready-to-develop project:
+The [InvenTree Plugin Creator](https://github.com/inventree/plugin-creator) is a command line tool which scaffolds a new plugin in a few seconds - select the features you need, and it generates a ready-to-develop project. Refer to the [plugin creator guide](https://docs.inventree.org/en/stable/plugins/creator/) and the [plugin walkthrough](https://docs.inventree.org/en/stable/plugins/walkthrough/) to get started.
 
-- Plugin metadata, licence and the plugin features (mixins) you select
-- Frontend setup for custom panels and dashboard items, with a hot-reloading development server
-- Optional Git, pre-commit and CI configuration (GitHub or GitLab), including automated PyPI publishing
-
-```bash
-pip install -U inventree-plugin-creator
-create-inventree-plugin
-```
-
-!!! info "InvenTree 1.0 or later"
-    Plugins generated with the plugin creator target InvenTree version 1.0.0 or later.
-
-Refer to the [plugin creator guide](https://docs.inventree.org/en/stable/plugins/creator/) and the [plugin walkthrough](https://docs.inventree.org/en/stable/plugins/walkthrough/) for step-by-step instructions.
 Once your plugin is published, add it to the [community plugin list](community.md) by following the [instructions on GitHub](https://github.com/inventree/inventree-website#adding-a-plugin-to-the-list).
 
 ## Community Plugins

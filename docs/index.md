@@ -7,17 +7,15 @@ hide:
   - toc
 ---
 
-## Features
+## [Features <i class="ti ti-arrow-right"></i>](features.md){ .iv-heading-link }
 
 {{ feature_cards('general') }}
 
-## Community
+## [Community <i class="ti ti-arrow-right"></i>](about.md){ .iv-heading-link }
 
 {{ stats() }}
 
-## Plugins
-
-Explore plugins provided by the community. [Browse the plugin list](plugins/community.md).
+## [Plugins <i class="ti ti-arrow-right"></i>](plugins/index.md){ .iv-heading-link }
 
 {{ plugin_cards(limit=4, recent=true) }}
 

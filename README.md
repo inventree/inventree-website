@@ -39,7 +39,6 @@ Content:
 `docs/plugins` contains plugin list entries (plus the index pages for the list)  
 `publishers/` contains publishers of plugins  
 `data/` contains data that is referenced on pages (`stats.yml` is updated daily by a bot)  
-`drafts/` contains unpublished drafts  
 `templates/` contains templates for new plugins and publishers  
 
 Theme and generated content:

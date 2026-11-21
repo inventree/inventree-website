@@ -3,7 +3,7 @@ name: inventree-brother-plugin
 author: SchrodingersGat
 license: MIT
 open_source: true
-stable: False
+stable: false
 maintained: true
 pypi: true
 package_name: inventree-brother-plugin

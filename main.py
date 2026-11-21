@@ -70,6 +70,10 @@ def excerpt(body: str, length: int = 200) -> str:
         if in_fence:
             in_fence = '```' not in block
             continue
+
+        # Drop a heading written directly above its paragraph (no blank line between)
+        block = re.sub(r'^(#[^\n]*\n)+', '', block).strip()
+
         if not block or block.startswith(('#', '!', '<', '|', '-', '*', '>', '[!')):
             continue
 

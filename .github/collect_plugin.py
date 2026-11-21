@@ -50,7 +50,7 @@ name: {name}
 author: {author}
 license: {license}
 open_source: true
-stable: {stable}
+stable: {str(stable).lower()}
 maintained: true
 pypi: true
 package_name: {name}

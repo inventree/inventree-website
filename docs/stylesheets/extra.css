@@ -48,7 +48,7 @@
 
 /* External links (Docs, Demo) are marked with an icon */
 .md-header .iv-header-tabs .iv-tab-external .ti {
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 	vertical-align: -0.05rem;
 }
 
@@ -58,7 +58,8 @@
 
 .md-header .iv-header-tabs .md-tabs__link {
 	margin-top: 0;
-	font-size: 0.75rem;
+	font-size: 0.85rem;
+	font-weight: 500;
 }
 
 /* No repo_url is set, so the (fixed width) repository slot is empty - hide it so
@@ -413,4 +414,25 @@
 	display: block;
 	font-size: 0.65rem;
 	color: var(--md-default-fg-color--light);
+}
+
+/* Home page section headings which link to their section (e.g. Features) */
+.md-typeset a.iv-heading-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+.md-typeset a.iv-heading-link .ti {
+	font-size: 0.8em;
+	opacity: 0.5;
+	transition: transform 125ms, opacity 125ms;
+}
+
+.md-typeset a.iv-heading-link:hover {
+	color: var(--md-accent-fg-color);
+}
+
+.md-typeset a.iv-heading-link:hover .ti {
+	opacity: 1;
+	transform: translateX(0.2em);
 }
