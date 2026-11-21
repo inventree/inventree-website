@@ -84,51 +84,9 @@ def copy_legacy_feeds():
         print(f'Copied {src} -> {dst}')
 
 
-# Old Jekyll pages were served at <page>.html - the 'redirects' plugin in mkdocs.yml
-# only handles .md sources, so these are written here
-LEGACY_HTML = {
-    'about/team.html': '/about/team/',
-    'blog.html': '/blog/',
-    'categories.html': '/plugins/categories/',
-    'contribute.html': '/contribute/',
-    'demo.html': '/demo/',
-    'deploy.html': '/deploy/',
-    'digitalocean.html': '/deploy/#digitalocean',
-    'extend/api.html': '/extend/#rest-api',
-    'extend/app.html': '/extend/app/',
-    'fund.html': '/fund/',
-    'news.html': '/news/',
-    'newsletter.html': '/newsletter/',
-    'plugins.html': '/plugins/community/',
-    'publishers.html': '/plugins/publishers/',
-    'support.html': '/support/',
-    'tags.html': '/plugins/tags/',
-}
-
-
-def write_legacy_redirects():
-    """Write a redirect page for each old Jekyll .html URL."""
-    for path, target in LEGACY_HTML.items():
-        url = html.escape(target)
-        output = site_dir.joinpath(path)
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(
-            '<!doctype html>\n<html lang="en">\n<head>\n'
-            '<meta charset="utf-8">\n<title>Redirecting...</title>\n'
-            f'<link rel="canonical" href="{url}">\n'
-            f'<meta http-equiv="refresh" content="0; url={url}">\n'
-            '</head>\n<body>\n'
-            f'You\'re being redirected to a <a href="{url}">new destination</a>.\n'
-            '</body>\n</html>\n',
-            encoding='utf-8',
-        )
-    print(f'Wrote {len(LEGACY_HTML)} legacy redirects')
-
-
 if __name__ == '__main__':
     if not site_dir.exists():
         sys.exit(f"'{site_dir}' does not exist - run 'zensical build' first")
 
     build_plugins_json()
     copy_legacy_feeds()
-    # write_legacy_redirects()
