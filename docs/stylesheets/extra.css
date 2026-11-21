@@ -56,6 +56,11 @@
 	height: auto;
 }
 
+/* Selected tab underline matches the header text (the theme uses the page text colour) */
+.md-header .iv-header-tabs .md-tabs__item--active {
+	border-bottom-color: var(--md-primary-bg-color);
+}
+
 .md-header .iv-header-tabs .md-tabs__link {
 	margin-top: 0;
 	font-size: 0.85rem;
@@ -125,13 +130,30 @@
  * ------------------------------------------------------------------------ */
 
 /* Home page hero */
+/* The header (on every page) and the home page hero use the original website
+ * colours - tan (#ddbc91) and blue-grey (#90a8d8) - rather than the documentation blue.
+ * The same colours are used in both light and dark mode */
+:root {
+	--iv-hero-top: #9e7d47;
+	--iv-hero-bottom: #6a5639;
+	--iv-hero-text: #f9fafb;
+	--iv-hero-muted: #e5e7eb;
+	--iv-hero-accent: #c3d1ee;
+	--iv-hero-button: #90a8d8;
+	--iv-hero-button-text: #1f2937;
+	--iv-hero-button-hover: #ddbc91;
+}
+
+.md-header,
+.md-nav--primary .md-nav__title[for="__drawer"] {
+	--md-primary-fg-color: var(--iv-hero-top);
+	--md-primary-bg-color: var(--iv-hero-text);
+	--md-primary-bg-color--light: var(--iv-hero-muted);
+}
+
 .iv-hero {
-	background: linear-gradient(
-		to bottom,
-		var(--md-primary-fg-color) 0%,
-		var(--md-primary-fg-color--dark) 100%
-	);
-	color: var(--md-primary-bg-color);
+	background: linear-gradient(to bottom, var(--iv-hero-top) 0%, var(--iv-hero-bottom) 100%);
+	color: var(--iv-hero-text);
 	padding: 3rem 0 2.5rem;
 }
 
@@ -180,30 +202,31 @@
 
 .iv-hero__accent {
 	display: block;
-	color: #b3e5fc;
+	color: var(--iv-hero-accent);
 }
 
 .iv-hero p {
 	font-size: 0.85rem;
 	line-height: 1.6;
+	color: var(--iv-hero-muted);
 }
 
 .iv-hero .md-typeset a.md-button {
-	color: #fff;
-	border-color: var(--md-primary-bg-color);
+	color: var(--iv-hero-text);
+	border-color: var(--iv-hero-text);
 	margin: 0.25rem 0.4rem 0.25rem 0;
 }
 
 .iv-hero .md-typeset a.md-button--primary {
-	background-color: #fff;
-	border-color: #fff;
-	color: var(--md-primary-fg-color);
+	background-color: var(--iv-hero-button);
+	border-color: var(--iv-hero-button);
+	color: var(--iv-hero-button-text);
 }
 
 .iv-hero .md-typeset a.md-button:hover {
-	background-color: var(--md-accent-fg-color);
-	border-color: var(--md-accent-fg-color);
-	color: var(--md-accent-bg-color);
+	background-color: var(--iv-hero-button-hover);
+	border-color: var(--iv-hero-button-hover);
+	color: var(--iv-hero-button-text);
 }
 
 /* Centered call-to-action blocks */
