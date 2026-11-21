@@ -10,8 +10,12 @@ package_name: inventree-order-history
 github: https://github.com/inventree/inventree-order-history
 issue_tracked: https://github.com/inventree/inventree-order-history/issues
 website: https://inventree.org
-categories: Reporting
-tags: order history data
+categories:
+  - Reporting
+tags:
+  - order
+  - history
+  - data
 ---
 
 Order History for InvenTree

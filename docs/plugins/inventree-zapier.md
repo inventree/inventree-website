@@ -12,8 +12,10 @@ gitlab:
 source:
 issue_tracker: https://github.com/matmair/inventree-zapier/issues
 website: https://mjmair.com
-categories: Event
-tags: Zapier
+categories:
+  - Event
+tags:
+  - Zapier
 ---
 Integrate Zapier into InvenTree
 

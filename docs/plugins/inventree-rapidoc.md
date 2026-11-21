@@ -12,8 +12,10 @@ gitlab:
 source:
 issue_tracker: https://github.com/matmair/inventree-rapidoc/issues
 website: https://mjmair.com/
-categories: API
-tags: RapiDoc
+categories:
+  - API
+tags:
+  - RapiDoc
 ---
 
 Use RapiDoc for Inventree API docs.

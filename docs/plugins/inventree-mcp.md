@@ -10,7 +10,8 @@ package_name: inventree-mcp
 github: https://github.com/inventree/inventree-mcp
 issue_tracker: https://github.com/inventree/inventree-mcp/issues
 website: https://inventree.org
-categories: AI
+categories:
+  - AI
 ---
 
 InvenTree MCP

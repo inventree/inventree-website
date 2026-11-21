@@ -12,8 +12,13 @@ gitlab:
 source:
 issue_tracker: https://github.com/wolflu05/inventree-bulk-plugin/issues
 website:
-categories: AppMixin
-tags: Bulk Stock Part Locations
+categories:
+  - AppMixin
+tags:
+  - Bulk
+  - Stock
+  - Part
+  - Locations
 ---
 Bulk creation plugin for InvenTree
 

@@ -10,8 +10,12 @@ package_name: inventree-harmonized-system-codes
 github: https://github.com/SchrodingersGat/inventree-harmonized-codes
 issue_tracked: https://github.com/SchrodingersGat/inventree-harmonized-codes/issues
 website: https://inventree.org
-categories: Shipping
-tags: shipping harmonized codes
+categories:
+  - Shipping
+tags:
+  - shipping
+  - harmonized
+  - codes
 ---
 
 Harmonized System Codes for InvenTree

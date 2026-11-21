@@ -10,8 +10,12 @@ package_name: inventree-rolling-stocktake
 github: https://github.com/inventree/rolling-stocktake-plugin
 issue_tracked: https://github.com/inventree/rolling-stocktake-plugin/issues
 website: https://inventree.org
-categories: Stock
-tags: stock dashboard inventory
+categories:
+  - Stock
+tags:
+  - stock
+  - dashboard
+  - inventory
 ---
 
 Rolling Stocktake for InvenTree

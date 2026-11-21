@@ -10,8 +10,12 @@ package_name: inventree-test-statistics
 github: https://github.com/inventree/inventree-test-statistics
 issue_tracked: https://github.com/inventree/inventree-test-statistics/issues
 website: https://inventree.org
-categories: Reporting
-tags: test report data
+categories:
+  - Reporting
+tags:
+  - test
+  - report
+  - data
 ---
 
 Test Statistics for InvenTree

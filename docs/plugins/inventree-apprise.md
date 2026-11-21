@@ -21,7 +21,6 @@ tags:
     - Microsoft Teams
     - Slack
     - Twilio
-    - 
 ---
 Send notifications from InvenTree via Apprise
 

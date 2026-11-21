@@ -12,8 +12,12 @@ gitlab:
 source:
 issue_tracker: https://github.com/inventree/inventree-brother-plugin/issues
 website: https://inventree.org
-categories: Printer
-tags: Label Printer Brother
+categories:
+  - Printer
+tags:
+  - Label
+  - Printer
+  - Brother
 ---
 Brother label printer plugin for InvenTree
 

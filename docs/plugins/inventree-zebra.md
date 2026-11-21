@@ -12,8 +12,12 @@ gitlab:
 source:
 issue_tracker: https://github.com/wolflu05/inventree-zebra/issues
 website:
-categories: Printer
-tags: Label Printer Zebra
+categories:
+  - Printer
+tags:
+  - Label
+  - Printer
+  - Zebra
 ---
 Zebra label printer driver plugin for InvenTree
 

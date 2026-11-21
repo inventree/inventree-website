@@ -9,8 +9,12 @@ pypi: true
 package_name: inventree-kicad-plugin
 github: https://github.com/afkiwers/inventree_kicad
 issue_tracked: https://github.com/afkiwers/inventree_kicad/issues
-categories: Integration
-tags: schematic bom kicad
+categories:
+  - Integration
+tags:
+  - schematic
+  - bom
+  - kicad
 ---
 
 KiCad Integration for InvenTree

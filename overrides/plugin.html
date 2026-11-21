@@ -2,7 +2,9 @@
 {% extends "main.html" %}
 
 {#- Anchors match slugify() in main.py for the tag values in use (letters, digits and spaces) -#}
+{#- A plain string (rather than a list) is shown as a single chip, not split into letters -#}
 {% macro chip_list(items, page_url, extra_class='') -%}
+  {%- if items is string %}{% set items = [items] %}{% endif -%}
   {%- for item in items or [] -%}
     <a href="{{ (page_url ~ '#' ~ (item | trim | lower | replace(' ', '-'))) | url }}" class="iv-chip {{ extra_class }}">{{ item | trim }}</a>
   {% endfor -%}

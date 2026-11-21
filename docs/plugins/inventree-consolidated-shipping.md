@@ -11,8 +11,12 @@ package_name: inventree-consolidated-shipment-lines
 github: https://github.com/SchrodingersGat/inventree-consolidated-shipping-report
 issue_tracker: https://github.com/SchrodingersGat/inventree-consolidated-shipping-report/issues
 website: https://inventree.org
-categories: Shipping
-tags: shipping consolidated report
+categories:
+  - Shipping
+tags:
+  - shipping
+  - consolidated
+  - report
 ---
 
 InvenTree Consolidated Shipping Lines

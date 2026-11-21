@@ -49,12 +49,12 @@ def slugify(value: str) -> str:
 
 
 def as_list(value) -> list[str]:
-    """Tags and categories may be a list, a comma separated string, or empty."""
+    """Tags and categories may be a list, a space or comma separated string, or empty."""
     if not value:
         return []
     if isinstance(value, str):
-        value = value.split(',')
-    return [str(v).strip() for v in value if str(v).strip()]
+        value = value.replace(',', ' ').split()
+    return [str(v).strip() for v in value if v is not None and str(v).strip()]
 
 
 def excerpt(body: str, length: int = 200) -> str:

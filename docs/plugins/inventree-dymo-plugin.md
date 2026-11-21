@@ -12,8 +12,12 @@ gitlab:
 source:
 issue_tracker: https://github.com/wolflu05/inventree-dymo-plugin/issues
 website:
-categories: Printer
-tags: Label Printer Dymo
+categories:
+  - Printer
+tags:
+  - Label
+  - Printer
+  - Dymo
 ---
 Dymo label printer driver plugin for InvenTree
 

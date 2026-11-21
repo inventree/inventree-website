@@ -12,8 +12,13 @@ gitlab:
 source:
 issue_tracker: https://github.com/wolflu05/inventree-cups-plugin/issues
 website:
-categories: Printer
-tags: Label Printer CUPS DYMO
+categories:
+  - Printer
+tags:
+  - Label
+  - Printer
+  - CUPS
+  - DYMO
 ---
 Label printing plugin for generic cups printers 
 

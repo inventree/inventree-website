@@ -10,8 +10,12 @@ package_name: inventree-stock-forecasting
 github: https://github.com/inventree/inventree-stock-forecasting
 issue_tracked: https://github.com/inventree/inventree-stock-forecasting/issues
 website: https://inventree.org
-categories: Reporting
-tags: stock forecasting data
+categories:
+  - Reporting
+tags:
+  - stock
+  - forecasting
+  - data
 ---
 
 Stock Forecasting for InvenTree

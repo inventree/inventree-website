@@ -10,8 +10,12 @@ package_name: inventree-wireviz-plugin
 github: https://github.com/inventree/inventree-wireviz
 issue_tracked: https://github.com/inventree/inventree-wireviz/issues
 website: https://inventree.org
-categories: Extension
-tags: BOM Build Part
+categories:
+  - Extension
+tags:
+  - BOM
+  - Build
+  - Part
 ---
 
 Wireviz Extension for InvenTree
