@@ -1,5 +1,6 @@
 ---
 title: Blog
+description: "Release announcements, guides and updates from the InvenTree team."
 ---
 
 # InvenTree Blog

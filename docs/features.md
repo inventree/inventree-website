@@ -1,6 +1,7 @@
 ---
 title: Features
 render_macros: true
+description: "Parts, stock, BOMs, manufacturing, purchasing and sales - plus labels, barcodes, a mobile app, REST API and plugins. See everything InvenTree can do."
 ---
 
 # A wealth of functions provided out of the box

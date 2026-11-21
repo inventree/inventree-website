@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: security-release
 title: Action required - Upcoming Security Release
+description: "The InvenTree core development team has received a report of a critical security vulnerability affecting a large range of releases since 2024. We will…"
 ---
 The InvenTree core development team has received a report of a *critical security vulnerability*  affecting a large range of releases since 2024. We will release a disclosure and a fixed release for the 1.2.x release series on 2026-04-08 21:00 UTC.  
 The vulnerability allows for lateral movement and privilege escalation within an InvenTree instance. It has a low attack complexity.

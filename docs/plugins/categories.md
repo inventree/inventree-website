@@ -2,6 +2,7 @@
 title: Plugins by Category
 template: main.html
 render_macros: true
+description: "Community plugins for InvenTree, grouped by category."
 ---
 
 # Plugins by Category

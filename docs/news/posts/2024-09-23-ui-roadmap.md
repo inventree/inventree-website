@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: ui-roadmap
 title: UI Roadmap - going 1.0
+description: "We are excited to share that we have formed a plan for 1.0 - this contains breaking changes to how UI works. Read the details in the full article and…"
 ---
 ### UI Roadmap - going 1.0
 

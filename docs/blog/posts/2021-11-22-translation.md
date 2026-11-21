@@ -4,6 +4,7 @@ authors:
   - SchrodingersGat
 slug: translation
 title: Translating InvenTree
+description: "How we provide translation support for InvenTree in multiple languages"
 ---
 How we provide translation support for InvenTree in multiple languages
 

@@ -4,6 +4,7 @@ authors:
   - SchrodingersGat
 slug: label-printing
 title: Label Printing Updates
+description: "Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a…"
 ---
 Available in the upcoming 0.13.0 stable release are some significant enhancements for label printing functionality. The label printing code has received a major overhaul to allow greater flexibility for label printing plugins, and enabling new features which were not previously possible.
 

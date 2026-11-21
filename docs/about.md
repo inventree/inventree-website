@@ -1,5 +1,6 @@
 ---
 title: About
+description: "About the InvenTree project - open source, how it is run, how releases work and how to get involved."
 ---
 
 # About InvenTree

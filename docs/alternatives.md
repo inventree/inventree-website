@@ -1,5 +1,6 @@
 ---
 title: Alternatives
+description: "InvenTree may not be the right fit for everyone. A short list of alternative parts, asset and ERP systems."
 ---
 
 # Alternatives

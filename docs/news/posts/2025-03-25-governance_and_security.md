@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: governance_and_security
 title: Governance and Security
+description: "In preparation for the upcoming InvenTree 1.0 release, we released new pages detailing project governance and security policies. It is recommended to read…"
 ---
 ### Governance and Security
 

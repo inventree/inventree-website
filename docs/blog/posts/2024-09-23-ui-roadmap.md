@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: ui-roadmap
 title: UI Roadmap - going 1.0
+description: "In August 2023 we announced in a blog post that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and…"
 ---
 In August 2023 we announced [in a blog post](/blog/2023/08/28/react) that we are working on a new user interface for InvenTree. This post is a follow-up to that announcement and provides an overview of the progress we have made so far and what we are planning to do next.
 The most important information for you: the next release (0.17.0) will be the last with the old interface (CUI) as the default. The new interface (PUI) will be the default starting with the 0.18.0 release.  

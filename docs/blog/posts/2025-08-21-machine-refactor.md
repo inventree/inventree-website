@@ -4,6 +4,7 @@ authors:
   - SchrodingersGat
 slug: machine-refactor
 title: Machine Plugin Refactor
+description: "In preparation for the upcoming 1.0.0 release, we have made some breaking changes to the machine registry plugin system."
 ---
 In preparation for the upcoming 1.0.0 release, we have made some *breaking* changes to the machine registry plugin system.
 

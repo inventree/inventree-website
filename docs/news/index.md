@@ -1,5 +1,6 @@
 ---
 title: News
+description: "Short announcements from the InvenTree project."
 ---
 
 # InvenTree News

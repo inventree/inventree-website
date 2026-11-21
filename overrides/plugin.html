@@ -78,6 +78,11 @@
 </aside>
 {%- endmacro %}
 
+{#- Use the plugin name (rather than the title derived from the file name) for the page title -#}
+{% block htmltitle %}
+  <title>{{ page.meta.name | d(page.title, true) }} - {{ config.site_name }}</title>
+{% endblock htmltitle %}
+
 {% block site_nav %}
   {#- The primary sidebar also holds the navigation drawer on narrow screens, so keep nav.html -#}
   <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">

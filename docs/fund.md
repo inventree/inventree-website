@@ -1,5 +1,6 @@
 ---
 title: Fund InvenTree
+description: "Support InvenTree development with a one-off or recurring sponsorship via GitHub Sponsors, Polar or PayPal."
 ---
 
 Sponsorships help to keep the InvenTree project sustainable, and buys time for the core developers to commit to the project.

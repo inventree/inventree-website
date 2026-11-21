@@ -1,5 +1,6 @@
 ---
 title: InvenTree Demo
+description: "Try InvenTree in your browser - log in to the online demo with one of the example accounts."
 ---
 
 Want to take InvenTree for a spin? A working demo of InvenTree is available online at <a href="https://demo.inventree.org" data-umami-event="demo">https://demo.inventree.org</a>

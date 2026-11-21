@@ -4,6 +4,7 @@ authors:
   - SchrodingersGat
 slug: rolling-stocktake
 title: Rolling Stocktake Plugin
+description: "The InvenTree development team has released a new plugin which provides a \"Rolling Stocktake\" mechanism for InvenTree."
 ---
 The InvenTree development team has released a new plugin which provides a "Rolling Stocktake" mechanism for InvenTree.
 

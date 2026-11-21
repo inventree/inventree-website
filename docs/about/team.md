@@ -1,6 +1,7 @@
 ---
 title: Team
 render_macros: true
+description: "Meet some of the people behind InvenTree."
 ---
 
 {{ team_intro() }}

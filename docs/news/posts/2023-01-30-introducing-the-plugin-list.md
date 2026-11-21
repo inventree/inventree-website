@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: introducing-the-plugin-list
 title: Introducing the Plugin List
+description: "Getting ready for 0.10.0, Website Updates and the Plugin List."
 ---
 Getting ready for 0.10.0, Website Updates and the Plugin List.
 

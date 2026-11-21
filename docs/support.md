@@ -1,5 +1,6 @@
 ---
 title: Get Support
+description: "How to get help with InvenTree - documentation, discussions, security reports and paid support."
 ---
 
 As an open-source project we offer a [public issue tracker](https://github.com/inventree/InvenTree/issues) and [public documentation](https://docs.inventree.org).

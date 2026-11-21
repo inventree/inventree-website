@@ -1,5 +1,6 @@
 ---
 title: Ecosystem
+description: "The InvenTree ecosystem - REST API, Python library, mobile app, plugins, AI assistants and third-party tools."
 ---
 
 # Ecosystem

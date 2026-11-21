@@ -2,6 +2,7 @@
 title: Plugins by Tag
 template: main.html
 render_macros: true
+description: "Community plugins for InvenTree, grouped by tag."
 ---
 
 # Plugins by Tag

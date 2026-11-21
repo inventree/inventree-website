@@ -22,6 +22,7 @@ render_macros: true
 hide:
   - navigation
   - toc
+description: "InvenTree is an open-source inventory management system, providing intuitive parts management and stock control for businesses and hobbyists alike."
 ---
 
 ## [Features <i class="ti ti-arrow-right"></i>](features.md){ .iv-heading-link }

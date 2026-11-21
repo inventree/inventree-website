@@ -2,6 +2,7 @@
 title: Community Plugins
 template: main.html
 render_macros: true
+description: "Browse plugins for InvenTree developed by the community."
 ---
 
 # Community Plugins

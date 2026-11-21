@@ -1,6 +1,7 @@
 ---
 title: InvenTree Mobile App
 render_macros: true
+description: "The InvenTree mobile app for Android and iOS - stock control and barcode scanning in the palm of your hand."
 ---
 
 # Mobile stock control in the palm of your hand

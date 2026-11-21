@@ -1,6 +1,7 @@
 ---
 title: Plugins
 template: main.html
+description: "Extend InvenTree with plugins - add UI panels, integrations, label printers, barcode formats and more - or create your own."
 ---
 
 # Plugins

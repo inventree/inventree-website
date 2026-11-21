@@ -1,5 +1,6 @@
 ---
 title: Contribute
+description: "Help improve InvenTree - sponsor the project, report bugs, write code, translate or improve the documentation."
 ---
 
 InvenTree is an open source project which is supported by a small group of volunteer contributors. Developing and maintaining an open source project is a lot of work, and requires a lot of developer time, a resource which is quite scarce.

@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: plugin-list
 title: Starting the Plugin List
+description: "Recently a new feature was launched: A central plugin list."
 ---
 Recently a new feature was launched: A central plugin list.
 

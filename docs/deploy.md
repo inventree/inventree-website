@@ -1,5 +1,6 @@
 ---
 title: Deploying InvenTree
+description: "Deploy InvenTree with Docker, the package installer, AppJail, a bare metal install or a one-click DigitalOcean droplet."
 ---
 
 There are multiple methods to deploy InvenTree. The most popular methods (supported by the development team) are listed below.

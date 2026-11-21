@@ -8,8 +8,7 @@
 site_name: InvenTree
 site_url: https://inventree.org/
 site_description: >-
-  InvenTree is an open-source inventory management system which provides intuitive parts management and stock control.
-  It is at the center of an ecosystem of addins for EDA tools, API wrapper, deeply integrated plugins and 3rd party tools.
+  InvenTree is an open-source inventory management system, providing intuitive parts management and stock control for businesses and hobbyists alike.
 site_author: InvenTree
 copyright: Copyright &copy; 2021-now InvenTree
 

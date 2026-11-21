@@ -1,5 +1,6 @@
 ---
 title: Newsletter
+description: "Subscribe to the InvenTree newsletter for release announcements and project news."
 ---
 
 # Subscribe to the Newsletter

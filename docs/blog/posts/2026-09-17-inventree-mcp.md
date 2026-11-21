@@ -4,6 +4,7 @@ authors:
   - SchrodingersGat
 slug: inventree-mcp
 title: InvenTree MCP Plugin
+description: "The InvenTree development team is excited to introduce InvenTreeMCP, a new plugin which exposes your InvenTree inventory data to AI agents and other…"
 ---
 The InvenTree development team is excited to introduce [InvenTreeMCP](https://github.com/inventree/inventree-mcp), a new plugin which exposes your InvenTree inventory data to AI agents and other MCP-aware applications via the [Model Context Protocol](https://modelcontextprotocol.io) (MCP).
 

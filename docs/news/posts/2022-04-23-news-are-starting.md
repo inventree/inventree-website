@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: news-are-starting
 title: We have news now!
+description: "News!"
 ---
 News!
 

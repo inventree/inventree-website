@@ -4,6 +4,7 @@ authors:
   - matmair
 slug: package-repo
 title: Action required - Package Repository Change
+description: "Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install…"
 ---
 Due to changes to the package publishing platform, packager.io, all users of the package-based installer (most often installed through the 1-line install script) must manually update their package repository configuration to continue receiving updates.
 
