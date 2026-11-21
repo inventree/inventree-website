@@ -154,11 +154,11 @@
 	margin: 0;
 	border-radius: 0.4rem;
 	overflow: hidden;
-	background-color: #fff;
 	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
 }
 
-/* Screenshots differ in height - fit each into the same box so the hero does not jump */
+/* Screenshots differ in shape - crop each to the same box (keeping the top left, where
+ * the page title and navigation are) so the hero neither jumps nor shows bars */
 .iv-hero__gallery .splide__slide,
 .md-typeset .iv-hero__gallery .splide__slide {
 	height: auto;
@@ -168,8 +168,8 @@
 	display: block;
 	width: 100%;
 	aspect-ratio: 2.4;
-	object-fit: contain;
-	background-color: #fff;
+	object-fit: cover;
+	object-position: left top;
 }
 
 .iv-hero .md-typeset h1 {
