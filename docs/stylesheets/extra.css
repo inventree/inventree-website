@@ -150,12 +150,26 @@
 	flex: 1 1 22rem;
 }
 
-.iv-hero__image img {
+.iv-hero__image .iv-hero__gallery {
+	margin: 0;
+	border-radius: 0.4rem;
+	overflow: hidden;
+	background-color: #fff;
+	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+/* Screenshots differ in height - fit each into the same box so the hero does not jump */
+.iv-hero__gallery .splide__slide,
+.md-typeset .iv-hero__gallery .splide__slide {
+	height: auto;
+}
+
+.iv-hero__gallery .splide__slide img {
 	display: block;
 	width: 100%;
-	height: auto;
-	border-radius: 0.4rem;
-	box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.3);
+	aspect-ratio: 2.4;
+	object-fit: contain;
+	background-color: #fff;
 }
 
 .iv-hero .md-typeset h1 {

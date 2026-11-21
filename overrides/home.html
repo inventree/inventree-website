@@ -28,7 +28,18 @@
         </a>
       </div>
       <div class="iv-hero__image">
-        <img src="{{ 'assets/front.png' | url }}" alt="InvenTree user interface" width="1200" height="800">
+        {#- Carousel of screenshots, listed in the 'hero_gallery' front matter of index.md -#}
+        <section class="splide iv-gallery iv-hero__gallery" data-per-page="1" aria-label="InvenTree screenshots">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for image in page.meta.hero_gallery or [] %}
+              <li class="splide__slide">
+                <img src="{{ ('assets/' ~ image) | url }}" alt="InvenTree user interface"{% if not loop.first %} loading="lazy"{% endif %}>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </section>
       </div>
     </div>
   </div>

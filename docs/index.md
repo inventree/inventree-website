@@ -1,6 +1,23 @@
 ---
 title: Intuitive Inventory Management
 template: home.html
+# Screenshots shown in the hero carousel (paths relative to docs/assets)
+hero_gallery:
+  - front.png
+  - webgallery/part_category.png
+  - webgallery/part_stock.png
+  - webgallery/stock_item.png
+  - webgallery/stock_location.png
+  - webgallery/build_orders.png
+  - webgallery/build_details.png
+  - webgallery/purchase_orders.png
+  - webgallery/suppliers.png
+  - webgallery/category_params.png
+  - webgallery/part_suppliers.png
+  - webgallery/stock_item_2.png
+  - webgallery/stock_location_2.png
+  - webgallery/category_subcats.png
+  - webgallery/build_outputs.png
 render_macros: true
 hide:
   - navigation
