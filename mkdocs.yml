@@ -40,7 +40,6 @@ theme:
   features:
     - content.code.copy
     - header.autohide
-    - navigation.indexes
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
@@ -60,29 +59,30 @@ extra_javascript:
 # discovered automatically (posts by the blog plugin, plugins by the index pages).
 nav:
   - Home: index.md
-  - Get Started:
+  - Features:
+    - Features: functions.md
     - Deploy: deploy.md
     - DigitalOcean: digitalocean.md
     - Demo: demo.md
-    - Features: functions.md
-    - Get Support: support.md
-    - Alternatives: alternatives/index.md
-  - Blog: blog/index.md
-  - News: news/index.md
+    - Alternatives: alternatives.md
+  - Blog:
+    - Blog: blog/index.md
+    - News: news/index.md
   - Plugins:
-    - plugins/index.md
+    - Plugin List: plugins/index.md
     - By Category: plugins/categories.md
     - By Tag: plugins/tags.md
     - Publishers: plugins/publishers.md
   - Ecosystem:
-    - extend/index.md
+    - Overview: extend/index.md
     - API: extend/api.md
     - Mobile App: extend/app.md
     - Plugins: extend/plugin/index.md
     - Integrations: extend/integrate/index.md
   - Community:
-    - About: about/index.md
+    - About: about.md
     - Team: about/team.md
+    - Get Support: support.md
     - Contribute: contribute.md
     - Fund InvenTree: fund.md
     - Newsletter: newsletter.md
@@ -101,7 +101,7 @@ plugins:
       post_url_format: "{date}/{slug}"
       post_url_date_format: yyyy/MM/dd
       post_readtime: true
-      archive_name: Archive
+      archive_name: Blog Archive
       archive_toc: true
       pagination_per_page: 10
   - blog:
@@ -112,7 +112,7 @@ plugins:
       post_url_format: "{date}/{slug}"
       post_url_date_format: yyyy/MM/dd
       post_readtime: false
-      archive_name: Archive
+      archive_name: News Archive
       archive_toc: true
       pagination_per_page: 20
   - rss:

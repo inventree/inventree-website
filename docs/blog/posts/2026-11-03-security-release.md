@@ -13,6 +13,7 @@ The vulnerabilities allow known users to privilege escalate within an InvenTree 
 ## Steps to take now
 
 We are not aware of active exploitation of this vulnerability, but we recommend that users take the following steps to mitigate risks:
+
 - Do *not* expose your InvenTree instance to the public internet without hardening steps as laid out in the [threat model](https://docs.inventree.org/en/stable/concepts/threat_model/)
 - Ensure *registration is disabled* till the release
 - Ensure you *trust all users registered* on your instance, especially those with staff or higher permissions

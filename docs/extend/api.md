@@ -5,6 +5,7 @@ title: API
 # InvenTree API
 
 InvenTree ships with an extensive REST API that is used by several native applications:
+
 - parts of the webinterface
 - InvenTree App (Android/iOS)
 - python module

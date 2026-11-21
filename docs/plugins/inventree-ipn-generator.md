@@ -64,6 +64,7 @@ Example: `(A6C)` will _always_ render as "A6C", regardless of other groups
 
 ### Numeric
 Numbers that should change over time should be encased in `{}`
+
 - `{5}` respresents a number with max 5 digits
 - `{25+}` represents a number 25-99
 
@@ -71,10 +72,12 @@ Example: `{5+}{3}` will result in this range: 5000-9999
 
 ### Characters
 Characters that change should be encased in `[]`
+
 - `[abc]` represents looping through the letters `a`, `b`, `c` in order.
 - `[a-f]` represents looping through the letters from `a` to `f` alphabetaically
 
 These two directives can be combined.
+
 - `[aQc-f]` represents:
 - - `a`, `Q`, `c-f`
 

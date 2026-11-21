@@ -12,6 +12,7 @@ Getting ready for 0.10.0, Website Updates and the Plugin List.
 Since the last release, we've been working on the next version of InvenTree, which will be 0.10.0. There are already 85 PRs merged into the `master` branch, and we're expecting to release 0.10.0 in the next few weeks. 
 
 There will be a full blog post once we release but here are a few perks to look for:
+
 - The option to use [Slovenian](https://github.com/inventree/InvenTree/pull/4072). Around 7% are already translated - we need your help to get that number up. Head over to the [translation project](https://crowdin.com/project/inventree) if you want to help with any language.
 - Attach the current order schedule to your calendar ([3858](https://github.com/inventree/InvenTree/pull/3858))
 - Improvements for report rendering ([4081](https://github.com/inventree/InvenTree/pull/4081)) and a lot of improvements to the docs

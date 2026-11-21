@@ -14,6 +14,7 @@ If you do not want to see them there you can **disable** the function in your us
 The good news first: We will **not** spam you with this function daily.  
 It is more of a tool to *communicate* with the *power users* and *admins*. There is wide array of reasons for the dev-team to want to communicate with you.  
 For example when we
+
 - are looking for inputs on new big, roadmap worthy FRs
 - want to show you a cool show-and-tell as an inspiration
 - have security advisories (please also follow releases - we always try to push new releases as fast as possible)
