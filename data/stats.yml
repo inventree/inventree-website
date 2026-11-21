@@ -1,13 +1,13 @@
 stats:
   - name: Docker pulls
     number: 3903802
-    icon: fa-brands fa-docker
+    icon: ti-brand-docker
   - name: GitHub Stars
     number: 7887
-    icon: fa-solid fa-star
+    icon: ti-star
   - name: Forks
     number: 1630
-    icon: fa-solid fa-code-branch
+    icon: ti-git-fork
   - name: Contributors
     number: 188
     icon: ti-users
