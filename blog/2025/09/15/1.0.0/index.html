@@ -1,0 +1,3168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The 1.0.0 release marks a major milestone for the InvenTree project. Not only does it represent an important step in the evolution of the software, but it…">
+      
+      
+        <meta name="author" content="InvenTree">
+      
+      
+        <link rel="canonical" href="https://inventree.org/blog/2025/09/15/1.0.0/">
+      
+      
+      
+        <link rel="prev" href="../../../08/21/machine-refactor/">
+      
+      
+        <link rel="next" href="../../../10/15/rolling-stocktake/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/favicon.ico">
+      <meta name="generator" content="zensical-0.1.1">
+    
+    
+      
+        <title>1.0.0 Release - InvenTree</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/modern/main.ebb7f775.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/splide.min.css">
+    
+      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  
+  <link rel="alternate" type="application/rss+xml" title="InvenTree Blog" href="../../../../feed_rss_created.xml">
+  <link rel="alternate" type="application/rss+xml" title="InvenTree News" href="../../../../../news/feed_rss_created.xml">
+  
+    
+  
+  
+    
+  
+  
+  <meta property="og:site_name" content="InvenTree">
+  <meta property="og:title" content="1.0.0 Release">
+  <meta property="og:description" content="The 1.0.0 release marks a major milestone for the InvenTree project. Not only does it represent an important step in the evolution of the software, but it…">
+  <meta property="og:image" content="https://inventree.org/assets/social-card.png">
+  <meta property="og:image:alt" content="InvenTree - Intuitive Inventory Management">
+  <meta property="og:url" content="https://inventree.org/blog/2025/09/15/1.0.0/">
+  
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2025-09-15">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@inventreedb">
+  <!-- Mastodon profile verification -->
+  <link rel="me" href="https://chaos.social/@InvenTree">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="InvenTree" class="md-header__button md-logo" aria-label="InvenTree" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="InvenTree">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            InvenTree
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1.0.0 Release
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <nav class="md-tabs iv-header-tabs" aria-label="Tabs">
+      <ul class="md-tabs__list">
+        
+          
+  
+  
+  
+    
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../features/" class="md-tabs__link">
+          
+  
+  Features
+
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../plugins/" class="md-tabs__link">
+          
+  
+  Plugins
+
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+  
+    
+      
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/" class="md-tabs__link">
+          
+  
+  Community
+
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+  
+    
+      <li class="md-tabs__item iv-tab-external">
+        <a href="https://docs.inventree.org/en/stable/" class="md-tabs__link" target="_blank" rel="noopener noreferrer">
+          
+  
+  Docs
+
+          <i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+
+        
+          
+  
+  
+  
+  
+    
+      <li class="md-tabs__item iv-tab-external">
+        <a href="https://demo.inventree.org/" class="md-tabs__link" target="_blank" rel="noopener noreferrer">
+          
+  
+  Demo
+
+          <i class="ti ti-external-link" aria-hidden="true"></i>
+        </a>
+      </li>
+    
+  
+
+        
+      </ul>
+    </nav>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="light-blue"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="InvenTree" class="md-nav__button md-logo" aria-label="InvenTree" data-md-component="logo">
+      
+  <img src="../../../../../assets/logo.png" alt="InvenTree">
+
+    </a>
+    InvenTree
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Blog
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_1">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Blog
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Blog
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="../../../../" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Blog
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Changelog
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Update Procedure
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-experience-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Experience Survey
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Breaking Changes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Breaking Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-interface-overhaul" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Interface Overhaul
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-system-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Plugin System Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-registry-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Machine Registry Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-interface-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Interface Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Notification Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#builtin-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Builtin Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Docker Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        API Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock-item-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stock Item Creation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Auth Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-update-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bulk Update Mixin
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Part Scheduling
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-stocktake" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Part Stocktake
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part Stocktake">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stocktake-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stocktake Export
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stock History
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-create-child-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Auto-Create Child Builds
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-django-import-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Remove django-import-export
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stock Return
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New Features / Improvements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features &#x2f; Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Performance Improvements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dashboard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-calendar-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Order Calendar Views
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Email Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-start-dates" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Order Start Dates
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-printing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reporting Printing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-merging" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Report Merging
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-parameter-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Part Parameter Tracking
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-build-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        External Build Orders
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bom-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        BOM Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-order-consume" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Build Order Consume
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serial-number-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Serial Number Navigation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-global-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Override Global Settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Override Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bug Fixes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contributing
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New Contributors
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Translation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Code Contributions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Report Bugs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-technical-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Documentation / Technical Writing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financial-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Financial Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Future Plans
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Blog Archive
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_1_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Blog Archive
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2026
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2025
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2024
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2023
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2022
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../archive/2021/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2021
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  News
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  News Archive
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_1_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  News Archive
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/archive/2026/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2026
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2025
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2024
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/archive/2023/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2023
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../news/archive/2022/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  2022
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Features
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Features
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Features
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../deploy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Deploy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Demo
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../alternatives/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Alternatives
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ecosystem
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../extend/app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mobile App
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plugins
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Plugins
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../plugins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Plugins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Community Plugins
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_3_2">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Community Plugins
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../plugins/community/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  All Plugins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../plugins/categories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  By Category
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../plugins/tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  By Tag
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../plugins/publishers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Publishers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Community
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Community
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  About
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/team/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Team
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../support/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Get Support
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../contribute/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Contribute
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../fund/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fund InvenTree
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../newsletter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Newsletter
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://docs.inventree.org/en/stable/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Docs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://demo.inventree.org/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Demo
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Changelog
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Update Procedure
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-experience-survey" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Experience Survey
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breaking-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Breaking Changes
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Breaking Changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-interface-overhaul" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Interface Overhaul
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plugin-system-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Plugin System Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-registry-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Machine Registry Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-interface-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Interface Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Notification Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#builtin-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Builtin Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Docker Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        API Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock-item-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stock Item Creation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Auth Changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bulk-update-mixin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bulk Update Mixin
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Part Scheduling
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-stocktake" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Part Stocktake
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part Stocktake">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stocktake-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stocktake Export
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stock History
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-create-child-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Auto-Create Child Builds
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-django-import-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Remove django-import-export
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stock-return" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stock Return
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-features-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New Features / Improvements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features &#x2f; Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#performance-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Performance Improvements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dashboard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-calendar-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Order Calendar Views
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#email-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Email Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-start-dates" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Order Start Dates
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-printing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reporting Printing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-merging" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Report Merging
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#part-parameter-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Part Parameter Tracking
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#external-build-orders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        External Build Orders
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bom-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        BOM Enhancements
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-order-consume" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Build Order Consume
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serial-number-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Serial Number Navigation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-global-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Override Global Settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#override-plugins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Override Plugins
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Bug Fixes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contributing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Contributing
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contributing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-contributors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        New Contributors
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Translation
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-contributions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Code Contributions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#report-bugs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Report Bugs
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-technical-writing" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Documentation / Technical Writing
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financial-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Financial Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#future-plans" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Future Plans
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/SchrodingersGat.png" alt="Oliver">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="/plugins/publishers/#schrodingersgat">Oliver</a>
+                        
+                      </strong>
+                      <br>
+                      Maintainer
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-calendar-days" viewBox="0 0 24 24"><path d="M8 2v3M16 2v3"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01"/></svg>
+                        <time datetime="2025-09-15 00:00:00+00:00" class="md-ellipsis">September 15, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              14 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      <a id="__skip" tabindex="-1"></a>
+      
+        
+
+
+  <h1>1.0.0 Release</h1>
+
+<p>The 1.0.0 release marks a major milestone for the InvenTree project. Not only does it represent an important step in the evolution of the software, but it also introduces a host of new features and improvements that enhance the user experience.</p>
+<!-- more -->
+
+<p>This release includes significant updates to the user interface, performance optimizations, and a range of new functionalities that have been requested by our community.</p>
+<p>With <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+milestone%3A1.0.0+">over 600 closed issues</a>, this release is a testament to the hard work and dedication of our contributors. We are excited to see how these changes will benefit users and help them manage their inventories more effectively.</p>
+<h3 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h3>
+<p>For a full list of changes made in this release, please see the <a href="https://github.com/inventree/InvenTree/releases/tag/1.0.0">release notes on GitHub</a>. The major changes are documented below, but there are many other improvements and bug fixes that have been implemented as well.</p>
+<p>You can also view a <a href="https://github.com/inventree/InvenTree/compare/0.17.0...1.0.0">full changelog between 0.17.0 and 1.0.0</a></p>
+<p>Going forward, we will be tracking major project changes in an internal <a href="https://github.com/inventree/InvenTree/blob/master/CHANGELOG.md">CHANGELOG file</a> - this file will be updated with each release, and will provide an overview of the major changes made in each version. This file is in addition to the release notes which are provided by GitHub.</p>
+<h3 id="update-procedure">Update Procedure<a class="headerlink" href="#update-procedure" title="Permanent link">&para;</a></h3>
+<p>To update to the latest version of InvenTree, please follow the updating instructions provided in the <a href="https://docs.inventree.org">InvenTree documentation</a>. Note that the particular update procedure may vary depending on your installation method.</p>
+<h2 id="user-experience-survey">User Experience Survey<a class="headerlink" href="#user-experience-survey" title="Permanent link">&para;</a></h2>
+<p>In conjunction with the 1.0.0 release, we have launched a <a href="https://forms.gle/a7mFzqZj57FeS7ds9">user experience survey</a> to gather feedback from our community. This survey is designed to help us understand how users are utilizing InvenTree, what features they find most valuable, and where we can improve.</p>
+<p>The survey is anonymous and should take no more than 10 minutes to complete. We encourage all users to participate, as your feedback is invaluable in shaping the future of InvenTree. Please consider taking the survey and sharing it with others who use InvenTree.</p>
+<h2 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">&para;</a></h2>
+<p>As with any major release, there are some breaking changes that users should be aware of. These changes may require adjustments to existing installations, plugins, or customizations.</p>
+<p>The most significant breaking changes are documented below, but users should also refer to the <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+milestone%3A1.0.0+label%3Abreaking">full list of breaking changes</a>.</p>
+<h3 id="user-interface-overhaul">User Interface Overhaul<a class="headerlink" href="#user-interface-overhaul" title="Permanent link">&para;</a></h3>
+<p>By far the largest change introduced in this release is the new user interface. The UI has been completely refactored to use a modern javascript / React framework, which allows for a more responsive and dynamic user experience. This change not only improves the performance of the application but also makes it easier to maintain and extend in the future.</p>
+<p>The new UI is now available at the <code>/web/</code> endpoint - and the old UI has been removed entirely.</p>
+<p>Note that old URLs have been remapped to the new UI, so users should not experience any issues with bookmarks or links that point to the old interface.</p>
+<p>The general "look and feel" of the InvenTree UI remains consistent with previous versions, but the underlying technology has been updated to provide a more robust and flexible foundation for future development.</p>
+<p>While we have made every effort to ensure that the new UI is compatible with existing data and functionality, there may be some edge cases where users encounter issues. We encourage users to report any problems they encounter so that we can address them promptly. In particular, if there are any features that are missing or not functioning as expected, please let us know <a href="https://github.com/inventree/InvenTree/issues">via GitHub issues</a>.</p>
+<h3 id="plugin-system-enhancements">Plugin System Enhancements<a class="headerlink" href="#plugin-system-enhancements" title="Permanent link">&para;</a></h3>
+<p>The plugin system has received significat attention in this release. In particular, the plugin system now provides a mechanism for plugins to render their own user interface componenents within the new UI framework.</p>
+<p>To this end, we have released an <a href="https://www.npmjs.com/package/@inventreedb/ui">npm package</a> that provides an interface layer for plugins looking to render custom components within the InvenTree UI.</p>
+<p>Additionally, we now have a <a href="https://github.com/inventree/plugin-creator/">plugin creation tool</a> which allows users to quickly scaffold InvenTree plugins.</p>
+<h3 id="machine-registry-enhancements">Machine Registry Enhancements<a class="headerlink" href="#machine-registry-enhancements" title="Permanent link">&para;</a></h3>
+<p>The machine registry has <a href="https://github.com/inventree/InvenTree/pull/10150">received an overhaul</a> which introduces a breaking change for any plugins which implement custom machine registry functionality.</p>
+<p>If you have implemented a custom machine registry plugin, you will need to update your plugin to work with the new machine registry system. In particular, the plugin must now implement a new <code>MachineDriverMixin</code> class, which provides a consistent interface for interacting with the machine registry.</p>
+<h3 id="user-interface-plugins">User Interface Plugins<a class="headerlink" href="#user-interface-plugins" title="Permanent link">&para;</a></h3>
+<p>This change may require some adjustments for users who have customized their InvenTree installation, particularly if they have created custom templates or plugins that rely on the old UI structure.</p>
+<p>Any plugins which have not been updated to work with the new UI will not function correctly, and will need to be adjusted to work with the new interface. This is after we <a href="https://github.com/inventree/InvenTree/pull/8828">removed the old PanelMixin class</a>. This means that any plugins which inherit from the PanelMixin class will now throw an error when loaded.</p>
+<p>The new UI plugin system provides a significant amount of <em>context</em> information to the plugins at render time. This means that plugins can now access information about the current user, the current page, and other relevant data when rendering their components.</p>
+<p>Additionally, the plugins can access the API directly from the UI, allowing for more dynamic interactions and data retrieval, without the plugin needing to authenticate separately.</p>
+<p>This plugin context system was introduced in <a href="https://github.com/inventree/InvenTree/pull/9439">#9439</a>, but further additions and improvements have been made in subsequent pull requests.</p>
+<p>The <a href="https://www.npmjs.com/package/@inventreedb/ui">@inventreedb/ui</a> npm package provides full type definitions for the plugin context, making it easier for developers to create plugins that integrate seamlessly with the new UI.</p>
+<p>Further, the npm package provieds a set of pre-defined react components which can be reused by plugins.</p>
+<p>Scaffolding a UI plugin from scratch represents a significant amount of work, so we have created a <a href="https://github.com/inventree/plugin-creator/">plugin creation tool</a> which generates all of the necessary boilerplate code to get started quickly. This tool can be used to create a new plugin that is ready to be extended with custom functionality.</p>
+<p>To integrate seamlessly with the UI, plugin developers should be aware that some <em>core</em> libraries (such as <em>react</em> / <em>mantine</em> / <em>lingui</em>) must be externalized, as they are already provided by the InvenTree UI. This means that plugins should not include their own versions of these libraries, as this can lead to conflicts and unexpected behavior.</p>
+<p>Note that this is all handled automatically by the plugin creation tool, so developers should not need to worry about this unless they are creating plugins manually.</p>
+<h3 id="notification-plugins">Notification Plugins<a class="headerlink" href="#notification-plugins" title="Permanent link">&para;</a></h3>
+<p>We have changed the way that notification methods can be <a href="https://github.com/inventree/InvenTree/pull/9735">implented via plugins</a>. This change was made to ensure that custom notification methods were able to be loaded and unloaded correctly, and to provide a more consistent approach for implementing notification methods across different plugins.</p>
+<p><em>However</em> - this change is <em>not</em> backwards compatible with existing plugins that implement notification methods. Plugin developers will need to update their plugins to use the new notification system in order to continue providing custom notification methods.</p>
+<h3 id="builtin-plugins">Builtin Plugins<a class="headerlink" href="#builtin-plugins" title="Permanent link">&para;</a></h3>
+<p>The InvenTree project now includes a number of builtin plugins that provide additional functionality and features. These plugins are designed to work seamlessly with the new UI and provide a range of enhancements to the core InvenTree functionality.</p>
+<p>Some of these plugins are <em>mandatory</em> - as they are required for the core functionality of InvenTree. These mandatory plugins are installed automatically when InvenTree is installed, and cannot be disabled.</p>
+<h3 id="docker-changes">Docker Changes<a class="headerlink" href="#docker-changes" title="Permanent link">&para;</a></h3>
+<p>Our <a href="https://hub.docker.com/r/inventree/inventree">official docker image</a> is now based on a Debian image, rather than Alpine. <a href="https://github.com/inventree/InvenTree/pull/10227">This change</a> was made due to a number of limitations with the Alpine image. The move to a Debian image also brings the docker image closer to the other installation methods, and the devcontainer setup.</p>
+<p>Functionally, the new docker image should behave identically to the old image, and users should not experience any issues when updating.</p>
+<p>Additionally, we have updated the <a href="https://github.com/inventree/InvenTree/pull/9041">supported postgres version</a> in our docker image from version 13 to version 17.</p>
+<p>For new installations, this should not cause any issues, as the docker image will automatically pull the latest version of postgres.</p>
+<p>For existing installations, this will only make a difference if you wish to update your existing database. Note that our docker image will still support connection to older versions of postgres, so users can continue to use their existing database without any issues.</p>
+<h3 id="api-changes">API Changes<a class="headerlink" href="#api-changes" title="Permanent link">&para;</a></h3>
+<p>There have been a significant number of changes to the InvenTree API in this release, although the majority of these changes are backwards compatible.</p>
+<p>All API changes are <a href="https://github.com/inventree/InvenTree/blob/master/src/backend/InvenTree/InvenTree/api_version.py">documented in the source code</a>, and users can refer to this file to see the specific changes that have been made.</p>
+<p>Additionally, the <a href="https://docs.inventree.org/en/stable/api/schema/">API schema is documented</a> and provides a comprehensive overview of the available endpoints and their parameters.</p>
+<h3 id="stock-item-creation">Stock Item Creation<a class="headerlink" href="#stock-item-creation" title="Permanent link">&para;</a></h3>
+<p>Creation of stock items via the API has been adjusted, to ensure that the return type is consistent. Now, the return type is always an array of items, even if only a single item is created. Refer to <a href="https://github.com/inventree/InvenTree/pull/9969">PR #9969</a> for more information on this change.</p>
+<h3 id="auth-changes">Auth Changes<a class="headerlink" href="#auth-changes" title="Permanent link">&para;</a></h3>
+<p>We have refactored our authentication framework significantly, both to support the new UI and also to align with modern best practices.</p>
+<p>These changes should not affect most users, as we have endeavored to maintain compatibility with existing authentication methods. However, users who have implemented custom authentication mechanisms may need to review their code to ensure compatibility with the new framework.</p>
+<p>In particular we have updated our <a href="https://github.com/inventree/InvenTree/pull/6293">django-allauth framework</a> to align with changes to that library.</p>
+<h3 id="bulk-update-mixin">Bulk Update Mixin<a class="headerlink" href="#bulk-update-mixin" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://github.com/inventree/InvenTree/pull/9313">PR #9313</a> we introduced a "BulkUpdateMixin" class which allows some API endpoints to support bulk updates. This mixin can be used to extend existing API endpoints to allow for bulk updates of objects, which can significantly improve performance when updating large datasets.</p>
+<h3 id="part-scheduling">Part Scheduling<a class="headerlink" href="#part-scheduling" title="Permanent link">&para;</a></h3>
+<p>The existing "Part Scheduling" feature has been removed in this release, and replaced with a plugin-based solution. This change was made to allow for greater flexibility and customization of the scheduling functionality, as well as to improve performance and maintainability.</p>
+<p>Refer to the <a href="https://github.com/inventree/inventree-stock-forecasting">InvenTree Stock Forecasting plugin</a> to replace the old part scheduling functionality. </p>
+<h3 id="part-stocktake">Part Stocktake<a class="headerlink" href="#part-stocktake" title="Permanent link">&para;</a></h3>
+<p>The "Part Stocktake" feature has been refactored to make use of the new import/export framework. Prior to <code>1.0.0</code>, the concept of "stocktake" referred to two separate concepts:</p>
+<ol>
+<li>The ability to provide a snapshot of the current stock levels for a part</li>
+<li>Record historical stock levels for a part</li>
+</ol>
+<p>These are now split into two separate features:</p>
+<h4 id="stocktake-export">Stocktake Export<a class="headerlink" href="#stocktake-export" title="Permanent link">&para;</a></h4>
+<p>Exporting stocktake data is now handled by a provided export plugin, which integrates into the refactored data export framework. This means that the "stocktake" feature is no longer a separate exporter pathway. Refer to the InvenTree documentation for details on how to use the new stocktake export functionality.</p>
+<h4 id="stock-history">Stock History<a class="headerlink" href="#stock-history" title="Permanent link">&para;</a></h4>
+<p>The "Stock History" feature remains in place, and allows users to view the historical stock levels for a part. This feature provides a detailed view of how stock levels have changed over time, and can be useful for tracking inventory trends and identifying potential issues.</p>
+<p>Refer to <a href="https://github.com/inventree/InvenTree/pull/10124">PR #10124</a> for further information on this change.</p>
+<h3 id="auto-create-child-builds">Auto-Create Child Builds<a class="headerlink" href="#auto-create-child-builds" title="Permanent link">&para;</a></h3>
+<p>The "auto-creation of child builds" feature has been removed from the core functionality, as it was not configurable and too narrowly scoped to be useful for most users. This feature has been replaced with a more flexible plugin-based solution, which allows users to create custom logic for automatically creating child builds based on their specific requirements.</p>
+<p>Refer to <a href="https://github.com/inventree/InvenTree/pull/9574">PR #9574</a> for more information.</p>
+<h3 id="remove-django-import-export">Remove django-import-export<a class="headerlink" href="#remove-django-import-export" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://github.com/inventree/InvenTree/pull/8685">#8685</a> we removed the <a href="https://django-import-export.readthedocs.io/en/latest/">django-import-export</a> framework, which is what was previously used for data import and export. This has been replaced with a <a href="https://github.com/inventree/InvenTree/issues/8686">custom API driven solution</a> which is more flexible and easier to use. Our new framework runs in the background worker, allowing for processing of large datasets without blocking the user interface (or causing the web server to timeout).</p>
+<p>Our data import and export framework has been completely rewritten, and replaced with a custom API driven solution.</p>
+<h3 id="stock-return">Stock Return<a class="headerlink" href="#stock-return" title="Permanent link">&para;</a></h3>
+<p>The "Stock Return" functionality has been expanded to allow for stock to be returned after having been consumed by a build order. To facilitate this, the API has been refactored to allow for stock returns to be processed more efficiently, and the user interface has been updated to reflect these changes.</p>
+<p>However this does represent a breaking change to the API, and users who have implemented custom logic for handling stock returns will need to update their code to accommodate the new API structure.</p>
+<p>Refer to <a href="https://github.com/inventree/InvenTree/pull/10132">PR #10132</a> for more information on this change.</p>
+<h2 id="new-features-improvements">New Features / Improvements<a class="headerlink" href="#new-features-improvements" title="Permanent link">&para;</a></h2>
+<p>There are a number of new features and improvements in this release, many of which have been requested by our community. Some of the most notable changes include:</p>
+<h3 id="performance-improvements">Performance Improvements<a class="headerlink" href="#performance-improvements" title="Permanent link">&para;</a></h3>
+<p>We have made significant performance improvements across the board, particularly in areas such as data loading and rendering. The new UI framework is designed to be more efficient, which should result in a smoother experience for users, especially when dealing with large datasets.</p>
+<p>The API has also been optimized to reduce response times and improve overall performance.</p>
+<h3 id="dashboard">Dashboard<a class="headerlink" href="#dashboard" title="Permanent link">&para;</a></h3>
+<p>The new user interface now includes a customizable dashboard that allows users to add, remove, and rearrange widgets according to their preferences. This feature provides a more personalized experience and enables users to focus on the information that is most relevant to them.</p>
+<p>This dashboard can be extended with custom widgets provided by plugins, allowing for even greater flexibility and customization.</p>
+<h3 id="order-calendar-views">Order Calendar Views<a class="headerlink" href="#order-calendar-views" title="Permanent link">&para;</a></h3>
+<p>We have <a href="https://github.com/inventree/InvenTree/pull/8933">reimplemented calendar views</a> for purchase orders, sales orders, and build orders. These calendar views allow users to see their orders in a calendar format, making it easier to visualize and manage their order schedules.</p>
+<h3 id="email-enhancements">Email Enhancements<a class="headerlink" href="#email-enhancements" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/inventree/InvenTree/pull/9608">PR #9608</a> enhances email support capabilities, including plugin support for sending and receiving emails.</p>
+<h3 id="order-start-dates">Order Start Dates<a class="headerlink" href="#order-start-dates" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://github.com/inventree/InvenTree/pull/8966">#PR 8966</a> we introduced a new "start date" field for purchase orders and sales orders. This field allows users to specify the date when the order is expected to start processing, which can be useful for planning and scheduling purposes. In <a href="https://github.com/inventree/InvenTree/pull/8915">#8915</a> the "start date" field was also added for build orders.</p>
+<h3 id="reporting-printing">Reporting Printing<a class="headerlink" href="#reporting-printing" title="Permanent link">&para;</a></h3>
+<p>Printing of reports and labels is now <a href="https://github.com/inventree/InvenTree/pull/9199">offloaded to the background worker</a>, allowing for more efficient processing of large reports without blocking the user interface. This change also introduces progress tracking for report generation, so users can see the status of their report as it is being generated.</p>
+<p>Additionally, reports and labels can now be generated programatically from plugins, allowing for greater flexibility and customization of report generation.</p>
+<h3 id="report-merging">Report Merging<a class="headerlink" href="#report-merging" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/inventree/InvenTree/pull/9532">PR #9532</a> introduces a new feature that allows users to merge multiple items into a single report. When generating reports against multiple items, users can now select to render the report as a single document, rather than generating separate reports for each item.</p>
+<p>This is selected as an option against a particular report template. Note that it requires the report template to be designed to support merging, as not all templates will be suitable for this feature.</p>
+<h3 id="part-parameter-tracking">Part Parameter Tracking<a class="headerlink" href="#part-parameter-tracking" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/inventree/InvenTree/pull/10023">PR #10023</a> tracks the user who last modified a part parameter, and when it was last modified. This change provides greater visibility into changes made to part parameters.</p>
+<h3 id="external-build-orders">External Build Orders<a class="headerlink" href="#external-build-orders" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://github.com/inventree/InvenTree/pull/9312">PR #9312</a> we introduced support for external build orders, allowing users to manage build orders that are fulfilled by external suppliers. This feature is particularly useful for users who need to manage builds that are outsourced to third-party manufacturers or suppliers.</p>
+<p>Refer to the <a href="https://docs.inventree.org/en/latest/manufacturing/external/">InvenTree documentation</a> for further information.</p>
+<h3 id="bom-enhancements">BOM Enhancements<a class="headerlink" href="#bom-enhancements" title="Permanent link">&para;</a></h3>
+<p>Added support for greater flexibility in managing Bills of Materials (BOMs) - refer to <a href="https://github.com/inventree/InvenTree/pull/10042">#10042</a> for details.</p>
+<h3 id="build-order-consume">Build Order Consume<a class="headerlink" href="#build-order-consume" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/inventree/InvenTree/pull/8191">PR #8191</a> adds the ability to partially consume stock against a build order, even if the build order is not yet complete. This feature allows users to consume stock as it allocated, rather than waiting for the entire build order to be completed. This provides users greater flexibility in managing their inventory and build orders, and can help to reduce delays in production.</p>
+<h3 id="serial-number-navigation">Serial Number Navigation<a class="headerlink" href="#serial-number-navigation" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/inventree/InvenTree/pull/9505">PR #9505</a> adds the ability to navigate between serial numbers in the user interface.</p>
+<h3 id="override-global-settings">Override Global Settings<a class="headerlink" href="#override-global-settings" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/inventree/InvenTree/pull/9718">PR #9718</a> introduces the ability to override global settings via system-level configuration. This allows system administrators to "lock down" certain settings, preventing users from changing them in the user interface. This is particularly useful for ensuring consistency across installations and preventing accidental changes to critical settings.</p>
+<h3 id="override-plugins">Override Plugins<a class="headerlink" href="#override-plugins" title="Permanent link">&para;</a></h3>
+<p>In <a href="https://github.com/inventree/InvenTree/pull/9718">PR #10094</a> we introduced the ability for system adminstrators to mark certain plugins as "mandatory" at the system configuration level. This means that these plugins cannot be disabled or uninstalled by users, ensuring that critical functionality remains available.</p>
+<h2 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h2>
+<p>There have been a <em>significant</em> number of bug fixes in this release, with over <a href="https://github.com/inventree/InvenTree/pulls?q=is%3Apr+milestone%3A1.0.0+label%3Abug+">150 tagged PRs</a>.</p>
+<p>Note that many of these bug fixes are related to implementation of the new interface, and may not represent issues present in previous versions of the InvenTree software.</p>
+<h2 id="contributing">Contributing<a class="headerlink" href="#contributing" title="Permanent link">&para;</a></h2>
+<p>As always, we would like to extend our heartfelt thanks to all of the contributors who have worked tirelessly to make this release possible. The InvenTree project is a community-driven effort, and it is only through the contributions of our users that we are able to continue improving and evolving the software.</p>
+<p>There are now <a href="https://github.com/inventree/InvenTree/graphs/contributors">over 100 contributors</a> to the InvenTree project, and we are grateful for each and every one of you. Whether you have contributed code, reported bugs, provided feedback, or simply used the software, your support is invaluable to us.</p>
+<h3 id="new-contributors">New Contributors<a class="headerlink" href="#new-contributors" title="Permanent link">&para;</a></h3>
+<p>The following developers made their first contributions to the InvenTree project in this release:</p>
+<ul>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/gunstr" title="GitHub User: gunstr">@gunstr</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9274">https://github.com/inventree/InvenTree/pull/9274</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/reilly-callaway" title="GitHub User: reilly-callaway">@reilly-callaway</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9575">https://github.com/inventree/InvenTree/pull/9575</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/aluminum-ice" title="GitHub User: aluminum-ice">@aluminum-ice</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9638">https://github.com/inventree/InvenTree/pull/9638</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/cbenhagen" title="GitHub User: cbenhagen">@cbenhagen</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9641">https://github.com/inventree/InvenTree/pull/9641</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/GoryMoon" title="GitHub User: GoryMoon">@GoryMoon</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9704">https://github.com/inventree/InvenTree/pull/9704</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/willbicks" title="GitHub User: willbicks">@willbicks</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9655">https://github.com/inventree/InvenTree/pull/9655</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/gitbock" title="GitHub User: gitbock">@gitbock</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9775">https://github.com/inventree/InvenTree/pull/9775</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/RedEchidnaUK" title="GitHub User: RedEchidnaUK">@RedEchidnaUK</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9400">https://github.com/inventree/InvenTree/pull/9400</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/tristanle22" title="GitHub User: tristanle22">@tristanle22</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9532">https://github.com/inventree/InvenTree/pull/9532</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/sufyan-mukadam" title="GitHub User: sufyan-mukadam">@sufyan-mukadam</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/9673">https://github.com/inventree/InvenTree/pull/9673</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/the78mole" title="GitHub User: the78mole">@the78mole</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10107">https://github.com/inventree/InvenTree/pull/10107</a></li>
+<li><a class="magiclink magiclink-github magiclink-mention" href="https://github.com/daniil4udo" title="GitHub User: daniil4udo">@daniil4udo</a> made their first contribution in <a href="https://github.com/inventree/InvenTree/pull/10179">https://github.com/inventree/InvenTree/pull/10179</a></li>
+</ul>
+<h3 id="translation">Translation<a class="headerlink" href="#translation" title="Permanent link">&para;</a></h3>
+<p>Our <a href="https://crowdin.com/project/inventree">translation efforts</a> continue to grow, with coverage increasing across a wide range of languages. We are grateful to all of our translators who have contributed to making InvenTree accessible to users around the world.</p>
+<p>If you are interested in contributing to the translation efforts, please visit our <a href="https://crowdin.com/project/inventree">Crowdin project</a> and join the community of translators.</p>
+<h3 id="code-contributions">Code Contributions<a class="headerlink" href="#code-contributions" title="Permanent link">&para;</a></h3>
+<p>Check out our GitHub page for a list of outstanding issues and feature requests. If you are a developer, you can help to contribute to the project by submitting a pull request.</p>
+<p>In particular, we are looking for assistance with frontend development, as we work to complete the new user interface and improve the overall UI/UX of the project.</p>
+<h3 id="report-bugs">Report Bugs<a class="headerlink" href="#report-bugs" title="Permanent link">&para;</a></h3>
+<p>If you encounter a bug in InvenTree, please report it on our <a href="https://github.com/inventree/inventree/issues">GitHub issues page</a>. Please ensure that you provide as much information as possible to help us diagnose and fix the issue.</p>
+<h3 id="documentation-technical-writing">Documentation / Technical Writing<a class="headerlink" href="#documentation-technical-writing" title="Permanent link">&para;</a></h3>
+<p>If you have experience with technical writing, you can help to improve the InvenTree documentation. We are always looking for help to improve the documentation and make it more accessible to new users.</p>
+<h3 id="financial-support">Financial Support<a class="headerlink" href="#financial-support" title="Permanent link">&para;</a></h3>
+<p>Sponsorships help to keep this project sustainable, and buys time for the core developers to commit to the project. A recurring or one off sponsorship is a great way to help InvenTree development to continue at full steam!</p>
+<p>The work undertaken to keep InvenTree running is done by a very small group of core developers, who do so in their spare time (and are not sponsored by their employers to work on InvenTree). If you benefit from the InvenTree project, please consider contributing to maintain vibrant development of this software!</p>
+<ul>
+<li><a href="/fund#github-sponsors">GitHub</a></li>
+</ul>
+<p>If you are using InvenTree in a commercial setting, please consider sponsoring the project to help support ongoing development and maintenance. Your support is greatly appreciated and helps to ensure that InvenTree remains a viable and sustainable project for years to come.</p>
+<p>If your company benefits from InvenTree, please consider a <a href="/fund#polar">one time sponsorship</a> or a <a href="/fund#polar">recurring sponsorship</a> to help support the project.</p>
+<h2 id="future-plans">Future Plans<a class="headerlink" href="#future-plans" title="Permanent link">&para;</a></h2>
+<p>Our focus over the last year has been on the new user interface, and we are excited to see it finally come to fruition in this release. However, there is still much work to be done, and we have a number of plans for future development.</p>
+<p>Check out our <a href="https://github.com/inventree/inventree/issues/">GitHub issues page</a> for a list of outstanding issues and feature requests. We are always looking for help to improve the project, and we welcome contributions from the community.</p>
+<p>You can also help by <a href="https://forms.gle/a7mFzqZj57FeS7ds9">completing the user survey</a> to provide feedback on your experience with InvenTree, and help us to prioritize future development efforts.</p>
+
+  
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021-now InvenTree
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/inventree/inventree" target="_blank" rel="noopener" title="InvenTree on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M216.5 362.5c-66-8-112.5-55.5-112.5-117 0-25 9-52 24-70-6.5-16.5-5.5-51.5 2-66 20-2.5 47 8 63 22.5 19-6 39-9 63.5-9s44.5 3 62.5 8.5c15.5-14 43-24.5 63-22 7 13.5 8 48.5 1.5 65.5 16 19 24.5 44.5 24.5 70.5 0 61.5-46.5 108-113.5 116.5 17 11 28.5 35 28.5 62.5v52c0 15 12.5 23.5 27.5 17.5C441 459.5 512 369 512 257 512 115.5 397 0 255.5 0S0 115.5 0 257c0 111 70.5 203 165.5 237.5 13.5 5 26.5-4 26.5-17.5v-40c-7 3-16 5-24 5-33 0-52.5-18-66.5-51.5-5.5-13.5-11.5-21.5-23-23-6-.5-8-3-8-6 0-6 10-10.5 20-10.5 14.5 0 27 9 40 27.5 10 14.5 20.5 21 33 21s20.5-4.5 32-16c8.5-8.5 15-16 21-21"/></svg>
+    </a>
+  
+    
+    
+      
+    
+    
+    
+    <a href="https://chaos.social/@InvenTree" target="_blank" rel="noopener me" title="InvenTree on Mastodon" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M433 179.1c0-97.2-63.7-125.7-63.7-125.7-62.5-28.7-228.6-28.4-290.5 0 0 0-63.7 28.5-63.7 125.7 0 115.7-6.6 259.4 105.6 289.1 40.5 10.7 75.3 13 103.3 11.4 50.8-2.8 79.3-18.1 79.3-18.1l-1.7-36.9s-36.3 11.4-77.1 10.1c-40.4-1.4-83-4.4-89.6-54-.6-4.6-.9-9.3-.9-13.9 85.6 20.9 158.7 9.1 178.7 6.7 56.1-6.7 105-41.3 111.2-72.9 9.8-49.8 9-121.5 9-121.5zm-75.1 125.2h-46.6V190.1c0-49.7-64-51.6-64 6.9v62.5H201V197c0-58.5-64-56.6-64-6.9v114.2H90.3c0-122.1-5.2-147.9 18.4-175 25.9-28.9 79.8-30.8 103.8 6.1l11.6 19.5 11.6-19.5c24.1-37.1 78.1-34.8 103.8-6.1 23.7 27.3 18.4 53 18.4 175"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://reddit.com/r/inventree" target="_blank" rel="noopener" title="InvenTree on Reddit" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M0 256C0 114.6 114.6 0 256 0s256 114.6 256 256-114.6 256-256 256H37.1c-13.7 0-20.5-16.5-10.9-26.2L75 437C28.7 390.7 0 326.7 0 256m349.6-102.4c23.6 0 42.7-19.1 42.7-42.7s-19.1-42.7-42.7-42.7c-20.6 0-37.8 14.6-41.8 34-34.5 3.7-61.4 33-61.4 68.4v.2c-37.5 1.6-71.8 12.3-99 29.1-10.1-7.8-22.8-12.5-36.5-12.5-33 0-59.8 26.8-59.8 59.8 0 24 14.1 44.6 34.4 54.1 2 69.4 77.6 125.2 170.6 125.2s168.7-55.9 170.6-125.3c20.2-9.6 34.1-30.2 34.1-54 0-33-26.8-59.8-59.8-59.8-13.7 0-26.3 4.6-36.4 12.4-27.4-17-62.1-27.7-100-29.1v-.2c0-25.4 18.9-46.5 43.4-49.9 4.4 18.8 21.3 32.8 41.5 32.8zm-172.5 93.3c16.7 0 29.5 17.6 28.5 39.3s-13.5 29.6-30.3 29.6-31.4-8.8-30.4-30.5S160.3 247 177 247zm190.1 38.3c1 21.7-13.7 30.5-30.4 30.5s-29.3-7.9-30.3-29.6 11.8-39.3 28.5-39.3 31.2 16.6 32.1 38.3zm-48.1 56.7c-10.3 24.6-34.6 41.9-63 41.9s-52.7-17.3-63-41.9c-1.2-2.9.8-6.2 3.9-6.5 18.4-1.9 38.3-2.9 59.1-2.9s40.7 1 59.1 2.9c3.1.3 5.1 3.6 3.9 6.5"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/inventreedb" target="_blank" rel="noopener" title="InvenTree on Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M357.2 48h70.6L273.6 224.2 455 464H313L201.7 318.6 74.5 464H3.8l164.9-188.5L-5.2 48h145.6l100.5 132.9zm-24.8 373.8h39.1L119.1 88h-42z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://hub.docker.com/r/inventree/inventree" target="_blank" rel="noopener" title="InvenTree on Docker" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M349.9 236.3h-66.1v-59.4h66.1zm0-204.3h-66.1v60.7h66.1zm78.2 144.8H362v59.4h66.1zm-156.3-72.1h-66.1v60.1h66.1zm78.1 0h-66.1v60.1h66.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1zm78.1 0h-66.1v59.4h66.1zm-78.1-72.1h-66.1v60.1h66.1z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+          
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../../../..","features":["content.code.copy","header.autohide","navigation.instant","navigation.tracking","navigation.tabs","navigation.top","toc.follow"],"redirect":"../../../../../redirect.json","search":"../../../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.3cb411a8.min.js"></script>
+      
+        <script src="../../../../../javascripts/splide.min.js"></script>
+      
+        <script src="../../../../../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
