@@ -102,7 +102,7 @@ def copy_legacy_feeds():
         dst = site_dir.joinpath(blog, 'feed.atom')
         shutil.copyfile(src, dst)
         count = reformat_feed_dates(dst)
-        print(f'Copied {src} -> {dst}; Reformatted {count} dates')
+        print(f'Copied {src} -> {dst}; Reformatted {count} dates in target')
 
 
 if __name__ == '__main__':
