@@ -10,6 +10,8 @@ import json
 import re
 import shutil
 import sys
+from datetime import timezone
+from email.utils import parsedate_to_datetime
 from pathlib import Path
 
 import markdown
@@ -25,6 +27,24 @@ site_dir = here.joinpath('site')
 def plain_text(text: str) -> str:
     """Render markdown and strip all HTML tags."""
     return re.sub(r'<[^>]+>', '', markdown.markdown(text))
+
+
+def reformat_feed_dates(feed: Path) -> int:
+    """Rewrite dates form RSS to Atom (ISO 8601)."""
+    pattern = re.compile(
+        r'(<(?:pubDate|lastBuildDate)\b[^>]*>)([^<]*)(</(?:pubDate|lastBuildDate)\s*>)'
+    )
+    content = feed.read_text(encoding='utf-8')
+
+    def replace(match: re.Match[str]) -> str:
+        date = parsedate_to_datetime(match.group(2).strip())
+        if date.tzinfo is None:
+            date = date.replace(tzinfo=timezone.utc)
+        return f'{match.group(1)}{date.isoformat(sep=" ", timespec="seconds")}{match.group(3)}'
+
+    content, reformatted = pattern.subn(replace, content)
+    feed.write_text(content, encoding='utf-8')
+    return reformatted
 
 
 def build_plugins_json():
@@ -81,7 +101,8 @@ def copy_legacy_feeds():
         src = site_dir.joinpath(blog, 'feed_rss_created.xml')
         dst = site_dir.joinpath(blog, 'feed.atom')
         shutil.copyfile(src, dst)
-        print(f'Copied {src} -> {dst}')
+        count = reformat_feed_dates(dst)
+        print(f'Copied {src} -> {dst}; Reformatted {count} dates')
 
 
 if __name__ == '__main__':
