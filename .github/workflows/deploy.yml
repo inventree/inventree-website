@@ -3,30 +3,32 @@ name: Build pages and publish
 on:
   push
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # required to push to the gh-pages branch
     steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
+      - uses: actions/checkout@v4
         with:
-          ruby-version: 3.4.9
-          bundler-cache: true
-      - name: Setup Node
-        uses: actions/setup-node@v2
+          fetch-depth: 0  # full history - used for the "last modified" date of plugins
+      - uses: actions/setup-python@v5
         with:
-          node-version: '14'
-      - run: npm install
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.txt
       - name: Build site
-        uses: limjh16/jekyll-action-ts@v2
-        with:
-          enable_cache: true
-      - run: bundle exec htmlproofer ./_site --no-check-external-hash --no-enforce-https --ignore-urls "/localhost/,/www.linkedin.com/,digitalocean.com,/cloud.digitalocean.com/,/dnschecker.org/,/npmjs.com/,/reddit.com/r/inventree/,/twitter.com/inventreedb/,/github.com/,/developer.digikey.com/,/patreon.com/,/partkeepr.org/,/download.dymo.com/,brother.com.au,/marketplace.digitalocean.com,/chaos.social"
-        name: Check links
+        # strict mode (set in mkdocs.yml) fails the build on broken internal links
+        run: zensical build --clean
+      - name: Generate plugins.json and legacy feeds
+        run: python scripts/post_build.py
       - name: Deploy
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: 'gh-pages'
-          publish_dir: ./_site
+          publish_dir: ./site

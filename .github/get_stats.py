@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 from urllib.request import urlopen, Request
 
-file_name = Path('_data/general/stats.yml')
+file_name = Path('data/stats.yml')
 github_project = "inventree/inventree"
 crowdin_projet_id = 452300
 
@@ -49,18 +49,18 @@ file_name.write_text(
 f"""stats:
   - name: Docker pulls
     number: {docker}
-    icon: fa-brands fa-docker
+    icon: ti-brand-docker
   - name: GitHub Stars
     number: {stars}
-    icon: fa-solid fa-star
+    icon: ti-star
   - name: Forks
     number: {forks}
-    icon: fa-solid fa-code-branch
+    icon: ti-git-fork
   - name: Contributors
     number: {contributors}
-    icon: fa-solid fa-hands-helping
+    icon: ti-users
   - name: Languages
     number: {languages}
-    icon: fa-solid fa fa-language
+    icon: ti-language
 """
 )

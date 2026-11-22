@@ -1,0 +1,11 @@
+{% extends "main.html" %}
+
+{% block content %}
+<h1><i class="ti ti-search"></i> Page not found</h1>
+<p>Sorry, we couldn't find the page you were looking for.</p>
+<p>
+  <a href="{{ '' | url }}" class="md-button md-button--primary"><i class="ti ti-home"></i> Home</a>
+  <a href="{{ 'blog/' | url }}" class="md-button"><i class="ti ti-news"></i> Blog</a>
+  <a href="{{ 'plugins/' | url }}" class="md-button"><i class="ti ti-puzzle"></i> Plugins</a>
+</p>
+{% endblock content %}
