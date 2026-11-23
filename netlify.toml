@@ -1,0 +1,13 @@
+# Netlify preview builds for pull requests
+[build]
+  command = "pip install -r requirements.txt && zensical build --clean && python scripts/post_build.py"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
+
+# Netlify's "pretty URLs" serves <page>.html at /<page> and redirects /<page>/ there.
+# The legacy <page>.html redirects (see scripts/post_build.py) would then loop, so
+# serve URLs exactly as built - matching GitHub Pages, which hosts the live site.
+[build.processing.html]
+  pretty_urls = false

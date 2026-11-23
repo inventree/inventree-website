@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <link rel="alternate" type="application/rss+xml" title="InvenTree Blog" href="{{ 'blog/feed_rss_created.xml' | url }}">
+  <link rel="alternate" type="application/rss+xml" title="InvenTree News" href="{{ 'news/feed_rss_created.xml' | url }}">
+  {#- Link previews (Open Graph / Twitter cards) - pages may set 'description' and 'image' in front matter -#}
+  {% set meta = page.meta or {} %}
+  {% if meta.template == "home.html" %}
+    {% set og_title = config.site_name ~ ' - ' ~ meta.title %}
+  {% else %}
+    {% set og_title = meta.name or meta.title or (page.title | striptags) %}
+  {% endif %}
+  {% if meta.description %}
+    {% set og_description = meta.description %}
+  {% elif meta.package_name %}
+    {% set og_description = meta.name ~ ' - a community plugin for InvenTree, published by ' ~ meta.author ~ '.' %}
+  {% else %}
+    {% set og_description = config.site_description %}
+  {% endif %}
+  {% set og_image = config.site_url ~ (meta.image or 'assets/social-card.png') %}
+  <meta property="og:site_name" content="{{ config.site_name }}">
+  <meta property="og:title" content="{{ (og_title or config.site_name) | e }}">
+  <meta property="og:description" content="{{ og_description | trim | e }}">
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:alt" content="InvenTree - Intuitive Inventory Management">
+  {% if page.canonical_url %}<meta property="og:url" content="{{ page.canonical_url }}">{% endif %}
+  {% if meta.date %}
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="{{ page.meta.date }}">
+  {% else %}
+  <meta property="og:type" content="website">
+  {% endif %}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@inventreedb">
+  <!-- Mastodon profile verification -->
+  <link rel="me" href="https://chaos.social/@InvenTree">
+{% endblock extrahead %}
+
+{#- Navigation tabs are rendered inside the header (see partials/header.html) -#}
+{% block tabs %}{% endblock tabs %}

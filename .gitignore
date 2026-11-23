@@ -1,11 +1,15 @@
-_site/
-.parcel-cache/
+# Build output
+site/
 .cache/
-.jekyll-cache/
-dist/
-node_modules/
-.jekyll-metadata
-.docusaurus/
-yarn-error.log
+__pycache__/
+*.pyc
 
-build/
+# Local virtual environments
+.venv/
+venv/
+
+# Old Jekyll build artifacts
+_site/
+.jekyll-cache/
+.jekyll-metadata
+node_modules/
